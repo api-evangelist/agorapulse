@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateSimpleDraftOpenResponse",
+  "required": [
+    "groupOfPosts"
+  ],
+  "type": "object",
+  "properties": {
+    "groupOfPosts": {
+      "$ref": "#/components/schemas/GroupOfPostsSummary"
+    }
+  },
+  "description": "Response after creating a simple draft"
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "YoutubeContentReportInsight",
+  "type": "object",
+  "properties": {
+    "addedToPlaylistCount": {
+      "type": "integer",
+      "description": "Number of times this video was added to a playlist",
+      "format": "int64",
+      "example": 830
+    },
+    "commentsCount": {
+      "type": "integer",
+      "description": "Number of comments",
+      "format": "int64",
+      "example": 2
+    },
+    "dislikeCount": {
+      "type": "integer",
+      "description": "Number of dislikes",
+      "format": "int64",
+      "example": 15
+    },
+    "subscribersGainCount": {
+      "type": "integer",
+      "description": "Number of subscribers gained from the video",
+      "format": "int64",
+      "example": 10
+    },
+    "subscribersLostCount": {
+      "type": "integer",
+      "description": "Number of subscribers lost from the video",
+      "format": "int64",
+      "example": 2
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 65
+    },
+    "removedFromPlaylistCount": {
+      "type": "integer",
+      "description": "Number of times this video was removed to a playlist",
+      "format": "int64",
+      "example": 400
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 46
+    },
+    "videoViewsCount": {
+      "type": "integer",
+      "description": "Number of video views",
+      "format": "int64",
+      "example": 23
+    },
+    "videoViewsTimeWatchedRate": {
+      "type": "number",
+      "description": "Ratio of average viewing time to total video duration as a percentage",
+      "format": "double",
+      "example": 75.8
+    }
+  },
+  "description": "Youtube Specific Content Report Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContentReportData"
+    }
+  ]
+}

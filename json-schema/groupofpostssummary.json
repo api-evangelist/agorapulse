@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GroupOfPostsSummary",
+  "required": [
+    "agorapulseLink",
+    "labels",
+    "profileScheduling",
+    "type",
+    "uid"
+  ],
+  "type": "object",
+  "properties": {
+    "uid": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "agorapulseLink": {
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/components/schemas/PostType"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "profileScheduling": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary"
+      }
+    }
+  }
+}

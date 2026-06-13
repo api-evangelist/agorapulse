@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TikTokContentReportInsight",
+  "type": "object",
+  "properties": {
+    "completionRate": {
+      "type": "integer",
+      "description": "Average viewing time relative to total video duration",
+      "format": "int64",
+      "example": null
+    },
+    "commentCount": {
+      "type": "integer",
+      "description": "Number of comments",
+      "format": "int64",
+      "example": 583
+    },
+    "engagementRatePerView": {
+      "type": "number",
+      "description": "Ratio of engagement to view as a percentage",
+      "format": "double",
+      "example": 78.3
+    },
+    "engagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "format": "double",
+      "example": 67.5
+    },
+    "viewsCount": {
+      "type": "integer",
+      "description": "Number of views",
+      "format": "int64",
+      "example": 928
+    },
+    "likeCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 583
+    },
+    "reachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 583
+    },
+    "shareCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 583
+    },
+    "videoCompletedCount": {
+      "type": "integer",
+      "description": "Number of times the video is watched fully",
+      "format": "int64",
+      "example": 76
+    },
+    "videoReplaysCount": {
+      "type": "integer",
+      "description": "Number of video replays",
+      "format": "int64",
+      "example": 45
+    },
+    "videoViewsTimeWatchedCount": {
+      "type": "integer",
+      "description": "Total viewing time in seconds",
+      "format": "int64",
+      "example": 12
+    },
+    "videoViewersRateByGender": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "format": "double"
+      },
+      "description": "Video viewers rate by gender",
+      "example": {
+        "Female": 0.457,
+        "Male": 0.403,
+        "Other": 0.14
+      }
+    },
+    "videoViewersRateByCountry": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "format": "double"
+      },
+      "description": "Video viewers rate by country",
+      "example": {
+        "CA": 0.0132,
+        "GB": 0.7303,
+        "US": 0.2565
+      }
+    },
+    "videoViewersRateByCity": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "format": "double"
+      },
+      "description": "Video viewers rate by city",
+      "example": {
+        "US Cincinnati": 0.597,
+        "US Los Angeles": 0.403
+      }
+    }
+  },
+  "description": "TikTok Specific Content Report Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContentReportData"
+    }
+  ]
+}

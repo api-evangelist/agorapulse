@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AbstractItem",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "parentId": {
+      "type": "string"
+    },
+    "workspaceId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "$ref": "#/components/schemas/ItemType"
+    },
+    "text": {
+      "type": "string"
+    },
+    "agorapulseLink": {
+      "type": "string"
+    },
+    "networkLink": {
+      "type": "string"
+    },
+    "profile": {
+      "$ref": "#/components/schemas/Profile"
+    },
+    "creator": {
+      "$ref": "#/components/schemas/ItemCreator"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sentiment": {
+      "$ref": "#/components/schemas/ItemSentiment"
+    }
+  }
+}

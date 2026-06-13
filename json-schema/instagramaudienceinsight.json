@@ -1,0 +1,241 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InstagramAudienceInsight",
+  "type": "object",
+  "properties": {
+    "followersCount": {
+      "type": "integer",
+      "description": "Number of total followers",
+      "format": "int64",
+      "example": 4465
+    },
+    "followersGainedCount": {
+      "type": "integer",
+      "description": "Number of gained followers",
+      "format": "int64",
+      "example": 23
+    },
+    "followersLostCount": {
+      "type": "integer",
+      "description": "Number of lost followers",
+      "format": "int64",
+      "example": 11
+    },
+    "followersNetGrowth": {
+      "type": "integer",
+      "description": "Net follower growth (gained minus lost)",
+      "format": "int64",
+      "example": 12
+    },
+    "engagementRatePerView": {
+      "type": "number",
+      "description": "Ratio of engagement to view as a percentage",
+      "format": "double",
+      "example": 24.2
+    },
+    "organicEngagementRatePerView": {
+      "type": "number",
+      "description": "Ratio of organic engagement to view as a percentage",
+      "format": "double",
+      "example": 10.2
+    },
+    "paidEngagementRatePerView": {
+      "type": "number",
+      "description": "Ratio of paid engagement to view as a percentage",
+      "format": "double",
+      "example": 14
+    },
+    "engagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "format": "double",
+      "example": 51.7
+    },
+    "organicEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of organic engagement to reach as a percentage",
+      "format": "double",
+      "example": 14.4
+    },
+    "paidEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of paid engagement to reach as a percentage",
+      "format": "double",
+      "example": 20.4
+    },
+    "viewsCount": {
+      "type": "integer",
+      "description": "Number of views",
+      "format": "int64",
+      "example": 245
+    },
+    "organicViewsCount": {
+      "type": "integer",
+      "description": "Number of organic views",
+      "format": "int64",
+      "example": 100
+    },
+    "paidViewsCount": {
+      "type": "integer",
+      "description": "Number of paid views",
+      "format": "int64",
+      "example": 145
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 667
+    },
+    "organicLikesCount": {
+      "type": "integer",
+      "description": "Number of organic likes",
+      "format": "int64",
+      "example": 50
+    },
+    "paidLikesCount": {
+      "type": "integer",
+      "description": "Number of paid likes",
+      "format": "int64",
+      "example": 617
+    },
+    "publishedCarouselCount": {
+      "type": "integer",
+      "description": "Number of published carousels",
+      "format": "int64",
+      "example": 3
+    },
+    "publishedPhotoCount": {
+      "type": "integer",
+      "description": "Number of published photos",
+      "format": "int64",
+      "example": 12
+    },
+    "publishedReelCount": {
+      "type": "integer",
+      "description": "Number of published reels",
+      "format": "int64",
+      "example": 4
+    },
+    "publishedStoryCount": {
+      "type": "integer",
+      "description": "Number of published stories",
+      "format": "int64",
+      "example": 16
+    },
+    "publishedVideoCount": {
+      "type": "integer",
+      "description": "Number of published videos",
+      "format": "int64",
+      "example": 8
+    },
+    "reachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 1200
+    },
+    "organicReachCount": {
+      "type": "integer",
+      "description": "Number of organic reach",
+      "format": "int64",
+      "example": 300
+    },
+    "paidReachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 900
+    },
+    "receivedMessagesCount": {
+      "type": "integer",
+      "description": "Number of received messages",
+      "format": "int64",
+      "example": 58
+    },
+    "receivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of received comments",
+      "format": "int64",
+      "example": 6
+    },
+    "organicReceivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of organic received comments",
+      "format": "int64",
+      "example": 2
+    },
+    "paidReceivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of paid received comments",
+      "format": "int64",
+      "example": 4
+    },
+    "savesCount": {
+      "type": "integer",
+      "description": "Number of saves",
+      "format": "int64",
+      "example": 677
+    },
+    "organicSavesCount": {
+      "type": "integer",
+      "description": "Number of organic saves",
+      "format": "int64",
+      "example": 220
+    },
+    "paidSavesCount": {
+      "type": "integer",
+      "description": "Number of paid saves",
+      "format": "int64",
+      "example": 457
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 23
+    },
+    "organicSharesCount": {
+      "type": "integer",
+      "description": "Number of organic shares",
+      "format": "int64",
+      "example": 3
+    },
+    "paidSharesCount": {
+      "type": "integer",
+      "description": "Number of paid shares",
+      "format": "int64",
+      "example": 20
+    },
+    "positiveItemsCount": {
+      "type": "integer",
+      "description": "Number of items with positive sentiment",
+      "format": "int64",
+      "example": 24
+    },
+    "neutralItemsCount": {
+      "type": "integer",
+      "description": "Number of items with neutral sentiment",
+      "format": "int64",
+      "example": 2
+    },
+    "negativeItemsCount": {
+      "type": "integer",
+      "description": "Number of items with negative sentiment",
+      "format": "int64",
+      "example": 12
+    },
+    "sentimentScore": {
+      "type": "number",
+      "description": "Ratio of positive items divided by the total of positive and negative items",
+      "format": "double",
+      "example": 50
+    }
+  },
+  "description": "Instagram Specific Audience Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AudienceReportByDate"
+    }
+  ]
+}

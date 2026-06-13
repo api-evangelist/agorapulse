@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SearchCalendarNoteOpenRequest",
+  "type": "object",
+  "properties": {
+    "since": {
+      "type": "string",
+      "description": "Filter notes after this timestamp",
+      "format": "date-time",
+      "example": "2024-01-01T00:00:00.000Z"
+    },
+    "until": {
+      "type": "string",
+      "description": "Filter notes before this timestamp",
+      "format": "date-time",
+      "example": "2024-12-31T23:59:59.000Z"
+    },
+    "profileUids": {
+      "type": "array",
+      "description": "Filter by specific profile UIDs",
+      "example": [
+        "profile_123",
+        "profile_456"
+      ],
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "description": "Request to search calendar notes with filtering options"
+}

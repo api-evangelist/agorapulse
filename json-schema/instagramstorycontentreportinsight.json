@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InstagramStoryContentReportInsight",
+  "type": "object",
+  "properties": {
+    "reachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 283
+    },
+    "engagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of engagement to impression as a percentage",
+      "format": "double",
+      "example": 46.7
+    },
+    "engagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "format": "double",
+      "example": 50
+    },
+    "impressionsCount": {
+      "type": "integer",
+      "description": "Number of impressions",
+      "format": "int64",
+      "example": 342
+    },
+    "swipeForwardCount": {
+      "type": "integer",
+      "description": "Number of swipes forward",
+      "format": "int64",
+      "example": 23
+    },
+    "tapBackCount": {
+      "type": "integer",
+      "description": "Number of taps back",
+      "format": "int64",
+      "example": 12
+    },
+    "tapForwardCount": {
+      "type": "integer",
+      "description": "Number of taps forward",
+      "format": "int64",
+      "example": 0
+    },
+    "exitCount": {
+      "type": "integer",
+      "description": "Number of taps exit",
+      "format": "int64",
+      "example": 0
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of post",
+      "example": "story"
+    }
+  },
+  "description": "Instagram Stories Specific Content Report Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContentReportData"
+    }
+  ]
+}

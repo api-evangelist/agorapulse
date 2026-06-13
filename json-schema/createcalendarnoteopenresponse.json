@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateCalendarNoteOpenResponse",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "Unique identifier of the calendar note"
+    },
+    "title": {
+      "type": "string",
+      "description": "Note title",
+      "example": "Team Meeting"
+    },
+    "body": {
+      "type": "string",
+      "description": "Note body content",
+      "example": "Discuss quarterly goals and roadmap"
+    },
+    "color": {
+      "type": "object",
+      "description": "Note color for calendar display",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PublishingCalendarNoteColor"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "startDate": {
+      "type": "string",
+      "description": "Note start date",
+      "format": "date",
+      "example": "2024-01-15T00:00:00.000Z"
+    },
+    "endDate": {
+      "type": "string",
+      "description": "Note end date",
+      "format": "date",
+      "example": "2024-01-15T00:00:00.000Z"
+    },
+    "profileUids": {
+      "type": "array",
+      "description": "List of profile UIDs associated with the note",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "description": "Response containing calendar note details"
+}

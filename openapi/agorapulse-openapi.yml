@@ -1,0 +1,4196 @@
+openapi: 3.1.0
+info:
+  title: Open API
+  description: Agorapulse's Open API documentation
+  version: '1.0'
+security:
+  - bearerAuth: []
+tags:
+  - name: Simple Drafts
+    description: Publishing simple drafts management
+  - name: Calendar Notes
+    description: Publishing calendar notes management
+  - name: Simple Scheduling
+    description: Publishing simple scheduled and immediate posts management
+  - name: Studio Media
+    description: Studio media upload management
+  - name: Inbox accounts
+    description: REST APIs related to the inbox
+  - name: Inbox Item Labels
+    description: Manage inbox item labels
+  - name: Inbox user
+    description: REST APIs related to the inbox users
+  - name: Inbox user notes
+    description: REST APIs related to the inbox user notes
+  - name: Inbox Workspace
+    description: REST APIs related to the inbox workspaces
+paths:
+  /v1.0/report/health:
+    get:
+      tags:
+        - OpenAPI
+      summary: Get health
+      description: Provides information about the state of the API
+      operationId: health
+      responses:
+        '200':
+          description: The API is healthy and working
+          content:
+            application/json:
+              examples:
+                example:
+                  value: OK
+  '/v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/insights/audience':
+    get:
+      tags:
+        - Report
+      summary: Get audience report
+      description: Get audience report
+      operationId: getAudience
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: string
+        - name: workspaceId
+          in: path
+          description: Workspace id
+          required: true
+          schema:
+            type: string
+        - name: profileUid
+          in: path
+          description: Profile uid
+          required: true
+          schema:
+            type: string
+        - name: since
+          in: query
+          required: true
+          explode: false
+          schema:
+            type: string
+        - name: until
+          in: query
+          required: true
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Audience is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenAudienceInsight'
+  '/v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/insights/communitymanagement':
+    get:
+      tags:
+        - Report
+      summary: Get community management report
+      description: Get community management report
+      operationId: getCommunityManagement
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: string
+        - name: workspaceId
+          in: path
+          description: Workspace id
+          required: true
+          schema:
+            type: string
+        - name: profileUid
+          in: path
+          description: Profile uid
+          required: true
+          schema:
+            type: string
+        - name: since
+          in: query
+          required: true
+          explode: false
+          schema:
+            type: string
+        - name: until
+          in: query
+          required: true
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Community management is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommunityManagementInsight'
+  '/v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/insights/content':
+    get:
+      tags:
+        - Report
+      summary: Get content report
+      description: Get content report
+      operationId: getContentReport
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: string
+        - name: workspaceId
+          in: path
+          description: Workspace id
+          required: true
+          schema:
+            type: string
+        - name: profileUid
+          in: path
+          description: Profile uid
+          required: true
+          schema:
+            type: string
+        - name: since
+          in: query
+          required: true
+          explode: false
+          schema:
+            type: string
+        - name: until
+          in: query
+          required: true
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Content report is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContentReportInsight_1'
+  /v1.0/core/organizations:
+    get:
+      tags:
+        - Organization
+      summary: Get manager organizations
+      description: List all organizations the manager belongs to
+      operationId: getManagerOrganizations
+      parameters:
+        - name: v
+          in: query
+          description: API version
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of the manager organizations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationListResponse'
+  '/v1.0/core/organizations/{organizationId}/workspaces':
+    get:
+      tags:
+        - Workspace
+      summary: Get organization workspaces
+      description: List all the workspaces in an organization
+      operationId: getOrganizationWorkspaces
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: string
+        - name: v
+          in: query
+          description: API version
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of all workspaces in the organization
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceListResponse'
+  '/v1.0/core/organizations/{organizationId}/workspaces/{workspaceId}/profiles':
+    get:
+      tags:
+        - Profile
+      summary: Get workspace profiles
+      description: List all profiles in a workspace
+      operationId: getWorkspaceProfiles
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: string
+        - name: workspaceId
+          in: path
+          description: Workspace id
+          required: true
+          schema:
+            type: string
+        - name: v
+          in: query
+          description: API version
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of the profiles
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileListResponse'
+  '/v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes':
+    get:
+      tags:
+        - Calendar Notes
+      summary: Search calendar notes
+      description: Search and filter calendar notes in the specified workspace
+      operationId: search
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+        - name: since
+          in: query
+          description: Filter notes after this date (ISO date)
+        - name: until
+          in: query
+          description: Filter notes before this date (ISO date)
+        - name: profileUids
+          in: query
+          description: Filter by profile UIDs
+      responses:
+        '200':
+          description: Calendar notes retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchCalendarNoteOpenResponse'
+        '400':
+          description: Invalid search parameters
+        '404':
+          description: Organization or workspace not found
+    post:
+      tags:
+        - Calendar Notes
+      summary: Create a new calendar note
+      description: Creates a new calendar note in the specified content
+      operationId: save
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+      requestBody:
+        description: Calendar note to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCalendarNoteOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Calendar note created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCalendarNoteOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+  '/v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes/{uid}':
+    put:
+      tags:
+        - Calendar Notes
+      summary: Update a calendar note
+      description: Updates an existing calendar note with new data
+      operationId: update
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+        - name: uid
+          in: path
+          description: Calendar note unique identifier
+          required: true
+      requestBody:
+        description: Updated calendar note data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCalendarNoteOpenRequest'
+        required: true
+      responses:
+        '200':
+          description: Calendar note updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCalendarNoteOpenResponse'
+        '400':
+          description: Invalid request data
+        '403':
+          description: Insufficient permissions to update the note
+        '404':
+          description: 'Calendar note, organization, or workspace not found'
+    delete:
+      tags:
+        - Calendar Notes
+      summary: Delete a calendar note
+      description: Deletes a calendar note by its UID
+      operationId: delete
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+        - name: uid
+          in: path
+          description: Calendar note unique identifier
+          required: true
+      responses:
+        '204':
+          description: Calendar note deleted successfully
+        '403':
+          description: Insufficient permissions to delete the note
+        '404':
+          description: 'Calendar note, organization, or workspace not found'
+  '/v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-drafts':
+    post:
+      tags:
+        - Simple Drafts
+      summary: Create a simple draft
+      description: >-
+        Creates a new simple draft with text, media, and scheduling options in
+        the specified workspace
+      operationId: save_1
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+      requestBody:
+        description: Simple draft to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSimpleDraftOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Simple draft created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSimpleDraftOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+  '/v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-schedule-posts':
+    post:
+      tags:
+        - Simple Scheduling
+      summary: Create a scheduled post
+      description: >-
+        Creates a new scheduled post with text, media, and publishing dates in
+        the specified workspace
+      operationId: save_2
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+      requestBody:
+        description: Scheduled post to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSimpleScheduleOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Scheduled post created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSimpleScheduleOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+  '/v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-schedule-posts:publish-now':
+    post:
+      tags:
+        - Simple Scheduling
+      summary: Publish a post immediately
+      description: >-
+        Publishes a new post immediately on the specified profiles in the
+        workspace
+      operationId: publishNow
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+      requestBody:
+        description: Post to publish immediately
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SimplePublishOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Post published successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSimpleScheduleOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+  '/v1.0/library/organizations/{organizationId}/workspaces/{workspaceId}/studio/media/upload':
+    post:
+      tags:
+        - Studio Media
+      summary: Request a presigned upload URL for studio media
+      description: >-
+        Returns a presigned S3 PUT URL that can be used to upload a media file
+        directly to S3
+      operationId: requestUpload
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization identifier
+          required: true
+        - name: workspaceId
+          in: path
+          description: Workspace identifier
+          required: true
+      requestBody:
+        description: Upload request details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudioMediaUploadOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Presigned upload URL generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudioMediaUploadOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+  '/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/conversations/{conversationId}/messages':
+    get:
+      tags:
+        - Inbox conversations
+      summary: Get conversation messages
+      operationId: getMessages
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: integer
+          example: 1419
+        - name: workspaceId
+          in: path
+          description: Workspace id
+          required: true
+          schema:
+            type: integer
+          example: 1416
+        - name: accountUid
+          in: path
+          description: Account uid
+          required: true
+          schema:
+            type: string
+          example: facebook_611
+        - name: conversationId
+          in: path
+          description: Conversation id
+          required: true
+          schema:
+            type: string
+        - name: since
+          in: query
+          description: >-
+            Filter messages created after this date (inclusive). ISO 8601
+            format.
+          schema:
+            type: string
+            format: date-time
+          example: '2025-10-01T09:00:00.000Z'
+        - name: until
+          in: query
+          description: >-
+            Filter messages created before this date (inclusive). ISO 8601
+            format.
+          schema:
+            type: string
+            format: date-time
+          example: '2025-10-15T13:00:00.000Z'
+        - name: offset
+          in: query
+          description: Offset for pagination
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: >-
+            Maximum number of messages to return per page. Must be between 1 and
+            25.
+          schema:
+            type: integer
+          example: 10
+        - name: order
+          in: query
+          description: >-
+            Sort order for the results. ASC for ascending (oldest first), DESC
+            for descending (newest first).
+          schema:
+            $ref: '#/components/schemas/Order'
+          example: DESC
+      responses:
+        '200':
+          description: getMessages 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessagesSearchResponse'
+  '/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/reply':
+    post:
+      tags:
+        - Inbox reply
+      summary: Reply to an item
+      operationId: create
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: integer
+          example: 1419
+        - name: workspaceId
+          in: path
+          description: Workspace id
+          required: true
+          schema:
+            type: integer
+          example: 1416
+        - name: accountUid
+          in: path
+          description: Account uid
+          required: true
+          schema:
+            type: string
+          example: facebook_611
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReplyRequest'
+        required: true
+      responses:
+        '200':
+          description: create 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+  '/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items':
+    get:
+      tags:
+        - Inbox items
+      summary: Find items
+      operationId: findItems
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization id
+          required: true
+          schema:
+            type: integer
+          example: 1419
+        - name: workspaceId
+          in: path
+          description: Workspace id
+          required: true
+          schema:
+            type: integer
+          example: 1416
+        - name: accountUids
+          in: query
+          description: >-
+            Set of account UIDs to filter items. Only items from these accounts
+            will be returned.
+          schema:
+            type: array
+            items:
+              type: string
+        - name: toReview
+          in: query
+          description: Filter items that need review (not yet approved by a manager)
+          schema:
+            type: boolean
+        - name: labels
+          in: query
+          description: >-
+            Filter items by labels. Only items with these labels will be
+            returned.
+          schema:
+            type: array
+            items:
+              type: string
+        - name: sentiments
+          in: query
+          description: Filter items by sentiment.
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ItemSentiment'
+        - name: types
+          in: query
+          description: >-
+            Filter items by type/source. Specify the types of items to retrieve
+            (e.g., organicComment, adsComment, conversation, ...)
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ItemFilterType'
+        - name: since
+          in: query
+          description: Filter items created after this date (inclusive). ISO 8601 format.
+          schema:
+            type: string
+            format: date-time
+          example: '2025-10-01T09:00:00.000Z'
+        - name: until
+          in: query
+          description: Filter items created before this date (inclusive). ISO 8601 format.
+          schema:
+            type: string
+            format: date-time
+          example: '2025-10-15T13:00:00.000Z'
+        - name: offset
+          in: query
+          description: Offset for pagination
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: >-
+            Maximum number of items to return per page. Must be between 1 and
+            25.
+          schema:
+            type: integer
+          example: 10
+        - name: order
+          in: query
+          description: >-
+            Sort order for the results. ASC for ascending (oldest first), DESC
+            for descending (newest first).
+          schema:
+            $ref: '#/components/schemas/Order'
+          example: DESC
+      responses:
+        '200':
+          description: findItems 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemsSearchResponse'
+webhooks:
+#  PUBLISHING_GROUP_OF_POSTS:
+#    post:
+#      requestBody:
+#        description: Events related to the life cycle of a group of posts
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/GroupOfPostsEvent'
+#      responses:
+#        '200':
+#          description: Return a 200 status to indicate that the data was received successfully
+#        '410':
+#          description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
+  PUBLISHING_POST:
+    post:
+      requestBody:
+        description: Events related to the publishing of a post
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublishingPostEvent'
+      responses:
+        '200':
+          description: Return a 200 status to indicate that the data was received successfully
+        '410':
+          description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
+  INBOX_ITEM:
+    post:
+      requestBody:
+        description: Events related to the life cycle of inbox items
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InboxItemEvent'
+      responses:
+        '200':
+          description: Return a 200 status to indicate that the data was received successfully
+        '410':
+          description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
+#  LISTENING_ITEM:
+#    post:
+#      requestBody:
+#        description: Events related to the ife cycle of listening items
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/ListeningItemEvent'
+#      responses:
+#        '200':
+#          description: Return a 200 status to indicate that the data was received successfully
+#        '410':
+#          description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
+components:
+  schemas:
+    AudienceReportByDate:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date in ISO format YYYY-MM-DD
+          example: '2020-04-18T00:00:00.000Z'
+        engagementCount:
+          type: integer
+          description: Number of engagement
+          format: int64
+          example: 99
+      description: Common properties for audience report insight
+      oneOf:
+        - $ref: '#/components/schemas/FacebookAudienceInsight'
+        - $ref: '#/components/schemas/TwitterAudienceInsight'
+        - $ref: '#/components/schemas/LinkedinAudienceInsight'
+        - $ref: '#/components/schemas/InstagramAudienceInsight'
+        - $ref: '#/components/schemas/TiktokAudienceInsight'
+        - $ref: '#/components/schemas/YoutubeAudienceInsight'
+        - $ref: '#/components/schemas/ThreadsAudienceInsight'
+    CommunityManagementAction:
+      type: object
+      properties:
+        averageResponseTime:
+          type: integer
+          description: Average time to respond
+          format: int64
+          example: 15
+        repliesCount:
+          type: integer
+          description: Number of replies
+          format: int64
+          example: 2
+        reviewsCount:
+          type: integer
+          description: Number of reviews
+          format: int64
+          example: 10
+        username:
+          type: string
+          description: Name of the user who performed community management actions
+          example: User123
+    CommunityManagementByDate:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date in ISO format YYYY-MM-DD
+          example: '2020-04-18T00:00:00.000Z'
+        sentRepliesCount:
+          type: integer
+          description: Number of replies sent
+          format: int64
+          example: 12
+        actions:
+          type: array
+          description: List of actions made by users
+          oneOf:
+            - $ref: '#/components/schemas/CommunityManagementAction'
+            - $ref: '#/components/schemas/FacebookCommunityManagementAction'
+            - $ref: '#/components/schemas/LinkedinCommunityManagementAction'
+            - $ref: '#/components/schemas/InstagramCommunityManagementAction'
+            - $ref: '#/components/schemas/TiktokCommunityManagementAction'
+            - $ref: '#/components/schemas/YoutubeCommunityManagementAction'
+          items:
+            $ref: '#/components/schemas/CommunityManagementAction'
+      description: Common properties for community management report
+    CommunityManagementInsight:
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommunityManagementByDate'
+      description: List of community management insight
+    ContentReportData:
+      type: object
+      properties:
+        engagementCount:
+          type: integer
+          description: Number of engagement
+          format: int64
+          example: 577
+        id:
+          type: string
+          description: Post id on the native network
+          example: '12232123'
+        publishingDate:
+          type: string
+          description: Publishing date
+          format: date-time
+          example: null
+        postUrl:
+          type: string
+          description: Post url on the native network
+        tags:
+          type: array
+          description: Label applied to the post
+          example:
+            - test
+            - test2
+          items:
+            type: string
+        text:
+          type: string
+          description: Text of the published post
+          example: This is a post
+        username:
+          type: string
+          description: Name of the user who published the post
+          example: User123
+      description: Common properties for content report insight
+      oneOf:
+        - $ref: '#/components/schemas/FacebookContentReportInsight'
+        - $ref: '#/components/schemas/TwitterContentReportInsight'
+        - $ref: '#/components/schemas/LinkedinContentReportInsight'
+        - $ref: '#/components/schemas/InstagramContentReportInsight'
+        - $ref: '#/components/schemas/InstagramStoryContentReportInsight'
+        - $ref: '#/components/schemas/TikTokContentReportInsight'
+        - $ref: '#/components/schemas/YoutubeContentReportInsight'
+    ContentReportInsight_1:
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContentReportData'
+      description: List of content report insight
+    FacebookAudienceInsight:
+      type: object
+      properties:
+        angryCount:
+          type: integer
+          description: Number of angry (reaction)
+          format: int64
+          example: 120
+        organicEngagementCount:
+          type: integer
+          description: Number of organic engagement
+          format: int64
+          example: 23
+        paidEngagementCount:
+          type: integer
+          description: Number of paid engagement
+          format: int64
+          example: 76
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 24.2
+        organicEngagementRatePerView:
+          type: number
+          description: Ratio of organic engagement to view as a percentage
+          format: double
+          example: 10.2
+        paidEngagementRatePerView:
+          type: number
+          description: Ratio of paid engagement to view as a percentage
+          format: double
+          example: 14
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 26.6
+        organicEngagementRatePerReach:
+          type: number
+          description: Ratio of organic engagement to reach as a percentage
+          format: double
+          example: 14.4
+        paidEngagementRatePerReach:
+          type: number
+          description: Ratio of paid engagement to reach as a percentage
+          format: double
+          example: 20.4
+        followersGainedCount:
+          type: integer
+          description: Number of gained followers
+          format: int64
+          example: 25
+        followersLostCount:
+          type: integer
+          description: Number of lost followers
+          format: int64
+          example: 2
+        followersNetGrowth:
+          type: integer
+          description: Net follower growth (gained minus lost)
+          format: int64
+          example: 23
+        followersCount:
+          type: integer
+          description: Number of total followers
+          format: int64
+          example: 3765
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 245
+        organicViewsCount:
+          type: integer
+          description: Number of organic views
+          format: int64
+          example: 45
+        paidViewsCount:
+          type: integer
+          description: Number of paid views
+          format: int64
+          example: 200
+        hahaCount:
+          type: integer
+          description: Number of haha (reaction)
+          format: int64
+          example: 830
+        loveCount:
+          type: integer
+          description: Number of love (reaction)
+          format: int64
+          example: 830
+        receivedMessagesCount:
+          type: integer
+          description: Number of received messages
+          format: int64
+          example: 3
+        publishedLinksCount:
+          type: integer
+          description: Number of published links
+          format: int64
+          example: 12
+        publishedPhotosCount:
+          type: integer
+          description: Number of published photos
+          format: int64
+          example: 23
+        publishedStatusCount:
+          type: integer
+          description: Number of published status
+          format: int64
+          example: 3
+        publishedVideoCount:
+          type: integer
+          description: Number of published videos
+          format: int64
+          example: 2
+        reactionsCount:
+          type: integer
+          description: Number of reactions
+          format: int64
+          example: 99
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        organicReceivedCommentsCount:
+          type: integer
+          description: Number of organic received comments
+          format: int64
+          example: 2
+        paidReceivedCommentsCount:
+          type: integer
+          description: Number of paid received comments
+          format: int64
+          example: 4
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+        organicSharesCount:
+          type: integer
+          description: Number of organic shares
+          format: int64
+          example: 3
+        paidSharesCount:
+          type: integer
+          description: Number of paid shares
+          format: int64
+          example: 20
+        videoViewsAutoplayCount:
+          type: integer
+          description: Number of video views generated by autoplayed videos
+          format: int64
+          example: 56
+        videoViewsClickCount:
+          type: integer
+          description: Number of video views generated by click-to-play
+          format: int64
+          example: 54
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sadCount:
+          type: integer
+          description: Number of sad (reaction)
+          format: int64
+          example: 1200
+        sentimentScore:
+          type: number
+          description: >-
+            Ratio of positive items divided by the total of positive and
+            negative items
+          format: double
+          example: 50
+        videoViewsCount:
+          type: integer
+          description: Number of video views
+          format: int64
+          example: 152
+        organicVideoViewsCount:
+          type: integer
+          description: Number of organic video views
+          format: int64
+          example: 54
+        paidVideoViewsCount:
+          type: integer
+          description: Number of paid video views
+          format: int64
+          example: 98
+        wowCount:
+          type: integer
+          description: Number of wow (reaction)
+          format: int64
+          example: 1200
+      description: Facebook model for audience report insight
+      allOf:
+        - $ref: '#/components/schemas/AudienceReportByDate'
+    FacebookCommunityManagementAction:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CommunityManagementAction'
+        - type: object
+          properties:
+            removedCount:
+              type: integer
+              description: Number of items removed
+              format: int64
+              example: 5
+    FacebookContentReportInsight:
+      type: object
+      properties:
+        angryCount:
+          type: integer
+          description: Number of angry (reaction)
+          format: int64
+          example: 830
+        clicksCount:
+          type: integer
+          description: Number of clicks
+          format: int64
+          example: 830
+        commentsCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 830
+        engagementCount:
+          type: integer
+          description: Number of engagement
+          format: int64
+          example: 99
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 25.7
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 64.2
+        hahaCount:
+          type: integer
+          description: Number of haha (reaction)
+          format: int64
+          example: 830
+        likeCount:
+          type: integer
+          description: Number of likes (reaction)
+          format: int64
+          example: 830
+        linkClicksCount:
+          type: integer
+          description: Number of clicks on links
+          format: int64
+          example: 752
+        loveCount:
+          type: integer
+          description: Number of love (reaction)
+          format: int64
+          example: 830
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 245
+        organicViewsCount:
+          type: integer
+          description: Number of organic views
+          format: int64
+          example: 45
+        organicReachCount:
+          type: integer
+          description: Number of organic reach
+          format: int64
+          example: 345
+        organicVideo30sViewsCount:
+          type: integer
+          description: >-
+            The number of times your videos played for at least 30 seconds, or
+            for nearly their total length if they're shorter than 30 seconds
+          format: int64
+          example: 345
+        organicVideoCompleteViewsCount:
+          type: integer
+          description: >-
+            The number of times your videos played from the beginning to 97%, or
+            more, of its length
+          format: int64
+          example: 345
+        organicVideoCompleteViewViewersCount:
+          type: integer
+          description: >-
+            The number of people who viewed your videos from the beginning to
+            97%, or more, of its length
+          format: int64
+          example: 345
+        otherClicksCount:
+          type: integer
+          description: Number of other clicks
+          format: int64
+          example: 836
+        paidViewsCount:
+          type: integer
+          description: Number of paid views
+          format: int64
+          example: 200
+        paidReachCount:
+          type: integer
+          description: Number of paid reach
+          format: int64
+          example: 291
+        photoViewClicksCount:
+          type: integer
+          description: Number of clicks to view photos
+          format: int64
+          example: 918
+        paidVideo30sViewsCount:
+          type: integer
+          description: >-
+            The number of times your promoted videos played for at least 30
+            seconds, or for nearly their total length if they're shorter than 30
+            seconds
+          format: int64
+          example: 918
+        paidVideoCompleteViewsCount:
+          type: integer
+          description: >-
+            The number of times your promoted videos played from the beginning
+            to 97%, or more, of its length
+          format: int64
+          example: 918
+        paidVideoCompleteViewViewersCount:
+          type: integer
+          description: >-
+            The number of people who viewed your promoted videos from the
+            beginning to 97%, or more, of its length
+          format: int64
+          example: 918
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 1200
+        reactionsCount:
+          type: integer
+          description: Total number of reactions
+          format: int64
+          example: 1200
+        sadCount:
+          type: integer
+          description: Number of sad (reaction)
+          format: int64
+          example: 1200
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 1200
+        videoPlaysCount:
+          type: integer
+          description: Number of video plays
+          format: int64
+          example: 23
+        videoViewsCount:
+          type: integer
+          description: Number of video views
+          format: int64
+          example: 23
+        organicVideoViewsCount:
+          type: integer
+          description: Number of organic video views
+          format: int64
+          example: 3
+        paidVideoViewsCount:
+          type: integer
+          description: Number of paid video views
+          format: int64
+          example: 20
+        videoViewsTimeWatchedCount:
+          type: integer
+          description: Average viewing time
+          format: int64
+          example: 12
+        videoViewsTimeWatchedRate:
+          type: number
+          description: >-
+            Ratio of average viewing time to total video duration as a
+            percentage
+          format: double
+          example: 75.8
+        video30sViewsAutoplayedCount:
+          type: integer
+          description: >-
+            The number of times your videos automatically played at each
+            interval as a percentage of all automatic views
+          format: int64
+          example: 12
+        video30sViewsClickedToPlayCount:
+          type: integer
+          description: >-
+            The number of times your videos played at each interval as a
+            percentage of all views, after people clicked play
+          format: int64
+          example: 12
+        video30sViewViewersCount:
+          type: integer
+          description: >-
+            The number of people who viewed your videos for at least 30 seconds,
+            or for nearly their total length if they're shorter than 30 seconds
+          format: int64
+          example: 12
+        videoViewTimeByAgeAndGender:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+          description: Video viewing time (sec) by age and gender
+          example:
+            F.18-24: 120
+            M.25-34: 300
+        videoViewTimeByCountry:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+          description: Video viewing time (sec) by country
+          example:
+            France (FR): 60
+            Germany (DE): 240
+        videoViewTimeByRegion:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+          description: Video viewing time (sec) by region
+          example:
+            Queensland - Australia: 48
+            England - United Kingdom: 26
+            California - United States: 120
+        wowCount:
+          type: integer
+          description: Number of wow (reaction)
+          format: int64
+          example: 1200
+      description: Facebook Specific Content Report Insights
+      allOf:
+        - $ref: '#/components/schemas/ContentReportData'
+    InstagramAudienceInsight:
+      type: object
+      properties:
+        followersCount:
+          type: integer
+          description: Number of total followers
+          format: int64
+          example: 4465
+        followersGainedCount:
+          type: integer
+          description: Number of gained followers
+          format: int64
+          example: 23
+        followersLostCount:
+          type: integer
+          description: Number of lost followers
+          format: int64
+          example: 11
+        followersNetGrowth:
+          type: integer
+          description: Net follower growth (gained minus lost)
+          format: int64
+          example: 12
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 24.2
+        organicEngagementRatePerView:
+          type: number
+          description: Ratio of organic engagement to view as a percentage
+          format: double
+          example: 10.2
+        paidEngagementRatePerView:
+          type: number
+          description: Ratio of paid engagement to view as a percentage
+          format: double
+          example: 14
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 51.7
+        organicEngagementRatePerReach:
+          type: number
+          description: Ratio of organic engagement to reach as a percentage
+          format: double
+          example: 14.4
+        paidEngagementRatePerReach:
+          type: number
+          description: Ratio of paid engagement to reach as a percentage
+          format: double
+          example: 20.4
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 245
+        organicViewsCount:
+          type: integer
+          description: Number of organic views
+          format: int64
+          example: 100
+        paidViewsCount:
+          type: integer
+          description: Number of paid views
+          format: int64
+          example: 145
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 667
+        organicLikesCount:
+          type: integer
+          description: Number of organic likes
+          format: int64
+          example: 50
+        paidLikesCount:
+          type: integer
+          description: Number of paid likes
+          format: int64
+          example: 617
+        publishedCarouselCount:
+          type: integer
+          description: Number of published carousels
+          format: int64
+          example: 3
+        publishedPhotoCount:
+          type: integer
+          description: Number of published photos
+          format: int64
+          example: 12
+        publishedReelCount:
+          type: integer
+          description: Number of published reels
+          format: int64
+          example: 4
+        publishedStoryCount:
+          type: integer
+          description: Number of published stories
+          format: int64
+          example: 16
+        publishedVideoCount:
+          type: integer
+          description: Number of published videos
+          format: int64
+          example: 8
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 1200
+        organicReachCount:
+          type: integer
+          description: Number of organic reach
+          format: int64
+          example: 300
+        paidReachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 900
+        receivedMessagesCount:
+          type: integer
+          description: Number of received messages
+          format: int64
+          example: 58
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        organicReceivedCommentsCount:
+          type: integer
+          description: Number of organic received comments
+          format: int64
+          example: 2
+        paidReceivedCommentsCount:
+          type: integer
+          description: Number of paid received comments
+          format: int64
+          example: 4
+        savesCount:
+          type: integer
+          description: Number of saves
+          format: int64
+          example: 677
+        organicSavesCount:
+          type: integer
+          description: Number of organic saves
+          format: int64
+          example: 220
+        paidSavesCount:
+          type: integer
+          description: Number of paid saves
+          format: int64
+          example: 457
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+        organicSharesCount:
+          type: integer
+          description: Number of organic shares
+          format: int64
+          example: 3
+        paidSharesCount:
+          type: integer
+          description: Number of paid shares
+          format: int64
+          example: 20
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sentimentScore:
+          type: number
+          description: >-
+            Ratio of positive items divided by the total of positive and
+            negative items
+          format: double
+          example: 50
+      description: Instagram Specific Audience Insights
+      allOf:
+        - $ref: '#/components/schemas/AudienceReportByDate'
+    InstagramCommunityManagementAction:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CommunityManagementAction'
+        - type: object
+          properties:
+            removedCount:
+              type: integer
+              description: Number of items removed
+              format: int64
+              example: 5
+    InstagramContentReportInsight:
+      type: object
+      properties:
+        avgWatchTime:
+          type: integer
+          description: Average viewing time
+          format: int64
+          example: 12
+        organicAvgWatchTime:
+          type: integer
+          description: Average organic viewing time
+          format: int64
+          example: 12
+        paidAvgWatchTime:
+          type: integer
+          description: Average paid viewing time
+          format: int64
+          example: 12
+        commentsCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 2
+        organicCommentsCount:
+          type: integer
+          description: Number of organic comments
+          format: int64
+          example: 2
+        paidCommentsCount:
+          type: integer
+          description: Number of paid comments
+          format: int64
+          example: 2
+        engagementCount:
+          type: integer
+          description: Number of engagement
+          format: int64
+          example: 99
+        organicEngagementCount:
+          type: integer
+          description: Number of organic engagement
+          format: int64
+          example: 23
+        paidEngagementCount:
+          type: integer
+          description: Number of paid engagement
+          format: int64
+          example: 76
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 50
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 50
+        organicEngagementRatePerImpression:
+          type: number
+          description: Ratio of organic engagement to organic impression as a percentage
+          format: double
+          example: 50
+        organicEngagementRatePerReach:
+          type: number
+          description: Ratio of organic engagement to organic reach as a percentage
+          format: double
+          example: 50
+        paidEngagementRatePerImpression:
+          type: number
+          description: Ratio of paid engagement to paid impression as a percentage
+          format: double
+          example: 50
+        paidEngagementRatePerReach:
+          type: number
+          description: Ratio of paid engagement to paid reach as a percentage
+          format: double
+          example: 50
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 245
+        organicImpressionsCount:
+          type: integer
+          description: Number of organic impressions
+          format: int64
+          example: 245
+        paidImpressionsCount:
+          type: integer
+          description: Number of paid impressions
+          format: int64
+          example: 245
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 1264
+        organicReachCount:
+          type: integer
+          description: Number of organic reach
+          format: int64
+          example: 345
+        paidReachCount:
+          type: integer
+          description: Number of paid reach
+          format: int64
+          example: 291
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 854
+        organicLikesCount:
+          type: integer
+          description: Number of organic likes
+          format: int64
+          example: 854
+        paidLikesCount:
+          type: integer
+          description: Number of paid likes
+          format: int64
+          example: 854
+        savesCount:
+          type: integer
+          description: Number of saves
+          format: int64
+          example: 234
+        organicSavesCount:
+          type: integer
+          description: Number of organic saves
+          format: int64
+          example: 234
+        paidSavesCount:
+          type: integer
+          description: Number of paid saves
+          format: int64
+          example: 234
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 46
+        organicSharesCount:
+          type: integer
+          description: Number of organic shares
+          format: int64
+          example: 46
+        paidSharesCount:
+          type: integer
+          description: Number of paid shares
+          format: int64
+          example: 46
+        type:
+          type: string
+          description: Type of post
+          example: post
+      description: Instagram Specific Content Report Insights
+      allOf:
+        - $ref: '#/components/schemas/ContentReportData'
+    InstagramStoryContentReportInsight:
+      type: object
+      properties:
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 283
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 46.7
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 50
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 342
+        swipeForwardCount:
+          type: integer
+          description: Number of swipes forward
+          format: int64
+          example: 23
+        tapBackCount:
+          type: integer
+          description: Number of taps back
+          format: int64
+          example: 12
+        tapForwardCount:
+          type: integer
+          description: Number of taps forward
+          format: int64
+          example: 0
+        exitCount:
+          type: integer
+          description: Number of taps exit
+          format: int64
+          example: 0
+        type:
+          type: string
+          description: Type of post
+          example: story
+      description: Instagram Stories Specific Content Report Insights
+      allOf:
+        - $ref: '#/components/schemas/ContentReportData'
+    LinkedinAudienceInsight:
+      type: object
+      properties:
+        clicksCount:
+          type: integer
+          description: Number of clicks on posts
+          format: int64
+          example: 2
+        organicClicksCount:
+          type: integer
+          description: Number of organic clicks on posts
+          format: int64
+          example: 0
+        paidClicksCount:
+          type: integer
+          description: Number of paid clicks on posts
+          format: int64
+          example: 2
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        organicReceivedCommentsCount:
+          type: integer
+          description: Number of organic comments received on posts
+          format: int64
+          example: 1
+        paidReceivedCommentsCount:
+          type: integer
+          description: Number of paid comments received on posts
+          format: int64
+          example: 5
+        organicEngagementCount:
+          type: integer
+          description: Number of organic engagement
+          format: int64
+          example: 33
+        paidEngagementCount:
+          type: integer
+          description: Number of paid engagement
+          format: int64
+          example: 66
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 24.2
+        organicEngagementRatePerImpression:
+          type: number
+          description: Ratio of organic engagement to impression as a percentage
+          format: double
+          example: 10.2
+        paidEngagementRatePerImpression:
+          type: number
+          description: Ratio of paid engagement to impression as a percentage
+          format: double
+          example: 14
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 34.8
+        organicEngagementRatePerReach:
+          type: number
+          description: Ratio of organic engagement to reach as a percentage
+          format: double
+          example: 14.4
+        paidEngagementRatePerReach:
+          type: number
+          description: Ratio of paid engagement to reach as a percentage
+          format: double
+          example: 20.4
+        followersCount:
+          type: integer
+          description: Number of total followers
+          format: int64
+          example: 199
+        followersGainedCount:
+          type: integer
+          description: Number of followers gained
+          format: int64
+          example: 9
+          deprecated: true
+        followersNetGrowth:
+          type: integer
+          description: Net follower growth (gained minus lost)
+          format: int64
+          example: 9
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 245
+        organicImpressionsCount:
+          type: integer
+          description: Number of organic impressions
+          format: int64
+          example: 90
+        paidImpressionsCount:
+          type: integer
+          description: Number of paid impressions
+          format: int64
+          example: 155
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 449
+        organicLikesCount:
+          type: integer
+          description: Number of organic likes on posts
+          format: int64
+          example: 58
+        paidLikesCount:
+          type: integer
+          description: Number of paid likes on posts
+          format: int64
+          example: 391
+        organicFollowersGainedCount:
+          type: integer
+          description: Number of organic followers gained
+          format: int64
+          example: 24
+          deprecated: true
+        paidFollowersGainedCount:
+          type: integer
+          description: Number of paid followers gained
+          format: int64
+          example: 54
+          deprecated: true
+        organicFollowersNetGrowth:
+          type: integer
+          description: Net organic follower growth (gained minus lost)
+          format: int64
+          example: 24
+        paidFollowersNetGrowth:
+          type: integer
+          description: Net paid follower growth (gained minus lost)
+          format: int64
+          example: 54
+        publishedPostsCount:
+          type: integer
+          description: Number of posts published
+          format: int64
+          example: 9
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 192
+        organicReachCount:
+          type: integer
+          description: Number of organic reach
+          format: int64
+          example: 43
+        paidReachCount:
+          type: integer
+          description: Number of paid reach
+          format: int64
+          example: 149
+        removedCount:
+          type: integer
+          description: Number of removed items
+          format: int64
+          example: 1
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sentimentScore:
+          type: number
+          description: >-
+            Ratio of positive items divided by the total of positive and
+            negative items
+          format: double
+          example: 50
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+        organicSharesCount:
+          type: integer
+          description: Number of organic shares
+          format: int64
+          example: 3
+        paidSharesCount:
+          type: integer
+          description: Number of paid shares
+          format: int64
+          example: 20
+      description: Linkedin Specific Audience Insights
+      allOf:
+        - $ref: '#/components/schemas/AudienceReportByDate'
+    LinkedinCommunityManagementAction:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CommunityManagementAction'
+        - type: object
+          properties:
+            removedCount:
+              type: integer
+              description: Number of items removed
+              format: int64
+              example: 5
+    LinkedinContentReportInsight:
+      type: object
+      properties:
+        clicksCount:
+          type: integer
+          description: Number of clicks
+          format: int64
+          example: 573
+        organicClicksCount:
+          type: integer
+          description: Number of organic clicks
+          format: int64
+          example: 173
+        paidClicksCount:
+          type: integer
+          description: Number of paid clicks
+          format: int64
+          example: 400
+        commentsCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 23
+        organicCommentsCount:
+          type: integer
+          description: Number of organic comments
+          format: int64
+          example: 5
+        paidCommentsCount:
+          type: integer
+          description: Number of paid comments
+          format: int64
+          example: 18
+        organicEngagementCount:
+          type: integer
+          description: Number of organic engagement
+          format: int64
+          example: 220
+        paidEngagementCount:
+          type: integer
+          description: Number of paid engagement
+          format: int64
+          example: 557
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 68.8
+        organicEngagementRatePerImpression:
+          type: number
+          description: Ratio of organic engagement to impression as a percentage
+          format: double
+          example: 21.2
+        paidEngagementRatePerImpression:
+          type: number
+          description: Ratio of paid engagement to impression as a percentage
+          format: double
+          example: 47.6
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 65.2
+        organicEngagementRatePerReach:
+          type: number
+          description: Ratio of organic engagement to reach as a percentage
+          format: double
+          example: 17.5
+        paidEngagementRatePerReach:
+          type: number
+          description: Ratio of paid engagement to reach as a percentage
+          format: double
+          example: 47.7
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 756
+        organicImpressionsCount:
+          type: integer
+          description: Number of organic impressions
+          format: int64
+          example: 276
+        paidImpressionsCount:
+          type: integer
+          description: Number of paid impressions
+          format: int64
+          example: 480
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 215
+        organicLikesCount:
+          type: integer
+          description: Number of organic likes
+          format: int64
+          example: 69
+        paidLikesCount:
+          type: integer
+          description: Number of paid likes
+          format: int64
+          example: 146
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 1200
+        organicReachCount:
+          type: integer
+          description: Number of organic reach
+          format: int64
+          example: 350
+        paidReachCount:
+          type: integer
+          description: Number of paid reach
+          format: int64
+          example: 850
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 21
+        organicSharesCount:
+          type: integer
+          description: Number of organic shares
+          format: int64
+          example: 3
+        paidSharesCount:
+          type: integer
+          description: Number of paid shares
+          format: int64
+          example: 18
+        videoViewsCount:
+          type: integer
+          description: Number of video views
+          format: int64
+          example: 86
+        videoViewsTimeWatchedCount:
+          type: integer
+          description: The time the video was watched in milliseconds
+          format: int64
+          example: 86
+        videoViewersCount:
+          type: integer
+          description: Number of viewers who made engaged plays on the video
+          format: int64
+          example: 86
+        video3sViewsTimeWatchedCount:
+          type: integer
+          description: >-
+            The time watched in milliseconds for video play-pause cycles that
+            are at least 3 seconds
+          format: int64
+          example: 86
+        organicVideoViewsCount:
+          type: integer
+          description: Number of organic video views
+          format: int64
+          example: 14
+        paidVideoViewsCount:
+          type: integer
+          description: Number of paid video views
+          format: int64
+          example: 72
+      description: Linkedin Specific Content Report Insights
+      allOf:
+        - $ref: '#/components/schemas/ContentReportData'
+    OpenAudienceInsight:
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AudienceReportByDate'
+      description: List of social network audience insight
+    ThreadsAudienceInsight:
+      type: object
+      properties:
+        followersCount:
+          type: integer
+          description: Number of total followers
+          format: int64
+          example: 200
+        followersGainedCount:
+          type: integer
+          description: Number of gained followers
+          format: int64
+          example: 21
+          deprecated: true
+        followersNetGrowth:
+          type: integer
+          description: Net follower growth (gained minus lost)
+          format: int64
+          example: 21
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 24.2
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 100
+        quotesCount:
+          type: integer
+          description: Number of quotes
+          format: int64
+          example: 23
+        repliesCount:
+          type: integer
+          description: Number of replies
+          format: int64
+          example: 6
+        repostsCount:
+          type: integer
+          description: Number of reposts
+          format: int64
+          example: 23
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 245
+        publishedCarouselCount:
+          type: integer
+          description: Number of published carousels
+          format: int64
+          example: 3
+        publishedPhotoCount:
+          type: integer
+          description: Number of published photos
+          format: int64
+          example: 12
+        publishedTextCount:
+          type: integer
+          description: Number of published texts
+          format: int64
+          example: 12
+        publishedVideoCount:
+          type: integer
+          description: Number of published videos
+          format: int64
+          example: 8
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sentimentScore:
+          type: number
+          description: >-
+            Ratio of positive items divided by the total of positive and
+            negative items
+          format: double
+          example: 50
+      description: Threads Specific Audience Insights
+      allOf:
+        - $ref: '#/components/schemas/AudienceReportByDate'
+    TikTokContentReportInsight:
+      type: object
+      properties:
+        completionRate:
+          type: integer
+          description: Average viewing time relative to total video duration
+          format: int64
+          example: null
+        commentCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 583
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 78.3
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 67.5
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 928
+        likeCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 583
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 583
+        shareCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 583
+        videoCompletedCount:
+          type: integer
+          description: Number of times the video is watched fully
+          format: int64
+          example: 76
+        videoReplaysCount:
+          type: integer
+          description: Number of video replays
+          format: int64
+          example: 45
+        videoViewsTimeWatchedCount:
+          type: integer
+          description: Total viewing time in seconds
+          format: int64
+          example: 12
+        videoViewersRateByGender:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Video viewers rate by gender
+          example:
+            Female: 0.457
+            Male: 0.403
+            Other: 0.14
+        videoViewersRateByCountry:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Video viewers rate by country
+          example:
+            CA: 0.0132
+            GB: 0.7303
+            US: 0.2565
+        videoViewersRateByCity:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Video viewers rate by city
+          example:
+            US Cincinnati: 0.597
+            US Los Angeles: 0.403
+      description: TikTok Specific Content Report Insights
+      allOf:
+        - $ref: '#/components/schemas/ContentReportData'
+    TiktokAudienceInsight:
+      type: object
+      properties:
+        followersCount:
+          type: integer
+          description: Number of total followers
+          format: int64
+          example: 199
+        followersGainedCount:
+          type: integer
+          description: Number of followers gained (only available for Tiktok business)
+          format: int64
+          example: 9
+        followersLostCount:
+          type: integer
+          description: Number of followers lost (only available for Tiktok business)
+          format: int64
+          example: 2
+        followersNetGrowth:
+          type: integer
+          description: Net follower growth (gained minus lost)
+          format: int64
+          example: 7
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 24.2
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 90
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 12
+        publishedVideoCount:
+          type: integer
+          description: Number of published videos
+          format: int64
+          example: 1
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+      description: Tiktok Specific Audience Insights
+      allOf:
+        - $ref: '#/components/schemas/AudienceReportByDate'
+    TiktokCommunityManagementAction:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CommunityManagementAction'
+        - type: object
+          properties:
+            removedCount:
+              type: integer
+              description: Number of items removed
+              format: int64
+              example: 5
+    TwitterAudienceInsight:
+      type: object
+      properties:
+        followersCount:
+          type: integer
+          description: Number of total followers
+          format: int64
+          example: 199
+        followersGainedCount:
+          type: integer
+          description: Number of followers gained
+          format: int64
+          example: 9
+          deprecated: true
+        followersNetGrowth:
+          type: integer
+          description: Net follower growth (gained minus lost)
+          format: int64
+          example: 9
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 24.2
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 245
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 65
+        mentionsCount:
+          type: integer
+          description: Number of mentions
+          format: int64
+          example: 12
+        quotePostsCount:
+          type: integer
+          description: Number of reposts
+          format: int64
+          example: 9
+        publishedLinksCount:
+          type: integer
+          description: Number of published links
+          format: int64
+          example: 3
+        publishedMediaCount:
+          type: integer
+          description: Number of published media
+          format: int64
+          example: 23
+        publishedTextCount:
+          type: integer
+          description: Number of published text
+          format: int64
+          example: 1
+        receivedMessagesCount:
+          type: integer
+          description: Number of received messages
+          format: int64
+          example: 3
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+          deprecated: true
+        repliesCount:
+          type: integer
+          description: Number of replies
+          format: int64
+          example: 6
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sentimentScore:
+          type: number
+          description: >-
+            Ratio of positive items divided by the total of positive and
+            negative items
+          format: double
+          example: 50
+      description: Twitter Specific Audience Insights
+      allOf:
+        - $ref: '#/components/schemas/AudienceReportByDate'
+    TwitterContentReportInsight:
+      type: object
+      properties:
+        commentsCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 21
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 65.4
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 277
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 65
+        quotePostsCount:
+          type: integer
+          description: Number of reposts
+          format: int64
+          example: 45
+        repostsCount:
+          type: integer
+          description: Number of reposts
+          format: int64
+          example: 23
+        videoViewsCount:
+          type: integer
+          description: Number of video views
+          format: int64
+          example: 73
+      description: Twitter Specific Content Report Insights
+      allOf:
+        - $ref: '#/components/schemas/ContentReportData'
+    YoutubeAudienceInsight:
+      type: object
+      properties:
+        addedToPlaylistCount:
+          type: integer
+          description: Number of times videos of the channel were added to a playlist
+          format: int64
+          example: 300
+        dislikesCount:
+          type: integer
+          description: Number of dislikes
+          format: int64
+          example: 30
+        estimatedWatchedTimeCount:
+          type: integer
+          description: Time people spent watching videos from your channel in minutes
+          format: int64
+          example: 10
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 12
+        publishedVideoCount:
+          type: integer
+          description: Number of published videos
+          format: int64
+          example: 1
+        removedFromPlaylistCount:
+          type: integer
+          description: Number of times videos of the channel were removed from a playlist
+          format: int64
+          example: 3
+        subscribersCount:
+          type: integer
+          description: Number of total subscribers
+          format: int64
+          example: 199
+        subscribersLostCount:
+          type: integer
+          description: Number of subscribers lost
+          format: int64
+          example: 9
+        subscribersGainedCount:
+          type: integer
+          description: Number of subscribers gained
+          format: int64
+          example: 9
+        subscribersNetGrowth:
+          type: integer
+          description: Net subscriber growth (gained minus lost)
+          format: int64
+          example: 0
+        videoViewsCount:
+          type: integer
+          description: Number of times your videos has been viewed
+          format: int64
+          example: 90
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sentimentScore:
+          type: number
+          description: >-
+            Ratio of positive items divided by the total of positive and
+            negative items
+          format: double
+          example: 50
+      description: Youtube Specific Audience Insights
+      allOf:
+        - $ref: '#/components/schemas/AudienceReportByDate'
+    YoutubeCommunityManagementAction:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CommunityManagementAction'
+        - type: object
+          properties:
+            removedCount:
+              type: integer
+              description: Number of items removed
+              format: int64
+              example: 5
+    YoutubeContentReportInsight:
+      type: object
+      properties:
+        addedToPlaylistCount:
+          type: integer
+          description: Number of times this video was added to a playlist
+          format: int64
+          example: 830
+        commentsCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 2
+        dislikeCount:
+          type: integer
+          description: Number of dislikes
+          format: int64
+          example: 15
+        subscribersGainCount:
+          type: integer
+          description: Number of subscribers gained from the video
+          format: int64
+          example: 10
+        subscribersLostCount:
+          type: integer
+          description: Number of subscribers lost from the video
+          format: int64
+          example: 2
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 65
+        removedFromPlaylistCount:
+          type: integer
+          description: Number of times this video was removed to a playlist
+          format: int64
+          example: 400
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 46
+        videoViewsCount:
+          type: integer
+          description: Number of video views
+          format: int64
+          example: 23
+        videoViewsTimeWatchedRate:
+          type: number
+          description: >-
+            Ratio of average viewing time to total video duration as a
+            percentage
+          format: double
+          example: 75.8
+      description: Youtube Specific Content Report Insights
+      allOf:
+        - $ref: '#/components/schemas/ContentReportData'
+    OrganizationListResponse:
+      required:
+        - organizations
+      type: object
+      properties:
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationResponse'
+      description: List of organizations
+    OrganizationResponse:
+      required:
+        - managerOrganizationRole
+        - organizationId
+        - organizationName
+      type: object
+      properties:
+        organizationId:
+          type: integer
+          format: int64
+        organizationName:
+          type: string
+        managerOrganizationRole:
+          type: string
+          deprecated: true
+      description: Single organization
+    ProfileListResponse:
+      required:
+        - profiles
+      type: object
+      properties:
+        profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileResponse_1'
+    ProfileResponse_1:
+      required:
+        - profileName
+        - profileType
+        - profileUid
+        - socialNetworkId
+        - workspaceId
+      type: object
+      properties:
+        profileUid:
+          type: string
+        profileName:
+          type: string
+        profileType:
+          $ref: '#/components/schemas/SocialNetworkChannel'
+        socialNetworkId:
+          type: string
+        workspaceId:
+          type: integer
+          format: int64
+    SocialNetworkChannel:
+      type: string
+      enum:
+        - FACEBOOK_PAGE
+        - FACEBOOK_INSTAGRAM
+        - LINKEDIN_PERSONAL
+        - LINKEDIN_COMPANY
+        - TIKTOK
+        - TWITTER
+        - GOOGLE
+        - YOUTUBE
+        - PINTEREST
+        - THREADS
+        - BLUESKY
+    WorkspaceListResponse:
+      required:
+        - workspaces
+      type: object
+      properties:
+        workspaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkspaceResponse_1'
+      description: List of workspaces
+    WorkspaceResponse_1:
+      required:
+        - organizationId
+        - workspaceId
+        - workspaceName
+      type: object
+      properties:
+        workspaceId:
+          type: integer
+          format: int64
+        workspaceName:
+          type: string
+        organizationId:
+          type: integer
+          format: int64
+      description: Single workspace
+    AbstractFacebookType:
+      type: object
+    AccountManagerSummary:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        managerId:
+          type: integer
+          format: int64
+        role:
+          $ref: '#/components/schemas/AccountRole'
+    AccountRole:
+      type: string
+      enum:
+        - admin
+        - editor
+        - moderator
+        - guest
+        - connectOnlyUser
+        - contentStudioOnly
+      x-enum-varnames:
+        - admin
+        - editor
+        - moderator
+        - guest
+        - connectOnlyUser
+        - contentStudioOnly
+    AccountSummary:
+      type: object
+      properties:
+        accountManagers:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountManagerSummary'
+        uid:
+          type: string
+        locked:
+          type: boolean
+        name:
+          type: string
+        alias:
+          type: string
+        username:
+          type: string
+        screenName:
+          type: string
+        organizationUid:
+          type: string
+        profilePictureUrl:
+          type: string
+        service:
+          $ref: '#/components/schemas/Service'
+        serviceId:
+          type: object
+        timeZone:
+          type: string
+        type:
+          $ref: '#/components/schemas/AccountType'
+        workspaceUid:
+          type: string
+        industryId:
+          type: integer
+          format: int64
+        industryName:
+          type: string
+        inboxSyncEnabled:
+          type: boolean
+        tokenValid:
+          type: boolean
+        specificServiceAccountData:
+          $ref: '#/components/schemas/SpecificServiceAccountData'
+        version:
+          type: integer
+          format: int32
+          nullable: true
+    AccountType:
+      type: string
+      enum:
+        - facebookGroup
+        - facebookPage
+        - facebookProfile
+        - googleLocation
+        - googlePage
+        - instagramBusiness
+        - instagramPersonal
+        - linkedinCompany
+        - linkedinPersonal
+        - qualityPage
+        - twitterAccount
+        - tiktokBusiness
+        - youtubeChannel
+        - pinterestAccount
+        - threadsAccount
+        - blueskyAccount
+      x-enum-varnames:
+        - facebookGroup
+        - facebookPage
+        - facebookProfile
+        - googleLocation
+        - googlePage
+        - instagramBusiness
+        - instagramPersonal
+        - linkedinCompany
+        - linkedinPersonal
+        - qualityPage
+        - twitterAccount
+        - tiktokBusiness
+        - youtubeChannel
+        - pinterestAccount
+        - threadsAccount
+        - blueskyAccount
+    CreateCalendarNoteOpenRequest:
+      required:
+        - color
+        - endDate
+        - startDate
+        - title
+      type: object
+      properties:
+        title:
+          minLength: 1
+          type: string
+          description: Note title
+          example: Team Meeting
+          x-size-message: Title is required
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          type: object
+          description: Note color for calendar display
+          allOf:
+            - $ref: '#/components/schemas/PublishingCalendarNoteColor'
+            - type: object
+          x-not-null-message: Color is required
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+          x-not-null-message: Start date is required
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+          x-not-null-message: End date is required
+        profileUids:
+          type: array
+          description: List of profile UIDs associated with the note
+          items:
+            type: string
+      description: Request to create or update a calendar note
+    CreateCalendarNoteOpenResponse:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the calendar note
+        title:
+          type: string
+          description: Note title
+          example: Team Meeting
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          type: object
+          description: Note color for calendar display
+          allOf:
+            - $ref: '#/components/schemas/PublishingCalendarNoteColor'
+            - type: object
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        profileUids:
+          type: array
+          description: List of profile UIDs associated with the note
+          items:
+            type: string
+      description: Response containing calendar note details
+    CreateSimpleDraftOpenRequest:
+      required:
+        - type
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text content of the draft
+          example: This is my social media post
+        type:
+          type: object
+          description: Type of the post
+          allOf:
+            - $ref: '#/components/schemas/PostType'
+            - type: object
+        link:
+          type: string
+          description: Link URL to be included in the post
+          example: 'https://example.com'
+        labels:
+          type: array
+          description: Set of labels/tags to categorize the draft
+          example:
+            - marketing
+            - promotion
+          items:
+            type: string
+        mediaUrls:
+          type: array
+          description: 'List of media URLs (images, videos) to be included'
+          example:
+            - 'https://example.com/image.jpg'
+          items:
+            type: string
+        scheduling:
+          type: array
+          description: Scheduling configuration for different profiles
+          items:
+            $ref: >-
+              #/components/schemas/CreateSimpleDraftOpenRequest.ProfileScheduling
+      description: Request to create a simple draft
+    CreateSimpleDraftOpenRequest.ProfileScheduling:
+      required:
+        - profileUid
+      type: object
+      properties:
+        profileUid:
+          minLength: 1
+          type: string
+          description: Unique identifier of the profile
+          example: profile_123
+        publishingDates:
+          type: array
+          description: List of publishing dates in ISO-8601 format
+          example:
+            - '2024-12-25T10:00:00.000Z'
+            - '2024-12-26T15:30:00.000Z'
+          items:
+            type: string
+            format: date-time
+      description: Scheduling configuration for a specific profile
+    CreateSimpleDraftOpenResponse:
+      required:
+        - groupOfPosts
+      type: object
+      properties:
+        groupOfPosts:
+          $ref: '#/components/schemas/GroupOfPostsSummary'
+      description: Response after creating a simple draft
+    CreateSimpleScheduleOpenRequest:
+      required:
+        - scheduling
+        - type
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text content of the post
+          example: This is my social media post
+        type:
+          type: object
+          description: Type of the post
+          allOf:
+            - $ref: '#/components/schemas/PostType'
+            - type: object
+        link:
+          type: string
+          description: Link URL to be included in the post
+          example: 'https://example.com'
+        labels:
+          type: array
+          description: Set of labels/tags to categorize the post
+          example:
+            - marketing
+            - promotion
+          items:
+            type: string
+        mediaUrls:
+          type: array
+          description: 'List of media URLs (images, videos) to be included'
+          example:
+            - 'https://example.com/image.jpg'
+          items:
+            type: string
+        scheduling:
+          minItems: 1
+          type: array
+          description: Scheduling configuration for different profiles
+          items:
+            $ref: >-
+              #/components/schemas/CreateSimpleScheduleOpenRequest.ProfileScheduling
+      description: Request to create a scheduled post
+    CreateSimpleScheduleOpenRequest.ProfileScheduling:
+      required:
+        - profileUid
+        - publishingDates
+      type: object
+      properties:
+        profileUid:
+          minLength: 1
+          type: string
+          description: Unique identifier of the profile
+          example: profile_123
+        publishingDates:
+          minItems: 1
+          type: array
+          description: List of publishing dates in ISO-8601 format
+          example:
+            - '2024-12-25T10:00:00.000Z'
+            - '2024-12-26T15:30:00.000Z'
+          items:
+            type: string
+            format: date-time
+      description: Scheduling configuration for a specific profile
+    CreateSimpleScheduleOpenResponse:
+      required:
+        - groupOfPosts
+      type: object
+      properties:
+        groupOfPosts:
+          $ref: '#/components/schemas/GroupOfPostsSummary'
+      description: Response after creating a scheduled post
+    FacebookType:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/AbstractFacebookType'
+        - type: object
+          properties:
+            id:
+              type: string
+            metadata:
+              $ref: '#/components/schemas/FacebookType.Metadata'
+            type:
+              type: string
+    FacebookType.Metadata:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/AbstractFacebookType'
+        - type: object
+          properties:
+            fields:
+              type: array
+              items:
+                $ref: '#/components/schemas/NamedFacebookType'
+            connections:
+              $ref: '#/components/schemas/FacebookType.Metadata.Connections'
+            type:
+              type: string
+    FacebookType.Metadata.Connections:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/AbstractFacebookType'
+        - type: object
+          properties:
+            home:
+              type: string
+            feed:
+              type: string
+            friends:
+              type: string
+            family:
+              type: string
+            activities:
+              type: string
+            interests:
+              type: string
+            music:
+              type: string
+            books:
+              type: string
+            movies:
+              type: string
+            television:
+              type: string
+            likes:
+              type: string
+            posts:
+              type: string
+            tagged:
+              type: string
+            statuses:
+              type: string
+            links:
+              type: string
+            notes:
+              type: string
+            photos:
+              type: string
+            albums:
+              type: string
+            events:
+              type: string
+            groups:
+              type: string
+            videos:
+              type: string
+            picture:
+              type: string
+            inbox:
+              type: string
+            outbox:
+              type: string
+            updates:
+              type: string
+    GroupOfPostsSummary:
+      required:
+        - agorapulseLink
+        - labels
+        - profileScheduling
+        - type
+        - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        agorapulseLink:
+          type: string
+        type:
+          $ref: '#/components/schemas/PostType'
+        labels:
+          type: array
+          items:
+            type: string
+        profileScheduling:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary'
+    GroupOfPostsSummary.ProfileSchedulingSummary:
+      required:
+        - profile
+        - schedulingSummary
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+        schedulingSummary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
+    GroupOfPostsSummary.SchedulingSummary:
+      required:
+        - publishingDate
+        - status
+        - uid
+      type: object
+      properties:
+        uid:
+          type: string
+        publishingDate:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/PostStatus'
+    NamedFacebookType:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/FacebookType'
+        - $ref: '#/components/schemas/AbstractFacebookType'
+        - type: object
+          properties:
+            name:
+              type: string
+    Network:
+      type: string
+      enum:
+        - BLUESKY
+        - FACEBOOK
+        - GOOGLE
+        - INSTAGRAM
+        - LINKEDIN
+        - PINTEREST
+        - THREADS
+        - TIKTOK
+        - TWITTER
+        - YOUTUBE
+    PostStatus:
+      type: string
+      enum:
+        - DRAFT
+        - PUBLISHED
+        - FAILED
+        - SCHEDULED
+    PostType:
+      type: string
+      enum:
+        - TEXT
+        - PHOTO
+        - VIDEO
+        - PHOTO_AND_VIDEO
+        - LINK
+        - PDF
+    Profile:
+      required:
+        - name
+        - network
+        - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
+    PublishingCalendarNoteColor:
+      type: string
+      enum:
+        - BLUE
+        - RED
+        - YELLOW
+        - GREEN
+        - PURPLE
+        - PINK
+        - ORANGE
+        - MINT
+        - CYAN
+        - GREY
+    SearchCalendarNoteOpenRequest:
+      type: object
+      properties:
+        since:
+          type: string
+          description: Filter notes after this timestamp
+          format: date-time
+          example: '2024-01-01T00:00:00.000Z'
+        until:
+          type: string
+          description: Filter notes before this timestamp
+          format: date-time
+          example: '2024-12-31T23:59:59.000Z'
+        profileUids:
+          type: array
+          description: Filter by specific profile UIDs
+          example:
+            - profile_123
+            - profile_456
+          items:
+            type: string
+      description: Request to search calendar notes with filtering options
+    SearchCalendarNoteOpenResponse:
+      type: object
+      properties:
+        notes:
+          type: array
+          description: List of calendar notes matching the search criteria
+          items:
+            $ref: >-
+              #/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem
+        query:
+          type: object
+          description: Query parameters used for the search
+          allOf:
+            - $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
+            - type: object
+      description: Response containing search results for calendar notes
+    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the calendar note
+        title:
+          type: string
+          description: Note title
+          example: Team Meeting
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          type: object
+          description: Note color for calendar display
+          allOf:
+            - $ref: '#/components/schemas/PublishingCalendarNoteColor'
+            - type: object
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        profileUids:
+          type: array
+          description: List of profile UIDs associated with the note
+          items:
+            type: string
+      description: Calendar note information in search results
+    Service:
+      type: string
+      enum:
+        - administrator
+        - bluesky
+        - connect
+        - external
+        - facebook
+        - google
+        - identity
+        - inbox
+        - instagram
+        - linkedin
+        - manager
+        - organization
+        - organizationCore
+        - pinterest
+        - publishing
+        - quality
+        - report
+        - reportApi
+        - threads
+        - tiktok
+        - twitter
+        - youtube
+      x-enum-varnames:
+        - administrator
+        - bluesky
+        - connect
+        - external
+        - facebook
+        - google
+        - identity
+        - inbox
+        - instagram
+        - linkedin
+        - manager
+        - organization
+        - organizationCore
+        - pinterest
+        - publishing
+        - quality
+        - report
+        - reportApi
+        - threads
+        - tiktok
+        - twitter
+        - youtube
+    SharedCalendarAccountManagerSummary:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        identityId:
+          type: string
+        fullName:
+          type: string
+        pictureUrl:
+          type: string
+        email:
+          type: string
+    SharedCalendarAccountManagerSummaryResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        identityId:
+          type: string
+        fullName:
+          type: string
+        pictureUrl:
+          type: string
+        email:
+          type: string
+    SharedCalendarAccountSummary:
+      required:
+        - accountSummary
+      type: object
+      properties:
+        managers:
+          type: array
+          items:
+            $ref: '#/components/schemas/SharedCalendarManagerSummary'
+        id:
+          type: string
+        name:
+          type: string
+        screenName:
+          type: string
+        profileImageUrl:
+          type: string
+        service:
+          $ref: '#/components/schemas/Service'
+        serviceId:
+          type: object
+        type:
+          $ref: '#/components/schemas/AccountType'
+        uid:
+          type: string
+        accountSummary:
+          $ref: '#/components/schemas/AccountSummary'
+    SharedCalendarAccountSummaryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        screenName:
+          type: string
+        profileImageUrl:
+          type: string
+        service:
+          $ref: '#/components/schemas/Service'
+        serviceId:
+          type: object
+        type:
+          $ref: '#/components/schemas/AccountType'
+        uid:
+          type: string
+        managers:
+          type: array
+          items:
+            $ref: '#/components/schemas/SharedCalendarManagerSummaryResponse'
+    SharedCalendarManagerSummary:
+      type: object
+      properties:
+        id:
+          type: string
+        account:
+          $ref: '#/components/schemas/SharedCalendarAccountSummary'
+        manager:
+          $ref: '#/components/schemas/SharedCalendarAccountManagerSummary'
+        role:
+          $ref: '#/components/schemas/AccountRole'
+    SharedCalendarManagerSummaryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        account:
+          $ref: '#/components/schemas/SharedCalendarAccountSummaryResponse'
+        manager:
+          $ref: '#/components/schemas/SharedCalendarAccountManagerSummaryResponse'
+        role:
+          $ref: '#/components/schemas/AccountRole'
+    SimplePublishOpenRequest:
+      required:
+        - profileUids
+        - type
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text content of the post
+          example: This is my social media post
+        type:
+          type: object
+          description: Type of the post
+          allOf:
+            - $ref: '#/components/schemas/PostType'
+            - type: object
+        link:
+          type: string
+          description: Link URL to be included in the post
+          example: 'https://example.com'
+        labels:
+          type: array
+          description: Set of labels/tags to categorize the post
+          example:
+            - marketing
+            - promotion
+          items:
+            type: string
+        mediaUrls:
+          type: array
+          description: 'List of media URLs (images, videos) to be included'
+          example:
+            - 'https://example.com/image.jpg'
+          items:
+            type: string
+        profileUids:
+          minItems: 1
+          type: array
+          description: List of profile UIDs the post will be published to
+          example:
+            - profile_123
+            - profile_456
+          items:
+            type: string
+      description: Request to publish a post immediately
+    SpecificServiceAccountData:
+      type: object
+      properties:
+        service:
+          $ref: '#/components/schemas/Service'
+    StudioMediaUploadOpenRequest:
+      required:
+        - contentType
+        - extension
+        - fileSize
+        - origin
+      type: object
+      properties:
+        extension:
+          minLength: 1
+          type: string
+          description: File extension
+          example: jpg
+        fileSize:
+          minimum: 0
+          exclusiveMinimum: true
+          type: integer
+          description: File size in bytes
+          format: int64
+          example: 1048576
+        contentType:
+          minLength: 1
+          type: string
+          description: Content type (MIME)
+          example: image/jpeg
+        origin:
+          minLength: 1
+          type: string
+          description: Origin of the upload request
+          example: lovable
+        contentStudioSessionId:
+          type: string
+          description: Optional Content Studio session ID for grouping uploads
+          nullable: true
+      description: Request to obtain a presigned upload URL for a studio media
+    StudioMediaUploadOpenResponse:
+      type: object
+      properties:
+        uploadUrl:
+          type: string
+          description: Presigned PUT URL - upload file with HTTP PUT to this URL
+        filename:
+          type: string
+          description: S3 object key
+        publicUrl:
+          type: string
+          description: CDN URL to access the uploaded file
+        baseUrl:
+          type: string
+          description: S3 URL to access the uploaded file
+        expiresInSeconds:
+          type: integer
+          description: URL expiration in seconds
+          format: int32
+        requiredHeaders:
+          type: object
+          additionalProperties:
+            type: string
+          description: Headers the client MUST include in the PUT upload request
+      description: Presigned URL for direct S3 upload
+    AbstractItem:
+      type: object
+      properties:
+        id:
+          type: string
+        parentId:
+          type: string
+        workspaceId:
+          type: integer
+          format: int64
+        creationDate:
+          type: string
+          format: date-time
+        type:
+          $ref: '#/components/schemas/ItemType'
+        text:
+          type: string
+        agorapulseLink:
+          type: string
+        networkLink:
+          type: string
+        profile:
+          $ref: '#/components/schemas/Profile'
+        creator:
+          $ref: '#/components/schemas/ItemCreator'
+        labels:
+          type: array
+          items:
+            type: string
+        sentiment:
+          $ref: '#/components/schemas/ItemSentiment'
+    CreateReplyRequest:
+      required:
+        - itemId
+        - message
+      type: object
+      properties:
+        itemId:
+          minLength: 1
+          type: string
+          description: The ID of the inbox item to reply to
+          example: item123
+        message:
+          minLength: 1
+          type: string
+          description: The content of the reply message
+          example: Thank you for your message!
+        privateReply:
+          type: boolean
+          description: >-
+            When true, sends a private message to the user instead of replying
+            publicly to a public item (e.g., comment). The reply will be sent as
+            a direct/private message. Supported by Facebook, Instagram, and
+            Twitter.
+          default: false
+        excludedUsers:
+          type: array
+          description: List of user IDs to exclude from mentions (Twitter-specific)
+          items:
+            type: string
+      description: Request to create a reply to an inbox item
+    ItemCreator:
+      required:
+        - id
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    ItemFilterType:
+      type: string
+      description: >-
+        Enum representing the possible item types that can be used for filtering
+        items in the inbox. These values correspond to the item types available
+        in the UI filter menu.
+
+
+        The enum values map to the frontend itemTypes used in the filter UI:
+
+
+        * **Facebook:** adsComment, organicComment, conversation, mention,
+        rating
+
+        * **Instagram:** adsComment, organicComment, conversation, reelComment,
+        mention, storyMentionConversation
+
+        * **Twitter:** mention, conversation
+
+        * **LinkedIn:** adsComment, organicComment, mention
+
+        * **TikTok:** adsComment, organicComment
+
+        * **Threads:** organicComment, mention
+      enum:
+        - ADS_COMMENT
+        - ORGANIC_COMMENT
+        - CONVERSATION
+        - MENTION
+        - RATING
+        - REEL_COMMENT
+        - STORY_MENTION_CONVERSATION
+      x-enum-descriptions:
+        - >-
+          Comments on promoted/sponsored posts (ads). Supported by: Facebook,
+          Instagram, LinkedIn, TikTok
+        - >-
+          Organic comments (not on ads). Supported by: Facebook, Instagram,
+          LinkedIn, TikTok, Threads
+        - >-
+          Private messages / direct messages. Supported by: Facebook, Instagram,
+          Twitter
+        - >-
+          Mentions of the profile/page. Supported by: Facebook, Instagram,
+          Twitter, LinkedIn, Threads
+        - 'Reviews/ratings. Supported by: Facebook only'
+        - 'Comments on Instagram Reels. Supported by: Instagram only'
+        - >-
+          Conversations from story mentions. Supported by: Instagram only Note:
+          This is different from the 'storyMention' source used in automated
+          moderation rules. In the UI filters, this represents conversations
+          grouped by story mentions.
+      x-type: String
+    ItemSentiment:
+      type: string
+      enum:
+        - POSITIVE
+        - NEGATIVE
+        - NEUTRAL
+    ItemType:
+      type: string
+      enum:
+        - PRIVATE_MESSAGE
+        - CONVERSATION
+        - COMMENT
+        - POST
+    ItemsSearchResponse:
+      required:
+        - items
+        - offset
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemDTO'
+        offset:
+          type: string
+    MessagesSearchResponse:
+      required:
+        - items
+        - offset
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemDTO'
+        offset:
+          type: string
+    Order:
+      type: string
+      enum:
+        - ASC
+        - DESC
+    GroupOfPostsEvent:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the event
+        type:
+          $ref: '#/components/schemas/GroupOfPostsEventType'
+          description: The event type
+        action:
+          $ref: '#/components/schemas/GroupOfPostsAction'
+          description: The action
+        organizationId:
+          type: integer
+          format: int64
+          description: Unique identifier for the organization
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the event
+        payload:
+          $ref: '#/components/schemas/GroupOfPosts'
+          description: The payload containing the group of posts information
+    PublishingPostEvent:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the event
+        type:
+          $ref: '#/components/schemas/PublishingPostEventType'
+          description: The event type
+        action:
+          $ref: '#/components/schemas/PostAction'
+          description: The action
+        organizationId:
+          type: integer
+          format: int64
+          description: Unique identifier for the organization
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the event
+        payload:
+          $ref: '#/components/schemas/PublishingPost'
+          description: The payload containing the post information
+    InboxItemEvent:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the event
+        type:
+          $ref: '#/components/schemas/InboxItemEventType'
+          description: The event type
+        action:
+          $ref: '#/components/schemas/InboxItemAction'
+          description: The action
+        organizationId:
+          type: integer
+          format: int64
+          description: Unique identifier for the organization
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the event
+        payload:
+          $ref: '#/components/schemas/InboxItem'
+          description: The payload containing the inbox item information
+    ListeningItemEvent:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the event
+        type:
+          $ref: '#/components/schemas/ListeningItemEventType'
+          description: The event type
+        action:
+          $ref: '#/components/schemas/ListeningItemAction'
+          description: The action
+        organizationId:
+          type: integer
+          format: int64
+          description: Unique identifier for the organization
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the event
+        payload:
+          type: string
+          description: The payload containing the listening item information
+    InboxItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the inbox item
+        parentId:
+          type: string
+          description: Identifier of the parent item if applicable
+        workspaceId:
+          type: integer
+          format: int64
+          description: Unique identifier for the workspace
+        profile:
+          $ref: '#/components/schemas/Profile1'
+          description: The social network profile associated with the item
+        agorapulseLink:
+          type: string
+          description: Link to the inbox item in Agorapulse application
+        networkLink:
+          type: string
+          description: Link to the inbox item in the social network
+        text:
+          type: string
+          description: Text content of the inbox item
+        creationDate:
+          type: string
+          format: date-time
+          description: Creation date of the inbox item
+        type:
+          $ref: '#/components/schemas/InboxItemType'
+          description: Type of the inbox item
+        creator:
+          $ref: '#/components/schemas/InboxItemCreator'
+          description: The user who created the inbox item
+        labels:
+          type: array
+          items: string
+          description: Labels associated with the item
+        addedLabels:
+          type: array
+          items: string
+          description: Labels added to the item during this event
+        sentiment:
+          $ref: '#/components/schemas/InboxItemSentiment'
+          description: Sentiment of the inbox item
+    GroupOfPosts:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the group of posts
+        actor:
+          $ref: '#/components/schemas/User'
+          description: The user who performed the action
+        link:
+          type: string
+          description: Link to the post in Agorapulse application
+        labels:
+          type: array
+          items: string
+          description: Labels associated with the group of posts
+        posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+          description: List of posts in the group
+    GroupOfPostsEventType:
+      type: string
+      enum:
+        - PUBLISHING_GROUP_OF_POSTS
+    PublishingPostEventType:
+      type: string
+      enum:
+        - PUBLISHING_POST
+    InboxItemEventType:
+      type: string
+      enum:
+        - INBOX_ITEM
+    ListeningItemEventType:
+      type: string
+      enum:
+        - LISTENING_ITEM
+    InboxItemType:
+      type: string
+      enum:
+        - PRIVATE_MESSAGE
+        - CONVERSATION
+        - COMMENT
+        - POST
+    InboxItemSentiment:
+      type: string
+      enum:
+        - POSITIVE
+        - NEGATIVE
+        - NEUTRAL
+    PublishingPost:
+      type: object
+      properties:
+        actor:
+          $ref: '#/components/schemas/User'
+          description: The user who performed the action
+        post:
+          $ref: '#/components/schemas/Post'
+          description: The post information
+    Post:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the post
+        agorapulseLink:
+          type: string
+          description: Link to the post in Agorapulse application
+        networkLink:
+          type: string
+          description: Link to the post in the social network
+        publishDate:
+          type: string
+          format: date-time
+          description: Publish date of the post
+        groupUid:
+          type: string
+          description: Unique identifier for the group of posts if applicable
+        profile:
+          $ref: '#/components/schemas/Profile1'
+          description: The social network profile associated with the post
+        status:
+          $ref: '#/components/schemas/PostStatus1'
+          description: Status of the post
+    Profile1:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the profile
+        name:
+          type: string
+          description: Name of the profile
+        network:
+          $ref: '#/components/schemas/Network'
+          description: The social network of the profile
+    GroupOfPostsAction:
+      type: string
+      enum:
+        - CREATED
+        - ASSIGNED
+        - APPROVED
+        - REJECTED
+    PostAction:
+      type: string
+      enum:
+        - PUBLISHED
+        - FAILED
+    PostStatus1:
+      type: string
+      enum:
+        - PUBLISHED
+        - FAILED
+    InboxItemAction:
+      type: string
+      enum:
+        - CREATED
+        - CLASSIFIED
+        - LABELIZED
+    ListeningItemAction:
+      type: string
+      enum:
+        - CREATED
+    User:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the user
+        name:
+          type: string
+          description: Name of the user
+        email:
+          type: string
+          format: email
+          description: Email address of the user
+    InboxItemCreator:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user on social network
+        name:
+          type: string
+          description: Name of the user
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header

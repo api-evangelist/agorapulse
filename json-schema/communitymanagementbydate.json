@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CommunityManagementByDate",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "Date in ISO format YYYY-MM-DD",
+      "example": "2020-04-18T00:00:00.000Z"
+    },
+    "sentRepliesCount": {
+      "type": "integer",
+      "description": "Number of replies sent",
+      "format": "int64",
+      "example": 12
+    },
+    "actions": {
+      "type": "array",
+      "description": "List of actions made by users",
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/CommunityManagementAction"
+        },
+        {
+          "$ref": "#/components/schemas/FacebookCommunityManagementAction"
+        },
+        {
+          "$ref": "#/components/schemas/LinkedinCommunityManagementAction"
+        },
+        {
+          "$ref": "#/components/schemas/InstagramCommunityManagementAction"
+        },
+        {
+          "$ref": "#/components/schemas/TiktokCommunityManagementAction"
+        },
+        {
+          "$ref": "#/components/schemas/YoutubeCommunityManagementAction"
+        }
+      ],
+      "items": {
+        "$ref": "#/components/schemas/CommunityManagementAction"
+      }
+    }
+  },
+  "description": "Common properties for community management report"
+}

@@ -1,0 +1,2279 @@
+{
+  "vocabulary": [
+    {
+      "term": "account",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarManagerSummary",
+        "SharedCalendarManagerSummaryResponse"
+      ]
+    },
+    {
+      "term": "accountManagers",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "accountSummary",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarAccountSummary"
+      ]
+    },
+    {
+      "term": "accountUid",
+      "type": "string",
+      "description": "Account uid",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/conversations/{conversationId}/messages:get"
+      ]
+    },
+    {
+      "term": "accountUids",
+      "type": "array",
+      "description": "Set of account UIDs to filter items. Only items from these accounts will be returned.",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items:get"
+      ]
+    },
+    {
+      "term": "action",
+      "type": "",
+      "description": "The action",
+      "usedIn": [
+        "GroupOfPostsEvent",
+        "PublishingPostEvent",
+        "InboxItemEvent",
+        "ListeningItemEvent"
+      ]
+    },
+    {
+      "term": "actions",
+      "type": "array",
+      "description": "List of actions made by users",
+      "usedIn": [
+        "CommunityManagementByDate"
+      ]
+    },
+    {
+      "term": "actor",
+      "type": "",
+      "description": "The user who performed the action",
+      "usedIn": [
+        "GroupOfPosts",
+        "PublishingPost"
+      ]
+    },
+    {
+      "term": "addedLabels",
+      "type": "array",
+      "description": "Labels added to the item during this event",
+      "usedIn": [
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "addedToPlaylistCount",
+      "type": "integer",
+      "description": "Number of times videos of the channel were added to a playlist",
+      "usedIn": [
+        "YoutubeAudienceInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "agorapulseLink",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "GroupOfPostsSummary",
+        "AbstractItem",
+        "InboxItem",
+        "Post"
+      ]
+    },
+    {
+      "term": "alias",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "angryCount",
+      "type": "integer",
+      "description": "Number of angry (reaction)",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "averageResponseTime",
+      "type": "integer",
+      "description": "Average time to respond",
+      "usedIn": [
+        "CommunityManagementAction"
+      ]
+    },
+    {
+      "term": "avgWatchTime",
+      "type": "integer",
+      "description": "Average viewing time",
+      "usedIn": [
+        "InstagramContentReportInsight"
+      ]
+    },
+    {
+      "term": "baseUrl",
+      "type": "string",
+      "description": "S3 URL to access the uploaded file",
+      "usedIn": [
+        "StudioMediaUploadOpenResponse"
+      ]
+    },
+    {
+      "term": "body",
+      "type": "string",
+      "description": "Note body content",
+      "usedIn": [
+        "CreateCalendarNoteOpenRequest",
+        "CreateCalendarNoteOpenResponse",
+        "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem"
+      ]
+    },
+    {
+      "term": "clicksCount",
+      "type": "integer",
+      "description": "Number of clicks",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "color",
+      "type": "object",
+      "description": "Note color for calendar display",
+      "usedIn": [
+        "CreateCalendarNoteOpenRequest",
+        "CreateCalendarNoteOpenResponse",
+        "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem"
+      ]
+    },
+    {
+      "term": "commentCount",
+      "type": "integer",
+      "description": "Number of comments",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "commentsCount",
+      "type": "integer",
+      "description": "Number of comments",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "InstagramContentReportInsight",
+        "LinkedinContentReportInsight",
+        "TwitterContentReportInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "completionRate",
+      "type": "integer",
+      "description": "Average viewing time relative to total video duration",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "contentStudioSessionId",
+      "type": "string",
+      "description": "Optional Content Studio session ID for grouping uploads",
+      "usedIn": [
+        "StudioMediaUploadOpenRequest"
+      ]
+    },
+    {
+      "term": "contentType",
+      "type": "string",
+      "description": "Content type (MIME)",
+      "usedIn": [
+        "StudioMediaUploadOpenRequest"
+      ]
+    },
+    {
+      "term": "conversationId",
+      "type": "string",
+      "description": "Conversation id",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/conversations/{conversationId}/messages:get"
+      ]
+    },
+    {
+      "term": "creationDate",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AbstractItem",
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "creator",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "AbstractItem",
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "data",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "CommunityManagementInsight",
+        "ContentReportInsight_1",
+        "OpenAudienceInsight"
+      ]
+    },
+    {
+      "term": "date",
+      "type": "string",
+      "description": "Date in ISO format YYYY-MM-DD",
+      "usedIn": [
+        "AudienceReportByDate",
+        "CommunityManagementByDate"
+      ]
+    },
+    {
+      "term": "dislikeCount",
+      "type": "integer",
+      "description": "Number of dislikes",
+      "usedIn": [
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "dislikesCount",
+      "type": "integer",
+      "description": "Number of dislikes",
+      "usedIn": [
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "email",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarAccountManagerSummary",
+        "SharedCalendarAccountManagerSummaryResponse",
+        "User"
+      ]
+    },
+    {
+      "term": "endDate",
+      "type": "string",
+      "description": "Note end date",
+      "usedIn": [
+        "CreateCalendarNoteOpenRequest",
+        "CreateCalendarNoteOpenResponse",
+        "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem"
+      ]
+    },
+    {
+      "term": "engagementCount",
+      "type": "integer",
+      "description": "Number of engagement",
+      "usedIn": [
+        "AudienceReportByDate",
+        "ContentReportData",
+        "FacebookContentReportInsight",
+        "InstagramContentReportInsight"
+      ]
+    },
+    {
+      "term": "engagementRatePerImpression",
+      "type": "number",
+      "description": "Ratio of engagement to impression as a percentage",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "InstagramStoryContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight",
+        "TwitterAudienceInsight",
+        "TwitterContentReportInsight"
+      ]
+    },
+    {
+      "term": "engagementRatePerReach",
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "InstagramStoryContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight",
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "engagementRatePerView",
+      "type": "number",
+      "description": "Ratio of engagement to view as a percentage",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TikTokContentReportInsight",
+        "TiktokAudienceInsight"
+      ]
+    },
+    {
+      "term": "estimatedWatchedTimeCount",
+      "type": "integer",
+      "description": "Time people spent watching videos from your channel in minutes",
+      "usedIn": [
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "excludedUsers",
+      "type": "array",
+      "description": "List of user IDs to exclude from mentions (Twitter-specific)",
+      "usedIn": [
+        "CreateReplyRequest"
+      ]
+    },
+    {
+      "term": "exitCount",
+      "type": "integer",
+      "description": "Number of taps exit",
+      "usedIn": [
+        "InstagramStoryContentReportInsight"
+      ]
+    },
+    {
+      "term": "expiresInSeconds",
+      "type": "integer",
+      "description": "URL expiration in seconds",
+      "usedIn": [
+        "StudioMediaUploadOpenResponse"
+      ]
+    },
+    {
+      "term": "extension",
+      "type": "string",
+      "description": "File extension",
+      "usedIn": [
+        "StudioMediaUploadOpenRequest"
+      ]
+    },
+    {
+      "term": "fileSize",
+      "type": "integer",
+      "description": "File size in bytes",
+      "usedIn": [
+        "StudioMediaUploadOpenRequest"
+      ]
+    },
+    {
+      "term": "filename",
+      "type": "string",
+      "description": "S3 object key",
+      "usedIn": [
+        "StudioMediaUploadOpenResponse"
+      ]
+    },
+    {
+      "term": "followersCount",
+      "type": "integer",
+      "description": "Number of total followers",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TiktokAudienceInsight",
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "followersGainedCount",
+      "type": "integer",
+      "description": "Number of gained followers",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TiktokAudienceInsight",
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "followersLostCount",
+      "type": "integer",
+      "description": "Number of lost followers",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "TiktokAudienceInsight"
+      ]
+    },
+    {
+      "term": "followersNetGrowth",
+      "type": "integer",
+      "description": "Net follower growth (gained minus lost)",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TiktokAudienceInsight",
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "fullName",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarAccountManagerSummary",
+        "SharedCalendarAccountManagerSummaryResponse"
+      ]
+    },
+    {
+      "term": "groupOfPosts",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "CreateSimpleDraftOpenResponse",
+        "CreateSimpleScheduleOpenResponse"
+      ]
+    },
+    {
+      "term": "groupUid",
+      "type": "string",
+      "description": "Unique identifier for the group of posts if applicable",
+      "usedIn": [
+        "Post"
+      ]
+    },
+    {
+      "term": "hahaCount",
+      "type": "integer",
+      "description": "Number of haha (reaction)",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "id",
+      "type": "string",
+      "description": "Post id on the native network",
+      "usedIn": [
+        "ContentReportData",
+        "AccountManagerSummary",
+        "SharedCalendarAccountManagerSummary",
+        "SharedCalendarAccountManagerSummaryResponse",
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse",
+        "SharedCalendarManagerSummary",
+        "SharedCalendarManagerSummaryResponse",
+        "AbstractItem",
+        "ItemCreator",
+        "InboxItem",
+        "InboxItemCreator"
+      ]
+    },
+    {
+      "term": "identityId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarAccountManagerSummary",
+        "SharedCalendarAccountManagerSummaryResponse"
+      ]
+    },
+    {
+      "term": "impressionsCount",
+      "type": "integer",
+      "description": "Number of impressions",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "InstagramStoryContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight",
+        "TwitterAudienceInsight",
+        "TwitterContentReportInsight"
+      ]
+    },
+    {
+      "term": "inboxSyncEnabled",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "industryId",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "industryName",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "itemId",
+      "type": "string",
+      "description": "The ID of the inbox item to reply to",
+      "usedIn": [
+        "CreateReplyRequest"
+      ]
+    },
+    {
+      "term": "items",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "ItemsSearchResponse",
+        "MessagesSearchResponse"
+      ]
+    },
+    {
+      "term": "labels",
+      "type": "array",
+      "description": "Set of labels/tags to categorize the draft",
+      "usedIn": [
+        "CreateSimpleDraftOpenRequest",
+        "CreateSimpleScheduleOpenRequest",
+        "GroupOfPostsSummary",
+        "SimplePublishOpenRequest",
+        "AbstractItem",
+        "InboxItem",
+        "GroupOfPosts"
+      ]
+    },
+    {
+      "term": "likeCount",
+      "type": "integer",
+      "description": "Number of likes (reaction)",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "likesCount",
+      "type": "integer",
+      "description": "Number of likes",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight",
+        "ThreadsAudienceInsight",
+        "TiktokAudienceInsight",
+        "TwitterAudienceInsight",
+        "TwitterContentReportInsight",
+        "YoutubeAudienceInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "limit",
+      "type": "integer",
+      "description": "Maximum number of messages to return per page. Must be between 1 and 25.",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/conversations/{conversationId}/messages:get"
+      ]
+    },
+    {
+      "term": "link",
+      "type": "string",
+      "description": "Link URL to be included in the post",
+      "usedIn": [
+        "CreateSimpleDraftOpenRequest",
+        "CreateSimpleScheduleOpenRequest",
+        "SimplePublishOpenRequest",
+        "GroupOfPosts"
+      ]
+    },
+    {
+      "term": "linkClicksCount",
+      "type": "integer",
+      "description": "Number of clicks on links",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "locked",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "loveCount",
+      "type": "integer",
+      "description": "Number of love (reaction)",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "manager",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarManagerSummary",
+        "SharedCalendarManagerSummaryResponse"
+      ]
+    },
+    {
+      "term": "managerId",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "AccountManagerSummary"
+      ]
+    },
+    {
+      "term": "managerOrganizationRole",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "OrganizationResponse"
+      ]
+    },
+    {
+      "term": "managers",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse"
+      ]
+    },
+    {
+      "term": "mediaUrls",
+      "type": "array",
+      "description": "List of media URLs (images, videos) to be included",
+      "usedIn": [
+        "CreateSimpleDraftOpenRequest",
+        "CreateSimpleScheduleOpenRequest",
+        "SimplePublishOpenRequest"
+      ]
+    },
+    {
+      "term": "mentionsCount",
+      "type": "integer",
+      "description": "Number of mentions",
+      "usedIn": [
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "message",
+      "type": "string",
+      "description": "The content of the reply message",
+      "usedIn": [
+        "CreateReplyRequest"
+      ]
+    },
+    {
+      "term": "name",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary",
+        "Profile",
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse",
+        "ItemCreator",
+        "Profile1",
+        "User",
+        "InboxItemCreator"
+      ]
+    },
+    {
+      "term": "negativeItemsCount",
+      "type": "integer",
+      "description": "Number of items with negative sentiment",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TwitterAudienceInsight",
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "network",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "Profile",
+        "Profile1"
+      ]
+    },
+    {
+      "term": "networkLink",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AbstractItem",
+        "InboxItem",
+        "Post"
+      ]
+    },
+    {
+      "term": "neutralItemsCount",
+      "type": "integer",
+      "description": "Number of items with neutral sentiment",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TwitterAudienceInsight",
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "notes",
+      "type": "array",
+      "description": "List of calendar notes matching the search criteria",
+      "usedIn": [
+        "SearchCalendarNoteOpenResponse"
+      ]
+    },
+    {
+      "term": "offset",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ItemsSearchResponse",
+        "MessagesSearchResponse"
+      ]
+    },
+    {
+      "term": "order",
+      "type": "",
+      "description": "Sort order for the results. ASC for ascending (oldest first), DESC for descending (newest first).",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/conversations/{conversationId}/messages:get"
+      ]
+    },
+    {
+      "term": "organicAvgWatchTime",
+      "type": "integer",
+      "description": "Average organic viewing time",
+      "usedIn": [
+        "InstagramContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicClicksCount",
+      "type": "integer",
+      "description": "Number of organic clicks on posts",
+      "usedIn": [
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicCommentsCount",
+      "type": "integer",
+      "description": "Number of organic comments",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicEngagementCount",
+      "type": "integer",
+      "description": "Number of organic engagement",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicEngagementRatePerImpression",
+      "type": "number",
+      "description": "Ratio of organic engagement to organic impression as a percentage",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicEngagementRatePerReach",
+      "type": "number",
+      "description": "Ratio of organic engagement to reach as a percentage",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicEngagementRatePerView",
+      "type": "number",
+      "description": "Ratio of organic engagement to view as a percentage",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight"
+      ]
+    },
+    {
+      "term": "organicFollowersGainedCount",
+      "type": "integer",
+      "description": "Number of organic followers gained",
+      "usedIn": [
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "organicFollowersNetGrowth",
+      "type": "integer",
+      "description": "Net organic follower growth (gained minus lost)",
+      "usedIn": [
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "organicImpressionsCount",
+      "type": "integer",
+      "description": "Number of organic impressions",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicLikesCount",
+      "type": "integer",
+      "description": "Number of organic likes",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicReachCount",
+      "type": "integer",
+      "description": "Number of organic reach",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicReceivedCommentsCount",
+      "type": "integer",
+      "description": "Number of organic received comments",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "organicSavesCount",
+      "type": "integer",
+      "description": "Number of organic saves",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicSharesCount",
+      "type": "integer",
+      "description": "Number of organic shares",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicVideo30sViewsCount",
+      "type": "integer",
+      "description": "The number of times your videos played for at least 30 seconds, or for nearly their total length if they're shorter than 30 seconds",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicVideoCompleteViewViewersCount",
+      "type": "integer",
+      "description": "The number of people who viewed your videos from the beginning to 97%, or more, of its length",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicVideoCompleteViewsCount",
+      "type": "integer",
+      "description": "The number of times your videos played from the beginning to 97%, or more, of its length",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicVideoViewsCount",
+      "type": "integer",
+      "description": "Number of organic video views",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "organicViewsCount",
+      "type": "integer",
+      "description": "Number of organic views",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight"
+      ]
+    },
+    {
+      "term": "organizationId",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "OrganizationResponse",
+        "WorkspaceResponse_1",
+        "GroupOfPostsEvent",
+        "PublishingPostEvent",
+        "InboxItemEvent",
+        "ListeningItemEvent"
+      ]
+    },
+    {
+      "term": "organizationName",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "OrganizationResponse"
+      ]
+    },
+    {
+      "term": "organizationUid",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "organizations",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "OrganizationListResponse"
+      ]
+    },
+    {
+      "term": "origin",
+      "type": "string",
+      "description": "Origin of the upload request",
+      "usedIn": [
+        "StudioMediaUploadOpenRequest"
+      ]
+    },
+    {
+      "term": "otherClicksCount",
+      "type": "integer",
+      "description": "Number of other clicks",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidAvgWatchTime",
+      "type": "integer",
+      "description": "Average paid viewing time",
+      "usedIn": [
+        "InstagramContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidClicksCount",
+      "type": "integer",
+      "description": "Number of paid clicks on posts",
+      "usedIn": [
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidCommentsCount",
+      "type": "integer",
+      "description": "Number of paid comments",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidEngagementCount",
+      "type": "integer",
+      "description": "Number of paid engagement",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidEngagementRatePerImpression",
+      "type": "number",
+      "description": "Ratio of paid engagement to paid impression as a percentage",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidEngagementRatePerReach",
+      "type": "number",
+      "description": "Ratio of paid engagement to reach as a percentage",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidEngagementRatePerView",
+      "type": "number",
+      "description": "Ratio of paid engagement to view as a percentage",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight"
+      ]
+    },
+    {
+      "term": "paidFollowersGainedCount",
+      "type": "integer",
+      "description": "Number of paid followers gained",
+      "usedIn": [
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "paidFollowersNetGrowth",
+      "type": "integer",
+      "description": "Net paid follower growth (gained minus lost)",
+      "usedIn": [
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "paidImpressionsCount",
+      "type": "integer",
+      "description": "Number of paid impressions",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidLikesCount",
+      "type": "integer",
+      "description": "Number of paid likes",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidReachCount",
+      "type": "integer",
+      "description": "Number of paid reach",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidReceivedCommentsCount",
+      "type": "integer",
+      "description": "Number of paid received comments",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "paidSavesCount",
+      "type": "integer",
+      "description": "Number of paid saves",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidSharesCount",
+      "type": "integer",
+      "description": "Number of paid shares",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidVideo30sViewsCount",
+      "type": "integer",
+      "description": "The number of times your promoted videos played for at least 30 seconds, or for nearly their total length if they're shorter than 30 seconds",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidVideoCompleteViewViewersCount",
+      "type": "integer",
+      "description": "The number of people who viewed your promoted videos from the beginning to 97%, or more, of its length",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidVideoCompleteViewsCount",
+      "type": "integer",
+      "description": "The number of times your promoted videos played from the beginning to 97%, or more, of its length",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidVideoViewsCount",
+      "type": "integer",
+      "description": "Number of paid video views",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "paidViewsCount",
+      "type": "integer",
+      "description": "Number of paid views",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight"
+      ]
+    },
+    {
+      "term": "parentId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AbstractItem",
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "payload",
+      "type": "",
+      "description": "The payload containing the group of posts information",
+      "usedIn": [
+        "GroupOfPostsEvent",
+        "PublishingPostEvent",
+        "InboxItemEvent",
+        "ListeningItemEvent"
+      ]
+    },
+    {
+      "term": "photoViewClicksCount",
+      "type": "integer",
+      "description": "Number of clicks to view photos",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "pictureUrl",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarAccountManagerSummary",
+        "SharedCalendarAccountManagerSummaryResponse"
+      ]
+    },
+    {
+      "term": "positiveItemsCount",
+      "type": "integer",
+      "description": "Number of items with positive sentiment",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TwitterAudienceInsight",
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "post",
+      "type": "",
+      "description": "The post information",
+      "usedIn": [
+        "PublishingPost"
+      ]
+    },
+    {
+      "term": "postUrl",
+      "type": "string",
+      "description": "Post url on the native network",
+      "usedIn": [
+        "ContentReportData"
+      ]
+    },
+    {
+      "term": "posts",
+      "type": "array",
+      "description": "List of posts in the group",
+      "usedIn": [
+        "GroupOfPosts"
+      ]
+    },
+    {
+      "term": "privateReply",
+      "type": "boolean",
+      "description": "When true, sends a private message to the user instead of replying publicly to a public item (e.g., comment). The reply will be sent as a direct/private message. Supported by Facebook, Instagram, and Twitter.",
+      "usedIn": [
+        "CreateReplyRequest"
+      ]
+    },
+    {
+      "term": "profile",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "GroupOfPostsSummary.ProfileSchedulingSummary",
+        "AbstractItem",
+        "InboxItem",
+        "Post"
+      ]
+    },
+    {
+      "term": "profileImageUrl",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse"
+      ]
+    },
+    {
+      "term": "profileName",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ProfileResponse_1"
+      ]
+    },
+    {
+      "term": "profilePictureUrl",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "profileScheduling",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "GroupOfPostsSummary"
+      ]
+    },
+    {
+      "term": "profileType",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "ProfileResponse_1"
+      ]
+    },
+    {
+      "term": "profileUid",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ProfileResponse_1",
+        "CreateSimpleDraftOpenRequest.ProfileScheduling",
+        "CreateSimpleScheduleOpenRequest.ProfileScheduling"
+      ]
+    },
+    {
+      "term": "profileUids",
+      "type": "array",
+      "description": "List of profile UIDs associated with the note",
+      "usedIn": [
+        "CreateCalendarNoteOpenRequest",
+        "CreateCalendarNoteOpenResponse",
+        "SearchCalendarNoteOpenRequest",
+        "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem",
+        "SimplePublishOpenRequest"
+      ]
+    },
+    {
+      "term": "profiles",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "ProfileListResponse"
+      ]
+    },
+    {
+      "term": "publicUrl",
+      "type": "string",
+      "description": "CDN URL to access the uploaded file",
+      "usedIn": [
+        "StudioMediaUploadOpenResponse"
+      ]
+    },
+    {
+      "term": "publishDate",
+      "type": "string",
+      "description": "Publish date of the post",
+      "usedIn": [
+        "Post"
+      ]
+    },
+    {
+      "term": "publishedCarouselCount",
+      "type": "integer",
+      "description": "Number of published carousels",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "ThreadsAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedLinksCount",
+      "type": "integer",
+      "description": "Number of published links",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedMediaCount",
+      "type": "integer",
+      "description": "Number of published media",
+      "usedIn": [
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedPhotoCount",
+      "type": "integer",
+      "description": "Number of published photos",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "ThreadsAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedPhotosCount",
+      "type": "integer",
+      "description": "Number of published photos",
+      "usedIn": [
+        "FacebookAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedPostsCount",
+      "type": "integer",
+      "description": "Number of posts published",
+      "usedIn": [
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedReelCount",
+      "type": "integer",
+      "description": "Number of published reels",
+      "usedIn": [
+        "InstagramAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedStatusCount",
+      "type": "integer",
+      "description": "Number of published status",
+      "usedIn": [
+        "FacebookAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedStoryCount",
+      "type": "integer",
+      "description": "Number of published stories",
+      "usedIn": [
+        "InstagramAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedTextCount",
+      "type": "integer",
+      "description": "Number of published texts",
+      "usedIn": [
+        "ThreadsAudienceInsight",
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishedVideoCount",
+      "type": "integer",
+      "description": "Number of published videos",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TiktokAudienceInsight",
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "publishingDate",
+      "type": "string",
+      "description": "Publishing date",
+      "usedIn": [
+        "ContentReportData",
+        "GroupOfPostsSummary.SchedulingSummary"
+      ]
+    },
+    {
+      "term": "publishingDates",
+      "type": "array",
+      "description": "List of publishing dates in ISO-8601 format",
+      "usedIn": [
+        "CreateSimpleDraftOpenRequest.ProfileScheduling",
+        "CreateSimpleScheduleOpenRequest.ProfileScheduling"
+      ]
+    },
+    {
+      "term": "query",
+      "type": "object",
+      "description": "Query parameters used for the search",
+      "usedIn": [
+        "SearchCalendarNoteOpenResponse"
+      ]
+    },
+    {
+      "term": "quotePostsCount",
+      "type": "integer",
+      "description": "Number of reposts",
+      "usedIn": [
+        "TwitterAudienceInsight",
+        "TwitterContentReportInsight"
+      ]
+    },
+    {
+      "term": "quotesCount",
+      "type": "integer",
+      "description": "Number of quotes",
+      "usedIn": [
+        "ThreadsAudienceInsight"
+      ]
+    },
+    {
+      "term": "reachCount",
+      "type": "integer",
+      "description": "Number of reach",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "InstagramStoryContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight",
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "reactionsCount",
+      "type": "integer",
+      "description": "Number of reactions",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "receivedCommentsCount",
+      "type": "integer",
+      "description": "Number of received comments",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "TiktokAudienceInsight",
+        "TwitterAudienceInsight",
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "receivedMessagesCount",
+      "type": "integer",
+      "description": "Number of received messages",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "removedCount",
+      "type": "integer",
+      "description": "Number of removed items",
+      "usedIn": [
+        "LinkedinAudienceInsight"
+      ]
+    },
+    {
+      "term": "removedFromPlaylistCount",
+      "type": "integer",
+      "description": "Number of times videos of the channel were removed from a playlist",
+      "usedIn": [
+        "YoutubeAudienceInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "repliesCount",
+      "type": "integer",
+      "description": "Number of replies",
+      "usedIn": [
+        "CommunityManagementAction",
+        "ThreadsAudienceInsight",
+        "TwitterAudienceInsight"
+      ]
+    },
+    {
+      "term": "repostsCount",
+      "type": "integer",
+      "description": "Number of reposts",
+      "usedIn": [
+        "ThreadsAudienceInsight",
+        "TwitterContentReportInsight"
+      ]
+    },
+    {
+      "term": "requiredHeaders",
+      "type": "object",
+      "description": "Headers the client MUST include in the PUT upload request",
+      "usedIn": [
+        "StudioMediaUploadOpenResponse"
+      ]
+    },
+    {
+      "term": "reviewsCount",
+      "type": "integer",
+      "description": "Number of reviews",
+      "usedIn": [
+        "CommunityManagementAction"
+      ]
+    },
+    {
+      "term": "role",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "AccountManagerSummary",
+        "SharedCalendarManagerSummary",
+        "SharedCalendarManagerSummaryResponse"
+      ]
+    },
+    {
+      "term": "sadCount",
+      "type": "integer",
+      "description": "Number of sad (reaction)",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "savesCount",
+      "type": "integer",
+      "description": "Number of saves",
+      "usedIn": [
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight"
+      ]
+    },
+    {
+      "term": "scheduling",
+      "type": "array",
+      "description": "Scheduling configuration for different profiles",
+      "usedIn": [
+        "CreateSimpleDraftOpenRequest",
+        "CreateSimpleScheduleOpenRequest"
+      ]
+    },
+    {
+      "term": "schedulingSummary",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "GroupOfPostsSummary.ProfileSchedulingSummary"
+      ]
+    },
+    {
+      "term": "screenName",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary",
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse"
+      ]
+    },
+    {
+      "term": "sentRepliesCount",
+      "type": "integer",
+      "description": "Number of replies sent",
+      "usedIn": [
+        "CommunityManagementByDate"
+      ]
+    },
+    {
+      "term": "sentiment",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "AbstractItem",
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "sentimentScore",
+      "type": "number",
+      "description": "Ratio of positive items divided by the total of positive and negative items",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "InstagramAudienceInsight",
+        "LinkedinAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TwitterAudienceInsight",
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "sentiments",
+      "type": "array",
+      "description": "Filter items by sentiment.",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items:get"
+      ]
+    },
+    {
+      "term": "service",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "AccountSummary",
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse",
+        "SpecificServiceAccountData"
+      ]
+    },
+    {
+      "term": "serviceId",
+      "type": "object",
+      "description": "",
+      "usedIn": [
+        "AccountSummary",
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse"
+      ]
+    },
+    {
+      "term": "shareCount",
+      "type": "integer",
+      "description": "Number of shares",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "sharesCount",
+      "type": "integer",
+      "description": "Number of shares",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight",
+        "InstagramContentReportInsight",
+        "LinkedinAudienceInsight",
+        "LinkedinContentReportInsight",
+        "TiktokAudienceInsight",
+        "TwitterAudienceInsight",
+        "YoutubeAudienceInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "since",
+      "type": "string",
+      "description": "Filter notes after this timestamp",
+      "usedIn": [
+        "SearchCalendarNoteOpenRequest"
+      ]
+    },
+    {
+      "term": "socialNetworkId",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "ProfileResponse_1"
+      ]
+    },
+    {
+      "term": "specificServiceAccountData",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "startDate",
+      "type": "string",
+      "description": "Note start date",
+      "usedIn": [
+        "CreateCalendarNoteOpenRequest",
+        "CreateCalendarNoteOpenResponse",
+        "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem"
+      ]
+    },
+    {
+      "term": "status",
+      "type": "",
+      "description": "",
+      "usedIn": [
+        "GroupOfPostsSummary.SchedulingSummary",
+        "Post"
+      ]
+    },
+    {
+      "term": "subscribersCount",
+      "type": "integer",
+      "description": "Number of total subscribers",
+      "usedIn": [
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "subscribersGainCount",
+      "type": "integer",
+      "description": "Number of subscribers gained from the video",
+      "usedIn": [
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "subscribersGainedCount",
+      "type": "integer",
+      "description": "Number of subscribers gained",
+      "usedIn": [
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "subscribersLostCount",
+      "type": "integer",
+      "description": "Number of subscribers lost",
+      "usedIn": [
+        "YoutubeAudienceInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "subscribersNetGrowth",
+      "type": "integer",
+      "description": "Net subscriber growth (gained minus lost)",
+      "usedIn": [
+        "YoutubeAudienceInsight"
+      ]
+    },
+    {
+      "term": "swipeForwardCount",
+      "type": "integer",
+      "description": "Number of swipes forward",
+      "usedIn": [
+        "InstagramStoryContentReportInsight"
+      ]
+    },
+    {
+      "term": "tags",
+      "type": "array",
+      "description": "Label applied to the post",
+      "usedIn": [
+        "ContentReportData"
+      ]
+    },
+    {
+      "term": "tapBackCount",
+      "type": "integer",
+      "description": "Number of taps back",
+      "usedIn": [
+        "InstagramStoryContentReportInsight"
+      ]
+    },
+    {
+      "term": "tapForwardCount",
+      "type": "integer",
+      "description": "Number of taps forward",
+      "usedIn": [
+        "InstagramStoryContentReportInsight"
+      ]
+    },
+    {
+      "term": "text",
+      "type": "string",
+      "description": "Text of the published post",
+      "usedIn": [
+        "ContentReportData",
+        "CreateSimpleDraftOpenRequest",
+        "CreateSimpleScheduleOpenRequest",
+        "SimplePublishOpenRequest",
+        "AbstractItem",
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "timeZone",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "timestamp",
+      "type": "string",
+      "description": "Timestamp of the event",
+      "usedIn": [
+        "GroupOfPostsEvent",
+        "PublishingPostEvent",
+        "InboxItemEvent",
+        "ListeningItemEvent"
+      ]
+    },
+    {
+      "term": "title",
+      "type": "string",
+      "description": "Note title",
+      "usedIn": [
+        "CreateCalendarNoteOpenRequest",
+        "CreateCalendarNoteOpenResponse",
+        "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem"
+      ]
+    },
+    {
+      "term": "toReview",
+      "type": "boolean",
+      "description": "Filter items that need review (not yet approved by a manager)",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items:get"
+      ]
+    },
+    {
+      "term": "tokenValid",
+      "type": "boolean",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "type",
+      "type": "string",
+      "description": "Type of post",
+      "usedIn": [
+        "InstagramContentReportInsight",
+        "InstagramStoryContentReportInsight",
+        "AccountSummary",
+        "CreateSimpleDraftOpenRequest",
+        "CreateSimpleScheduleOpenRequest",
+        "GroupOfPostsSummary",
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse",
+        "SimplePublishOpenRequest",
+        "AbstractItem",
+        "GroupOfPostsEvent",
+        "PublishingPostEvent",
+        "InboxItemEvent",
+        "ListeningItemEvent",
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "types",
+      "type": "array",
+      "description": "Filter items by type/source. Specify the types of items to retrieve (e.g., organicComment, adsComment, conversation, ...)",
+      "usedIn": [
+        "parameter:/v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items:get"
+      ]
+    },
+    {
+      "term": "uid",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary",
+        "CreateCalendarNoteOpenResponse",
+        "GroupOfPostsSummary",
+        "GroupOfPostsSummary.SchedulingSummary",
+        "Profile",
+        "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem",
+        "SharedCalendarAccountSummary",
+        "SharedCalendarAccountSummaryResponse",
+        "GroupOfPostsEvent",
+        "PublishingPostEvent",
+        "InboxItemEvent",
+        "ListeningItemEvent",
+        "GroupOfPosts",
+        "Post",
+        "Profile1",
+        "User"
+      ]
+    },
+    {
+      "term": "until",
+      "type": "string",
+      "description": "Filter notes before this timestamp",
+      "usedIn": [
+        "SearchCalendarNoteOpenRequest"
+      ]
+    },
+    {
+      "term": "uploadUrl",
+      "type": "string",
+      "description": "Presigned PUT URL - upload file with HTTP PUT to this URL",
+      "usedIn": [
+        "StudioMediaUploadOpenResponse"
+      ]
+    },
+    {
+      "term": "username",
+      "type": "string",
+      "description": "Name of the user who performed community management actions",
+      "usedIn": [
+        "CommunityManagementAction",
+        "ContentReportData",
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "v",
+      "type": "string",
+      "description": "API version",
+      "usedIn": [
+        "parameter:/v1.0/core/organizations:get"
+      ]
+    },
+    {
+      "term": "version",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "video30sViewViewersCount",
+      "type": "integer",
+      "description": "The number of people who viewed your videos for at least 30 seconds, or for nearly their total length if they're shorter than 30 seconds",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "video30sViewsAutoplayedCount",
+      "type": "integer",
+      "description": "The number of times your videos automatically played at each interval as a percentage of all automatic views",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "video30sViewsClickedToPlayCount",
+      "type": "integer",
+      "description": "The number of times your videos played at each interval as a percentage of all views, after people clicked play",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "video3sViewsTimeWatchedCount",
+      "type": "integer",
+      "description": "The time watched in milliseconds for video play-pause cycles that are at least 3 seconds",
+      "usedIn": [
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoCompletedCount",
+      "type": "integer",
+      "description": "Number of times the video is watched fully",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoPlaysCount",
+      "type": "integer",
+      "description": "Number of video plays",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoReplaysCount",
+      "type": "integer",
+      "description": "Number of video replays",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewTimeByAgeAndGender",
+      "type": "object",
+      "description": "Video viewing time (sec) by age and gender",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewTimeByCountry",
+      "type": "object",
+      "description": "Video viewing time (sec) by country",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewTimeByRegion",
+      "type": "object",
+      "description": "Video viewing time (sec) by region",
+      "usedIn": [
+        "FacebookContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewersCount",
+      "type": "integer",
+      "description": "Number of viewers who made engaged plays on the video",
+      "usedIn": [
+        "LinkedinContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewersRateByCity",
+      "type": "object",
+      "description": "Video viewers rate by city",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewersRateByCountry",
+      "type": "object",
+      "description": "Video viewers rate by country",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewersRateByGender",
+      "type": "object",
+      "description": "Video viewers rate by gender",
+      "usedIn": [
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewsAutoplayCount",
+      "type": "integer",
+      "description": "Number of video views generated by autoplayed videos",
+      "usedIn": [
+        "FacebookAudienceInsight"
+      ]
+    },
+    {
+      "term": "videoViewsClickCount",
+      "type": "integer",
+      "description": "Number of video views generated by click-to-play",
+      "usedIn": [
+        "FacebookAudienceInsight"
+      ]
+    },
+    {
+      "term": "videoViewsCount",
+      "type": "integer",
+      "description": "Number of video views",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "LinkedinContentReportInsight",
+        "TwitterContentReportInsight",
+        "YoutubeAudienceInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewsTimeWatchedCount",
+      "type": "integer",
+      "description": "Average viewing time",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "LinkedinContentReportInsight",
+        "TikTokContentReportInsight"
+      ]
+    },
+    {
+      "term": "videoViewsTimeWatchedRate",
+      "type": "number",
+      "description": "Ratio of average viewing time to total video duration as a percentage",
+      "usedIn": [
+        "FacebookContentReportInsight",
+        "YoutubeContentReportInsight"
+      ]
+    },
+    {
+      "term": "viewsCount",
+      "type": "integer",
+      "description": "Number of views",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight",
+        "InstagramAudienceInsight",
+        "ThreadsAudienceInsight",
+        "TikTokContentReportInsight",
+        "TiktokAudienceInsight"
+      ]
+    },
+    {
+      "term": "workspaceId",
+      "type": "integer",
+      "description": "",
+      "usedIn": [
+        "ProfileResponse_1",
+        "WorkspaceResponse_1",
+        "AbstractItem",
+        "InboxItem"
+      ]
+    },
+    {
+      "term": "workspaceName",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "WorkspaceResponse_1"
+      ]
+    },
+    {
+      "term": "workspaceUid",
+      "type": "string",
+      "description": "",
+      "usedIn": [
+        "AccountSummary"
+      ]
+    },
+    {
+      "term": "workspaces",
+      "type": "array",
+      "description": "",
+      "usedIn": [
+        "WorkspaceListResponse"
+      ]
+    },
+    {
+      "term": "wowCount",
+      "type": "integer",
+      "description": "Number of wow (reaction)",
+      "usedIn": [
+        "FacebookAudienceInsight",
+        "FacebookContentReportInsight"
+      ]
+    }
+  ]
+}

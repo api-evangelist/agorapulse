@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FacebookCommunityManagementAction",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/CommunityManagementAction"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "removedCount": {
+          "type": "integer",
+          "description": "Number of items removed",
+          "format": "int64",
+          "example": 5
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Profile",
+  "required": [
+    "name",
+    "network",
+    "uid"
+  ],
+  "type": "object",
+  "properties": {
+    "uid": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "network": {
+      "$ref": "#/components/schemas/Network"
+    }
+  }
+}

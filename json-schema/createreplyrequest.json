@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateReplyRequest",
+  "required": [
+    "itemId",
+    "message"
+  ],
+  "type": "object",
+  "properties": {
+    "itemId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The ID of the inbox item to reply to",
+      "example": "item123"
+    },
+    "message": {
+      "minLength": 1,
+      "type": "string",
+      "description": "The content of the reply message",
+      "example": "Thank you for your message!"
+    },
+    "privateReply": {
+      "type": "boolean",
+      "description": "When true, sends a private message to the user instead of replying publicly to a public item (e.g., comment). The reply will be sent as a direct/private message. Supported by Facebook, Instagram, and Twitter.",
+      "default": false
+    },
+    "excludedUsers": {
+      "type": "array",
+      "description": "List of user IDs to exclude from mentions (Twitter-specific)",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "description": "Request to create a reply to an inbox item"
+}

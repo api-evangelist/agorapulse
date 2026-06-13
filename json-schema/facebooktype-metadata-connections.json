@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FacebookType.Metadata.Connections",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AbstractFacebookType"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "home": {
+          "type": "string"
+        },
+        "feed": {
+          "type": "string"
+        },
+        "friends": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "activities": {
+          "type": "string"
+        },
+        "interests": {
+          "type": "string"
+        },
+        "music": {
+          "type": "string"
+        },
+        "books": {
+          "type": "string"
+        },
+        "movies": {
+          "type": "string"
+        },
+        "television": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "string"
+        },
+        "posts": {
+          "type": "string"
+        },
+        "tagged": {
+          "type": "string"
+        },
+        "statuses": {
+          "type": "string"
+        },
+        "links": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "photos": {
+          "type": "string"
+        },
+        "albums": {
+          "type": "string"
+        },
+        "events": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "string"
+        },
+        "videos": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        },
+        "inbox": {
+          "type": "string"
+        },
+        "outbox": {
+          "type": "string"
+        },
+        "updates": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

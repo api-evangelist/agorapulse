@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PublishingPost",
+  "type": "object",
+  "properties": {
+    "actor": {
+      "$ref": "#/components/schemas/User",
+      "description": "The user who performed the action"
+    },
+    "post": {
+      "$ref": "#/components/schemas/Post",
+      "description": "The post information"
+    }
+  }
+}

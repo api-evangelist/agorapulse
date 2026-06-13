@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AccountManagerSummary",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "managerId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "role": {
+      "$ref": "#/components/schemas/AccountRole"
+    }
+  }
+}

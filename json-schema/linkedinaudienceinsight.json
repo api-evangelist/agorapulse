@@ -1,0 +1,250 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LinkedinAudienceInsight",
+  "type": "object",
+  "properties": {
+    "clicksCount": {
+      "type": "integer",
+      "description": "Number of clicks on posts",
+      "format": "int64",
+      "example": 2
+    },
+    "organicClicksCount": {
+      "type": "integer",
+      "description": "Number of organic clicks on posts",
+      "format": "int64",
+      "example": 0
+    },
+    "paidClicksCount": {
+      "type": "integer",
+      "description": "Number of paid clicks on posts",
+      "format": "int64",
+      "example": 2
+    },
+    "receivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of received comments",
+      "format": "int64",
+      "example": 6
+    },
+    "organicReceivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of organic comments received on posts",
+      "format": "int64",
+      "example": 1
+    },
+    "paidReceivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of paid comments received on posts",
+      "format": "int64",
+      "example": 5
+    },
+    "organicEngagementCount": {
+      "type": "integer",
+      "description": "Number of organic engagement",
+      "format": "int64",
+      "example": 33
+    },
+    "paidEngagementCount": {
+      "type": "integer",
+      "description": "Number of paid engagement",
+      "format": "int64",
+      "example": 66
+    },
+    "engagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of engagement to impression as a percentage",
+      "format": "double",
+      "example": 24.2
+    },
+    "organicEngagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of organic engagement to impression as a percentage",
+      "format": "double",
+      "example": 10.2
+    },
+    "paidEngagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of paid engagement to impression as a percentage",
+      "format": "double",
+      "example": 14
+    },
+    "engagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "format": "double",
+      "example": 34.8
+    },
+    "organicEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of organic engagement to reach as a percentage",
+      "format": "double",
+      "example": 14.4
+    },
+    "paidEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of paid engagement to reach as a percentage",
+      "format": "double",
+      "example": 20.4
+    },
+    "followersCount": {
+      "type": "integer",
+      "description": "Number of total followers",
+      "format": "int64",
+      "example": 199
+    },
+    "followersGainedCount": {
+      "type": "integer",
+      "description": "Number of followers gained",
+      "format": "int64",
+      "example": 9,
+      "deprecated": true
+    },
+    "followersNetGrowth": {
+      "type": "integer",
+      "description": "Net follower growth (gained minus lost)",
+      "format": "int64",
+      "example": 9
+    },
+    "impressionsCount": {
+      "type": "integer",
+      "description": "Number of impressions",
+      "format": "int64",
+      "example": 245
+    },
+    "organicImpressionsCount": {
+      "type": "integer",
+      "description": "Number of organic impressions",
+      "format": "int64",
+      "example": 90
+    },
+    "paidImpressionsCount": {
+      "type": "integer",
+      "description": "Number of paid impressions",
+      "format": "int64",
+      "example": 155
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 449
+    },
+    "organicLikesCount": {
+      "type": "integer",
+      "description": "Number of organic likes on posts",
+      "format": "int64",
+      "example": 58
+    },
+    "paidLikesCount": {
+      "type": "integer",
+      "description": "Number of paid likes on posts",
+      "format": "int64",
+      "example": 391
+    },
+    "organicFollowersGainedCount": {
+      "type": "integer",
+      "description": "Number of organic followers gained",
+      "format": "int64",
+      "example": 24,
+      "deprecated": true
+    },
+    "paidFollowersGainedCount": {
+      "type": "integer",
+      "description": "Number of paid followers gained",
+      "format": "int64",
+      "example": 54,
+      "deprecated": true
+    },
+    "organicFollowersNetGrowth": {
+      "type": "integer",
+      "description": "Net organic follower growth (gained minus lost)",
+      "format": "int64",
+      "example": 24
+    },
+    "paidFollowersNetGrowth": {
+      "type": "integer",
+      "description": "Net paid follower growth (gained minus lost)",
+      "format": "int64",
+      "example": 54
+    },
+    "publishedPostsCount": {
+      "type": "integer",
+      "description": "Number of posts published",
+      "format": "int64",
+      "example": 9
+    },
+    "reachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 192
+    },
+    "organicReachCount": {
+      "type": "integer",
+      "description": "Number of organic reach",
+      "format": "int64",
+      "example": 43
+    },
+    "paidReachCount": {
+      "type": "integer",
+      "description": "Number of paid reach",
+      "format": "int64",
+      "example": 149
+    },
+    "removedCount": {
+      "type": "integer",
+      "description": "Number of removed items",
+      "format": "int64",
+      "example": 1
+    },
+    "positiveItemsCount": {
+      "type": "integer",
+      "description": "Number of items with positive sentiment",
+      "format": "int64",
+      "example": 24
+    },
+    "neutralItemsCount": {
+      "type": "integer",
+      "description": "Number of items with neutral sentiment",
+      "format": "int64",
+      "example": 2
+    },
+    "negativeItemsCount": {
+      "type": "integer",
+      "description": "Number of items with negative sentiment",
+      "format": "int64",
+      "example": 12
+    },
+    "sentimentScore": {
+      "type": "number",
+      "description": "Ratio of positive items divided by the total of positive and negative items",
+      "format": "double",
+      "example": 50
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 23
+    },
+    "organicSharesCount": {
+      "type": "integer",
+      "description": "Number of organic shares",
+      "format": "int64",
+      "example": 3
+    },
+    "paidSharesCount": {
+      "type": "integer",
+      "description": "Number of paid shares",
+      "format": "int64",
+      "example": 20
+    }
+  },
+  "description": "Linkedin Specific Audience Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AudienceReportByDate"
+    }
+  ]
+}

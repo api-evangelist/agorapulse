@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ListeningItemEvent",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "Unique identifier for the event"
+    },
+    "type": {
+      "$ref": "#/components/schemas/ListeningItemEventType",
+      "description": "The event type"
+    },
+    "action": {
+      "$ref": "#/components/schemas/ListeningItemAction",
+      "description": "The action"
+    },
+    "organizationId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier for the organization"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the event"
+    },
+    "payload": {
+      "type": "string",
+      "description": "The payload containing the listening item information"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "operationId": "health",
+  "status": "200",
+  "example": {
+    "value": "OK"
+  }
+}

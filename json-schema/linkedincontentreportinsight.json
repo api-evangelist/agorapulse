@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LinkedinContentReportInsight",
+  "type": "object",
+  "properties": {
+    "clicksCount": {
+      "type": "integer",
+      "description": "Number of clicks",
+      "format": "int64",
+      "example": 573
+    },
+    "organicClicksCount": {
+      "type": "integer",
+      "description": "Number of organic clicks",
+      "format": "int64",
+      "example": 173
+    },
+    "paidClicksCount": {
+      "type": "integer",
+      "description": "Number of paid clicks",
+      "format": "int64",
+      "example": 400
+    },
+    "commentsCount": {
+      "type": "integer",
+      "description": "Number of comments",
+      "format": "int64",
+      "example": 23
+    },
+    "organicCommentsCount": {
+      "type": "integer",
+      "description": "Number of organic comments",
+      "format": "int64",
+      "example": 5
+    },
+    "paidCommentsCount": {
+      "type": "integer",
+      "description": "Number of paid comments",
+      "format": "int64",
+      "example": 18
+    },
+    "organicEngagementCount": {
+      "type": "integer",
+      "description": "Number of organic engagement",
+      "format": "int64",
+      "example": 220
+    },
+    "paidEngagementCount": {
+      "type": "integer",
+      "description": "Number of paid engagement",
+      "format": "int64",
+      "example": 557
+    },
+    "engagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of engagement to impression as a percentage",
+      "format": "double",
+      "example": 68.8
+    },
+    "organicEngagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of organic engagement to impression as a percentage",
+      "format": "double",
+      "example": 21.2
+    },
+    "paidEngagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of paid engagement to impression as a percentage",
+      "format": "double",
+      "example": 47.6
+    },
+    "engagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "format": "double",
+      "example": 65.2
+    },
+    "organicEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of organic engagement to reach as a percentage",
+      "format": "double",
+      "example": 17.5
+    },
+    "paidEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of paid engagement to reach as a percentage",
+      "format": "double",
+      "example": 47.7
+    },
+    "impressionsCount": {
+      "type": "integer",
+      "description": "Number of impressions",
+      "format": "int64",
+      "example": 756
+    },
+    "organicImpressionsCount": {
+      "type": "integer",
+      "description": "Number of organic impressions",
+      "format": "int64",
+      "example": 276
+    },
+    "paidImpressionsCount": {
+      "type": "integer",
+      "description": "Number of paid impressions",
+      "format": "int64",
+      "example": 480
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 215
+    },
+    "organicLikesCount": {
+      "type": "integer",
+      "description": "Number of organic likes",
+      "format": "int64",
+      "example": 69
+    },
+    "paidLikesCount": {
+      "type": "integer",
+      "description": "Number of paid likes",
+      "format": "int64",
+      "example": 146
+    },
+    "reachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 1200
+    },
+    "organicReachCount": {
+      "type": "integer",
+      "description": "Number of organic reach",
+      "format": "int64",
+      "example": 350
+    },
+    "paidReachCount": {
+      "type": "integer",
+      "description": "Number of paid reach",
+      "format": "int64",
+      "example": 850
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 21
+    },
+    "organicSharesCount": {
+      "type": "integer",
+      "description": "Number of organic shares",
+      "format": "int64",
+      "example": 3
+    },
+    "paidSharesCount": {
+      "type": "integer",
+      "description": "Number of paid shares",
+      "format": "int64",
+      "example": 18
+    },
+    "videoViewsCount": {
+      "type": "integer",
+      "description": "Number of video views",
+      "format": "int64",
+      "example": 86
+    },
+    "videoViewsTimeWatchedCount": {
+      "type": "integer",
+      "description": "The time the video was watched in milliseconds",
+      "format": "int64",
+      "example": 86
+    },
+    "videoViewersCount": {
+      "type": "integer",
+      "description": "Number of viewers who made engaged plays on the video",
+      "format": "int64",
+      "example": 86
+    },
+    "video3sViewsTimeWatchedCount": {
+      "type": "integer",
+      "description": "The time watched in milliseconds for video play-pause cycles that are at least 3 seconds",
+      "format": "int64",
+      "example": 86
+    },
+    "organicVideoViewsCount": {
+      "type": "integer",
+      "description": "Number of organic video views",
+      "format": "int64",
+      "example": 14
+    },
+    "paidVideoViewsCount": {
+      "type": "integer",
+      "description": "Number of paid video views",
+      "format": "int64",
+      "example": 72
+    }
+  },
+  "description": "Linkedin Specific Content Report Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContentReportData"
+    }
+  ]
+}

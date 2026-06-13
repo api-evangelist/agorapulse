@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "YoutubeAudienceInsight",
+  "type": "object",
+  "properties": {
+    "addedToPlaylistCount": {
+      "type": "integer",
+      "description": "Number of times videos of the channel were added to a playlist",
+      "format": "int64",
+      "example": 300
+    },
+    "dislikesCount": {
+      "type": "integer",
+      "description": "Number of dislikes",
+      "format": "int64",
+      "example": 30
+    },
+    "estimatedWatchedTimeCount": {
+      "type": "integer",
+      "description": "Time people spent watching videos from your channel in minutes",
+      "format": "int64",
+      "example": 10
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 12
+    },
+    "publishedVideoCount": {
+      "type": "integer",
+      "description": "Number of published videos",
+      "format": "int64",
+      "example": 1
+    },
+    "removedFromPlaylistCount": {
+      "type": "integer",
+      "description": "Number of times videos of the channel were removed from a playlist",
+      "format": "int64",
+      "example": 3
+    },
+    "subscribersCount": {
+      "type": "integer",
+      "description": "Number of total subscribers",
+      "format": "int64",
+      "example": 199
+    },
+    "subscribersLostCount": {
+      "type": "integer",
+      "description": "Number of subscribers lost",
+      "format": "int64",
+      "example": 9
+    },
+    "subscribersGainedCount": {
+      "type": "integer",
+      "description": "Number of subscribers gained",
+      "format": "int64",
+      "example": 9
+    },
+    "subscribersNetGrowth": {
+      "type": "integer",
+      "description": "Net subscriber growth (gained minus lost)",
+      "format": "int64",
+      "example": 0
+    },
+    "videoViewsCount": {
+      "type": "integer",
+      "description": "Number of times your videos has been viewed",
+      "format": "int64",
+      "example": 90
+    },
+    "receivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of received comments",
+      "format": "int64",
+      "example": 6
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 23
+    },
+    "positiveItemsCount": {
+      "type": "integer",
+      "description": "Number of items with positive sentiment",
+      "format": "int64",
+      "example": 24
+    },
+    "neutralItemsCount": {
+      "type": "integer",
+      "description": "Number of items with neutral sentiment",
+      "format": "int64",
+      "example": 2
+    },
+    "negativeItemsCount": {
+      "type": "integer",
+      "description": "Number of items with negative sentiment",
+      "format": "int64",
+      "example": 12
+    },
+    "sentimentScore": {
+      "type": "number",
+      "description": "Ratio of positive items divided by the total of positive and negative items",
+      "format": "double",
+      "example": 50
+    }
+  },
+  "description": "Youtube Specific Audience Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AudienceReportByDate"
+    }
+  ]
+}

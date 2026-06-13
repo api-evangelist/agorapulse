@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SharedCalendarManagerSummary",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "account": {
+      "$ref": "#/components/schemas/SharedCalendarAccountSummary"
+    },
+    "manager": {
+      "$ref": "#/components/schemas/SharedCalendarAccountManagerSummary"
+    },
+    "role": {
+      "$ref": "#/components/schemas/AccountRole"
+    }
+  }
+}

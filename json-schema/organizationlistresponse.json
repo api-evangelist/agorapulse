@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrganizationListResponse",
+  "required": [
+    "organizations"
+  ],
+  "type": "object",
+  "properties": {
+    "organizations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OrganizationResponse"
+      }
+    }
+  },
+  "description": "List of organizations"
+}

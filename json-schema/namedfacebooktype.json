@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NamedFacebookType",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/FacebookType"
+    },
+    {
+      "$ref": "#/components/schemas/AbstractFacebookType"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

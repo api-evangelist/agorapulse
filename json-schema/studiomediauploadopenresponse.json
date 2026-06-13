@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StudioMediaUploadOpenResponse",
+  "type": "object",
+  "properties": {
+    "uploadUrl": {
+      "type": "string",
+      "description": "Presigned PUT URL - upload file with HTTP PUT to this URL"
+    },
+    "filename": {
+      "type": "string",
+      "description": "S3 object key"
+    },
+    "publicUrl": {
+      "type": "string",
+      "description": "CDN URL to access the uploaded file"
+    },
+    "baseUrl": {
+      "type": "string",
+      "description": "S3 URL to access the uploaded file"
+    },
+    "expiresInSeconds": {
+      "type": "integer",
+      "description": "URL expiration in seconds",
+      "format": "int32"
+    },
+    "requiredHeaders": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Headers the client MUST include in the PUT upload request"
+    }
+  },
+  "description": "Presigned URL for direct S3 upload"
+}

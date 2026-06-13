@@ -1,0 +1,662 @@
+{
+  "@context": {
+    "@vocab": "https://api.agorapulse.com/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "agorapulse": "https://api.agorapulse.com/vocab#",
+    "account": "agorapulse:account",
+    "accountManagers": "agorapulse:accountManagers",
+    "accountSummary": "agorapulse:accountSummary",
+    "action": "agorapulse:action",
+    "actions": "agorapulse:actions",
+    "actor": "agorapulse:actor",
+    "addedLabels": "agorapulse:addedLabels",
+    "addedToPlaylistCount": "agorapulse:addedToPlaylistCount",
+    "agorapulseLink": "agorapulse:agorapulseLink",
+    "alias": "agorapulse:alias",
+    "angryCount": "agorapulse:angryCount",
+    "averageResponseTime": "agorapulse:averageResponseTime",
+    "avgWatchTime": "agorapulse:avgWatchTime",
+    "baseUrl": "agorapulse:baseUrl",
+    "body": "agorapulse:body",
+    "clicksCount": "agorapulse:clicksCount",
+    "color": "agorapulse:color",
+    "commentCount": "agorapulse:commentCount",
+    "commentsCount": "agorapulse:commentsCount",
+    "completionRate": "agorapulse:completionRate",
+    "contentStudioSessionId": "agorapulse:contentStudioSessionId",
+    "contentType": "agorapulse:contentType",
+    "creationDate": "agorapulse:creationDate",
+    "creator": "agorapulse:creator",
+    "data": "agorapulse:data",
+    "date": "agorapulse:date",
+    "dislikeCount": "agorapulse:dislikeCount",
+    "dislikesCount": "agorapulse:dislikesCount",
+    "email": "agorapulse:email",
+    "endDate": "agorapulse:endDate",
+    "engagementCount": "agorapulse:engagementCount",
+    "engagementRatePerImpression": "agorapulse:engagementRatePerImpression",
+    "engagementRatePerReach": "agorapulse:engagementRatePerReach",
+    "engagementRatePerView": "agorapulse:engagementRatePerView",
+    "estimatedWatchedTimeCount": "agorapulse:estimatedWatchedTimeCount",
+    "excludedUsers": "agorapulse:excludedUsers",
+    "exitCount": "agorapulse:exitCount",
+    "expiresInSeconds": "agorapulse:expiresInSeconds",
+    "extension": "agorapulse:extension",
+    "fileSize": "agorapulse:fileSize",
+    "filename": "agorapulse:filename",
+    "followersCount": "agorapulse:followersCount",
+    "followersGainedCount": "agorapulse:followersGainedCount",
+    "followersLostCount": "agorapulse:followersLostCount",
+    "followersNetGrowth": "agorapulse:followersNetGrowth",
+    "fullName": "agorapulse:fullName",
+    "groupOfPosts": "agorapulse:groupOfPosts",
+    "groupUid": "agorapulse:groupUid",
+    "hahaCount": "agorapulse:hahaCount",
+    "id": "agorapulse:id",
+    "identityId": "agorapulse:identityId",
+    "impressionsCount": "agorapulse:impressionsCount",
+    "inboxSyncEnabled": "agorapulse:inboxSyncEnabled",
+    "industryId": "agorapulse:industryId",
+    "industryName": "agorapulse:industryName",
+    "itemId": "agorapulse:itemId",
+    "items": "agorapulse:items",
+    "labels": "agorapulse:labels",
+    "likeCount": "agorapulse:likeCount",
+    "likesCount": "agorapulse:likesCount",
+    "link": "agorapulse:link",
+    "linkClicksCount": "agorapulse:linkClicksCount",
+    "locked": "agorapulse:locked",
+    "loveCount": "agorapulse:loveCount",
+    "manager": "agorapulse:manager",
+    "managerId": "agorapulse:managerId",
+    "managerOrganizationRole": "agorapulse:managerOrganizationRole",
+    "managers": "agorapulse:managers",
+    "mediaUrls": "agorapulse:mediaUrls",
+    "mentionsCount": "agorapulse:mentionsCount",
+    "message": "agorapulse:message",
+    "name": "agorapulse:name",
+    "negativeItemsCount": "agorapulse:negativeItemsCount",
+    "network": "agorapulse:network",
+    "networkLink": "agorapulse:networkLink",
+    "neutralItemsCount": "agorapulse:neutralItemsCount",
+    "notes": "agorapulse:notes",
+    "offset": "agorapulse:offset",
+    "organicAvgWatchTime": "agorapulse:organicAvgWatchTime",
+    "organicClicksCount": "agorapulse:organicClicksCount",
+    "organicCommentsCount": "agorapulse:organicCommentsCount",
+    "organicEngagementCount": "agorapulse:organicEngagementCount",
+    "organicEngagementRatePerImpression": "agorapulse:organicEngagementRatePerImpression",
+    "organicEngagementRatePerReach": "agorapulse:organicEngagementRatePerReach",
+    "organicEngagementRatePerView": "agorapulse:organicEngagementRatePerView",
+    "organicFollowersGainedCount": "agorapulse:organicFollowersGainedCount",
+    "organicFollowersNetGrowth": "agorapulse:organicFollowersNetGrowth",
+    "organicImpressionsCount": "agorapulse:organicImpressionsCount",
+    "organicLikesCount": "agorapulse:organicLikesCount",
+    "organicReachCount": "agorapulse:organicReachCount",
+    "organicReceivedCommentsCount": "agorapulse:organicReceivedCommentsCount",
+    "organicSavesCount": "agorapulse:organicSavesCount",
+    "organicSharesCount": "agorapulse:organicSharesCount",
+    "organicVideo30sViewsCount": "agorapulse:organicVideo30sViewsCount",
+    "organicVideoCompleteViewViewersCount": "agorapulse:organicVideoCompleteViewViewersCount",
+    "organicVideoCompleteViewsCount": "agorapulse:organicVideoCompleteViewsCount",
+    "organicVideoViewsCount": "agorapulse:organicVideoViewsCount",
+    "organicViewsCount": "agorapulse:organicViewsCount",
+    "organizationId": "agorapulse:organizationId",
+    "organizationName": "agorapulse:organizationName",
+    "organizationUid": "agorapulse:organizationUid",
+    "organizations": "agorapulse:organizations",
+    "origin": "agorapulse:origin",
+    "otherClicksCount": "agorapulse:otherClicksCount",
+    "paidAvgWatchTime": "agorapulse:paidAvgWatchTime",
+    "paidClicksCount": "agorapulse:paidClicksCount",
+    "paidCommentsCount": "agorapulse:paidCommentsCount",
+    "paidEngagementCount": "agorapulse:paidEngagementCount",
+    "paidEngagementRatePerImpression": "agorapulse:paidEngagementRatePerImpression",
+    "paidEngagementRatePerReach": "agorapulse:paidEngagementRatePerReach",
+    "paidEngagementRatePerView": "agorapulse:paidEngagementRatePerView",
+    "paidFollowersGainedCount": "agorapulse:paidFollowersGainedCount",
+    "paidFollowersNetGrowth": "agorapulse:paidFollowersNetGrowth",
+    "paidImpressionsCount": "agorapulse:paidImpressionsCount",
+    "paidLikesCount": "agorapulse:paidLikesCount",
+    "paidReachCount": "agorapulse:paidReachCount",
+    "paidReceivedCommentsCount": "agorapulse:paidReceivedCommentsCount",
+    "paidSavesCount": "agorapulse:paidSavesCount",
+    "paidSharesCount": "agorapulse:paidSharesCount",
+    "paidVideo30sViewsCount": "agorapulse:paidVideo30sViewsCount",
+    "paidVideoCompleteViewViewersCount": "agorapulse:paidVideoCompleteViewViewersCount",
+    "paidVideoCompleteViewsCount": "agorapulse:paidVideoCompleteViewsCount",
+    "paidVideoViewsCount": "agorapulse:paidVideoViewsCount",
+    "paidViewsCount": "agorapulse:paidViewsCount",
+    "parentId": "agorapulse:parentId",
+    "payload": "agorapulse:payload",
+    "photoViewClicksCount": "agorapulse:photoViewClicksCount",
+    "pictureUrl": "agorapulse:pictureUrl",
+    "positiveItemsCount": "agorapulse:positiveItemsCount",
+    "post": "agorapulse:post",
+    "postUrl": "agorapulse:postUrl",
+    "posts": "agorapulse:posts",
+    "privateReply": "agorapulse:privateReply",
+    "profile": "agorapulse:profile",
+    "profileImageUrl": "agorapulse:profileImageUrl",
+    "profileName": "agorapulse:profileName",
+    "profilePictureUrl": "agorapulse:profilePictureUrl",
+    "profileScheduling": "agorapulse:profileScheduling",
+    "profileType": "agorapulse:profileType",
+    "profileUid": "agorapulse:profileUid",
+    "profileUids": "agorapulse:profileUids",
+    "profiles": "agorapulse:profiles",
+    "publicUrl": "agorapulse:publicUrl",
+    "publishDate": "agorapulse:publishDate",
+    "publishedCarouselCount": "agorapulse:publishedCarouselCount",
+    "publishedLinksCount": "agorapulse:publishedLinksCount",
+    "publishedMediaCount": "agorapulse:publishedMediaCount",
+    "publishedPhotoCount": "agorapulse:publishedPhotoCount",
+    "publishedPhotosCount": "agorapulse:publishedPhotosCount",
+    "publishedPostsCount": "agorapulse:publishedPostsCount",
+    "publishedReelCount": "agorapulse:publishedReelCount",
+    "publishedStatusCount": "agorapulse:publishedStatusCount",
+    "publishedStoryCount": "agorapulse:publishedStoryCount",
+    "publishedTextCount": "agorapulse:publishedTextCount",
+    "publishedVideoCount": "agorapulse:publishedVideoCount",
+    "publishingDate": "agorapulse:publishingDate",
+    "publishingDates": "agorapulse:publishingDates",
+    "query": "agorapulse:query",
+    "quotePostsCount": "agorapulse:quotePostsCount",
+    "quotesCount": "agorapulse:quotesCount",
+    "reachCount": "agorapulse:reachCount",
+    "reactionsCount": "agorapulse:reactionsCount",
+    "receivedCommentsCount": "agorapulse:receivedCommentsCount",
+    "receivedMessagesCount": "agorapulse:receivedMessagesCount",
+    "removedCount": "agorapulse:removedCount",
+    "removedFromPlaylistCount": "agorapulse:removedFromPlaylistCount",
+    "repliesCount": "agorapulse:repliesCount",
+    "repostsCount": "agorapulse:repostsCount",
+    "requiredHeaders": "agorapulse:requiredHeaders",
+    "reviewsCount": "agorapulse:reviewsCount",
+    "role": "agorapulse:role",
+    "sadCount": "agorapulse:sadCount",
+    "savesCount": "agorapulse:savesCount",
+    "scheduling": "agorapulse:scheduling",
+    "schedulingSummary": "agorapulse:schedulingSummary",
+    "screenName": "agorapulse:screenName",
+    "sentRepliesCount": "agorapulse:sentRepliesCount",
+    "sentiment": "agorapulse:sentiment",
+    "sentimentScore": "agorapulse:sentimentScore",
+    "service": "agorapulse:service",
+    "serviceId": "agorapulse:serviceId",
+    "shareCount": "agorapulse:shareCount",
+    "sharesCount": "agorapulse:sharesCount",
+    "since": "agorapulse:since",
+    "socialNetworkId": "agorapulse:socialNetworkId",
+    "specificServiceAccountData": "agorapulse:specificServiceAccountData",
+    "startDate": "agorapulse:startDate",
+    "status": "agorapulse:status",
+    "subscribersCount": "agorapulse:subscribersCount",
+    "subscribersGainCount": "agorapulse:subscribersGainCount",
+    "subscribersGainedCount": "agorapulse:subscribersGainedCount",
+    "subscribersLostCount": "agorapulse:subscribersLostCount",
+    "subscribersNetGrowth": "agorapulse:subscribersNetGrowth",
+    "swipeForwardCount": "agorapulse:swipeForwardCount",
+    "tags": "agorapulse:tags",
+    "tapBackCount": "agorapulse:tapBackCount",
+    "tapForwardCount": "agorapulse:tapForwardCount",
+    "text": "agorapulse:text",
+    "timeZone": "agorapulse:timeZone",
+    "timestamp": "agorapulse:timestamp",
+    "title": "agorapulse:title",
+    "tokenValid": "agorapulse:tokenValid",
+    "type": "agorapulse:type",
+    "uid": "agorapulse:uid",
+    "until": "agorapulse:until",
+    "uploadUrl": "agorapulse:uploadUrl",
+    "username": "agorapulse:username",
+    "version": "agorapulse:version",
+    "video30sViewViewersCount": "agorapulse:video30sViewViewersCount",
+    "video30sViewsAutoplayedCount": "agorapulse:video30sViewsAutoplayedCount",
+    "video30sViewsClickedToPlayCount": "agorapulse:video30sViewsClickedToPlayCount",
+    "video3sViewsTimeWatchedCount": "agorapulse:video3sViewsTimeWatchedCount",
+    "videoCompletedCount": "agorapulse:videoCompletedCount",
+    "videoPlaysCount": "agorapulse:videoPlaysCount",
+    "videoReplaysCount": "agorapulse:videoReplaysCount",
+    "videoViewTimeByAgeAndGender": "agorapulse:videoViewTimeByAgeAndGender",
+    "videoViewTimeByCountry": "agorapulse:videoViewTimeByCountry",
+    "videoViewTimeByRegion": "agorapulse:videoViewTimeByRegion",
+    "videoViewersCount": "agorapulse:videoViewersCount",
+    "videoViewersRateByCity": "agorapulse:videoViewersRateByCity",
+    "videoViewersRateByCountry": "agorapulse:videoViewersRateByCountry",
+    "videoViewersRateByGender": "agorapulse:videoViewersRateByGender",
+    "videoViewsAutoplayCount": "agorapulse:videoViewsAutoplayCount",
+    "videoViewsClickCount": "agorapulse:videoViewsClickCount",
+    "videoViewsCount": "agorapulse:videoViewsCount",
+    "videoViewsTimeWatchedCount": "agorapulse:videoViewsTimeWatchedCount",
+    "videoViewsTimeWatchedRate": "agorapulse:videoViewsTimeWatchedRate",
+    "viewsCount": "agorapulse:viewsCount",
+    "workspaceId": "agorapulse:workspaceId",
+    "workspaceName": "agorapulse:workspaceName",
+    "workspaceUid": "agorapulse:workspaceUid",
+    "workspaces": "agorapulse:workspaces",
+    "wowCount": "agorapulse:wowCount",
+    "AudienceReportByDate": {
+      "@id": "agorapulse:AudienceReportByDate",
+      "@type": "@id"
+    },
+    "CommunityManagementAction": {
+      "@id": "agorapulse:CommunityManagementAction",
+      "@type": "@id"
+    },
+    "CommunityManagementByDate": {
+      "@id": "agorapulse:CommunityManagementByDate",
+      "@type": "@id"
+    },
+    "CommunityManagementInsight": {
+      "@id": "agorapulse:CommunityManagementInsight",
+      "@type": "@id"
+    },
+    "ContentReportData": {
+      "@id": "agorapulse:ContentReportData",
+      "@type": "@id"
+    },
+    "ContentReportInsight_1": {
+      "@id": "agorapulse:ContentReportInsight_1",
+      "@type": "@id"
+    },
+    "FacebookAudienceInsight": {
+      "@id": "agorapulse:FacebookAudienceInsight",
+      "@type": "@id"
+    },
+    "FacebookCommunityManagementAction": {
+      "@id": "agorapulse:FacebookCommunityManagementAction",
+      "@type": "@id"
+    },
+    "FacebookContentReportInsight": {
+      "@id": "agorapulse:FacebookContentReportInsight",
+      "@type": "@id"
+    },
+    "InstagramAudienceInsight": {
+      "@id": "agorapulse:InstagramAudienceInsight",
+      "@type": "@id"
+    },
+    "InstagramCommunityManagementAction": {
+      "@id": "agorapulse:InstagramCommunityManagementAction",
+      "@type": "@id"
+    },
+    "InstagramContentReportInsight": {
+      "@id": "agorapulse:InstagramContentReportInsight",
+      "@type": "@id"
+    },
+    "InstagramStoryContentReportInsight": {
+      "@id": "agorapulse:InstagramStoryContentReportInsight",
+      "@type": "@id"
+    },
+    "LinkedinAudienceInsight": {
+      "@id": "agorapulse:LinkedinAudienceInsight",
+      "@type": "@id"
+    },
+    "LinkedinCommunityManagementAction": {
+      "@id": "agorapulse:LinkedinCommunityManagementAction",
+      "@type": "@id"
+    },
+    "LinkedinContentReportInsight": {
+      "@id": "agorapulse:LinkedinContentReportInsight",
+      "@type": "@id"
+    },
+    "OpenAudienceInsight": {
+      "@id": "agorapulse:OpenAudienceInsight",
+      "@type": "@id"
+    },
+    "ThreadsAudienceInsight": {
+      "@id": "agorapulse:ThreadsAudienceInsight",
+      "@type": "@id"
+    },
+    "TikTokContentReportInsight": {
+      "@id": "agorapulse:TikTokContentReportInsight",
+      "@type": "@id"
+    },
+    "TiktokAudienceInsight": {
+      "@id": "agorapulse:TiktokAudienceInsight",
+      "@type": "@id"
+    },
+    "TiktokCommunityManagementAction": {
+      "@id": "agorapulse:TiktokCommunityManagementAction",
+      "@type": "@id"
+    },
+    "TwitterAudienceInsight": {
+      "@id": "agorapulse:TwitterAudienceInsight",
+      "@type": "@id"
+    },
+    "TwitterContentReportInsight": {
+      "@id": "agorapulse:TwitterContentReportInsight",
+      "@type": "@id"
+    },
+    "YoutubeAudienceInsight": {
+      "@id": "agorapulse:YoutubeAudienceInsight",
+      "@type": "@id"
+    },
+    "YoutubeCommunityManagementAction": {
+      "@id": "agorapulse:YoutubeCommunityManagementAction",
+      "@type": "@id"
+    },
+    "YoutubeContentReportInsight": {
+      "@id": "agorapulse:YoutubeContentReportInsight",
+      "@type": "@id"
+    },
+    "OrganizationListResponse": {
+      "@id": "agorapulse:OrganizationListResponse",
+      "@type": "@id"
+    },
+    "OrganizationResponse": {
+      "@id": "agorapulse:OrganizationResponse",
+      "@type": "@id"
+    },
+    "ProfileListResponse": {
+      "@id": "agorapulse:ProfileListResponse",
+      "@type": "@id"
+    },
+    "ProfileResponse_1": {
+      "@id": "agorapulse:ProfileResponse_1",
+      "@type": "@id"
+    },
+    "SocialNetworkChannel": {
+      "@id": "agorapulse:SocialNetworkChannel",
+      "@type": "@id"
+    },
+    "WorkspaceListResponse": {
+      "@id": "agorapulse:WorkspaceListResponse",
+      "@type": "@id"
+    },
+    "WorkspaceResponse_1": {
+      "@id": "agorapulse:WorkspaceResponse_1",
+      "@type": "@id"
+    },
+    "AbstractFacebookType": {
+      "@id": "agorapulse:AbstractFacebookType",
+      "@type": "@id"
+    },
+    "AccountManagerSummary": {
+      "@id": "agorapulse:AccountManagerSummary",
+      "@type": "@id"
+    },
+    "AccountRole": {
+      "@id": "agorapulse:AccountRole",
+      "@type": "@id"
+    },
+    "AccountSummary": {
+      "@id": "agorapulse:AccountSummary",
+      "@type": "@id"
+    },
+    "AccountType": {
+      "@id": "agorapulse:AccountType",
+      "@type": "@id"
+    },
+    "CreateCalendarNoteOpenRequest": {
+      "@id": "agorapulse:CreateCalendarNoteOpenRequest",
+      "@type": "@id"
+    },
+    "CreateCalendarNoteOpenResponse": {
+      "@id": "agorapulse:CreateCalendarNoteOpenResponse",
+      "@type": "@id"
+    },
+    "CreateSimpleDraftOpenRequest": {
+      "@id": "agorapulse:CreateSimpleDraftOpenRequest",
+      "@type": "@id"
+    },
+    "CreateSimpleDraftOpenRequest.ProfileScheduling": {
+      "@id": "agorapulse:CreateSimpleDraftOpenRequest.ProfileScheduling",
+      "@type": "@id"
+    },
+    "CreateSimpleDraftOpenResponse": {
+      "@id": "agorapulse:CreateSimpleDraftOpenResponse",
+      "@type": "@id"
+    },
+    "CreateSimpleScheduleOpenRequest": {
+      "@id": "agorapulse:CreateSimpleScheduleOpenRequest",
+      "@type": "@id"
+    },
+    "CreateSimpleScheduleOpenRequest.ProfileScheduling": {
+      "@id": "agorapulse:CreateSimpleScheduleOpenRequest.ProfileScheduling",
+      "@type": "@id"
+    },
+    "CreateSimpleScheduleOpenResponse": {
+      "@id": "agorapulse:CreateSimpleScheduleOpenResponse",
+      "@type": "@id"
+    },
+    "FacebookType": {
+      "@id": "agorapulse:FacebookType",
+      "@type": "@id"
+    },
+    "FacebookType.Metadata": {
+      "@id": "agorapulse:FacebookType.Metadata",
+      "@type": "@id"
+    },
+    "FacebookType.Metadata.Connections": {
+      "@id": "agorapulse:FacebookType.Metadata.Connections",
+      "@type": "@id"
+    },
+    "GroupOfPostsSummary": {
+      "@id": "agorapulse:GroupOfPostsSummary",
+      "@type": "@id"
+    },
+    "GroupOfPostsSummary.ProfileSchedulingSummary": {
+      "@id": "agorapulse:GroupOfPostsSummary.ProfileSchedulingSummary",
+      "@type": "@id"
+    },
+    "GroupOfPostsSummary.SchedulingSummary": {
+      "@id": "agorapulse:GroupOfPostsSummary.SchedulingSummary",
+      "@type": "@id"
+    },
+    "NamedFacebookType": {
+      "@id": "agorapulse:NamedFacebookType",
+      "@type": "@id"
+    },
+    "Network": {
+      "@id": "agorapulse:Network",
+      "@type": "@id"
+    },
+    "PostStatus": {
+      "@id": "agorapulse:PostStatus",
+      "@type": "@id"
+    },
+    "PostType": {
+      "@id": "agorapulse:PostType",
+      "@type": "@id"
+    },
+    "Profile": {
+      "@id": "agorapulse:Profile",
+      "@type": "@id"
+    },
+    "PublishingCalendarNoteColor": {
+      "@id": "agorapulse:PublishingCalendarNoteColor",
+      "@type": "@id"
+    },
+    "SearchCalendarNoteOpenRequest": {
+      "@id": "agorapulse:SearchCalendarNoteOpenRequest",
+      "@type": "@id"
+    },
+    "SearchCalendarNoteOpenResponse": {
+      "@id": "agorapulse:SearchCalendarNoteOpenResponse",
+      "@type": "@id"
+    },
+    "SearchCalendarNoteOpenResponse.CalendarNoteOpenItem": {
+      "@id": "agorapulse:SearchCalendarNoteOpenResponse.CalendarNoteOpenItem",
+      "@type": "@id"
+    },
+    "Service": {
+      "@id": "agorapulse:Service",
+      "@type": "@id"
+    },
+    "SharedCalendarAccountManagerSummary": {
+      "@id": "agorapulse:SharedCalendarAccountManagerSummary",
+      "@type": "@id"
+    },
+    "SharedCalendarAccountManagerSummaryResponse": {
+      "@id": "agorapulse:SharedCalendarAccountManagerSummaryResponse",
+      "@type": "@id"
+    },
+    "SharedCalendarAccountSummary": {
+      "@id": "agorapulse:SharedCalendarAccountSummary",
+      "@type": "@id"
+    },
+    "SharedCalendarAccountSummaryResponse": {
+      "@id": "agorapulse:SharedCalendarAccountSummaryResponse",
+      "@type": "@id"
+    },
+    "SharedCalendarManagerSummary": {
+      "@id": "agorapulse:SharedCalendarManagerSummary",
+      "@type": "@id"
+    },
+    "SharedCalendarManagerSummaryResponse": {
+      "@id": "agorapulse:SharedCalendarManagerSummaryResponse",
+      "@type": "@id"
+    },
+    "SimplePublishOpenRequest": {
+      "@id": "agorapulse:SimplePublishOpenRequest",
+      "@type": "@id"
+    },
+    "SpecificServiceAccountData": {
+      "@id": "agorapulse:SpecificServiceAccountData",
+      "@type": "@id"
+    },
+    "StudioMediaUploadOpenRequest": {
+      "@id": "agorapulse:StudioMediaUploadOpenRequest",
+      "@type": "@id"
+    },
+    "StudioMediaUploadOpenResponse": {
+      "@id": "agorapulse:StudioMediaUploadOpenResponse",
+      "@type": "@id"
+    },
+    "AbstractItem": {
+      "@id": "agorapulse:AbstractItem",
+      "@type": "@id"
+    },
+    "CreateReplyRequest": {
+      "@id": "agorapulse:CreateReplyRequest",
+      "@type": "@id"
+    },
+    "ItemCreator": {
+      "@id": "agorapulse:ItemCreator",
+      "@type": "@id"
+    },
+    "ItemDTO": {
+      "@id": "agorapulse:ItemDTO",
+      "@type": "@id"
+    },
+    "ItemFilterType": {
+      "@id": "agorapulse:ItemFilterType",
+      "@type": "@id"
+    },
+    "ItemSentiment": {
+      "@id": "agorapulse:ItemSentiment",
+      "@type": "@id"
+    },
+    "ItemType": {
+      "@id": "agorapulse:ItemType",
+      "@type": "@id"
+    },
+    "ItemsSearchResponse": {
+      "@id": "agorapulse:ItemsSearchResponse",
+      "@type": "@id"
+    },
+    "MessagesSearchResponse": {
+      "@id": "agorapulse:MessagesSearchResponse",
+      "@type": "@id"
+    },
+    "Order": {
+      "@id": "agorapulse:Order",
+      "@type": "@id"
+    },
+    "GroupOfPostsEvent": {
+      "@id": "agorapulse:GroupOfPostsEvent",
+      "@type": "@id"
+    },
+    "PublishingPostEvent": {
+      "@id": "agorapulse:PublishingPostEvent",
+      "@type": "@id"
+    },
+    "InboxItemEvent": {
+      "@id": "agorapulse:InboxItemEvent",
+      "@type": "@id"
+    },
+    "ListeningItemEvent": {
+      "@id": "agorapulse:ListeningItemEvent",
+      "@type": "@id"
+    },
+    "InboxItem": {
+      "@id": "agorapulse:InboxItem",
+      "@type": "@id"
+    },
+    "GroupOfPosts": {
+      "@id": "agorapulse:GroupOfPosts",
+      "@type": "@id"
+    },
+    "GroupOfPostsEventType": {
+      "@id": "agorapulse:GroupOfPostsEventType",
+      "@type": "@id"
+    },
+    "PublishingPostEventType": {
+      "@id": "agorapulse:PublishingPostEventType",
+      "@type": "@id"
+    },
+    "InboxItemEventType": {
+      "@id": "agorapulse:InboxItemEventType",
+      "@type": "@id"
+    },
+    "ListeningItemEventType": {
+      "@id": "agorapulse:ListeningItemEventType",
+      "@type": "@id"
+    },
+    "InboxItemType": {
+      "@id": "agorapulse:InboxItemType",
+      "@type": "@id"
+    },
+    "InboxItemSentiment": {
+      "@id": "agorapulse:InboxItemSentiment",
+      "@type": "@id"
+    },
+    "PublishingPost": {
+      "@id": "agorapulse:PublishingPost",
+      "@type": "@id"
+    },
+    "Post": {
+      "@id": "agorapulse:Post",
+      "@type": "@id"
+    },
+    "Profile1": {
+      "@id": "agorapulse:Profile1",
+      "@type": "@id"
+    },
+    "GroupOfPostsAction": {
+      "@id": "agorapulse:GroupOfPostsAction",
+      "@type": "@id"
+    },
+    "PostAction": {
+      "@id": "agorapulse:PostAction",
+      "@type": "@id"
+    },
+    "PostStatus1": {
+      "@id": "agorapulse:PostStatus1",
+      "@type": "@id"
+    },
+    "InboxItemAction": {
+      "@id": "agorapulse:InboxItemAction",
+      "@type": "@id"
+    },
+    "ListeningItemAction": {
+      "@id": "agorapulse:ListeningItemAction",
+      "@type": "@id"
+    },
+    "User": {
+      "@id": "agorapulse:User",
+      "@type": "@id"
+    },
+    "InboxItemCreator": {
+      "@id": "agorapulse:InboxItemCreator",
+      "@type": "@id"
+    }
+  },
+  "@type": "schema:APIReference",
+  "schema:name": "Agorapulse API",
+  "schema:description": "Agorapulse's Open API documentation",
+  "schema:version": "1.0",
+  "schema:url": "https://api.agorapulse.com/docs"
+}

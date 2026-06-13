@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateSimpleScheduleOpenRequest.ProfileScheduling",
+  "required": [
+    "profileUid",
+    "publishingDates"
+  ],
+  "type": "object",
+  "properties": {
+    "profileUid": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier of the profile",
+      "example": "profile_123"
+    },
+    "publishingDates": {
+      "minItems": 1,
+      "type": "array",
+      "description": "List of publishing dates in ISO-8601 format",
+      "example": [
+        "2024-12-25T10:00:00.000Z",
+        "2024-12-26T15:30:00.000Z"
+      ],
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "description": "Scheduling configuration for a specific profile"
+}

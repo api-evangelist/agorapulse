@@ -1,0 +1,198 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InstagramContentReportInsight",
+  "type": "object",
+  "properties": {
+    "avgWatchTime": {
+      "type": "integer",
+      "description": "Average viewing time",
+      "format": "int64",
+      "example": 12
+    },
+    "organicAvgWatchTime": {
+      "type": "integer",
+      "description": "Average organic viewing time",
+      "format": "int64",
+      "example": 12
+    },
+    "paidAvgWatchTime": {
+      "type": "integer",
+      "description": "Average paid viewing time",
+      "format": "int64",
+      "example": 12
+    },
+    "commentsCount": {
+      "type": "integer",
+      "description": "Number of comments",
+      "format": "int64",
+      "example": 2
+    },
+    "organicCommentsCount": {
+      "type": "integer",
+      "description": "Number of organic comments",
+      "format": "int64",
+      "example": 2
+    },
+    "paidCommentsCount": {
+      "type": "integer",
+      "description": "Number of paid comments",
+      "format": "int64",
+      "example": 2
+    },
+    "engagementCount": {
+      "type": "integer",
+      "description": "Number of engagement",
+      "format": "int64",
+      "example": 99
+    },
+    "organicEngagementCount": {
+      "type": "integer",
+      "description": "Number of organic engagement",
+      "format": "int64",
+      "example": 23
+    },
+    "paidEngagementCount": {
+      "type": "integer",
+      "description": "Number of paid engagement",
+      "format": "int64",
+      "example": 76
+    },
+    "engagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of engagement to impression as a percentage",
+      "format": "double",
+      "example": 50
+    },
+    "engagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "format": "double",
+      "example": 50
+    },
+    "organicEngagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of organic engagement to organic impression as a percentage",
+      "format": "double",
+      "example": 50
+    },
+    "organicEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of organic engagement to organic reach as a percentage",
+      "format": "double",
+      "example": 50
+    },
+    "paidEngagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of paid engagement to paid impression as a percentage",
+      "format": "double",
+      "example": 50
+    },
+    "paidEngagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of paid engagement to paid reach as a percentage",
+      "format": "double",
+      "example": 50
+    },
+    "impressionsCount": {
+      "type": "integer",
+      "description": "Number of impressions",
+      "format": "int64",
+      "example": 245
+    },
+    "organicImpressionsCount": {
+      "type": "integer",
+      "description": "Number of organic impressions",
+      "format": "int64",
+      "example": 245
+    },
+    "paidImpressionsCount": {
+      "type": "integer",
+      "description": "Number of paid impressions",
+      "format": "int64",
+      "example": 245
+    },
+    "reachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 1264
+    },
+    "organicReachCount": {
+      "type": "integer",
+      "description": "Number of organic reach",
+      "format": "int64",
+      "example": 345
+    },
+    "paidReachCount": {
+      "type": "integer",
+      "description": "Number of paid reach",
+      "format": "int64",
+      "example": 291
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 854
+    },
+    "organicLikesCount": {
+      "type": "integer",
+      "description": "Number of organic likes",
+      "format": "int64",
+      "example": 854
+    },
+    "paidLikesCount": {
+      "type": "integer",
+      "description": "Number of paid likes",
+      "format": "int64",
+      "example": 854
+    },
+    "savesCount": {
+      "type": "integer",
+      "description": "Number of saves",
+      "format": "int64",
+      "example": 234
+    },
+    "organicSavesCount": {
+      "type": "integer",
+      "description": "Number of organic saves",
+      "format": "int64",
+      "example": 234
+    },
+    "paidSavesCount": {
+      "type": "integer",
+      "description": "Number of paid saves",
+      "format": "int64",
+      "example": 234
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 46
+    },
+    "organicSharesCount": {
+      "type": "integer",
+      "description": "Number of organic shares",
+      "format": "int64",
+      "example": 46
+    },
+    "paidSharesCount": {
+      "type": "integer",
+      "description": "Number of paid shares",
+      "format": "int64",
+      "example": 46
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of post",
+      "example": "post"
+    }
+  },
+  "description": "Instagram Specific Content Report Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContentReportData"
+    }
+  ]
+}

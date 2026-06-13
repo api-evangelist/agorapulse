@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ContentReportData",
+  "type": "object",
+  "properties": {
+    "engagementCount": {
+      "type": "integer",
+      "description": "Number of engagement",
+      "format": "int64",
+      "example": 577
+    },
+    "id": {
+      "type": "string",
+      "description": "Post id on the native network",
+      "example": "12232123"
+    },
+    "publishingDate": {
+      "type": "string",
+      "description": "Publishing date",
+      "format": "date-time",
+      "example": null
+    },
+    "postUrl": {
+      "type": "string",
+      "description": "Post url on the native network"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Label applied to the post",
+      "example": [
+        "test",
+        "test2"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "text": {
+      "type": "string",
+      "description": "Text of the published post",
+      "example": "This is a post"
+    },
+    "username": {
+      "type": "string",
+      "description": "Name of the user who published the post",
+      "example": "User123"
+    }
+  },
+  "description": "Common properties for content report insight",
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/FacebookContentReportInsight"
+    },
+    {
+      "$ref": "#/components/schemas/TwitterContentReportInsight"
+    },
+    {
+      "$ref": "#/components/schemas/LinkedinContentReportInsight"
+    },
+    {
+      "$ref": "#/components/schemas/InstagramContentReportInsight"
+    },
+    {
+      "$ref": "#/components/schemas/InstagramStoryContentReportInsight"
+    },
+    {
+      "$ref": "#/components/schemas/TikTokContentReportInsight"
+    },
+    {
+      "$ref": "#/components/schemas/YoutubeContentReportInsight"
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FacebookContentReportInsight",
+  "type": "object",
+  "properties": {
+    "angryCount": {
+      "type": "integer",
+      "description": "Number of angry (reaction)",
+      "format": "int64",
+      "example": 830
+    },
+    "clicksCount": {
+      "type": "integer",
+      "description": "Number of clicks",
+      "format": "int64",
+      "example": 830
+    },
+    "commentsCount": {
+      "type": "integer",
+      "description": "Number of comments",
+      "format": "int64",
+      "example": 830
+    },
+    "engagementCount": {
+      "type": "integer",
+      "description": "Number of engagement",
+      "format": "int64",
+      "example": 99
+    },
+    "engagementRatePerView": {
+      "type": "number",
+      "description": "Ratio of engagement to view as a percentage",
+      "format": "double",
+      "example": 25.7
+    },
+    "engagementRatePerReach": {
+      "type": "number",
+      "description": "Ratio of engagement to reach as a percentage",
+      "format": "double",
+      "example": 64.2
+    },
+    "hahaCount": {
+      "type": "integer",
+      "description": "Number of haha (reaction)",
+      "format": "int64",
+      "example": 830
+    },
+    "likeCount": {
+      "type": "integer",
+      "description": "Number of likes (reaction)",
+      "format": "int64",
+      "example": 830
+    },
+    "linkClicksCount": {
+      "type": "integer",
+      "description": "Number of clicks on links",
+      "format": "int64",
+      "example": 752
+    },
+    "loveCount": {
+      "type": "integer",
+      "description": "Number of love (reaction)",
+      "format": "int64",
+      "example": 830
+    },
+    "viewsCount": {
+      "type": "integer",
+      "description": "Number of views",
+      "format": "int64",
+      "example": 245
+    },
+    "organicViewsCount": {
+      "type": "integer",
+      "description": "Number of organic views",
+      "format": "int64",
+      "example": 45
+    },
+    "organicReachCount": {
+      "type": "integer",
+      "description": "Number of organic reach",
+      "format": "int64",
+      "example": 345
+    },
+    "organicVideo30sViewsCount": {
+      "type": "integer",
+      "description": "The number of times your videos played for at least 30 seconds, or for nearly their total length if they're shorter than 30 seconds",
+      "format": "int64",
+      "example": 345
+    },
+    "organicVideoCompleteViewsCount": {
+      "type": "integer",
+      "description": "The number of times your videos played from the beginning to 97%, or more, of its length",
+      "format": "int64",
+      "example": 345
+    },
+    "organicVideoCompleteViewViewersCount": {
+      "type": "integer",
+      "description": "The number of people who viewed your videos from the beginning to 97%, or more, of its length",
+      "format": "int64",
+      "example": 345
+    },
+    "otherClicksCount": {
+      "type": "integer",
+      "description": "Number of other clicks",
+      "format": "int64",
+      "example": 836
+    },
+    "paidViewsCount": {
+      "type": "integer",
+      "description": "Number of paid views",
+      "format": "int64",
+      "example": 200
+    },
+    "paidReachCount": {
+      "type": "integer",
+      "description": "Number of paid reach",
+      "format": "int64",
+      "example": 291
+    },
+    "photoViewClicksCount": {
+      "type": "integer",
+      "description": "Number of clicks to view photos",
+      "format": "int64",
+      "example": 918
+    },
+    "paidVideo30sViewsCount": {
+      "type": "integer",
+      "description": "The number of times your promoted videos played for at least 30 seconds, or for nearly their total length if they're shorter than 30 seconds",
+      "format": "int64",
+      "example": 918
+    },
+    "paidVideoCompleteViewsCount": {
+      "type": "integer",
+      "description": "The number of times your promoted videos played from the beginning to 97%, or more, of its length",
+      "format": "int64",
+      "example": 918
+    },
+    "paidVideoCompleteViewViewersCount": {
+      "type": "integer",
+      "description": "The number of people who viewed your promoted videos from the beginning to 97%, or more, of its length",
+      "format": "int64",
+      "example": 918
+    },
+    "reachCount": {
+      "type": "integer",
+      "description": "Number of reach",
+      "format": "int64",
+      "example": 1200
+    },
+    "reactionsCount": {
+      "type": "integer",
+      "description": "Total number of reactions",
+      "format": "int64",
+      "example": 1200
+    },
+    "sadCount": {
+      "type": "integer",
+      "description": "Number of sad (reaction)",
+      "format": "int64",
+      "example": 1200
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 1200
+    },
+    "videoPlaysCount": {
+      "type": "integer",
+      "description": "Number of video plays",
+      "format": "int64",
+      "example": 23
+    },
+    "videoViewsCount": {
+      "type": "integer",
+      "description": "Number of video views",
+      "format": "int64",
+      "example": 23
+    },
+    "organicVideoViewsCount": {
+      "type": "integer",
+      "description": "Number of organic video views",
+      "format": "int64",
+      "example": 3
+    },
+    "paidVideoViewsCount": {
+      "type": "integer",
+      "description": "Number of paid video views",
+      "format": "int64",
+      "example": 20
+    },
+    "videoViewsTimeWatchedCount": {
+      "type": "integer",
+      "description": "Average viewing time",
+      "format": "int64",
+      "example": 12
+    },
+    "videoViewsTimeWatchedRate": {
+      "type": "number",
+      "description": "Ratio of average viewing time to total video duration as a percentage",
+      "format": "double",
+      "example": 75.8
+    },
+    "video30sViewsAutoplayedCount": {
+      "type": "integer",
+      "description": "The number of times your videos automatically played at each interval as a percentage of all automatic views",
+      "format": "int64",
+      "example": 12
+    },
+    "video30sViewsClickedToPlayCount": {
+      "type": "integer",
+      "description": "The number of times your videos played at each interval as a percentage of all views, after people clicked play",
+      "format": "int64",
+      "example": 12
+    },
+    "video30sViewViewersCount": {
+      "type": "integer",
+      "description": "The number of people who viewed your videos for at least 30 seconds, or for nearly their total length if they're shorter than 30 seconds",
+      "format": "int64",
+      "example": 12
+    },
+    "videoViewTimeByAgeAndGender": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": "Video viewing time (sec) by age and gender",
+      "example": {
+        "F.18-24": 120,
+        "M.25-34": 300
+      }
+    },
+    "videoViewTimeByCountry": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": "Video viewing time (sec) by country",
+      "example": {
+        "France (FR)": 60,
+        "Germany (DE)": 240
+      }
+    },
+    "videoViewTimeByRegion": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": "Video viewing time (sec) by region",
+      "example": {
+        "Queensland - Australia": 48,
+        "England - United Kingdom": 26,
+        "California - United States": 120
+      }
+    },
+    "wowCount": {
+      "type": "integer",
+      "description": "Number of wow (reaction)",
+      "format": "int64",
+      "example": 1200
+    }
+  },
+  "description": "Facebook Specific Content Report Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContentReportData"
+    }
+  ]
+}

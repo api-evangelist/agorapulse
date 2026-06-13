@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProfileResponse_1",
+  "required": [
+    "profileName",
+    "profileType",
+    "profileUid",
+    "socialNetworkId",
+    "workspaceId"
+  ],
+  "type": "object",
+  "properties": {
+    "profileUid": {
+      "type": "string"
+    },
+    "profileName": {
+      "type": "string"
+    },
+    "profileType": {
+      "$ref": "#/components/schemas/SocialNetworkChannel"
+    },
+    "socialNetworkId": {
+      "type": "string"
+    },
+    "workspaceId": {
+      "type": "integer",
+      "format": "int64"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StudioMediaUploadOpenRequest",
+  "required": [
+    "contentType",
+    "extension",
+    "fileSize",
+    "origin"
+  ],
+  "type": "object",
+  "properties": {
+    "extension": {
+      "minLength": 1,
+      "type": "string",
+      "description": "File extension",
+      "example": "jpg"
+    },
+    "fileSize": {
+      "minimum": 0,
+      "exclusiveMinimum": true,
+      "type": "integer",
+      "description": "File size in bytes",
+      "format": "int64",
+      "example": 1048576
+    },
+    "contentType": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Content type (MIME)",
+      "example": "image/jpeg"
+    },
+    "origin": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Origin of the upload request",
+      "example": "lovable"
+    },
+    "contentStudioSessionId": {
+      "type": "string",
+      "description": "Optional Content Studio session ID for grouping uploads",
+      "nullable": true
+    }
+  },
+  "description": "Request to obtain a presigned upload URL for a studio media"
+}

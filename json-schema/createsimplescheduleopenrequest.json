@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateSimpleScheduleOpenRequest",
+  "required": [
+    "scheduling",
+    "type"
+  ],
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Text content of the post",
+      "example": "This is my social media post"
+    },
+    "type": {
+      "type": "object",
+      "description": "Type of the post",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PostType"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "link": {
+      "type": "string",
+      "description": "Link URL to be included in the post",
+      "example": "https://example.com"
+    },
+    "labels": {
+      "type": "array",
+      "description": "Set of labels/tags to categorize the post",
+      "example": [
+        "marketing",
+        "promotion"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "mediaUrls": {
+      "type": "array",
+      "description": "List of media URLs (images, videos) to be included",
+      "example": [
+        "https://example.com/image.jpg"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "scheduling": {
+      "minItems": 1,
+      "type": "array",
+      "description": "Scheduling configuration for different profiles",
+      "items": {
+        "$ref": "#/components/schemas/CreateSimpleScheduleOpenRequest.ProfileScheduling"
+      }
+    }
+  },
+  "description": "Request to create a scheduled post"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SharedCalendarAccountManagerSummaryResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "identityId": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "pictureUrl": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkspaceResponse_1",
+  "required": [
+    "organizationId",
+    "workspaceId",
+    "workspaceName"
+  ],
+  "type": "object",
+  "properties": {
+    "workspaceId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "workspaceName": {
+      "type": "string"
+    },
+    "organizationId": {
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "description": "Single workspace"
+}

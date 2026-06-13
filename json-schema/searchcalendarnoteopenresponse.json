@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SearchCalendarNoteOpenResponse",
+  "type": "object",
+  "properties": {
+    "notes": {
+      "type": "array",
+      "description": "List of calendar notes matching the search criteria",
+      "items": {
+        "$ref": "#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem"
+      }
+    },
+    "query": {
+      "type": "object",
+      "description": "Query parameters used for the search",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SearchCalendarNoteOpenRequest"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "description": "Response containing search results for calendar notes"
+}

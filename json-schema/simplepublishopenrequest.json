@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SimplePublishOpenRequest",
+  "required": [
+    "profileUids",
+    "type"
+  ],
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Text content of the post",
+      "example": "This is my social media post"
+    },
+    "type": {
+      "type": "object",
+      "description": "Type of the post",
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PostType"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "link": {
+      "type": "string",
+      "description": "Link URL to be included in the post",
+      "example": "https://example.com"
+    },
+    "labels": {
+      "type": "array",
+      "description": "Set of labels/tags to categorize the post",
+      "example": [
+        "marketing",
+        "promotion"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "mediaUrls": {
+      "type": "array",
+      "description": "List of media URLs (images, videos) to be included",
+      "example": [
+        "https://example.com/image.jpg"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "profileUids": {
+      "minItems": 1,
+      "type": "array",
+      "description": "List of profile UIDs the post will be published to",
+      "example": [
+        "profile_123",
+        "profile_456"
+      ],
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "description": "Request to publish a post immediately"
+}

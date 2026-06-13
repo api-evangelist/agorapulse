@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GroupOfPosts",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "Unique identifier for the group of posts"
+    },
+    "actor": {
+      "$ref": "#/components/schemas/User",
+      "description": "The user who performed the action"
+    },
+    "link": {
+      "type": "string",
+      "description": "Link to the post in Agorapulse application"
+    },
+    "labels": {
+      "type": "array",
+      "items": "string",
+      "description": "Labels associated with the group of posts"
+    },
+    "posts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Post"
+      },
+      "description": "List of posts in the group"
+    }
+  }
+}

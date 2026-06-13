@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AudienceReportByDate",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "Date in ISO format YYYY-MM-DD",
+      "example": "2020-04-18T00:00:00.000Z"
+    },
+    "engagementCount": {
+      "type": "integer",
+      "description": "Number of engagement",
+      "format": "int64",
+      "example": 99
+    }
+  },
+  "description": "Common properties for audience report insight",
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/FacebookAudienceInsight"
+    },
+    {
+      "$ref": "#/components/schemas/TwitterAudienceInsight"
+    },
+    {
+      "$ref": "#/components/schemas/LinkedinAudienceInsight"
+    },
+    {
+      "$ref": "#/components/schemas/InstagramAudienceInsight"
+    },
+    {
+      "$ref": "#/components/schemas/TiktokAudienceInsight"
+    },
+    {
+      "$ref": "#/components/schemas/YoutubeAudienceInsight"
+    },
+    {
+      "$ref": "#/components/schemas/ThreadsAudienceInsight"
+    }
+  ]
+}

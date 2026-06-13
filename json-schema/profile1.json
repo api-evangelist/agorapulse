@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Profile1",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "Unique identifier for the profile"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the profile"
+    },
+    "network": {
+      "$ref": "#/components/schemas/Network",
+      "description": "The social network of the profile"
+    }
+  }
+}

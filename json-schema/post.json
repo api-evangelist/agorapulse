@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Post",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "Unique identifier for the post"
+    },
+    "agorapulseLink": {
+      "type": "string",
+      "description": "Link to the post in Agorapulse application"
+    },
+    "networkLink": {
+      "type": "string",
+      "description": "Link to the post in the social network"
+    },
+    "publishDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Publish date of the post"
+    },
+    "groupUid": {
+      "type": "string",
+      "description": "Unique identifier for the group of posts if applicable"
+    },
+    "profile": {
+      "$ref": "#/components/schemas/Profile1",
+      "description": "The social network profile associated with the post"
+    },
+    "status": {
+      "$ref": "#/components/schemas/PostStatus1",
+      "description": "Status of the post"
+    }
+  }
+}

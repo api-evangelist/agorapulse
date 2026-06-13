@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GroupOfPostsSummary.SchedulingSummary",
+  "required": [
+    "publishingDate",
+    "status",
+    "uid"
+  ],
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string"
+    },
+    "publishingDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "$ref": "#/components/schemas/PostStatus"
+    }
+  }
+}

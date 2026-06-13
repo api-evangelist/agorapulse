@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CommunityManagementAction",
+  "type": "object",
+  "properties": {
+    "averageResponseTime": {
+      "type": "integer",
+      "description": "Average time to respond",
+      "format": "int64",
+      "example": 15
+    },
+    "repliesCount": {
+      "type": "integer",
+      "description": "Number of replies",
+      "format": "int64",
+      "example": 2
+    },
+    "reviewsCount": {
+      "type": "integer",
+      "description": "Number of reviews",
+      "format": "int64",
+      "example": 10
+    },
+    "username": {
+      "type": "string",
+      "description": "Name of the user who performed community management actions",
+      "example": "User123"
+    }
+  }
+}

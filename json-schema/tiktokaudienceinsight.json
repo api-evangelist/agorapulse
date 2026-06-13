@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TiktokAudienceInsight",
+  "type": "object",
+  "properties": {
+    "followersCount": {
+      "type": "integer",
+      "description": "Number of total followers",
+      "format": "int64",
+      "example": 199
+    },
+    "followersGainedCount": {
+      "type": "integer",
+      "description": "Number of followers gained (only available for Tiktok business)",
+      "format": "int64",
+      "example": 9
+    },
+    "followersLostCount": {
+      "type": "integer",
+      "description": "Number of followers lost (only available for Tiktok business)",
+      "format": "int64",
+      "example": 2
+    },
+    "followersNetGrowth": {
+      "type": "integer",
+      "description": "Net follower growth (gained minus lost)",
+      "format": "int64",
+      "example": 7
+    },
+    "engagementRatePerView": {
+      "type": "number",
+      "description": "Ratio of engagement to view as a percentage",
+      "format": "double",
+      "example": 24.2
+    },
+    "viewsCount": {
+      "type": "integer",
+      "description": "Number of views",
+      "format": "int64",
+      "example": 90
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 12
+    },
+    "publishedVideoCount": {
+      "type": "integer",
+      "description": "Number of published videos",
+      "format": "int64",
+      "example": 1
+    },
+    "receivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of received comments",
+      "format": "int64",
+      "example": 6
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 23
+    }
+  },
+  "description": "Tiktok Specific Audience Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AudienceReportByDate"
+    }
+  ]
+}

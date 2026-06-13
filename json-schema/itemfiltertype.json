@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ItemFilterType",
+  "type": "string",
+  "description": "Enum representing the possible item types that can be used for filtering items in the inbox. These values correspond to the item types available in the UI filter menu.\n\nThe enum values map to the frontend itemTypes used in the filter UI:\n\n* **Facebook:** adsComment, organicComment, conversation, mention, rating\n* **Instagram:** adsComment, organicComment, conversation, reelComment, mention, storyMentionConversation\n* **Twitter:** mention, conversation\n* **LinkedIn:** adsComment, organicComment, mention\n* **TikTok:** adsComment, organicComment\n* **Threads:** organicComment, mention",
+  "enum": [
+    "ADS_COMMENT",
+    "ORGANIC_COMMENT",
+    "CONVERSATION",
+    "MENTION",
+    "RATING",
+    "REEL_COMMENT",
+    "STORY_MENTION_CONVERSATION"
+  ],
+  "x-enum-descriptions": [
+    "Comments on promoted/sponsored posts (ads). Supported by: Facebook, Instagram, LinkedIn, TikTok",
+    "Organic comments (not on ads). Supported by: Facebook, Instagram, LinkedIn, TikTok, Threads",
+    "Private messages / direct messages. Supported by: Facebook, Instagram, Twitter",
+    "Mentions of the profile/page. Supported by: Facebook, Instagram, Twitter, LinkedIn, Threads",
+    "Reviews/ratings. Supported by: Facebook only",
+    "Comments on Instagram Reels. Supported by: Instagram only",
+    "Conversations from story mentions. Supported by: Instagram only Note: This is different from the 'storyMention' source used in automated moderation rules. In the UI filters, this represents conversations grouped by story mentions."
+  ],
+  "x-type": "String"
+}

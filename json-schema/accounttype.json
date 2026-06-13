@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AccountType",
+  "type": "string",
+  "enum": [
+    "facebookGroup",
+    "facebookPage",
+    "facebookProfile",
+    "googleLocation",
+    "googlePage",
+    "instagramBusiness",
+    "instagramPersonal",
+    "linkedinCompany",
+    "linkedinPersonal",
+    "qualityPage",
+    "twitterAccount",
+    "tiktokBusiness",
+    "youtubeChannel",
+    "pinterestAccount",
+    "threadsAccount",
+    "blueskyAccount"
+  ],
+  "x-enum-varnames": [
+    "facebookGroup",
+    "facebookPage",
+    "facebookProfile",
+    "googleLocation",
+    "googlePage",
+    "instagramBusiness",
+    "instagramPersonal",
+    "linkedinCompany",
+    "linkedinPersonal",
+    "qualityPage",
+    "twitterAccount",
+    "tiktokBusiness",
+    "youtubeChannel",
+    "pinterestAccount",
+    "threadsAccount",
+    "blueskyAccount"
+  ]
+}

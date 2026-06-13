@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TwitterContentReportInsight",
+  "type": "object",
+  "properties": {
+    "commentsCount": {
+      "type": "integer",
+      "description": "Number of comments",
+      "format": "int64",
+      "example": 21
+    },
+    "engagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of engagement to impression as a percentage",
+      "format": "double",
+      "example": 65.4
+    },
+    "impressionsCount": {
+      "type": "integer",
+      "description": "Number of impressions",
+      "format": "int64",
+      "example": 277
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 65
+    },
+    "quotePostsCount": {
+      "type": "integer",
+      "description": "Number of reposts",
+      "format": "int64",
+      "example": 45
+    },
+    "repostsCount": {
+      "type": "integer",
+      "description": "Number of reposts",
+      "format": "int64",
+      "example": 23
+    },
+    "videoViewsCount": {
+      "type": "integer",
+      "description": "Number of video views",
+      "format": "int64",
+      "example": 73
+    }
+  },
+  "description": "Twitter Specific Content Report Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContentReportData"
+    }
+  ]
+}

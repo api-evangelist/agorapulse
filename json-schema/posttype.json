@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PostType",
+  "type": "string",
+  "enum": [
+    "TEXT",
+    "PHOTO",
+    "VIDEO",
+    "PHOTO_AND_VIDEO",
+    "LINK",
+    "PDF"
+  ]
+}

@@ -30,7 +30,9 @@ apis:
       - type: Documentation
         url: https://api.agorapulse.com/docs
       - type: OpenAPI
-        url: https://api.agorapulse.com/docs
+        url: https://api.agorapulse.com/docs/open-api.yml
+      - type: OpenAPI
+        url: openapi/agorapulse-openapi.yml
 common:
   - type: Website
     url: https://www.agorapulse.com/

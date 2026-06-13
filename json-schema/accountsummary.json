@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AccountSummary",
+  "type": "object",
+  "properties": {
+    "accountManagers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountManagerSummary"
+      }
+    },
+    "uid": {
+      "type": "string"
+    },
+    "locked": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "screenName": {
+      "type": "string"
+    },
+    "organizationUid": {
+      "type": "string"
+    },
+    "profilePictureUrl": {
+      "type": "string"
+    },
+    "service": {
+      "$ref": "#/components/schemas/Service"
+    },
+    "serviceId": {
+      "type": "object"
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/components/schemas/AccountType"
+    },
+    "workspaceUid": {
+      "type": "string"
+    },
+    "industryId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "industryName": {
+      "type": "string"
+    },
+    "inboxSyncEnabled": {
+      "type": "boolean"
+    },
+    "tokenValid": {
+      "type": "boolean"
+    },
+    "specificServiceAccountData": {
+      "$ref": "#/components/schemas/SpecificServiceAccountData"
+    },
+    "version": {
+      "type": "integer",
+      "format": "int32",
+      "nullable": true
+    }
+  }
+}

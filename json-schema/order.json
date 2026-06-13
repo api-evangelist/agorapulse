@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Order",
+  "type": "string",
+  "enum": [
+    "ASC",
+    "DESC"
+  ]
+}

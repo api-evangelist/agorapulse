@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InboxItem",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the inbox item"
+    },
+    "parentId": {
+      "type": "string",
+      "description": "Identifier of the parent item if applicable"
+    },
+    "workspaceId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Unique identifier for the workspace"
+    },
+    "profile": {
+      "$ref": "#/components/schemas/Profile1",
+      "description": "The social network profile associated with the item"
+    },
+    "agorapulseLink": {
+      "type": "string",
+      "description": "Link to the inbox item in Agorapulse application"
+    },
+    "networkLink": {
+      "type": "string",
+      "description": "Link to the inbox item in the social network"
+    },
+    "text": {
+      "type": "string",
+      "description": "Text content of the inbox item"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation date of the inbox item"
+    },
+    "type": {
+      "$ref": "#/components/schemas/InboxItemType",
+      "description": "Type of the inbox item"
+    },
+    "creator": {
+      "$ref": "#/components/schemas/InboxItemCreator",
+      "description": "The user who created the inbox item"
+    },
+    "labels": {
+      "type": "array",
+      "items": "string",
+      "description": "Labels associated with the item"
+    },
+    "addedLabels": {
+      "type": "array",
+      "items": "string",
+      "description": "Labels added to the item during this event"
+    },
+    "sentiment": {
+      "$ref": "#/components/schemas/InboxItemSentiment",
+      "description": "Sentiment of the inbox item"
+    }
+  }
+}

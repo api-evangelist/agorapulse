@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ThreadsAudienceInsight",
+  "type": "object",
+  "properties": {
+    "followersCount": {
+      "type": "integer",
+      "description": "Number of total followers",
+      "format": "int64",
+      "example": 200
+    },
+    "followersGainedCount": {
+      "type": "integer",
+      "description": "Number of gained followers",
+      "format": "int64",
+      "example": 21,
+      "deprecated": true
+    },
+    "followersNetGrowth": {
+      "type": "integer",
+      "description": "Net follower growth (gained minus lost)",
+      "format": "int64",
+      "example": 21
+    },
+    "engagementRatePerView": {
+      "type": "number",
+      "description": "Ratio of engagement to view as a percentage",
+      "format": "double",
+      "example": 24.2
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 100
+    },
+    "quotesCount": {
+      "type": "integer",
+      "description": "Number of quotes",
+      "format": "int64",
+      "example": 23
+    },
+    "repliesCount": {
+      "type": "integer",
+      "description": "Number of replies",
+      "format": "int64",
+      "example": 6
+    },
+    "repostsCount": {
+      "type": "integer",
+      "description": "Number of reposts",
+      "format": "int64",
+      "example": 23
+    },
+    "viewsCount": {
+      "type": "integer",
+      "description": "Number of views",
+      "format": "int64",
+      "example": 245
+    },
+    "publishedCarouselCount": {
+      "type": "integer",
+      "description": "Number of published carousels",
+      "format": "int64",
+      "example": 3
+    },
+    "publishedPhotoCount": {
+      "type": "integer",
+      "description": "Number of published photos",
+      "format": "int64",
+      "example": 12
+    },
+    "publishedTextCount": {
+      "type": "integer",
+      "description": "Number of published texts",
+      "format": "int64",
+      "example": 12
+    },
+    "publishedVideoCount": {
+      "type": "integer",
+      "description": "Number of published videos",
+      "format": "int64",
+      "example": 8
+    },
+    "positiveItemsCount": {
+      "type": "integer",
+      "description": "Number of items with positive sentiment",
+      "format": "int64",
+      "example": 24
+    },
+    "neutralItemsCount": {
+      "type": "integer",
+      "description": "Number of items with neutral sentiment",
+      "format": "int64",
+      "example": 2
+    },
+    "negativeItemsCount": {
+      "type": "integer",
+      "description": "Number of items with negative sentiment",
+      "format": "int64",
+      "example": 12
+    },
+    "sentimentScore": {
+      "type": "number",
+      "description": "Ratio of positive items divided by the total of positive and negative items",
+      "format": "double",
+      "example": 50
+    }
+  },
+  "description": "Threads Specific Audience Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AudienceReportByDate"
+    }
+  ]
+}

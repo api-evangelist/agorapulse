@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TwitterAudienceInsight",
+  "type": "object",
+  "properties": {
+    "followersCount": {
+      "type": "integer",
+      "description": "Number of total followers",
+      "format": "int64",
+      "example": 199
+    },
+    "followersGainedCount": {
+      "type": "integer",
+      "description": "Number of followers gained",
+      "format": "int64",
+      "example": 9,
+      "deprecated": true
+    },
+    "followersNetGrowth": {
+      "type": "integer",
+      "description": "Net follower growth (gained minus lost)",
+      "format": "int64",
+      "example": 9
+    },
+    "engagementRatePerImpression": {
+      "type": "number",
+      "description": "Ratio of engagement to impression as a percentage",
+      "format": "double",
+      "example": 24.2
+    },
+    "impressionsCount": {
+      "type": "integer",
+      "description": "Number of impressions",
+      "format": "int64",
+      "example": 245
+    },
+    "likesCount": {
+      "type": "integer",
+      "description": "Number of likes",
+      "format": "int64",
+      "example": 65
+    },
+    "mentionsCount": {
+      "type": "integer",
+      "description": "Number of mentions",
+      "format": "int64",
+      "example": 12
+    },
+    "quotePostsCount": {
+      "type": "integer",
+      "description": "Number of reposts",
+      "format": "int64",
+      "example": 9
+    },
+    "publishedLinksCount": {
+      "type": "integer",
+      "description": "Number of published links",
+      "format": "int64",
+      "example": 3
+    },
+    "publishedMediaCount": {
+      "type": "integer",
+      "description": "Number of published media",
+      "format": "int64",
+      "example": 23
+    },
+    "publishedTextCount": {
+      "type": "integer",
+      "description": "Number of published text",
+      "format": "int64",
+      "example": 1
+    },
+    "receivedMessagesCount": {
+      "type": "integer",
+      "description": "Number of received messages",
+      "format": "int64",
+      "example": 3
+    },
+    "receivedCommentsCount": {
+      "type": "integer",
+      "description": "Number of received comments",
+      "format": "int64",
+      "example": 6,
+      "deprecated": true
+    },
+    "repliesCount": {
+      "type": "integer",
+      "description": "Number of replies",
+      "format": "int64",
+      "example": 6
+    },
+    "sharesCount": {
+      "type": "integer",
+      "description": "Number of shares",
+      "format": "int64",
+      "example": 23
+    },
+    "positiveItemsCount": {
+      "type": "integer",
+      "description": "Number of items with positive sentiment",
+      "format": "int64",
+      "example": 24
+    },
+    "neutralItemsCount": {
+      "type": "integer",
+      "description": "Number of items with neutral sentiment",
+      "format": "int64",
+      "example": 2
+    },
+    "negativeItemsCount": {
+      "type": "integer",
+      "description": "Number of items with negative sentiment",
+      "format": "int64",
+      "example": 12
+    },
+    "sentimentScore": {
+      "type": "number",
+      "description": "Ratio of positive items divided by the total of positive and negative items",
+      "format": "double",
+      "example": 50
+    }
+  },
+  "description": "Twitter Specific Audience Insights",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AudienceReportByDate"
+    }
+  ]
+}
