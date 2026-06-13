@@ -1,0 +1,59 @@
+aid: agorapulse
+name: Agorapulse
+description: Agorapulse is a social media management and CRM platform offering a REST API for publishing content, managing inboxes, monitoring social listening, and accessing performance analytics across Facebook, Instagram, LinkedIn, YouTube, TikTok, and Threads.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/agorapulse/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Social Media Management
+  - Social Media
+  - CRM
+  - Analytics
+  - Publishing
+  - Inbox Management
+  - Social Listening
+apis:
+  - aid: agorapulse:agorapulse-reports-api
+    name: Agorapulse Reports Open API
+    description: The Agorapulse Reports Open API provides read-only access to analytics and reporting data, enabling teams to export audience, community management, and content performance data to external BI tools and analytics platforms. Available exclusively on the Custom plan.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+    baseURL: https://api.agorapulse.com
+    tags:
+      - Analytics
+      - Reporting
+      - Social Media
+      - Performance
+    properties:
+      - type: Documentation
+        url: https://api.agorapulse.com/docs
+      - type: OpenAPI
+        url: https://api.agorapulse.com/docs
+common:
+  - type: Website
+    url: https://www.agorapulse.com/
+  - type: Documentation
+    url: https://support.agorapulse.com/en/collections/10906108-product-updates-and-api
+  - type: GitHubOrg
+    url: https://github.com/agorapulse
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/agorapulse/
+  - type: Blog
+    url: https://www.agorapulse.com/blog/
+  - type: Pricing
+    url: https://www.agorapulse.com/pricing/
+  - type: StatusPage
+    url: https://status.agorapulse.com/
+  - type: X
+    url: https://x.com/agorapulse
+  - type: Plans
+    url: plans/agorapulse-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/agorapulse-rate-limits.yml
+  - type: FinOps
+    url: finops/agorapulse-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

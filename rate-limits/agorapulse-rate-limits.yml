@@ -1,0 +1,48 @@
+name: Agorapulse Rate Limits
+description: Rate limiting policies for the Agorapulse Reports Open API.
+url: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+limits:
+  - name: Requests per 30 minutes
+    limit: 500
+    window: 30 minutes
+    scope: per API key
+    description: A maximum of 500 API requests are allowed per 30-minute rolling window per API key.
+
+authentication:
+  type: API Key
+  description: API keys are generated in Personal Settings under the API Keys section. Each key is unique to the individual user, and permissions granted are contingent upon the access levels assigned to that user.
+  header: Authorization
+  notes:
+    - It is recommended to use the API key of the org owner or manager with access to all social profiles to ensure full data access.
+    - API keys are scoped to the user's permission level within Agorapulse.
+
+access:
+  type: Read-Only
+  description: The Agorapulse Open API provides read-only access to analytics and reporting data. Write operations such as publishing or inbox management are not supported via the API.
+  excluded_data:
+    - Custom reports
+    - Social Media ROI reports
+    - Social listening data
+
+supported_platforms:
+  - Facebook
+  - Instagram
+  - LinkedIn
+  - YouTube
+  - TikTok
+  - Threads
+
+report_types:
+  - Audience
+  - Community Management
+  - Content (Performance)
+
+identifiers_required:
+  - name: Organization ID
+    endpoint: Get manager organizations
+  - name: Workspace ID
+    endpoint: Get organization workspaces
+  - name: Profile ID
+    endpoint: Get workspace profiles
+
+date_format: Unix timestamp (for query parameters specifying date ranges)

@@ -1,0 +1,81 @@
+name: Agorapulse Plans and Pricing
+description: Pricing plans for the Agorapulse social media management platform, including API access details for each tier.
+url: https://www.agorapulse.com/pricing/
+plans:
+  - name: Standard
+    price: 79
+    unit: per user/month (billed monthly)
+    price_annual: 99
+    unit_annual: per user/month (billed annually)
+    description: Schedule and publish unlimited posts, manage messages and organic comments in a unified inbox, and access basic audience and content reports with export capability.
+    features:
+      - Unlimited post scheduling and publishing
+      - Unified inbox for messages and organic comments
+      - Basic audience reports
+      - Basic content reports with export
+      - 10 social profiles
+      - 24/7 support (response under 6 hours)
+    api_access: false
+
+  - name: Professional
+    price: 119
+    unit: per user/month (billed monthly)
+    price_annual: 149
+    unit_annual: per user/month (billed annually)
+    description: Everything in Standard, plus link in bio tool, Instagram product tagging, calendar notes, ad comment monitoring, post and inbox assignments, and team performance reporting.
+    features:
+      - Everything in Standard
+      - Link in bio tool
+      - Instagram product tagging
+      - Calendar notes
+      - Monitor and respond to ad comments
+      - Post and inbox assignments
+      - Team performance reporting
+      - 10 social profiles
+    api_access: false
+
+  - name: Advanced
+    price: 149
+    unit: per user/month (billed monthly)
+    price_annual: 199
+    unit_annual: per user/month (billed annually)
+    description: Everything in Professional, plus labels, saved replies, automated moderation rules, bulk actions, shared content calendars, advanced reports, ads analytics, ROI analysis, and competitor benchmarking.
+    features:
+      - Everything in Professional
+      - Labels and saved replies
+      - Automated moderation rules
+      - Bulk actions
+      - Shared content calendars
+      - Advanced reports
+      - Ads analytics
+      - ROI analysis
+      - Competitor benchmarking
+      - 10 social profiles
+    api_access: false
+
+  - name: Custom
+    price: contact
+    unit: custom pricing
+    description: Enterprise-level plan with unlimited social profiles, AI-powered reply suggestions, SSO, custom roles, full reporting suite with historical data import, Reports Open API access, HubSpot/Salesforce/Slack/Teams integrations, and a dedicated success manager with priority support.
+    features:
+      - Everything in Advanced
+      - Unlimited social profiles
+      - AI-powered reply suggestions
+      - SSO and custom roles
+      - Full reporting suite
+      - Historical data import
+      - Reports Open API access
+      - HubSpot integration
+      - Salesforce integration
+      - Slack integration
+      - Microsoft Teams integration
+      - Dedicated success manager
+      - Priority support (response under 30 minutes)
+    api_access: true
+    api_notes: Reports Open API is exclusively available on the Custom plan. Contact Agorapulse sales to obtain access.
+
+notes:
+  - Annual billing provides approximately 20% discount over monthly billing.
+  - Additional social profiles cost $15 per profile per month.
+  - X (Twitter) Lite is included in all paid plans; X Plus is an additional add-on.
+  - API key is unique to each individual user; permissions are based on the user's assigned access level.

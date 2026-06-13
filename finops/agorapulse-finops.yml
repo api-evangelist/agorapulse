@@ -1,0 +1,43 @@
+name: Agorapulse FinOps
+description: Financial operations guidance for teams integrating the Agorapulse Reports Open API, including cost considerations, plan requirements, and optimization strategies.
+url: https://www.agorapulse.com/pricing/
+
+api_access_requirement:
+  plan: Custom
+  note: The Reports Open API is exclusively available on the Custom plan. Organizations must upgrade from Standard, Professional, or Advanced to gain API access. Contact Agorapulse sales for Custom plan pricing.
+
+cost_drivers:
+  - name: Custom Plan Subscription
+    description: A Custom plan subscription is required per user to access the API. Pricing is negotiated directly with Agorapulse and is not publicly disclosed.
+    billing: Per user, custom quote
+  - name: Additional Social Profiles
+    description: Additional social profiles beyond the plan default cost $15 per profile per month.
+    unit_price: 15
+    unit: per profile/month
+  - name: X (Twitter) Add-ons
+    description: X Lite is included in paid plans; X Plus is an additional paid add-on for extended Twitter/X functionality.
+    billing: Add-on pricing
+
+cost_optimization:
+  - Use annual billing to receive approximately 20% savings compared to monthly billing.
+  - Consolidate API access under a single org owner or manager API key to avoid needing multiple Custom plan seats solely for API use.
+  - Cache API responses where possible, as the 500-requests-per-30-minute rate limit means unoptimized polling can exhaust the quota quickly.
+  - Batch date-range queries to minimize the total number of API calls when pulling historical analytics data.
+  - Limit social profile count to only those needed for API reporting to reduce additional profile fees.
+
+budget_planning:
+  - API access requires at minimum one Custom plan seat; factor this into budget as the baseline cost.
+  - Plan for potential overage in profile count if your organization manages many social accounts.
+  - Evaluate whether the Reports Open API (read-only analytics) meets your use case before committing to a Custom plan, as publishing and inbox automation via API are not supported.
+
+integrations_included_on_custom:
+  - HubSpot
+  - Salesforce
+  - Slack
+  - Microsoft Teams
+  - Reports Open API
+
+notes:
+  - There is no pay-per-call pricing for the API; access is bundled into the Custom plan subscription.
+  - Standard, Professional, and Advanced plans do not include API access.
+  - Contact Agorapulse at https://www.agorapulse.com/pricing/ to get a Custom plan quote.
