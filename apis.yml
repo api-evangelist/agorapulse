@@ -1,7 +1,7 @@
 aid: agorapulse
 name: Agorapulse
 description: Agorapulse is a social media management and CRM platform offering a REST API for publishing content, managing inboxes, monitoring social listening, and accessing performance analytics across Facebook, Instagram, LinkedIn, YouTube, TikTok, and Threads.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/agorapulse/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -18,7 +18,7 @@ apis:
   - aid: agorapulse:agorapulse-reports-api
     name: Agorapulse Reports Open API
     description: The Agorapulse Reports Open API provides read-only access to analytics and reporting data, enabling teams to export audience, community management, and content performance data to external BI tools and analytics platforms. Available exclusively on the Custom plan.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
     baseURL: https://api.agorapulse.com
     tags:
