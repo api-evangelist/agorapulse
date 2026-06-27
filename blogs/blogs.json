@@ -2,12 +2,17 @@
   "repo": "agorapulse",
   "feeds": [
     {
-      "source": "https://www.agorapulse.com/blog/",
+      "source": "https://www.agorapulse.com/blog/feed/",
       "feed_url": "https://www.agorapulse.com/blog/feed/",
-      "title": "Agorapulse Blog",
-      "saved": 0
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.linkedin.com/company/agorapulse/",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-21T17:00:00Z",
+  "fetched": "2026-06-27T12:03:07Z",
   "post_count": 0
 }
