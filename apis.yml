@@ -34,6 +34,14 @@ apis:
       - type: OpenAPI
         url: openapi/agorapulse-openapi.yml
 common:
+  - type: TrustCenter
+    url: security/agorapulse-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/agorapulse-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/agorapulse-domain-security.yml
+  - type: Authentication
+    url: authentication/agorapulse-authentication.yml
   - type: Website
     url: https://www.agorapulse.com/
   - type: Documentation
