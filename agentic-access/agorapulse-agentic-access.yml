@@ -1,0 +1,244 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/agorapulse-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 18
+  by_action_class:
+    connected: 10
+    acting: 8
+  by_consequence:
+    read: 10
+    write: 8
+  human_in_the_loop_required: 0
+operations:
+- path: /v1.0/report/health
+  method: get
+  operationId: health
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/insights/audience
+  method: get
+  operationId: getAudience
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/insights/communitymanagement
+  method: get
+  operationId: getCommunityManagement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/insights/content
+  method: get
+  operationId: getContentReport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/core/organizations
+  method: get
+  operationId: getManagerOrganizations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/core/organizations/{organizationId}/workspaces
+  method: get
+  operationId: getOrganizationWorkspaces
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/core/organizations/{organizationId}/workspaces/{workspaceId}/profiles
+  method: get
+  operationId: getWorkspaceProfiles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes
+  method: get
+  operationId: search
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes
+  method: post
+  operationId: save
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes/{uid}
+  method: put
+  operationId: update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes/{uid}
+  method: delete
+  operationId: delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-drafts
+  method: post
+  operationId: save_1
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-schedule-posts
+  method: post
+  operationId: save_2
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-schedule-posts:publish-now
+  method: post
+  operationId: publishNow
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/library/organizations/{organizationId}/workspaces/{workspaceId}/studio/media/upload
+  method: post
+  operationId: requestUpload
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/conversations/{conversationId}/messages
+  method: get
+  operationId: getMessages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/reply
+  method: post
+  operationId: create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items
+  method: get
+  operationId: findItems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
