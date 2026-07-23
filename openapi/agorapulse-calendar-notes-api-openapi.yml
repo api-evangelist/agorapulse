@@ -1,0 +1,318 @@
+openapi: 3.1.0
+info:
+  title: Open Calendar Notes API
+  description: Agorapulse's Open API documentation
+  version: '1.0'
+security:
+- bearerAuth: []
+tags:
+- name: Calendar Notes
+  description: Publishing calendar notes management
+paths:
+  /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes:
+    get:
+      tags:
+      - Calendar Notes
+      summary: Search calendar notes
+      description: Search and filter calendar notes in the specified workspace
+      operationId: search
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization identifier
+        required: true
+      - name: workspaceId
+        in: path
+        description: Workspace identifier
+        required: true
+      - name: since
+        in: query
+        description: Filter notes after this date (ISO date)
+      - name: until
+        in: query
+        description: Filter notes before this date (ISO date)
+      - name: profileUids
+        in: query
+        description: Filter by profile UIDs
+      responses:
+        '200':
+          description: Calendar notes retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchCalendarNoteOpenResponse'
+        '400':
+          description: Invalid search parameters
+        '404':
+          description: Organization or workspace not found
+    post:
+      tags:
+      - Calendar Notes
+      summary: Create a new calendar note
+      description: Creates a new calendar note in the specified content
+      operationId: save
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization identifier
+        required: true
+      - name: workspaceId
+        in: path
+        description: Workspace identifier
+        required: true
+      requestBody:
+        description: Calendar note to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCalendarNoteOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Calendar note created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCalendarNoteOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+  /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes/{uid}:
+    put:
+      tags:
+      - Calendar Notes
+      summary: Update a calendar note
+      description: Updates an existing calendar note with new data
+      operationId: update
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization identifier
+        required: true
+      - name: workspaceId
+        in: path
+        description: Workspace identifier
+        required: true
+      - name: uid
+        in: path
+        description: Calendar note unique identifier
+        required: true
+      requestBody:
+        description: Updated calendar note data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCalendarNoteOpenRequest'
+        required: true
+      responses:
+        '200':
+          description: Calendar note updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCalendarNoteOpenResponse'
+        '400':
+          description: Invalid request data
+        '403':
+          description: Insufficient permissions to update the note
+        '404':
+          description: Calendar note, organization, or workspace not found
+    delete:
+      tags:
+      - Calendar Notes
+      summary: Delete a calendar note
+      description: Deletes a calendar note by its UID
+      operationId: delete
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization identifier
+        required: true
+      - name: workspaceId
+        in: path
+        description: Workspace identifier
+        required: true
+      - name: uid
+        in: path
+        description: Calendar note unique identifier
+        required: true
+      responses:
+        '204':
+          description: Calendar note deleted successfully
+        '403':
+          description: Insufficient permissions to delete the note
+        '404':
+          description: Calendar note, organization, or workspace not found
+components:
+  schemas:
+    PublishingCalendarNoteColor:
+      type: string
+      enum:
+      - BLUE
+      - RED
+      - YELLOW
+      - GREEN
+      - PURPLE
+      - PINK
+      - ORANGE
+      - MINT
+      - CYAN
+      - GREY
+    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the calendar note
+        title:
+          type: string
+          description: Note title
+          example: Team Meeting
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          type: object
+          description: Note color for calendar display
+          allOf:
+          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
+          - type: object
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        profileUids:
+          type: array
+          description: List of profile UIDs associated with the note
+          items:
+            type: string
+      description: Calendar note information in search results
+    SearchCalendarNoteOpenResponse:
+      type: object
+      properties:
+        notes:
+          type: array
+          description: List of calendar notes matching the search criteria
+          items:
+            $ref: '#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem'
+        query:
+          type: object
+          description: Query parameters used for the search
+          allOf:
+          - $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
+          - type: object
+      description: Response containing search results for calendar notes
+    CreateCalendarNoteOpenRequest:
+      required:
+      - color
+      - endDate
+      - startDate
+      - title
+      type: object
+      properties:
+        title:
+          minLength: 1
+          type: string
+          description: Note title
+          example: Team Meeting
+          x-size-message: Title is required
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          type: object
+          description: Note color for calendar display
+          allOf:
+          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
+          - type: object
+          x-not-null-message: Color is required
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+          x-not-null-message: Start date is required
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+          x-not-null-message: End date is required
+        profileUids:
+          type: array
+          description: List of profile UIDs associated with the note
+          items:
+            type: string
+      description: Request to create or update a calendar note
+    CreateCalendarNoteOpenResponse:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the calendar note
+        title:
+          type: string
+          description: Note title
+          example: Team Meeting
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          type: object
+          description: Note color for calendar display
+          allOf:
+          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
+          - type: object
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        profileUids:
+          type: array
+          description: List of profile UIDs associated with the note
+          items:
+            type: string
+      description: Response containing calendar note details
+    SearchCalendarNoteOpenRequest:
+      type: object
+      properties:
+        since:
+          type: string
+          description: Filter notes after this timestamp
+          format: date-time
+          example: '2024-01-01T00:00:00.000Z'
+        until:
+          type: string
+          description: Filter notes before this timestamp
+          format: date-time
+          example: '2024-12-31T23:59:59.000Z'
+        profileUids:
+          type: array
+          description: Filter by specific profile UIDs
+          example:
+          - profile_123
+          - profile_456
+          items:
+            type: string
+      description: Request to search calendar notes with filtering options
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header

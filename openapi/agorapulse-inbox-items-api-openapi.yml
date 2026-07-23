@@ -1,0 +1,245 @@
+openapi: 3.1.0
+info:
+  title: Open Calendar Notes Inbox items API
+  description: Agorapulse's Open API documentation
+  version: '1.0'
+security:
+- bearerAuth: []
+tags:
+- name: Inbox items
+paths:
+  /v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items:
+    get:
+      tags:
+      - Inbox items
+      summary: Find items
+      operationId: findItems
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization id
+        required: true
+        schema:
+          type: integer
+        example: 1419
+      - name: workspaceId
+        in: path
+        description: Workspace id
+        required: true
+        schema:
+          type: integer
+        example: 1416
+      - name: accountUids
+        in: query
+        description: Set of account UIDs to filter items. Only items from these accounts will be returned.
+        schema:
+          type: array
+          items:
+            type: string
+      - name: toReview
+        in: query
+        description: Filter items that need review (not yet approved by a manager)
+        schema:
+          type: boolean
+      - name: labels
+        in: query
+        description: Filter items by labels. Only items with these labels will be returned.
+        schema:
+          type: array
+          items:
+            type: string
+      - name: sentiments
+        in: query
+        description: Filter items by sentiment.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemSentiment'
+      - name: types
+        in: query
+        description: Filter items by type/source. Specify the types of items to retrieve (e.g., organicComment, adsComment, conversation, ...)
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemFilterType'
+      - name: since
+        in: query
+        description: Filter items created after this date (inclusive). ISO 8601 format.
+        schema:
+          type: string
+          format: date-time
+        example: '2025-10-01T09:00:00.000Z'
+      - name: until
+        in: query
+        description: Filter items created before this date (inclusive). ISO 8601 format.
+        schema:
+          type: string
+          format: date-time
+        example: '2025-10-15T13:00:00.000Z'
+      - name: offset
+        in: query
+        description: Offset for pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Maximum number of items to return per page. Must be between 1 and 25.
+        schema:
+          type: integer
+        example: 10
+      - name: order
+        in: query
+        description: Sort order for the results. ASC for ascending (oldest first), DESC for descending (newest first).
+        schema:
+          $ref: '#/components/schemas/Order'
+        example: DESC
+      responses:
+        '200':
+          description: findItems 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemsSearchResponse'
+components:
+  schemas:
+    AbstractItem:
+      type: object
+      properties:
+        id:
+          type: string
+        parentId:
+          type: string
+        workspaceId:
+          type: integer
+          format: int64
+        creationDate:
+          type: string
+          format: date-time
+        type:
+          $ref: '#/components/schemas/ItemType'
+        text:
+          type: string
+        agorapulseLink:
+          type: string
+        networkLink:
+          type: string
+        profile:
+          $ref: '#/components/schemas/Profile'
+        creator:
+          $ref: '#/components/schemas/ItemCreator'
+        labels:
+          type: array
+          items:
+            type: string
+        sentiment:
+          $ref: '#/components/schemas/ItemSentiment'
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    ItemFilterType:
+      type: string
+      description: 'Enum representing the possible item types that can be used for filtering items in the inbox. These values correspond to the item types available in the UI filter menu.
+
+
+        The enum values map to the frontend itemTypes used in the filter UI:
+
+
+        * **Facebook:** adsComment, organicComment, conversation, mention, rating
+
+        * **Instagram:** adsComment, organicComment, conversation, reelComment, mention, storyMentionConversation
+
+        * **Twitter:** mention, conversation
+
+        * **LinkedIn:** adsComment, organicComment, mention
+
+        * **TikTok:** adsComment, organicComment
+
+        * **Threads:** organicComment, mention'
+      enum:
+      - ADS_COMMENT
+      - ORGANIC_COMMENT
+      - CONVERSATION
+      - MENTION
+      - RATING
+      - REEL_COMMENT
+      - STORY_MENTION_CONVERSATION
+      x-enum-descriptions:
+      - 'Comments on promoted/sponsored posts (ads). Supported by: Facebook, Instagram, LinkedIn, TikTok'
+      - 'Organic comments (not on ads). Supported by: Facebook, Instagram, LinkedIn, TikTok, Threads'
+      - 'Private messages / direct messages. Supported by: Facebook, Instagram, Twitter'
+      - 'Mentions of the profile/page. Supported by: Facebook, Instagram, Twitter, LinkedIn, Threads'
+      - 'Reviews/ratings. Supported by: Facebook only'
+      - 'Comments on Instagram Reels. Supported by: Instagram only'
+      - 'Conversations from story mentions. Supported by: Instagram only Note: This is different from the ''storyMention'' source used in automated moderation rules. In the UI filters, this represents conversations grouped by story mentions.'
+      x-type: String
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
+    Order:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    ItemsSearchResponse:
+      required:
+      - items
+      - offset
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemDTO'
+        offset:
+          type: string
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header

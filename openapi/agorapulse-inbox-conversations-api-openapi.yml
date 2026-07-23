@@ -1,0 +1,189 @@
+openapi: 3.1.0
+info:
+  title: Open Calendar Notes Inbox conversations API
+  description: Agorapulse's Open API documentation
+  version: '1.0'
+security:
+- bearerAuth: []
+tags:
+- name: Inbox conversations
+paths:
+  ? /v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/accounts/{accountUid}/conversations/{conversationId}/messages
+  : get:
+      tags:
+      - Inbox conversations
+      summary: Get conversation messages
+      operationId: getMessages
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization id
+        required: true
+        schema:
+          type: integer
+        example: 1419
+      - name: workspaceId
+        in: path
+        description: Workspace id
+        required: true
+        schema:
+          type: integer
+        example: 1416
+      - name: accountUid
+        in: path
+        description: Account uid
+        required: true
+        schema:
+          type: string
+        example: facebook_611
+      - name: conversationId
+        in: path
+        description: Conversation id
+        required: true
+        schema:
+          type: string
+      - name: since
+        in: query
+        description: Filter messages created after this date (inclusive). ISO 8601 format.
+        schema:
+          type: string
+          format: date-time
+        example: '2025-10-01T09:00:00.000Z'
+      - name: until
+        in: query
+        description: Filter messages created before this date (inclusive). ISO 8601 format.
+        schema:
+          type: string
+          format: date-time
+        example: '2025-10-15T13:00:00.000Z'
+      - name: offset
+        in: query
+        description: Offset for pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Maximum number of messages to return per page. Must be between 1 and 25.
+        schema:
+          type: integer
+        example: 10
+      - name: order
+        in: query
+        description: Sort order for the results. ASC for ascending (oldest first), DESC for descending (newest first).
+        schema:
+          $ref: '#/components/schemas/Order'
+        example: DESC
+      responses:
+        '200':
+          description: getMessages 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessagesSearchResponse'
+components:
+  schemas:
+    AbstractItem:
+      type: object
+      properties:
+        id:
+          type: string
+        parentId:
+          type: string
+        workspaceId:
+          type: integer
+          format: int64
+        creationDate:
+          type: string
+          format: date-time
+        type:
+          $ref: '#/components/schemas/ItemType'
+        text:
+          type: string
+        agorapulseLink:
+          type: string
+        networkLink:
+          type: string
+        profile:
+          $ref: '#/components/schemas/Profile'
+        creator:
+          $ref: '#/components/schemas/ItemCreator'
+        labels:
+          type: array
+          items:
+            type: string
+        sentiment:
+          $ref: '#/components/schemas/ItemSentiment'
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    MessagesSearchResponse:
+      required:
+      - items
+      - offset
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemDTO'
+        offset:
+          type: string
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    Order:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header

@@ -1,0 +1,31 @@
+openapi: 3.1.0
+info:
+  title: Open Calendar Notes OpenAPI API
+  description: Agorapulse's Open API documentation
+  version: '1.0'
+security:
+- bearerAuth: []
+tags:
+- name: OpenAPI
+paths:
+  /v1.0/report/health:
+    get:
+      tags:
+      - OpenAPI
+      summary: Get health
+      description: Provides information about the state of the API
+      operationId: health
+      responses:
+        '200':
+          description: The API is healthy and working
+          content:
+            application/json:
+              examples:
+                example:
+                  value: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header
