@@ -1,7 +1,20 @@
 aid: agorapulse
 name: Agorapulse
 description: Agorapulse is a social media management and CRM platform offering a REST API for publishing content, managing inboxes, monitoring social listening, and accessing performance analytics across Facebook, Instagram, LinkedIn, YouTube, TikTok, and Threads.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/agorapulse.png
 url: https://raw.githubusercontent.com/api-evangelist/agorapulse/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -15,24 +28,162 @@ tags:
   - Inbox Management
   - Social Listening
 apis:
-  - aid: agorapulse:agorapulse-reports-api
-    name: Agorapulse Reports Open API
-    description: The Agorapulse Reports Open API provides read-only access to analytics and reporting data, enabling teams to export audience, community management, and content performance data to external BI tools and analytics platforms. Available exclusively on the Custom plan.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
-    baseURL: https://api.agorapulse.com
-    tags:
-      - Analytics
-      - Reporting
-      - Social Media
-      - Performance
-    properties:
-      - type: Documentation
-        url: https://api.agorapulse.com/docs
-      - type: OpenAPI
-        url: https://api.agorapulse.com/docs/open-api.yml
-      - type: OpenAPI
-        url: openapi/agorapulse-openapi.yml
+- aid: agorapulse:agorapulse-calendar-notes-api
+  name: Agorapulse Calendar Notes API
+  description: Publishing calendar notes management
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Calendar Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-calendar-notes-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-inbox-conversations-api
+  name: Agorapulse Inbox conversations API
+  description: The Inbox conversations API from Agorapulse — 1 operation(s) for inbox conversations.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Inbox conversations
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-inbox-conversations-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-inbox-items-api
+  name: Agorapulse Inbox items API
+  description: The Inbox items API from Agorapulse — 1 operation(s) for inbox items.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Inbox items
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-inbox-items-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-inbox-reply-api
+  name: Agorapulse Inbox reply API
+  description: The Inbox reply API from Agorapulse — 1 operation(s) for inbox reply.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Inbox reply
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-inbox-reply-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-openapi-api
+  name: Agorapulse OpenAPI API
+  description: The OpenAPI API from Agorapulse — 1 operation(s) for openapi.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - OpenAPI
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-openapi-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-organization-api
+  name: Agorapulse Organization API
+  description: The Organization API from Agorapulse — 1 operation(s) for organization.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-organization-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-profile-api
+  name: Agorapulse Profile API
+  description: The Profile API from Agorapulse — 1 operation(s) for profile.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-profile-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-report-api
+  name: Agorapulse Report API
+  description: The Report API from Agorapulse — 3 operation(s) for report.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-report-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-simple-drafts-api
+  name: Agorapulse Simple Drafts API
+  description: Publishing simple drafts management
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Simple Drafts
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-simple-drafts-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-simple-scheduling-api
+  name: Agorapulse Simple Scheduling API
+  description: Publishing simple scheduled and immediate posts management
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Simple Scheduling
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-simple-scheduling-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-studio-media-api
+  name: Agorapulse Studio Media API
+  description: Studio media upload management
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Studio Media
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-studio-media-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-workspace-api
+  name: Agorapulse Workspace API
+  description: The Workspace API from Agorapulse — 1 operation(s) for workspace.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Workspace
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-workspace-api-openapi.yml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
 common:
   - type: AgenticAccess
     url: agentic-access/agorapulse-agentic-access.yml
