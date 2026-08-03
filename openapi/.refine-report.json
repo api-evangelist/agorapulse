@@ -1,0 +1,36 @@
+{
+  "provider": "agorapulse",
+  "sources": [
+    "agorapulse-calendar-notes-api-openapi.yml",
+    "agorapulse-inbox-conversations-api-openapi.yml",
+    "agorapulse-inbox-items-api-openapi.yml",
+    "agorapulse-inbox-reply-api-openapi.yml",
+    "agorapulse-openapi-api-openapi.yml",
+    "agorapulse-organization-api-openapi.yml",
+    "agorapulse-profile-api-openapi.yml",
+    "agorapulse-report-api-openapi.yml",
+    "agorapulse-simple-drafts-api-openapi.yml",
+    "agorapulse-simple-scheduling-api-openapi.yml",
+    "agorapulse-studio-media-api-openapi.yml",
+    "agorapulse-workspace-api-openapi.yml"
+  ],
+  "outputs": [
+    "agorapulse-calendar-notes-api-openapi.yml",
+    "agorapulse-inbox-conversations-api-openapi.yml",
+    "agorapulse-inbox-items-api-openapi.yml",
+    "agorapulse-inbox-reply-api-openapi.yml",
+    "agorapulse-openapi-api-openapi.yml",
+    "agorapulse-organization-api-openapi.yml",
+    "agorapulse-profile-api-openapi.yml",
+    "agorapulse-report-api-openapi.yml",
+    "agorapulse-simple-drafts-api-openapi.yml",
+    "agorapulse-simple-scheduling-api-openapi.yml",
+    "agorapulse-studio-media-api-openapi.yml",
+    "agorapulse-workspace-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
