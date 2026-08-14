@@ -17,7 +17,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/agorapulse.png
 url: https://raw.githubusercontent.com/api-evangelist/agorapulse/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 tags:
   - Social Media Management
@@ -39,149 +39,221 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/agorapulse-calendar-notes-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-calendar-notes-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-inbox-conversations-api
-  name: Agorapulse Inbox conversations API
-  description: The Inbox conversations API from Agorapulse — 1 operation(s) for inbox conversations.
+- aid: agorapulse:agorapulse-agorapulse-api-api
+  name: Agorapulse Webhooks API
+  description: >-
+    The webhook surface of the Agorapulse API — the OpenAPI 3.1 top-level webhooks object carrying
+    the PUBLISHING_POST and INBOX_ITEM events, their payload schemas and the X-Hook-Signature HMAC
+    scheme. Carries no request operations of its own.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Inbox conversations
+  - Agorapulse API
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-inbox-conversations-api-openapi.yml
+    url: openapi/agorapulse-agorapulse-api-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-agorapulse-api-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-inbox-items-api
-  name: Agorapulse Inbox items API
-  description: The Inbox items API from Agorapulse — 1 operation(s) for inbox items.
+- aid: agorapulse:agorapulse-competitor-api
+  name: Agorapulse Competitor API
+  description: The Competitor API from Agorapulse — 2 operation(s) for competitor.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Inbox items
+  - Competitor
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-inbox-items-api-openapi.yml
+    url: openapi/agorapulse-competitor-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-competitor-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-inbox-reply-api
-  name: Agorapulse Inbox reply API
-  description: The Inbox reply API from Agorapulse — 1 operation(s) for inbox reply.
+- aid: agorapulse:agorapulse-conversations-api
+  name: Agorapulse Conversations API
+  description: Read conversation threads from your social inbox.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Inbox reply
+  - Conversations
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-inbox-reply-api-openapi.yml
+    url: openapi/agorapulse-conversations-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-conversations-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-openapi-api
-  name: Agorapulse OpenAPI API
-  description: The OpenAPI API from Agorapulse — 1 operation(s) for openapi.
+- aid: agorapulse:agorapulse-drafts-api
+  name: Agorapulse Drafts API
+  description: Create draft posts for review and approval.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - OpenAPI
+  - Drafts
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-openapi-api-openapi.yml
+    url: openapi/agorapulse-drafts-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-drafts-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-organization-api
-  name: Agorapulse Organization API
-  description: The Organization API from Agorapulse — 1 operation(s) for organization.
+- aid: agorapulse:agorapulse-groups-api
+  name: Agorapulse Groups API
+  description: Folders that organize a workspace's social profiles, with the profiles each contains.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Organization
+  - Groups
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-organization-api-openapi.yml
+    url: openapi/agorapulse-groups-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-groups-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-profile-api
-  name: Agorapulse Profile API
-  description: The Profile API from Agorapulse — 1 operation(s) for profile.
+- aid: agorapulse:agorapulse-health-api
+  name: Agorapulse Health API
+  description: Service health and status checks.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Profile
+  - Health
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-profile-api-openapi.yml
+    url: openapi/agorapulse-health-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-health-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-report-api
-  name: Agorapulse Report API
-  description: The Report API from Agorapulse — 3 operation(s) for report.
+- aid: agorapulse:agorapulse-items-api
+  name: Agorapulse Items API
+  description: List inbox items (comments, messages, reviews).
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Report
+  - Items
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-report-api-openapi.yml
+    url: openapi/agorapulse-items-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-items-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-simple-drafts-api
-  name: Agorapulse Simple Drafts API
-  description: Publishing simple drafts management
+- aid: agorapulse:agorapulse-media-api
+  name: Agorapulse Media API
+  description: Upload media assets to your content library.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Simple Drafts
+  - Media
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-simple-drafts-api-openapi.yml
+    url: openapi/agorapulse-media-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-media-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-simple-scheduling-api
-  name: Agorapulse Simple Scheduling API
-  description: Publishing simple scheduled and immediate posts management
+- aid: agorapulse:agorapulse-organizations-api
+  name: Agorapulse Organizations API
+  description: List and access the organizations you belong to.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Simple Scheduling
+  - Organizations
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-simple-scheduling-api-openapi.yml
+    url: openapi/agorapulse-organizations-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-organizations-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-studio-media-api
-  name: Agorapulse Studio Media API
-  description: Studio media upload management
+- aid: agorapulse:agorapulse-pinterest-boards-api
+  name: Agorapulse Pinterest boards API
+  description: List a Pinterest profile's boards to obtain the board id a pin requires.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Studio Media
+  - Pinterest boards
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-studio-media-api-openapi.yml
+    url: openapi/agorapulse-pinterest-boards-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-pinterest-boards-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
-- aid: agorapulse:agorapulse-workspace-api
-  name: Agorapulse Workspace API
-  description: The Workspace API from Agorapulse — 1 operation(s) for workspace.
+- aid: agorapulse:agorapulse-profiles-api
+  name: Agorapulse Profiles API
+  description: The connected social profiles within a workspace.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
-  - Workspace
+  - Profiles
   properties:
   - type: OpenAPI
-    url: openapi/agorapulse-workspace-api-openapi.yml
+    url: openapi/agorapulse-profiles-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-profiles-api-overlay.yaml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-replies-api
+  name: Agorapulse Replies API
+  description: Reply to inbox items.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Replies
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-replies-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-replies-api-overlay.yaml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-reports-api
+  name: Agorapulse Reports API
+  description: Pull audience, content and community-management insights.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-reports-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-reports-api-overlay.yaml
+  - type: Documentation
+    url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-workspaces-api
+  name: Agorapulse Workspaces API
+  description: Workspaces group the social profiles you manage inside an organization.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Workspaces
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-workspaces-api-openapi.yml
+  - type: Overlay
+    url: overlays/agorapulse-workspaces-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
 common:
@@ -217,6 +289,59 @@ common:
     url: rate-limits/agorapulse-rate-limits.yml
   - type: FinOps
     url: finops/agorapulse-finops.yml
+  - type: MCPServer
+    url: mcp/agorapulse-mcp.yml
+  - type: ToolCrosswalk
+    url: mcp/agorapulse-tool-crosswalk.yml
+  - type: Packages
+    url: packages/agorapulse-packages.yml
+  - type: SDKs
+    url: packages/agorapulse-packages.yml
+  - type: WellKnown
+    url: well-known/agorapulse-well-known.yml
+  - type: LLMsTxt
+    url: llms/agorapulse-llms.txt
+  - type: OAuthScopes
+    url: scopes/agorapulse-scopes.yml
+  - type: Conventions
+    url: conventions/agorapulse-conventions.yml
+  - type: ErrorCatalog
+    url: errors/agorapulse-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/agorapulse-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/agorapulse-changelog.yml
+  - type: DataModel
+    url: data-model/agorapulse-data-model.yml
+  - type: Components
+    url: components/agorapulse-components.yml
+  - type: Conformance
+    url: conformance/agorapulse-conformance.yml
+  - type: Compliance
+    url: https://trust.agorapulse.com/
+  - type: Security
+    url: https://www.agorapulse.com/security/
+  - type: Webhooks
+    url: asyncapi/agorapulse-webhooks.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: APIReference
+    url: https://api.agorapulse.com/docs
+  - type: GettingStarted
+    url: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  - type: Support
+    url: https://support.agorapulse.com/
+  - type: SignUp
+    url: https://www.agorapulse.com/signup/
+  - type: TermsOfService
+    url: https://www.agorapulse.com/terms-of-service/
+  - type: PrivacyPolicy
+    url: https://www.agorapulse.com/privacy-policy/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 52
+  pass: local-v1
