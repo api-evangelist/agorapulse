@@ -1,0 +1,54 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://status.agorapulse.com/, https://support.agorapulse.com/en/collections/10906108-product-updates-and-api,
+  openapi/_original/agorapulse-open-api-openapi.yml
+versioning:
+  scheme: uri-path
+  current: v1.0
+  docs: https://api.agorapulse.com/docs
+  note: Every endpoint carries a /v1.0/ prefix. Only one version has ever been published.
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  note: >-
+    No deprecation or sunset policy is published, and no Deprecation/Sunset response header is
+    declared anywhere in the spec. Deprecation is signalled only in-band, by the OpenAPI
+    `deprecated: true` flag and a "(deprecated)" suffix on the operation summary — with no stated
+    removal date and no migration target. No `Deprecation` pointer is emitted for this provider
+    because there is no policy page to point at.
+deprecated_operations:
+- operation: openapi/agorapulse-drafts-api-openapi.yml#save_1
+  path: POST /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-drafts
+  summary: Create a simple draft (deprecated)
+  replacement: not stated
+sla:
+  url: null
+  uptime_target: null
+  note: No public SLA or uptime target was found; support response times are published per plan on the pricing page instead.
+status_page: https://status.agorapulse.com/
+release_notes:
+  url: https://support.agorapulse.com/en/articles/13315559-agorapulse-release-notes-2026
+  archive:
+  - {year: 2026, url: 'https://support.agorapulse.com/en/articles/13315559-agorapulse-release-notes-2026'}
+  - {year: 2025, url: 'https://support.agorapulse.com/en/articles/11419511-agorapulse-release-notes-2025'}
+  - {year: 2024, url: 'https://support.agorapulse.com/en/articles/11426269-agorapulse-release-notes-2024'}
+  - {year: 2023, url: 'https://support.agorapulse.com/en/articles/11427752-agorapulse-release-notes-2023'}
+  note: >-
+    Product release notes, dated and maintained back to 2023. They cover the application, not the
+    API — across all of 2026 not one entry describes an API, webhook or developer change, even though
+    the spec demonstrably gained competitor reports, media slots, Pinterest boards and menu groups in
+    that window. See changelog/agorapulse-changelog.yml.
+upstream_dependency_notices:
+  note: >-
+    Agorapulse publishes network-level API change notices, which is the closest thing it has to a
+    developer changelog — e.g. "Facebook metric deprecation (June 2026)" and "API Limitations per
+    Network". These describe Meta/LinkedIn/TikTok platform limits flowing through to Agorapulse data,
+    not Agorapulse API versioning.
+  urls:
+  - https://support.agorapulse.com/en/articles/15773507-facebook-metric-deprecation-june-2026
+  - https://support.agorapulse.com/en/articles/8712660-api-limitations-per-network
+x-evidence:
+- {fetched: '2026-08-13', url: 'https://status.agorapulse.com/', http_status: 200}
+- {fetched: '2026-08-13', url: 'https://support.agorapulse.com/en/collections/10906108-product-updates-and-api', http_status: 200}

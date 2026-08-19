@@ -1,0 +1,1 @@
+{"resource":"https://api.openmcp.agorapulse.com/mcp","authorization_servers":["https://api.identity.agorapulse.com"],"bearer_methods_supported":["header"]}

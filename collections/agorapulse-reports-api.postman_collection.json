@@ -1,0 +1,535 @@
+{
+  "item": [
+    {
+      "id": "8c6e1558-cef1-42e9-b2d8-68163c7f2fc1",
+      "name": "Reports",
+      "description": {
+        "content": "Pull audience, content and community-management insights.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "81306455-7add-4a31-b4f0-9e0d4b4143bf",
+          "name": "Get audience report",
+          "request": {
+            "name": "Get audience report",
+            "description": {
+              "content": "Get audience report",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "report",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "profiles",
+                ":profileUid",
+                "insights",
+                "audience"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "until",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "profileUid",
+                  "description": "(Required) Profile uid"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bd8582b-dfe2-4433-bb23-b912cb76dba7",
+              "name": "Audience is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "report",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "profiles",
+                    ":profileUid",
+                    "insights",
+                    "audience"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "profileUid",
+                      "description": "(Required) Profile uid"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"angryCount\": 120,\n      \"organicEngagementCount\": 23,\n      \"paidEngagementCount\": 76,\n      \"engagementRatePerView\": 24.2,\n      \"organicEngagementRatePerView\": 10.2,\n      \"paidEngagementRatePerView\": 14,\n      \"engagementRatePerReach\": 26.6,\n      \"organicEngagementRatePerReach\": 14.4,\n      \"paidEngagementRatePerReach\": 20.4,\n      \"followersGainedCount\": 25,\n      \"followersLostCount\": 2,\n      \"followersNetGrowth\": 23,\n      \"followersCount\": 3765,\n      \"viewsCount\": 245,\n      \"organicViewsCount\": 45,\n      \"paidViewsCount\": 200,\n      \"hahaCount\": 830,\n      \"loveCount\": 830,\n      \"receivedMessagesCount\": 3,\n      \"publishedLinksCount\": 12,\n      \"publishedPhotosCount\": 23,\n      \"publishedStatusCount\": 3,\n      \"publishedVideoCount\": 2,\n      \"reactionsCount\": 99,\n      \"receivedCommentsCount\": 6,\n      \"organicReceivedCommentsCount\": 2,\n      \"paidReceivedCommentsCount\": 4,\n      \"sharesCount\": 23,\n      \"organicSharesCount\": 3,\n      \"paidSharesCount\": 20,\n      \"videoViewsAutoplayCount\": 56,\n      \"videoViewsClickCount\": 54,\n      \"positiveItemsCount\": 24,\n      \"neutralItemsCount\": 2,\n      \"negativeItemsCount\": 12,\n      \"sadCount\": 1200,\n      \"sentimentScore\": 50,\n      \"videoViewsCount\": 152,\n      \"organicVideoViewsCount\": 54,\n      \"paidVideoViewsCount\": 98,\n      \"wowCount\": 1200\n    },\n    {\n      \"angryCount\": 120,\n      \"organicEngagementCount\": 23,\n      \"paidEngagementCount\": 76,\n      \"engagementRatePerView\": 24.2,\n      \"organicEngagementRatePerView\": 10.2,\n      \"paidEngagementRatePerView\": 14,\n      \"engagementRatePerReach\": 26.6,\n      \"organicEngagementRatePerReach\": 14.4,\n      \"paidEngagementRatePerReach\": 20.4,\n      \"followersGainedCount\": 25,\n      \"followersLostCount\": 2,\n      \"followersNetGrowth\": 23,\n      \"followersCount\": 3765,\n      \"viewsCount\": 245,\n      \"organicViewsCount\": 45,\n      \"paidViewsCount\": 200,\n      \"hahaCount\": 830,\n      \"loveCount\": 830,\n      \"receivedMessagesCount\": 3,\n      \"publishedLinksCount\": 12,\n      \"publishedPhotosCount\": 23,\n      \"publishedStatusCount\": 3,\n      \"publishedVideoCount\": 2,\n      \"reactionsCount\": 99,\n      \"receivedCommentsCount\": 6,\n      \"organicReceivedCommentsCount\": 2,\n      \"paidReceivedCommentsCount\": 4,\n      \"sharesCount\": 23,\n      \"organicSharesCount\": 3,\n      \"paidSharesCount\": 20,\n      \"videoViewsAutoplayCount\": 56,\n      \"videoViewsClickCount\": 54,\n      \"positiveItemsCount\": 24,\n      \"neutralItemsCount\": 2,\n      \"negativeItemsCount\": 12,\n      \"sadCount\": 1200,\n      \"sentimentScore\": 50,\n      \"videoViewsCount\": 152,\n      \"organicVideoViewsCount\": 54,\n      \"paidVideoViewsCount\": 98,\n      \"wowCount\": 1200\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aeb06173-cecf-406c-bfcd-e056224858f9",
+          "name": "Get community management report",
+          "request": {
+            "name": "Get community management report",
+            "description": {
+              "content": "Get community management report",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "report",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "profiles",
+                ":profileUid",
+                "insights",
+                "communitymanagement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "until",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "profileUid",
+                  "description": "(Required) Profile uid"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b29d4ca1-ee48-4fda-9251-211ee8a39b6e",
+              "name": "Community management is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "report",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "profiles",
+                    ":profileUid",
+                    "insights",
+                    "communitymanagement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "profileUid",
+                      "description": "(Required) Profile uid"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"date\": \"2020-04-18T00:00:00.000Z\",\n      \"sentRepliesCount\": 12,\n      \"actions\": {\n        \"averageResponseTime\": 15,\n        \"repliesCount\": 2,\n        \"reviewsCount\": 10,\n        \"username\": \"User123\"\n      }\n    },\n    {\n      \"date\": \"2020-04-18T00:00:00.000Z\",\n      \"sentRepliesCount\": 12,\n      \"actions\": {\n        \"averageResponseTime\": 15,\n        \"repliesCount\": 2,\n        \"reviewsCount\": 10,\n        \"username\": \"User123\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8b520db-14b8-462e-bf9a-872ced93f823",
+          "name": "Get content report",
+          "request": {
+            "name": "Get content report",
+            "description": {
+              "content": "Get content report",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "report",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "profiles",
+                ":profileUid",
+                "insights",
+                "content"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "until",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "profileUid",
+                  "description": "(Required) Profile uid"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab27038e-301c-41e2-bc4a-23c70eec6618",
+              "name": "Content report is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "report",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "profiles",
+                    ":profileUid",
+                    "insights",
+                    "content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "profileUid",
+                      "description": "(Required) Profile uid"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"angryCount\": 830,\n      \"clicksCount\": 830,\n      \"commentsCount\": 830,\n      \"engagementCount\": 99,\n      \"engagementRatePerView\": 25.7,\n      \"engagementRatePerReach\": 64.2,\n      \"hahaCount\": 830,\n      \"likeCount\": 830,\n      \"linkClicksCount\": 752,\n      \"loveCount\": 830,\n      \"viewsCount\": 245,\n      \"organicViewsCount\": 45,\n      \"organicReachCount\": 345,\n      \"organicVideo30sViewsCount\": 345,\n      \"organicVideoCompleteViewsCount\": 345,\n      \"organicVideoCompleteViewViewersCount\": 345,\n      \"otherClicksCount\": 836,\n      \"paidViewsCount\": 200,\n      \"paidReachCount\": 291,\n      \"photoViewClicksCount\": 918,\n      \"paidVideo30sViewsCount\": 918,\n      \"paidVideoCompleteViewsCount\": 918,\n      \"paidVideoCompleteViewViewersCount\": 918,\n      \"reachCount\": 1200,\n      \"reactionsCount\": 1200,\n      \"sadCount\": 1200,\n      \"sharesCount\": 1200,\n      \"videoPlaysCount\": 23,\n      \"videoViewsCount\": 23,\n      \"organicVideoViewsCount\": 3,\n      \"paidVideoViewsCount\": 20,\n      \"videoViewsTimeWatchedCount\": 12,\n      \"videoViewsTimeWatchedRate\": 75.8,\n      \"video30sViewsAutoplayedCount\": 12,\n      \"video30sViewsClickedToPlayCount\": 12,\n      \"video30sViewViewersCount\": 12,\n      \"videoViewTimeByAgeAndGender\": {\n        \"F.18-24\": 120,\n        \"M.25-34\": 300\n      },\n      \"videoViewTimeByCountry\": {\n        \"France (FR)\": 60,\n        \"Germany (DE)\": 240\n      },\n      \"videoViewTimeByRegion\": {\n        \"Queensland - Australia\": 48,\n        \"England - United Kingdom\": 26,\n        \"California - United States\": 120\n      },\n      \"wowCount\": 1200\n    },\n    {\n      \"angryCount\": 830,\n      \"clicksCount\": 830,\n      \"commentsCount\": 830,\n      \"engagementCount\": 99,\n      \"engagementRatePerView\": 25.7,\n      \"engagementRatePerReach\": 64.2,\n      \"hahaCount\": 830,\n      \"likeCount\": 830,\n      \"linkClicksCount\": 752,\n      \"loveCount\": 830,\n      \"viewsCount\": 245,\n      \"organicViewsCount\": 45,\n      \"organicReachCount\": 345,\n      \"organicVideo30sViewsCount\": 345,\n      \"organicVideoCompleteViewsCount\": 345,\n      \"organicVideoCompleteViewViewersCount\": 345,\n      \"otherClicksCount\": 836,\n      \"paidViewsCount\": 200,\n      \"paidReachCount\": 291,\n      \"photoViewClicksCount\": 918,\n      \"paidVideo30sViewsCount\": 918,\n      \"paidVideoCompleteViewsCount\": 918,\n      \"paidVideoCompleteViewViewersCount\": 918,\n      \"reachCount\": 1200,\n      \"reactionsCount\": 1200,\n      \"sadCount\": 1200,\n      \"sharesCount\": 1200,\n      \"videoPlaysCount\": 23,\n      \"videoViewsCount\": 23,\n      \"organicVideoViewsCount\": 3,\n      \"paidVideoViewsCount\": 20,\n      \"videoViewsTimeWatchedCount\": 12,\n      \"videoViewsTimeWatchedRate\": 75.8,\n      \"video30sViewsAutoplayedCount\": 12,\n      \"video30sViewsClickedToPlayCount\": 12,\n      \"video30sViewViewersCount\": 12,\n      \"videoViewTimeByAgeAndGender\": {\n        \"F.18-24\": 120,\n        \"M.25-34\": 300\n      },\n      \"videoViewTimeByCountry\": {\n        \"France (FR)\": 60,\n        \"Germany (DE)\": 240\n      },\n      \"videoViewTimeByRegion\": {\n        \"Queensland - Australia\": 48,\n        \"England - United Kingdom\": 26,\n        \"California - United States\": 120\n      },\n      \"wowCount\": 1200\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.agorapulse.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9d78cd7a-3021-4ffe-b6d1-7ae530f001d6",
+    "name": "Agorapulse Reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n\n\nContact Support:\n Name: Agorapulse API Support\n Email: support@agorapulse.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+generated: '2026-08-13'
+method: generated
+source: openapi/_original/agorapulse-open-api-openapi.yml (22 operations, harvested from https://api.agorapulse.com/docs/open-api.yml)
+note: >-
+  Agorapulse publishes no skills or AGENTS.md of its own — searched before generating. Every step in
+  every skill below is grounded in an operationId that exists verbatim in the harvested spec.
+skills:
+- file: agorapulse-pull-profile-reports.md
+  name: Pull Agorapulse profile reports
+  api: openapi/agorapulse-reports-api-openapi.yml
+  operations: [getManagerOrganizations, getOrganizationWorkspaces, getWorkspaceProfiles, getAudience, getCommunityManagement, getContentReport, health]
+- file: agorapulse-manage-calendar-notes.md
+  name: Manage Agorapulse calendar notes
+  api: openapi/agorapulse-calendar-notes-api-openapi.yml
+  operations: [getManagerOrganizations, getOrganizationWorkspaces, search, save, update, delete]
+- file: agorapulse-triage-and-reply-inbox.md
+  name: Triage and reply to the Agorapulse inbox
+  api: openapi/agorapulse-items-api-openapi.yml
+  operations: [getManagerOrganizations, getOrganizationWorkspaces, findItems, getMessages, create1]
+- file: agorapulse-upload-media-and-draft.md
+  name: Upload media and stage an Agorapulse draft
+  api: openapi/agorapulse-media-api-openapi.yml
+  operations: [getManagerOrganizations, getOrganizationWorkspaces, getWorkspaceProfiles, create, get, requestUpload, save_1, list]

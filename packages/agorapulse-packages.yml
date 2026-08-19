@@ -1,0 +1,70 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  registry.npmjs.org (search + per-package metadata endpoints), api.github.com/orgs/agorapulse/repos,
+  and https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+summary: >-
+  Agorapulse ships no conventional REST client SDK in any language. The only first-party libraries
+  that speak to api.agorapulse.com are the MCP server and an n8n community node, both published under
+  the official @agorapulse npm scope. The rest of the @agorapulse scope is their internal Angular
+  design system, and the 80-repo GitHub org is Micronaut/Grails infrastructure libraries that have
+  nothing to do with the public API.
+registries_checked:
+- {registry: npm, result: 19 packages under the @agorapulse scope}
+- {registry: pypi, package: agorapulse, status: 404}
+- {registry: rubygems, package: agorapulse, status: 404}
+- {registry: crates.io, package: agorapulse, status: 403}
+- {registry: packagist, package: agorapulse, status: 301}
+- {registry: maven-central, result: 'many com.agorapulse:* artifacts, all Micronaut/Grails infrastructure libraries — none is an Agorapulse API client'}
+packages:
+- language: javascript
+  registry: npm
+  name: '@agorapulse/mcp'
+  url: https://www.npmjs.com/package/@agorapulse/mcp
+  install: npx -y @agorapulse/mcp
+  official: true
+  api_client: true
+  version: 1.0.1
+  published: '2025-06-12'
+  bin: agorapulse-mcp
+  description: MCP server exposing six Agorapulse API tools over stdio; calls https://api.agorapulse.com with an X-API-KEY.
+  note: >-
+    The closest thing Agorapulse has to a client library — it is a real, published, first-party
+    consumer of the REST API. Last release 2025-06-12, which predates the competitor-report,
+    media-slot, Pinterest-board and menu-group operations now in the spec, so it is already behind
+    the API it wraps.
+- language: javascript
+  registry: npm
+  name: '@agorapulse/n8n-nodes-agorapulse'
+  url: https://www.npmjs.com/package/@agorapulse/n8n-nodes-agorapulse
+  install: npm install @agorapulse/n8n-nodes-agorapulse
+  official: true
+  api_client: true
+  version: 0.0.1
+  published: '2025-12-17'
+  description: n8n community node for Agorapulse — social media management and automation.
+  note: Published under the official @agorapulse scope. Still at 0.0.1 with a single release.
+design_system:
+  note: >-
+    Published under the official @agorapulse scope and genuinely first-party, but these are the
+    Angular libraries behind the Agorapulse web app, not API clients. Recorded for completeness and
+    for the currency signal — this scope is actively released, which is what makes the 2025 dates on
+    the two API-facing packages above stand out. See components/agorapulse-components.yml.
+  packages:
+  - {registry: npm, name: '@agorapulse/ui-components', version: 22.0.14, published: '2026-08-12', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui-symbol', version: 22.0.0, published: '2026-07-22', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui-theme', version: 22.0.1, published: '2026-07-30', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui-charts', version: 22.0.0, published: '2026-07-22', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui-charts-map', version: 22.0.0, published: '2026-07-22', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui-animations', version: 22.0.1, published: '2026-07-31', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui-wysiwyg-editor', version: 22.0.2, published: '2026-07-22', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui-social-network-preview', version: 13.2.1, published: '2022-08-09', official: true, api_client: false}
+  - {registry: npm, name: '@agorapulse/ui', version: 2.4.4, published: '2022-01-18', official: true, api_client: false}
+not_first_party_api_clients:
+- name: '@agorapulse/module-federation*'
+  reason: Angular module-federation tooling, forked from @angular-architects. Not an API client.
+- name: com.agorapulse.* (Maven Central) / github.com/agorapulse/micronaut-*
+  reason: >-
+    Micronaut and Grails infrastructure libraries (AWS SDK, Worker, Permissions, Slack, Segment,
+    NewRelic, testing libraries). Open sourced by Agorapulse engineering, unrelated to the
+    Agorapulse product API.

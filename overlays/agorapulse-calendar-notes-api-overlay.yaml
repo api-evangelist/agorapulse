@@ -1,0 +1,36 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Agorapulse Calendar notes API
+  version: 1.0.0
+extends: openapi/agorapulse-calendar-notes-api-openapi.yml
+x-generated: '2026-08-13'
+x-method: generated
+actions:
+- target: $.info
+  description: Record API Evangelist provenance for the harvested contract.
+  update:
+    x-apievangelist-provider: agorapulse
+    x-apievangelist-source: https://api.agorapulse.com/docs/open-api.yml
+    x-apievangelist-harvested: '2026-08-13'
+- target: $
+  description: Restate the production server so the split document is callable standalone.
+  update:
+    servers:
+    - url: https://api.agorapulse.com
+      description: Production
+- target: $.components.securitySchemes.bearerAuth
+  description: Clarify that the scheme named bearerAuth is a static API key, not a bearer token.
+  update:
+    x-apievangelist-note: Despite the name, this is a raw per-user API key in the X-API-KEY header. Keys
+      inherit the minting user’s in-app permissions.
+- target: $.info
+  description: Cross-link the derived API Evangelist artifacts for this contract.
+  update:
+    x-apievangelist-artifacts:
+      authentication: authentication/agorapulse-authentication.yml
+      conventions: conventions/agorapulse-conventions.yml
+      errors: errors/agorapulse-problem-types.yml
+      rate-limits: rate-limits/agorapulse-rate-limits.yml
+      data-model: data-model/agorapulse-data-model.yml
+      webhooks: asyncapi/agorapulse-webhooks.yml
+      mcp: mcp/agorapulse-mcp.yml

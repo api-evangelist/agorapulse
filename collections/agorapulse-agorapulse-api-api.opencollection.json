@@ -1,0 +1,17 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Agorapulse API API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [],
+  "bundled": true
+}

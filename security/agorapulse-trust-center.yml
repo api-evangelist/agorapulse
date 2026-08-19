@@ -1,18 +1,35 @@
-generated: '2026-07-11'
+generated: '2026-08-13'
 method: searched
 probe: true
-source: https://www.agorapulse.com/security/
-url: https://www.agorapulse.com/security/
+source: https://trust.agorapulse.com/
+url: https://trust.agorapulse.com/
+also:
+- https://www.agorapulse.com/trust-center/
+- https://support.agorapulse.com/en/articles/13891773-agorapulse-trust-center
+- https://www.agorapulse.com/security/
+- https://www.agorapulse.com/gdpr/
 certifications:
-- SOC 2
-- ISO 27001
-- PCI DSS
+- ISO 27001:2022
+- SOC 2 Type 2
 - GDPR
+documents_available:
+- {name: 'ISO 27001:2022 certificate', via: 'https://trust.agorapulse.com/'}
+- {name: 'SOC 2 Type 2 report', via: 'https://trust.agorapulse.com/'}
+- {name: 'Data Processing Agreement', via: 'https://www.agorapulse.com/trust-center/'}
+- {name: 'Infrastructure, organizational and product security measures', via: 'https://trust.agorapulse.com/'}
+not_agorapulse_certifications:
+  note: >-
+    https://www.agorapulse.com/security/ also lists ISO 9001, ISO 27017, ISO 27018, PCI DSS Level 1
+    and SOC 1/2/3. Those are AWS's certifications for the underlying infrastructure, presented as
+    such on the page, and are NOT credited to Agorapulse here. A prior round of this profile
+    recorded PCI DSS as an Agorapulse certification; that has been corrected.
+  items: [ISO 9001, ISO 27017, ISO 27018, PCI DSS Level 1, SOC 1, SOC 3]
+  attributed_to: Amazon Web Services
 evidence:
-- source: https://www.agorapulse.com/security/
-  keywords:
-  - soc2
-  - iso 27001
-  - pci dss
-  - trust center
-  - gdpr
+- source: https://support.agorapulse.com/en/articles/13891773-agorapulse-trust-center
+  quote: 'ISO 27001:2022 certificate, SOC 2 Type 2 report and GDPR compliance are available at the Trust Center.'
+- source: https://www.agorapulse.com/trust-center/
+  keywords: [customer trust portal, soc 2 audit report, gdpr, data processing agreement]
+x-evidence:
+- {fetched: '2026-08-13', url: 'https://trust.agorapulse.com/', http_status: 200}
+- {fetched: '2026-08-13', url: 'https://www.agorapulse.com/gdpr/', http_status: 200}

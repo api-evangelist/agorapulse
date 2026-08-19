@@ -1,0 +1,665 @@
+# Agorapulse - Help Centre
+
+> How can Agorapulse help you today?
+
+## English
+
+### Agorapulse 101
+
+- [The Agorapulse Academy](https://support.agorapulse.com/en/articles/12108190-the-agorapulse-academy.md): Become an Agorapulse expert with the Agorapulse Academy.
+- [The Agorapulse Glossary](https://support.agorapulse.com/en/articles/13779845-the-agorapulse-glossary.md): These are words you will commonly see when using Agorapulse
+- [What is a social profile?](https://support.agorapulse.com/en/articles/8762832-what-is-a-social-profile.md)
+- [How to add a social profile](https://support.agorapulse.com/en/articles/8762473-how-to-add-a-social-profile.md): Connect your social accounts so that you can manage your social media presence in Agorapulse!
+- [How to remove a social profile](https://support.agorapulse.com/en/articles/8762748-how-to-remove-a-social-profile.md): Learn how to remove a social profile form your subscription!
+- [How to manage tokens in Agorapulse](https://support.agorapulse.com/en/articles/8985782-how-to-manage-tokens-in-agorapulse.md): Keep your social profiles connected by learning how to renew and manage expired or invalid tokens!
+- [Why is my Instagram profile not connecting to Agorapulse?](https://support.agorapulse.com/en/articles/8762513-why-is-my-instagram-profile-not-connecting-to-agorapulse.md): Troubleshoot Instagram connection issues related to setup, permissions, or account access.
+- [Why is a personal Facebook profile required to connect Facebook or Instagram to Agorapulse?](https://support.agorapulse.com/en/articles/8762717-why-is-a-personal-facebook-profile-required-to-connect-facebook-or-instagram-to-agorapulse.md): This article outlines the importance of using your own personal Facebook profile to authenticate Agorapulse.
+- [Managing your pages through Meta Business Manager](https://support.agorapulse.com/en/articles/9027532-managing-your-pages-through-meta-business-manager.md)
+- [Team management settings explained](https://support.agorapulse.com/en/articles/9542481-team-management-settings-explained.md): Learn how to manage users in your Agorapulse organization.
+- [How to add or delete team members](https://support.agorapulse.com/en/articles/9542494-how-to-add-or-delete-team-members.md): Learn how to invite, remove, or send invitations to users!
+- [Agorapulse Permissions Matrix](https://support.agorapulse.com/en/articles/8764534-agorapulse-permissions-matrix.md): A detailed breakdown of the actions available to each social profile and organization-level role in Agorapulse.
+- [How to create and manage custom roles](https://support.agorapulse.com/en/articles/11641202-how-to-create-and-manage-custom-roles.md): Create custom permission templates for team members.
+- [What kind of support do you provide?](https://support.agorapulse.com/en/articles/8762469-what-kind-of-support-do-you-provide.md): How can you get in touch with us.
+- [Do you support Facebook Store locations?](https://support.agorapulse.com/en/articles/8762837-do-you-support-facebook-store-locations.md)
+- [How to manage time zones in Agorapulse](https://support.agorapulse.com/en/articles/8769381-how-to-manage-time-zones-in-agorapulse.md): Learn how time zones can be configured across Agorapulse features.
+- [How long do you keep my data for?](https://support.agorapulse.com/en/articles/8980700-how-long-do-you-keep-my-data-for.md): Find out how Agorapulse stores your data.
+- [Agorapulse Trust Center](https://support.agorapulse.com/en/articles/13891773-agorapulse-trust-center.md): An overview on how Agorapulse protects your security and privacy
+- [Agorapulse Refund Policy](https://support.agorapulse.com/en/articles/15075866-agorapulse-refund-policy.md)
+
+### Settings and Subscription
+
+- [Pricing Per User Explained](https://support.agorapulse.com/en/articles/8762696-pricing-per-user-explained.md): Find out more about the subscriptions Agorapulse offers.
+- [Agorapulse Free Trial Explained](https://support.agorapulse.com/en/articles/11748805-agorapulse-free-trial-explained.md): Learn more about the free trial Agorapulse offers.
+- [Agorapulse Free Plan Explained](https://support.agorapulse.com/en/articles/8762514-agorapulse-free-plan-explained.md)
+- [X \(Twitter\) Lite and X \(Twitter\) Plus Explained](https://support.agorapulse.com/en/articles/8762824-x-twitter-lite-and-x-twitter-plus-explained.md): Find out the difference between X Lite and X Plus.
+- [Legacy Subscription Update](https://support.agorapulse.com/en/articles/10982218-legacy-subscription-update.md): Find out more information on our changes to historical subscriptions.
+- [Extended Historical Data sync explained](https://support.agorapulse.com/en/articles/10516784-extended-historical-data-sync-explained.md): This article will detail what extended historical data can be synced to Agorapulse after a social profile is connected.
+- [How to subscribe to Agorapulse](https://support.agorapulse.com/en/articles/8762844-how-to-subscribe-to-agorapulse.md)
+- [How to edit an active subscription](https://support.agorapulse.com/en/articles/8762784-how-to-edit-an-active-subscription.md): Organization Owners can manage subscription plans \(upgrade or downgrade\) in the Subscription settings.
+- [How to manage add-ons in your Agorapulse subscription](https://support.agorapulse.com/en/articles/8762841-how-to-manage-add-ons-in-your-agorapulse-subscription.md): Configure add ons to your Agorapulse subscriptions!
+- [How to cancel an Agorapulse subscription](https://support.agorapulse.com/en/articles/8762836-how-to-cancel-an-agorapulse-subscription.md): Cancel your Agorapulse subscription or subscription renewal.
+- [How do I transfer my subscription to another team member?](https://support.agorapulse.com/en/articles/8762839-how-do-i-transfer-my-subscription-to-another-team-member.md)
+- [Agorapulse Notifications Explained](https://support.agorapulse.com/en/articles/8762721-agorapulse-notifications-explained.md): Find out what notifications you can enable in Agorapulse!
+- [How to sign up to, log in or log out of Agorapulse](https://support.agorapulse.com/en/articles/8762489-how-to-sign-up-to-log-in-or-log-out-of-agorapulse.md)
+- [How to delete your Agorapulse account](https://support.agorapulse.com/en/articles/8762704-how-to-delete-your-agorapulse-account.md): Delete your Agorapulse organization and account.
+- [How to reset forgotten password](https://support.agorapulse.com/en/articles/8762711-how-to-reset-forgotten-password.md)
+- [How to rename and group social profiles](https://support.agorapulse.com/en/articles/8762708-how-to-rename-and-group-social-profiles.md): Learn how to create and manage social profile groups in Agorapulse
+- [Agorapulse and SSO \(Single Sign On\)](https://support.agorapulse.com/en/articles/8762699-agorapulse-and-sso-single-sign-on.md)
+- [How to enable/disable two-factor authentication \(2FA\) in Agorapulse](https://support.agorapulse.com/en/articles/8762716-how-to-enable-disable-two-factor-authentication-2fa-in-agorapulse.md): Learn how to manage two-factor authentication for your Agorapulse account
+- [My account has been locked](https://support.agorapulse.com/en/articles/8762719-my-account-has-been-locked.md)
+- [Why am I seeing a "too many devices" message?](https://support.agorapulse.com/en/articles/8980870-why-am-i-seeing-a-too-many-devices-message.md)
+- [How to update your personal information](https://support.agorapulse.com/en/articles/14040024-how-to-update-your-personal-information.md): Instructions on how to update your personal information
+- [How to view invoices in Agorapulse](https://support.agorapulse.com/en/articles/8764453-how-to-view-invoices-in-agorapulse.md): Access invoices int the Subscription settings.
+- [How to edit billing information](https://support.agorapulse.com/en/articles/8764451-how-to-edit-billing-information.md): Update invoicing information within the Subscription settings.
+- [How to add additional payment methods](https://support.agorapulse.com/en/articles/8764468-how-to-add-additional-payment-methods.md): Learn how to add a payment method to Agorapulse!
+- [Billing Frequently Asked Questions \(FAQ\)](https://support.agorapulse.com/en/articles/12097076-billing-frequently-asked-questions-faq.md): Find the answers to common questions about billing in Agorapulse.
+
+### Publishing
+
+- [Publishing by Social Network Explained](https://support.agorapulse.com/en/articles/10520824-publishing-by-social-network-explained.md): Learn what you can publish through Agorapulse by social network.
+- [How to create and schedule a post in Agorapulse](https://support.agorapulse.com/en/articles/8769280-how-to-create-and-schedule-a-post-in-agorapulse.md): Learn how to schedule content across your social profiles through Agorapulse.
+- [How to manage scheduled posts](https://support.agorapulse.com/en/articles/8772948-how-to-manage-scheduled-posts.md): Learn how to edit or delete a scheduled post.
+- [Publishing Image and Video Specifications](https://support.agorapulse.com/en/articles/8773203-publishing-image-and-video-specifications.md): Learn best practices on uploading media to Agorapulse for publishing.
+- [How to edit an image or video when creating a post](https://support.agorapulse.com/en/articles/11982712-how-to-edit-an-image-or-video-when-creating-a-post.md): Edit an image or choose a custom video thumbnail from the Publishing Composer.
+- [How to use custom fields when creating a post](https://support.agorapulse.com/en/articles/8769295-how-to-use-custom-fields-when-creating-a-post.md): Save time by personalizing posts with reusable custom fields!
+- [How to set up a link in bio page for an Instagram profile](https://support.agorapulse.com/en/articles/8772962-how-to-set-up-a-link-in-bio-page-for-an-instagram-profile.md): Create and manage your PulseLink link in bio page by adding Instagram posts that direct followers to custom URLs!
+- [How to create a group of hashtags](https://support.agorapulse.com/en/articles/8769364-how-to-create-a-group-of-hashtags.md): Save time when creating posts by using hashtag groups!
+- [How to target posts to a specific audience](https://support.agorapulse.com/en/articles/8769366-how-to-target-posts-to-a-specific-audience.md): Use post targeting to target your audience!
+- [How to manage link previews](https://support.agorapulse.com/en/articles/8769372-how-to-manage-link-previews.md): Learn how to manage and customize link previews!
+- [How to add a location to a post](https://support.agorapulse.com/en/articles/8772956-how-to-add-a-location-to-a-post.md): Add locations to your Facebook and Instagram posts through Agorapulse!
+- [How to create and manage publishing labels](https://support.agorapulse.com/en/articles/8769363-how-to-create-and-manage-publishing-labels.md): Utilize publishing labels in order to group published content!
+- [How to mention and tag accounts in a post](https://support.agorapulse.com/en/articles/8769375-how-to-mention-and-tag-accounts-in-a-post.md): Mention and tag other profiles when creating a post in the Publishing Composer.
+- [How to add subtitles to a video post](https://support.agorapulse.com/en/articles/8773239-how-to-add-subtitles-to-a-video-post.md): Add subtitles to increase engagement and visibility on video posts!
+- [How to add alternative text to an image](https://support.agorapulse.com/en/articles/8773211-how-to-add-alternative-text-to-an-image.md): Make your content accessible through the use of alt-text!
+- [How to track and shorten links](https://support.agorapulse.com/en/articles/9739136-how-to-track-and-shorten-links.md): Measure campaign performance by tracking and shortening links.
+- [How to add a poll to a LinkedIn post](https://support.agorapulse.com/en/articles/10249225-how-to-add-a-poll-to-a-linkedin-post.md): Learn how to create and publish LinkedIn polls using Agorapulse!
+- [How to boost a Facebook post in Agorapulse](https://support.agorapulse.com/en/articles/8912280-how-to-boost-a-facebook-post-in-agorapulse.md): Learn how to boost Facebook posts in Agorapulse during scheduling or after publishing!
+- [How to create a thread](https://support.agorapulse.com/en/articles/8769726-how-to-create-a-thread.md): Create a thread when creating an X or Threads post in the Publishing Composer.
+- [How to add a first comment to a post](https://support.agorapulse.com/en/articles/8769638-how-to-add-a-first-comment-to-a-post.md): Schedule a first comment at the same time you schedule your post!
+- [How to create Instagram collaborative posts in Agorapulse](https://support.agorapulse.com/en/articles/8769652-how-to-create-instagram-collaborative-posts-in-agorapulse.md): Add collaborators to Instagram posts to increase your audience!
+- [How to set up product tagging on Instagram](https://support.agorapulse.com/en/articles/12008373-how-to-set-up-product-tagging-on-instagram.md): Learn how to set up Meta’s Commerce Manager and tag products in Instagram posts.
+- [How to add audio to Instagram Reels](https://support.agorapulse.com/en/articles/16020547-how-to-add-audio-to-instagram-reels.md): Learn how to add audio to your Instagram Reels
+- [Publishing Calendar Explained](https://support.agorapulse.com/en/articles/12019371-publishing-calendar-explained.md): View and manage publishing through the Publishing Calendar.
+- [How to view a published or failed post](https://support.agorapulse.com/en/articles/10184307-how-to-view-a-published-or-failed-post.md): View published posts through the Publishing Calendar!
+- [How to delete a published post](https://support.agorapulse.com/en/articles/12059454-how-to-delete-a-published-post.md): Learn which networks support published post deletion through Agorapulse.
+- [How to export posts as a CSV](https://support.agorapulse.com/en/articles/15962987-how-to-export-posts-as-a-csv.md): Learn how to export posts from your Publishing Calendar
+- [How to send a post for approval](https://support.agorapulse.com/en/articles/8773562-how-to-send-a-post-for-approval.md): Send content to internal or external collaborators for review!
+- [How to review a post as an approver](https://support.agorapulse.com/en/articles/10353571-how-to-review-a-post-as-an-approver.md): Learn how to respond to a post that you have been assigned!
+- [How to manage post approval workflows](https://support.agorapulse.com/en/articles/10346598-how-to-manage-post-approval-workflows.md): Send posts for approval to a designated multi-step approval workflow.
+- [How to create a Shared Calendar](https://support.agorapulse.com/en/articles/9979006-how-to-create-a-shared-calendar.md): Send posts to clients or external users for approval using the Shared Calendar.
+- [How to access the Shared Calendar as an external user](https://support.agorapulse.com/en/articles/12010367-how-to-access-the-shared-calendar-as-an-external-user.md): Access the Shared Calendar as an external user to approve and reject posts.
+- [How to create and manage draft posts](https://support.agorapulse.com/en/articles/8774052-how-to-create-and-manage-draft-posts.md): Learn how to create, convert, organize, and manage draft posts.
+- [How to Bulk Import Posts via CSV File](https://support.agorapulse.com/en/articles/8774056-how-to-bulk-import-posts-via-csv-file.md): Upload multiple posts at once using bulk import.
+- [Asset Library Explained](https://support.agorapulse.com/en/articles/8773668-asset-library-explained.md): Upload media directly to the Asset Library so your team can access it when publishing posts in Agorapulse.
+- [How to create a public URL for images/videos](https://support.agorapulse.com/en/articles/8774058-how-to-create-a-public-url-for-images-videos.md): Bulk upload videos and images from Dropbox & Google Drive
+- [Queues Explained](https://support.agorapulse.com/en/articles/8774121-queues-explained.md): Use Queues to automate the publishing process.
+- [How to create and organize queues](https://support.agorapulse.com/en/articles/8774124-how-to-create-and-organize-queues.md): Create publishing queues and organize them using groups.
+- [How to set up timeslots for queues](https://support.agorapulse.com/en/articles/8774145-how-to-set-up-timeslots-for-queues.md): Customize timeslots to publish content from your queues automatically.
+- [How to manage content in a publishing queue](https://support.agorapulse.com/en/articles/10063742-how-to-manage-content-in-a-publishing-queue.md): Organize content within a queue.
+- [How to add content to a queue](https://support.agorapulse.com/en/articles/12081732-how-to-add-content-to-a-queue.md): Learn how to create posts and add post to a queue.
+- [Publishing Frequently Asked Questions \(FAQ\)](https://support.agorapulse.com/en/articles/11951279-publishing-frequently-asked-questions-faq.md)
+- [Common Publishing Errors](https://support.agorapulse.com/en/articles/11960881-common-publishing-errors.md): Learn how to troubleshoot common Publishing errors.
+
+### Archie \(Beta\)
+
+- [Archie Explained](https://support.agorapulse.com/en/articles/15385025-archie-explained.md): Learn more about Archie, Agorapulse's AI-powered creation studio
+- [How to get started with Archie](https://support.agorapulse.com/en/articles/15435821-how-to-get-started-with-archie.md): Learn how to begin using Archie
+- [How to start a conversation with Archie](https://support.agorapulse.com/en/articles/15450609-how-to-start-a-conversation-with-archie.md)
+- [How to generate posts with Archie](https://support.agorapulse.com/en/articles/15452272-how-to-generate-posts-with-archie.md): Learn how to generate posts with Agorapulse's AI assistant
+- [How to schedule posts with Archie](https://support.agorapulse.com/en/articles/15483742-how-to-schedule-posts-with-archie.md)
+- [How to repurpose content with Archie](https://support.agorapulse.com/en/articles/15972276-how-to-repurpose-content-with-archie.md): Learn how to repurpose your top content using Archie
+
+### Inbox
+
+- [Agorapulse Inbox Explained](https://support.agorapulse.com/en/articles/10393075-agorapulse-inbox-explained.md): Respond to conversations, comments, mentions and direct messages \(DMs\) using Agorapulse's Inbox!
+- [How to reply to an Inbox item](https://support.agorapulse.com/en/articles/10393331-how-to-reply-to-an-inbox-item.md): Reply to comments, DMs, mentions and conversation within the Inbox.
+- [How to manage users in the Inbox](https://support.agorapulse.com/en/articles/10406585-how-to-manage-users-in-the-inbox.md): Discover more information about users who interact with your content.
+- [How to assign and review items in the Inbox](https://support.agorapulse.com/en/articles/10441656-how-to-assign-and-review-items-in-the-inbox.md): Learn how to assign Inbox items to team members for review.
+- [How to create and manage Inbox labels](https://support.agorapulse.com/en/articles/10420408-how-to-create-and-manage-inbox-labels.md): Use labels in the Inbox to help group and report on similar conversations.
+- [How to create and manage saved replies](https://support.agorapulse.com/en/articles/10393481-how-to-create-and-manage-saved-replies.md): Use saved replies to respond to common conversations in the Inbox.
+- [How to track sentiment in the Inbox](https://support.agorapulse.com/en/articles/10394113-how-to-track-sentiment-in-the-inbox.md): React quickly to conversations requiring your attention using sentiment in the Inbox.
+- [How to delete or hide an item in the Inbox](https://support.agorapulse.com/en/articles/10393493-how-to-delete-or-hide-an-item-in-the-inbox.md): Learn how to remove comments, DMs or mentions in the Inbox.
+- [How to search, filter and sort in the Inbox](https://support.agorapulse.com/en/articles/10410740-how-to-search-filter-and-sort-in-the-inbox.md): Quickly identify Inbox items by applying selected criteria.
+- [How to use bulk actions in the Inbox](https://support.agorapulse.com/en/articles/10420158-how-to-use-bulk-actions-in-the-inbox.md): Use bulk actions in the Inbox to effectively manage multiple conversations at once.
+- [How to export Inbox items from Agorapulse](https://support.agorapulse.com/en/articles/11197848-how-to-export-inbox-items-from-agorapulse.md)
+- [How to create and manage filter presets in the Inbox](https://support.agorapulse.com/en/articles/11640196-how-to-create-and-manage-filter-presets-in-the-inbox.md): Customize the Inbox view with filter presets.
+- [Custom inboxes explained](https://support.agorapulse.com/en/articles/12571402-custom-inboxes-explained.md): Customize your Inbox with custom inboxes
+- [Ad Comment Management Explained](https://support.agorapulse.com/en/articles/10442447-ad-comment-management-explained.md): Interact with users engaging with paid content.
+- [How to connect and manage ad accounts](https://support.agorapulse.com/en/articles/9608631-how-to-connect-and-manage-ad-accounts.md): Learn how to sync ad comments to the Inbox by connecting your ad accounts!
+- [How to set up Automated Moderation in the Inbox](https://support.agorapulse.com/en/articles/10419838-how-to-set-up-automated-moderation-in-the-inbox.md): Define a set of automated rules to automatically assign actions to Inbox items.
+- [Automated moderation best practices](https://support.agorapulse.com/en/articles/14658483-automated-moderation-best-practices.md): Learn the best practices for creating moderation rules
+- [Common Inbox Reply Errors](https://support.agorapulse.com/en/articles/8764601-common-inbox-reply-errors.md): Learn how to troubleshoot common Inbox errors.
+- [Inbox Frequently Asked Questions \(FAQs\)](https://support.agorapulse.com/en/articles/10443802-inbox-frequently-asked-questions-faqs.md): Find the answers to common questions related to Agorapulse's Inbox.
+- [Custom inbox and filter preset best practices](https://support.agorapulse.com/en/articles/14424548-custom-inbox-and-filter-preset-best-practices.md)
+
+### Analytics
+
+- [Reports Frequently Asked Questions \(FAQs\)](https://support.agorapulse.com/en/articles/11066949-reports-frequently-asked-questions-faqs.md): Find out answers to common questions about Agorapulse Reports.
+- [Legacy Custom Reports deprecation \(September 2026\)](https://support.agorapulse.com/en/articles/15880685-legacy-custom-reports-deprecation-september-2026.md): Learn about the deprecation of Legacy Custom reports
+- [Agorapulse Reports Explained](https://support.agorapulse.com/en/articles/11066993-agorapulse-reports-explained.md)
+- [Audience Report Explained](https://support.agorapulse.com/en/articles/10751286-audience-report-explained.md)
+- [Posts Performance report explained](https://support.agorapulse.com/en/articles/11065478-posts-performance-report-explained.md): Learn how to view individual content insights in the Reports tool!
+- [Posts Insights report explained](https://support.agorapulse.com/en/articles/10904403-posts-insights-report-explained.md): Learn how to view publishing insights in the Reports tool!
+- [Community Management Report Explained](https://support.agorapulse.com/en/articles/10728067-community-management-report-explained.md): Learn how to track your team's response efficiency!
+- [Competitors Report Explained](https://support.agorapulse.com/en/articles/9952765-competitors-report-explained.md): Add or remove competitors in order to compare key audience and content metrics!
+- [Meta Ads Report Explained](https://support.agorapulse.com/en/articles/10137532-meta-ads-report-explained.md): Sync the Agorapulse reports tool with data from Meta Ads!
+- [LinkedIn Ads Report Explained](https://support.agorapulse.com/en/articles/11537372-linkedin-ads-report-explained.md): Sync LinkedIn Ads data to Agorapulse!
+- [Custom Reports Explained](https://support.agorapulse.com/en/articles/10728432-custom-reports-explained.md): Learn how to create a custom report and aggregate data across multiple social profiles.
+- [How to configure Agorapulse reports](https://support.agorapulse.com/en/articles/11066881-how-to-configure-agorapulse-reports.md): Learn the different ways you can export insights from the Reports tool!
+- [How to export Agorapulse reports](https://support.agorapulse.com/en/articles/11114496-how-to-export-agorapulse-reports.md): Learn how to export insights from Agorapulse reports!
+- [How to configure customizable business hours](https://support.agorapulse.com/en/articles/10728501-how-to-configure-customizable-business-hours.md): Learn how to enter customized business hours to assist with average response time calculations.
+- [Facebook metric deprecation \(June 2026\)](https://support.agorapulse.com/en/articles/15773507-facebook-metric-deprecation-june-2026.md): Learn how Facebook metrics will be affected by recent changes to Meta's API.
+- [Social Media ROI - feature overview](https://support.agorapulse.com/en/articles/8778518-social-media-roi-feature-overview.md)
+- [Agorapulse ROI dashboard vs Google Analytics 4](https://support.agorapulse.com/en/articles/8778523-agorapulse-roi-dashboard-vs-google-analytics-4.md)
+- [Is Paid Social Counted in the Social Media ROI Dashboards?](https://support.agorapulse.com/en/articles/8778525-is-paid-social-counted-in-the-social-media-roi-dashboards.md)
+- [Quantify Social Content's Value When You Don't Sell Anything Online](https://support.agorapulse.com/en/articles/8778528-quantify-social-content-s-value-when-you-don-t-sell-anything-online.md)
+- [How can I check the data generated from my Pulse.ly links?](https://support.agorapulse.com/en/articles/8778530-how-can-i-check-the-data-generated-from-my-pulse-ly-links.md)
+- [How to measure the impact of your work with Agorapulse](https://support.agorapulse.com/en/articles/8778256-how-to-measure-the-impact-of-your-work-with-agorapulse.md)
+- [Report Studio Explained](https://support.agorapulse.com/en/articles/15950060-report-studio-explained.md): Learn how to get started creating reports using Report Studio
+- [How to organize your reports in Report Studio](https://support.agorapulse.com/en/articles/15951155-how-to-organize-your-reports-in-report-studio.md): Learn how to manage and organize your reports in Report Studio
+- [How to export reports in Report Studio](https://support.agorapulse.com/en/articles/16043113-how-to-export-reports-in-report-studio.md): Learn how to export your custom report in Report Studio
+- [Report Studio's widget library explained](https://support.agorapulse.com/en/articles/15198172-report-studio-s-widget-library-explained.md)
+
+### Advanced Listening
+
+- [Advanced Listening Explained](https://support.agorapulse.com/en/articles/10365572-advanced-listening-explained.md): Advanced Listening allows you to stay ahead of changes affecting your industry and organization!
+- [How to view and manage Advanced Listening searches](https://support.agorapulse.com/en/articles/8712184-how-to-view-and-manage-advanced-listening-searches.md): View all Advanced Listening searches in the Search Dashboard.
+- [How to create an Advanced Listening search](https://support.agorapulse.com/en/articles/8712232-how-to-create-an-advanced-listening-search.md): Learn how to create an Advanced Listening search.
+- [How to view Advanced Listening search results](https://support.agorapulse.com/en/articles/8712289-how-to-view-advanced-listening-search-results.md): Learn how to access and interpret the results of your Advanced Listening search!
+- [How to set up Advanced Listening alerts](https://support.agorapulse.com/en/articles/10767589-how-to-set-up-advanced-listening-alerts.md): Learn how to be notified of key changes in Advanced Listening searches.
+- [How to trial the Advanced Listening feature](https://support.agorapulse.com/en/articles/11384539-how-to-trial-the-advanced-listening-feature.md): Learn what is included in a trial of our Advanced Listening feature!
+
+### Advocacy
+
+- [Agorapulse Advocacy Explained](https://support.agorapulse.com/en/articles/11624163-agorapulse-advocacy-explained.md): Learn how to leverage Advocacy to increase the reach of your campaigns.
+- [How to create an Advocacy campaign](https://support.agorapulse.com/en/articles/11625852-how-to-create-an-advocacy-campaign.md): Create a campaign to share links and post with internal or external advocates.
+- [How to view and manage an Advocacy campaign](https://support.agorapulse.com/en/articles/11626012-how-to-view-and-manage-an-advocacy-campaign.md): Learn how to gain insights into Advocacy campaigns.
+- [How to add and manage advocates](https://support.agorapulse.com/en/articles/8871050-how-to-add-and-manage-advocates.md): Add internal and external advocates for use in Advocacy camapaigns.
+- [How to respond to an Advocacy campaign as an advocate](https://support.agorapulse.com/en/articles/11626004-how-to-respond-to-an-advocacy-campaign-as-an-advocate.md): Learn how to access the Advocate Space and respond to advocacy campaigns!
+
+### Agorapulse Mobile App
+
+- [Limitations of The Agorapulse Mobile App](https://support.agorapulse.com/en/articles/8778754-limitations-of-the-agorapulse-mobile-app.md)
+- [How do I log in to Agorapulse mobile app?](https://support.agorapulse.com/en/articles/8778740-how-do-i-log-in-to-agorapulse-mobile-app.md)
+- [Do you provide a mobile app?](https://support.agorapulse.com/en/articles/8778753-do-you-provide-a-mobile-app.md)
+- [How to schedule and publish a post via mobile notification](https://support.agorapulse.com/en/articles/8778750-how-to-schedule-and-publish-a-post-via-mobile-notification.md): Learn how to publish Instagram and TikTok posts via mobile notification.
+- [How can I receive Agorapulse mobile push notifications?](https://support.agorapulse.com/en/articles/8778765-how-can-i-receive-agorapulse-mobile-push-notifications.md)
+- [Mobile Publishing explained](https://support.agorapulse.com/en/articles/13197769-mobile-publishing-explained.md): Learn how to schedule content across your social profiles through the Agorapulse mobile app
+- [How to view and manage posts from the mobile app](https://support.agorapulse.com/en/articles/13455632-how-to-view-and-manage-posts-from-the-mobile-app.md): Learn how to view and manage posts via the mobile app
+- [Managing saved replies from the mobile app](https://support.agorapulse.com/en/articles/12835207-managing-saved-replies-from-the-mobile-app.md): Use saved replies to reply to conversations from the mobile app
+- [Mobile Inbox explained](https://support.agorapulse.com/en/articles/12754360-mobile-inbox-explained.md): Respond to conversations, comments, mentions and direct messages \(DMs\) on the go using Agorapulse's mobile Inbox
+- [How to reply to and manage items in the mobile Inbox](https://support.agorapulse.com/en/articles/12770663-how-to-reply-to-and-manage-items-in-the-mobile-inbox.md): Learn how to manage your inbox items from the mobile app
+- [Mobile Listening explained](https://support.agorapulse.com/en/articles/13181121-mobile-listening-explained.md): View your Listening searches from the Agorapulse mobile app
+- [Mobile Asset Library explained](https://support.agorapulse.com/en/articles/13754683-mobile-asset-library-explained.md): Learn how to use the Asset Library on the mobile app
+
+### AI & Automations
+
+- [Model Context Protocool \(MCP\) integration explained](https://support.agorapulse.com/en/articles/12960496-model-context-protocool-mcp-integration-explained.md): Learn how Agorapulse's MCP allows you to integrate with AI tools
+- [How to use the AI Writing Assistant](https://support.agorapulse.com/en/articles/8769298-how-to-use-the-ai-writing-assistant.md): Create, refine, or translate social media copy with the help of built-in AI.
+- [How to generate an AI Summary](https://support.agorapulse.com/en/articles/12041180-how-to-generate-an-ai-summary.md): Quickly and easily analyze, interpret and action reporting data with AI.
+- [Organization AI Context explained](https://support.agorapulse.com/en/articles/12400727-organization-ai-context-explained.md): Refine the tone of Agorapulse's AI features
+- [How to use the Zapier integration with Agorapulse](https://support.agorapulse.com/en/articles/12277852-how-to-use-the-zapier-integration-with-agorapulse.md): This article describes the Agorapulse integration for Zapier and how to use it.
+
+### Integrations
+
+- [Are Google Drive and Dropbox available on Agorapulse?](https://support.agorapulse.com/en/articles/8773253-are-google-drive-and-dropbox-available-on-agorapulse.md)
+- [How to connect to Agorapulse's Open API](https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api.md): Export Agorapulse reporting data to external analytics or BI tools
+- [How to use your Bitly account to shorten links](https://support.agorapulse.com/en/articles/9095281-how-to-use-your-bitly-account-to-shorten-links.md)
+- [How to use the Canva Integration](https://support.agorapulse.com/en/articles/8773225-how-to-use-the-canva-integration.md): Learn how to import designs from Canva to Agorapulse
+- [HubSpot and Salesforce within Agorapulse](https://support.agorapulse.com/en/articles/9101574-hubspot-and-salesforce-within-agorapulse.md)
+- [How to connect Google Analytics to Agorapulse](https://support.agorapulse.com/en/articles/8778519-how-to-connect-google-analytics-to-agorapulse.md)
+- [The Google Analytics account I'm looking for doesn't show up inside Agorapulse](https://support.agorapulse.com/en/articles/8778521-the-google-analytics-account-i-m-looking-for-doesn-t-show-up-inside-agorapulse.md)
+- [How can I link Agorapulse data to Looker Studio?](https://support.agorapulse.com/en/articles/9250755-how-can-i-link-agorapulse-data-to-looker-studio.md)
+- [Agorapulse Integration for Slack](https://support.agorapulse.com/en/articles/9490732-agorapulse-integration-for-slack.md): This article describes the Agorapulse integration for Slack and how to use it.
+- [Agorapulse Integration for Microsoft Teams](https://support.agorapulse.com/en/articles/11503107-agorapulse-integration-for-microsoft-teams.md): Receive Agorapulse notifications directly in Microsoft Teams!
+
+### Product Updates and API
+
+- [What is new in Agorapulse?](https://support.agorapulse.com/en/articles/11431161-what-is-new-in-agorapulse.md): A summary of the latest product features and enhancements from the latest release cycle.
+- [API Limitations per Network](https://support.agorapulse.com/en/articles/8712660-api-limitations-per-network.md): An overview of features that are unavailable in Agorapulse due to API limitations set by each social network.
+- [Agorapulse Release Notes - 2026](https://support.agorapulse.com/en/articles/13315559-agorapulse-release-notes-2026.md): Discover the new product features we have released this year.
+- [Agorapulse Release Notes - 2025](https://support.agorapulse.com/en/articles/11419511-agorapulse-release-notes-2025.md): Discover the new product features we have released this year.
+- [Agorapulse Release Notes - 2024](https://support.agorapulse.com/en/articles/11426269-agorapulse-release-notes-2024.md): Discover the product features that were released in 2024.
+- [Agorapulse Release Notes - 2023](https://support.agorapulse.com/en/articles/11427752-agorapulse-release-notes-2023.md): Discover the product features that were released in 2023.
+
+## Français
+
+### Débuter avec Agorapulse
+
+- [L' Agorapulse Academy](https://support.agorapulse.com/fr/articles/12108190-l-agorapulse-academy.md): Devenez un expert Agorapulse avec l'Agorapulse Academy.
+- [Glossaire Agorapulse](https://support.agorapulse.com/fr/articles/13779845-glossaire-agorapulse.md): Voici des mots que vous rencontrerez fréquemment en utilisant Agorapulse.
+- [Qu'entendez-vous par profil social ?](https://support.agorapulse.com/fr/articles/8762832-qu-entendez-vous-par-profil-social.md)
+- [Comment ajouter un profil social ?](https://support.agorapulse.com/fr/articles/8762473-comment-ajouter-un-profil-social.md): Ajoutez vos profils sociaux afin de pouvoir gérer votre présence sur les réseaux sociaux depuis Agorapulse !
+- [Comment supprimer un profil social](https://support.agorapulse.com/fr/articles/8762748-comment-supprimer-un-profil-social.md): Pour apprendre à supprimer un profil social de votre abonnement !
+- [Comment gérer les jetons dans Agorapulse](https://support.agorapulse.com/fr/articles/8985782-comment-gerer-les-jetons-dans-agorapulse.md): Gardez vos profils sociaux connectés en apprenant à renouveler et gérer les jetons expirés ou invalides !
+- [Pourquoi je n'arrive pas à ajouter mon profil Instagram à Agorapulse ?](https://support.agorapulse.com/fr/articles/8762513-pourquoi-je-n-arrive-pas-a-ajouter-mon-profil-instagram-a-agorapulse.md): Résoudre les problèmes d'ajout de compte Instagram liés aux paramètres, aux permissions ou à l'accès au compte.
+- [Pourquoi un profil Facebook personnel est-il nécessaire pour connecter Facebook ou Instagram à Agorapulse ?](https://support.agorapulse.com/fr/articles/8762717-pourquoi-un-profil-facebook-personnel-est-il-necessaire-pour-connecter-facebook-ou-instagram-a-agorapulse.md): Cet article souligne l’importance d’utiliser votre propre profil Facebook personnel pour authentifier Agorapulse.
+- [Gérez vos pages via le Meta Business Manager](https://support.agorapulse.com/fr/articles/9027532-gerez-vos-pages-via-le-meta-business-manager.md)
+- [Les paramètres de votre équipe expliqués](https://support.agorapulse.com/fr/articles/9542481-les-parametres-de-votre-equipe-expliques.md): Découvrez comment gérer les utilisateurs de votre organisation Agorapulse.
+- [Comment ajouter ou supprimer des membres de l'équipe](https://support.agorapulse.com/fr/articles/9542494-comment-ajouter-ou-supprimer-des-membres-de-l-equipe.md): Découvrez comment inviter, supprimer ou envoyer des invitations aux utilisateurs !
+- [Matrice des permissions Agorapulse](https://support.agorapulse.com/fr/articles/8764534-matrice-des-permissions-agorapulse.md): Une analyse détaillée des actions disponibles pour chaque rôle au niveau des profils sociaux et de l'organisation dans Agorapulse.
+- [Comment créer et gérer des rôles personnalisés](https://support.agorapulse.com/fr/articles/11641202-comment-creer-et-gerer-des-roles-personnalises.md): Créez des modèles de permissions personnalisées pour les membres de l'équipe.
+- [Quel type de Support offrons-nous ?](https://support.agorapulse.com/fr/articles/8762469-quel-type-de-support-offrons-nous.md)
+- [Puis-je ajouter une page Lieu Facebook ?](https://support.agorapulse.com/fr/articles/8762837-puis-je-ajouter-une-page-lieu-facebook.md)
+- [Comment gérer les fuseaux horaires dans Agorapulse](https://support.agorapulse.com/fr/articles/8769381-comment-gerer-les-fuseaux-horaires-dans-agorapulse.md): Découvrez comment les fuseaux horaires peuvent être configurés dans les fonctionnalités d'Agorapulse.
+- [Combien de temps conservez-vous mes données ?](https://support.agorapulse.com/fr/articles/8980700-combien-de-temps-conservez-vous-mes-donnees.md): Découvrez comment Agorapulse stocke vos données.
+- [Centre de confiance Agorapulse](https://support.agorapulse.com/fr/articles/13891773-centre-de-confiance-agorapulse.md): Présentation de la manière dont Agorapulse protège votre sécurité et votre confidentialité
+- [Politique de remboursement d'Agorapulse](https://support.agorapulse.com/fr/articles/15075866-politique-de-remboursement-d-agorapulse.md)
+
+### Paramètres & Souscription
+
+- [Explication de la tarification par utilisateur](https://support.agorapulse.com/fr/articles/8762696-explication-de-la-tarification-par-utilisateur.md): Découvrez-en plus sur les abonnements proposés par Agorapulse.
+- [Explication de la période d'essai Agorapulse](https://support.agorapulse.com/fr/articles/11748805-explication-de-la-periode-d-essai-agorapulse.md): En savoir plus sur la période d'essai proposée par Agorapulse.
+- [Explication du plan Free d'Agorapulse](https://support.agorapulse.com/fr/articles/8762514-explication-du-plan-free-d-agorapulse.md)
+- [X \(Twitter\) Lite et X \(Twitter\) Plus expliqués](https://support.agorapulse.com/fr/articles/8762824-x-twitter-lite-et-x-twitter-plus-expliques.md): Découvrez la différence entre X Lite et X Plus.
+- [Mise à jour de l'abonnement Legacy](https://support.agorapulse.com/fr/articles/10982218-mise-a-jour-de-l-abonnement-legacy.md): Obtenez plus d'informations sur nos modifications apportées aux abonnements historiques.
+- [Explication de la synchronisation des données historiques étendues](https://support.agorapulse.com/fr/articles/10516784-explication-de-la-synchronisation-des-donnees-historiques-etendues.md): Cet article détaille les données historiques étendues qui peuvent être synchronisées avec Agorapulse après l'ajout d'un profil social.
+- [Comment s'abonner à Agorapulse](https://support.agorapulse.com/fr/articles/8762844-comment-s-abonner-a-agorapulse.md)
+- [Comment modifier un abonnement actif](https://support.agorapulse.com/fr/articles/8762784-comment-modifier-un-abonnement-actif.md): Les propriétaires de l'organisation peuvent gérer leur plan \(passer à un plan supérieur ou inférieur\) dans les paramètres d'abonnement.
+- [Comment gérer les extensions de votre abonnement Agorapulse](https://support.agorapulse.com/fr/articles/8762841-comment-gerer-les-extensions-de-votre-abonnement-agorapulse.md): Configurez des extensions pour vos abonnements Agorapulse !
+- [Comment résilier un abonnement Agorapulse ?](https://support.agorapulse.com/fr/articles/8762836-comment-resilier-un-abonnement-agorapulse.md): Annulez votre abonnement ou le renouvellement de votre abonnement Agorapulse.
+- [Comment transférer mon abonnement à un tiers ?](https://support.agorapulse.com/fr/articles/8762839-comment-transferer-mon-abonnement-a-un-tiers.md)
+- [Explication des notifications Agorapulse](https://support.agorapulse.com/fr/articles/8762721-explication-des-notifications-agorapulse.md): Découvrez quelles notifications vous pouvez activer dans Agorapulse !
+- [Comment s'inscrire ou se connecter à votre organisation Agorapulse ?](https://support.agorapulse.com/fr/articles/8762489-comment-s-inscrire-ou-se-connecter-a-votre-organisation-agorapulse.md)
+- [Comment supprimer mon compte Agorapulse ?](https://support.agorapulse.com/fr/articles/8762704-comment-supprimer-mon-compte-agorapulse.md): Supprimez votre organisation et votre compte Agorapulse
+- [Comment réinitialiser un mot de passe oublié ?](https://support.agorapulse.com/fr/articles/8762711-comment-reinitialiser-un-mot-de-passe-oublie.md)
+- [Comment renommer et regrouper les profils sociaux](https://support.agorapulse.com/fr/articles/8762708-comment-renommer-et-regrouper-les-profils-sociaux.md): Apprenez à créer et à gérer des groupes de profils sociaux dans Agorapulse
+- [Agorapulse et SSO \(Single Sign On\)](https://support.agorapulse.com/fr/articles/8762699-agorapulse-et-sso-single-sign-on.md)
+- [Comment activer/désactiver l'authentification à 2 facteurs \(2FA\) dans Agorapulse ?](https://support.agorapulse.com/fr/articles/8762716-comment-activer-desactiver-l-authentification-a-2-facteurs-2fa-dans-agorapulse.md): Découvrez comment gérer l'authentification à deux facteurs pour votre compte Agorapulse.
+- [Mon compte a été verrouillé temporairement](https://support.agorapulse.com/fr/articles/8762719-mon-compte-a-ete-verrouille-temporairement.md)
+- [Pourquoi le message "Trop d'appareils utilisent ce compte" apparaît-il ?](https://support.agorapulse.com/fr/articles/8980870-pourquoi-le-message-trop-d-appareils-utilisent-ce-compte-apparait-il.md)
+- [Comment mettre à jour vos informations personnelles](https://support.agorapulse.com/fr/articles/14040024-comment-mettre-a-jour-vos-informations-personnelles.md): Instructions sur la façon de mettre à jour vos informations personnelles
+- [Comment accéder aux factures dans Agorapulse](https://support.agorapulse.com/fr/articles/8764453-comment-acceder-aux-factures-dans-agorapulse.md): Accédez aux factures dans les paramètres d'abonnement.
+- [Comment modifier les informations de facturation](https://support.agorapulse.com/fr/articles/8764451-comment-modifier-les-informations-de-facturation.md): Mettre à jour les informations de facturation dans les paramètres d'abonnement.
+- [Comment puis-je ajouter plusieurs modes de paiement ?](https://support.agorapulse.com/fr/articles/8764468-comment-puis-je-ajouter-plusieurs-modes-de-paiement.md): Découvrez comment mettre à jour votre moyen de paiement !
+- [Questions fréquemment posées sur la facturation \(FAQ\)](https://support.agorapulse.com/fr/articles/12097076-questions-frequemment-posees-sur-la-facturation-faq.md): Trouvez les réponses aux questions courantes sur la facturation dans Agorapulse.
+
+### Publication
+
+- [Explication de la publication par réseau social](https://support.agorapulse.com/fr/articles/10520824-explication-de-la-publication-par-reseau-social.md): Découvrez ce que vous pouvez publier via Agorapulse via le réseau social.
+- [Comment créer et programmer une publication dans Agorapulse](https://support.agorapulse.com/fr/articles/8769280-comment-creer-et-programmer-une-publication-dans-agorapulse.md): Découvrez comment planifier du contenu sur vos profils sociaux via Agorapulse.
+- [Comment gérer les publications programmées](https://support.agorapulse.com/fr/articles/8772948-comment-gerer-les-publications-programmees.md): Découvrez comment modifier ou supprimer une publication planifiée.
+- [Spécificités de publication d'images et de vidéos](https://support.agorapulse.com/fr/articles/8773203-specificites-de-publication-d-images-et-de-videos.md): Découvrez les meilleures pratiques pour télécharger des médias sur Agorapulse pour la publication.
+- [Comment modifier une image ou une vidéo lors de la création d'une publication](https://support.agorapulse.com/fr/articles/11982712-comment-modifier-une-image-ou-une-video-lors-de-la-creation-d-une-publication.md): Modifiez une image ou choisissez une miniature vidéo personnalisée dans l'outil de publication.
+- [Comment utiliser les champs personnalisés lors de la création d'une publication](https://support.agorapulse.com/fr/articles/8769295-comment-utiliser-les-champs-personnalises-lors-de-la-creation-d-une-publication.md): Gagnez du temps en personnalisant vos publications avec des champs personnalisés réutilisables !
+- [Comment créer un lien dans la page bio d'un profil Instagram](https://support.agorapulse.com/fr/articles/8772962-comment-creer-un-lien-dans-la-page-bio-d-un-profil-instagram.md):  Gérez votre lien PulseLink en bio et redirigez vos abonnés via des posts Instagram vers des URL personnalisées !
+- [Comment créer un groupe de hashtags](https://support.agorapulse.com/fr/articles/8769364-comment-creer-un-groupe-de-hashtags.md): Gagnez du temps lors de la création de publications en utilisant des groupes de hashtags !
+- [Comment cibler les publications pour une audience spécifique](https://support.agorapulse.com/fr/articles/8769366-comment-cibler-les-publications-pour-une-audience-specifique.md): Utilisez le ciblage des publications pour cibler votre audience !
+- [Comment gérer les aperçus des liens ?](https://support.agorapulse.com/fr/articles/8769372-comment-gerer-les-apercus-des-liens.md): Apprenez à gérer et personnaliser les aperçus de liens !
+- [Comment ajouter une localisation à une publication](https://support.agorapulse.com/fr/articles/8772956-comment-ajouter-une-localisation-a-une-publication.md): Ajoutez des lieux à vos publications Facebook et Instagram via Agorapulse !
+- [Comment créer et gérer des labels de publication](https://support.agorapulse.com/fr/articles/8769363-comment-creer-et-gerer-des-labels-de-publication.md): Utilisez des labels de publication pour regrouper le contenu publié !
+- [Comment mentionner et taguer des comptes dans une publication ?](https://support.agorapulse.com/fr/articles/8769375-comment-mentionner-et-taguer-des-comptes-dans-une-publication.md): Mentionner et taguer des comptes lors de la création d'une publication depuis l'outil de publication.
+- [Comment ajouter des sous-titres à une publication vidéo](https://support.agorapulse.com/fr/articles/8773239-comment-ajouter-des-sous-titres-a-une-publication-video.md): Ajoutez des sous-titres pour augmenter l’engagement et la visibilité sur les publications vidéo !
+- [Comment ajouter un texte alternatif à une image](https://support.agorapulse.com/fr/articles/8773211-comment-ajouter-un-texte-alternatif-a-une-image.md): Rendez votre contenu accessible grâce à l’utilisation de texte alternatif !
+- [Comment tracker et raccourcir les liens](https://support.agorapulse.com/fr/articles/9739136-comment-tracker-et-raccourcir-les-liens.md): Mesurez les performances de la campagne en trackant et en raccourcissant les liens.
+- [Comment ajouter un sondage à une publication LinkedIn](https://support.agorapulse.com/fr/articles/10249225-comment-ajouter-un-sondage-a-une-publication-linkedin.md): Apprenez à créer et publier des sondages LinkedIn en utilisant Agorapulse !
+- [Booster les publications Facebook](https://support.agorapulse.com/fr/articles/8912280-booster-les-publications-facebook.md)
+- [Comment créer un fil de dicussion](https://support.agorapulse.com/fr/articles/8769726-comment-creer-un-fil-de-dicussion.md): Créez un fil de discussion lors de la création d'une publication X \(Twitter\) ou Threads dans l'outil de publication.
+- [Comment ajouter un premier commentaire à une publication](https://support.agorapulse.com/fr/articles/8769638-comment-ajouter-un-premier-commentaire-a-une-publication.md): Planifiez un premier commentaire en même temps que vous planifiez votre publication !
+- [Comment créer des publications collaboratives Instagram sur Agorapulse ?](https://support.agorapulse.com/fr/articles/8769652-comment-creer-des-publications-collaboratives-instagram-sur-agorapulse.md): Faites des publications Instagram en collaboration pour augmenter votre audience !
+- [Comment configurer le marquage des produits sur Instagram](https://support.agorapulse.com/fr/articles/12008373-comment-configurer-le-marquage-des-produits-sur-instagram.md): Découvrez comment configurer le gestionnaire de commerce de Meta et étiqueter les produits dans les publications Instagram.
+- [Comment ajouter un audio à vos Reels Instagram](https://support.agorapulse.com/fr/articles/16020547-comment-ajouter-un-audio-a-vos-reels-instagram.md): Apprenez à ajouter un audio à vos Reels Instagram
+- [Calendrier de publication expliqué](https://support.agorapulse.com/fr/articles/12019371-calendrier-de-publication-explique.md): Consultez et gérez les publications via le calendrier de publication.
+- [Comment afficher une publication publiée ou échouée](https://support.agorapulse.com/fr/articles/10184307-comment-afficher-une-publication-publiee-ou-echouee.md): Consultez les articles publiés via le calendrier de publication !
+- [Comment supprimer une publication publiée ?](https://support.agorapulse.com/fr/articles/12059454-comment-supprimer-une-publication-publiee.md): Découvrez quels réseaux prennent en charge la suppression des publications publiées via Agorapulse.
+- [Comment exporter des publications au format CSV](https://support.agorapulse.com/fr/articles/15962987-comment-exporter-des-publications-au-format-csv.md): Découvrez comment exporter les posts de votre calendrier de publication
+- [Comment envoyer une publication pour approbation](https://support.agorapulse.com/fr/articles/8773562-comment-envoyer-une-publication-pour-approbation.md): Envoyez du contenu à des utilisateurs internes ou externes pour les traiter !
+- [Comment traiter une publication en tant qu'approbateur](https://support.agorapulse.com/fr/articles/10353571-comment-traiter-une-publication-en-tant-qu-approbateur.md): Apprenez à répondre à une publication qui vous a été assignée !
+- [Gérer les workflows d'approbation des publications](https://support.agorapulse.com/fr/articles/10346598-gerer-les-workflows-d-approbation-des-publications.md): Envoyez des publications pour approbation à un workflow d’approbation en plusieurs étapes spécifiques.
+- [Comment créer un calendrier partagé](https://support.agorapulse.com/fr/articles/9979006-comment-creer-un-calendrier-partage.md): Envoyez des publications aux clients ou aux utilisateurs externes pour approbation à l'aide du calendrier partagé.
+- [Comment accéder au calendrier partagé en tant qu'utilisateur externe](https://support.agorapulse.com/fr/articles/12010367-comment-acceder-au-calendrier-partage-en-tant-qu-utilisateur-externe.md): Accédez au calendrier partagé en tant qu'utilisateur externe pour approuver et rejeter les publications.
+- [Comment créer et gérer des brouillons de publication](https://support.agorapulse.com/fr/articles/8774052-comment-creer-et-gerer-des-brouillons-de-publication.md): Apprenez à créer, convertir, organiser et gérer des brouillons de publications.
+- [Comment importer en lot des publications via un fichier CSV ?](https://support.agorapulse.com/fr/articles/8774056-comment-importer-en-lot-des-publications-via-un-fichier-csv.md): Importez plusieurs publications à la fois grâce à l’importation en lot
+- [Librairie expliquée](https://support.agorapulse.com/fr/articles/8773668-librairie-expliquee.md): Téléchargez des médias directement dans la librairie afin que votre équipe puisse y accéder lors de la publication de publications dans Agorapulse.
+- [Comment créer une URL publique de mes images/vidéos ?](https://support.agorapulse.com/fr/articles/8774058-comment-creer-une-url-publique-de-mes-images-videos.md): Importer en lot des vidéos et images depuis Dropbox et Google Drive
+- [Les files d'attente expliquées](https://support.agorapulse.com/fr/articles/8774121-les-files-d-attente-expliquees.md): Utilisez les files d’attente pour automatiser le processus de publication.
+- [Comment créer et organiser des files d'attente](https://support.agorapulse.com/fr/articles/8774124-comment-creer-et-organiser-des-files-d-attente.md): Créez des files d’attente de publication et organisez-les à l’aide de groupes.
+- [Comment configurer des plages horaires pour les files d'attente](https://support.agorapulse.com/fr/articles/8774145-comment-configurer-des-plages-horaires-pour-les-files-d-attente.md): Personnalisez les plages horaires pour publier automatiquement le contenu de vos files d'attente.
+- [Comment gérer le contenu dans une file d'attente de publication](https://support.agorapulse.com/fr/articles/10063742-comment-gerer-le-contenu-dans-une-file-d-attente-de-publication.md): Organiser le contenu dans une file d'attente.
+- [Comment ajouter du contenu à une file d'attente](https://support.agorapulse.com/fr/articles/12081732-comment-ajouter-du-contenu-a-une-file-d-attente.md): Apprenez à créer des publications et à ajouter des publications à une file d’attente.
+- [Questions fréquemment posées \(FAQ\) sur la publication](https://support.agorapulse.com/fr/articles/11951279-questions-frequemment-posees-faq-sur-la-publication.md)
+- [Erreurs de publication courantes](https://support.agorapulse.com/fr/articles/11960881-erreurs-de-publication-courantes.md): Découvrez comment résoudre les erreurs de publication courantes.
+
+### Archie \(Bêta\)
+
+- [Archie expliqué](https://support.agorapulse.com/fr/articles/15385025-archie-explique.md): Découvrez Archie, le studio de création d'Agorapulse basé sur l'IA.
+- [Comment débuter avec Archie](https://support.agorapulse.com/fr/articles/15435821-comment-debuter-avec-archie.md): Apprenez comment commencer à utiliser Archie
+- [Comment commencer une conversation avec Archie](https://support.agorapulse.com/fr/articles/15450609-comment-commencer-une-conversation-avec-archie.md)
+- [Comment générer des publications avec Archie](https://support.agorapulse.com/fr/articles/15452272-comment-generer-des-publications-avec-archie.md): Découvrez comment générer des publications avec l'assistant IA d'Agorapulse.
+- [Comment programmer des publications avec Archie](https://support.agorapulse.com/fr/articles/15483742-comment-programmer-des-publications-avec-archie.md)
+- [Comment réutiliser du contenu avec Archie](https://support.agorapulse.com/fr/articles/15972276-comment-reutiliser-du-contenu-avec-archie.md): Découvrez comment réutiliser votre meilleur contenu grâce à Archie.
+
+### Boîte de réception 
+
+- [La boîte de réception Agorapulse expliquée](https://support.agorapulse.com/fr/articles/10393075-la-boite-de-reception-agorapulse-expliquee.md): Répondez aux conversations, commentaires, mentions et messages privés \(DM\) en utilisant la boîte de réception Agorapulse !
+- [Comment répondre à un élément de la boîte de réception ?](https://support.agorapulse.com/fr/articles/10393331-comment-repondre-a-un-element-de-la-boite-de-reception.md): Répondez aux commentaires, DM, mentions et conversations dans la boîte de réception.
+- [Comment gérer les utilisateurs dans la boîte de réception ?](https://support.agorapulse.com/fr/articles/10406585-comment-gerer-les-utilisateurs-dans-la-boite-de-reception.md): Découvrez plus d'informations sur les utilisateurs qui interagissent avec votre contenu.
+- [Comment assigner et traiter des éléments dans la boîte de réception ?](https://support.agorapulse.com/fr/articles/10441656-comment-assigner-et-traiter-des-elements-dans-la-boite-de-reception.md): Découvrez comment assigner des éléments de la boîte de réception aux membres de l'équipe pour les traiter.
+- [Comment créer et gérer les labels de la boîte de réception ?](https://support.agorapulse.com/fr/articles/10420408-comment-creer-et-gerer-les-labels-de-la-boite-de-reception.md): Utilisez des labels dans la boîte de réception pour regrouper et créer des rapports sur des conversations similaires.
+- [Comment créer et gérer des réponses sauvegardées](https://support.agorapulse.com/fr/articles/10393481-comment-creer-et-gerer-des-reponses-sauvegardees.md): Utilisez les réponses sauvegardées pour répondre aux conversations courantes dans la boîte de réception.
+- [Comment suivre les sentiments au niveau de la boîte de réception ?](https://support.agorapulse.com/fr/articles/10394113-comment-suivre-les-sentiments-au-niveau-de-la-boite-de-reception.md): Réagissez rapidement aux conversations nécessitant votre attention en utilisant les sentiments dans la boîte de réception.
+- [Comment supprimer ou masquer un élément dans la boîte de réception ?](https://support.agorapulse.com/fr/articles/10393493-comment-supprimer-ou-masquer-un-element-dans-la-boite-de-reception.md): Découvrez comment supprimer des commentaires, des DM ou des mentions dans la boîte de réception.
+- [Comment rechercher, filtrer et trier dans la boîte de réception](https://support.agorapulse.com/fr/articles/10410740-comment-rechercher-filtrer-et-trier-dans-la-boite-de-reception.md): Identifiez rapidement les éléments de la boîte de réception en appliquant des critères sélectionnés.
+- [Comment utiliser les actions de groupées dans la boîte de réception](https://support.agorapulse.com/fr/articles/10420158-comment-utiliser-les-actions-de-groupees-dans-la-boite-de-reception.md): Utilisez les actions groupées dans la boîte de réception pour gérer efficacement plusieurs conversations à la fois.
+- [Comment exporter les éléments de la boîte de réception depuis Agorapulse ?](https://support.agorapulse.com/fr/articles/11197848-comment-exporter-les-elements-de-la-boite-de-reception-depuis-agorapulse.md)
+- [Comment créer et gérer des préfiltres dans la boîte de réception](https://support.agorapulse.com/fr/articles/11640196-comment-creer-et-gerer-des-prefiltres-dans-la-boite-de-reception.md): Personnalisez la vue de la boîte de réception avec des préfiltres.
+- [Explication des boîtes de réception personnalisées](https://support.agorapulse.com/fr/articles/12571402-explication-des-boites-de-reception-personnalisees.md): Personnalisez votre boîte de réception avec des boîtes de réception personnalisées
+- [La gestion des commentaires publicitaires expliquée](https://support.agorapulse.com/fr/articles/10442447-la-gestion-des-commentaires-publicitaires-expliquee.md): Répondez aux utilisateurs qui interagissent avec du contenu sponsorisé.
+- [Comment connecter et gérer les comptes de publicité](https://support.agorapulse.com/fr/articles/9608631-comment-connecter-et-gerer-les-comptes-de-publicite.md): Découvrez comment synchroniser les commentaires de publicités avec la boîte de réception en connectant vos comptes de publicité !
+- [Comment configurer la modération automatique de la boîte de réception](https://support.agorapulse.com/fr/articles/10419838-comment-configurer-la-moderation-automatique-de-la-boite-de-reception.md): Définissez un ensemble de règles automatisées pour attribuer automatiquement des actions aux éléments de la boîte de réception.
+- [Meilleures pratiques de modération automatisée](https://support.agorapulse.com/fr/articles/14658483-meilleures-pratiques-de-moderation-automatisee.md): Découvrez les meilleures pratiques pour créer des règles de modération
+- [Erreurs fréquentes de réponse dans la boîte de réception](https://support.agorapulse.com/fr/articles/8764601-erreurs-frequentes-de-reponse-dans-la-boite-de-reception.md): Découvrez comment résoudre les erreurs courantes de la boîte de réception.
+- [Questions fréquemment posées \(FAQ\) sur la boîte de réception](https://support.agorapulse.com/fr/articles/10443802-questions-frequemment-posees-faq-sur-la-boite-de-reception.md): Trouvez les réponses aux questions fréqueentes liées à la boîte de réception d'Agorapulse.
+- [Meilleures pratiques pour des boîtes de réception personnalisées et des filtres prédéfinis](https://support.agorapulse.com/fr/articles/14424548-meilleures-pratiques-pour-des-boites-de-reception-personnalisees-et-des-filtres-predefinis.md)
+
+### Statistiques 
+
+- [Foire aux questions \(FAQ\) des rapports](https://support.agorapulse.com/fr/articles/11066949-foire-aux-questions-faq-des-rapports.md): Découvrez les réponses aux questions courantes sur les rapports Agorapulse.
+- [Dépréciation de l'ancienne version des rapports personnalisés \(septembre 2026\)](https://support.agorapulse.com/fr/articles/15880685-depreciation-de-l-ancienne-version-des-rapports-personnalises-septembre-2026.md): Informations sur la dépréciation de l'ancienne version des rapports personnalisés
+- [Explication des rapports Agorapulse](https://support.agorapulse.com/fr/articles/11066993-explication-des-rapports-agorapulse.md)
+- [Explication du rapport d'audience](https://support.agorapulse.com/fr/articles/10751286-explication-du-rapport-d-audience.md)
+- [Explication du rapport des performances des publications](https://support.agorapulse.com/fr/articles/11065478-explication-du-rapport-des-performances-des-publications.md): Découvrez comment consulter les statistiques de contenu individuelles dans l'outil Rapports !
+- [Explication du rapport statistiques des publications](https://support.agorapulse.com/fr/articles/10904403-explication-du-rapport-statistiques-des-publications.md): Découvrez comment consulter les statistiques de publication dans l'outil Rapports !
+- [Rapport Community Management expliqué](https://support.agorapulse.com/fr/articles/10728067-rapport-community-management-explique.md): Apprenez à suivre l'efficacité de réponse de votre équipe !
+- [Rapport sur les concurrents expliqué](https://support.agorapulse.com/fr/articles/9952765-rapport-sur-les-concurrents-explique.md): Ajoutez ou supprimez des concurrents afin de comparer les indicateurs clés d'Audience et de Contenus !
+- [Rapport publicitaire Meta Ads expliqué](https://support.agorapulse.com/fr/articles/10137532-rapport-publicitaire-meta-ads-explique.md): Synchronisez l'outil de rapports Agorapulse avec les données de Meta Ads Manager !
+- [Rapport sur les publicités LinkedIn expliqué](https://support.agorapulse.com/fr/articles/11537372-rapport-sur-les-publicites-linkedin-explique.md): Synchronisez les données des publicités LinkedIn ou LinkedIn Ads avec Agorapulse !
+- [Rapports personnalisés expliqués](https://support.agorapulse.com/fr/articles/10728432-rapports-personnalises-expliques.md): Apprenez à créer un rapport personnalisé et à agréger des données à partir de plusieurs profils sociaux.
+- [Comment configurer les rapports Agorapulse](https://support.agorapulse.com/fr/articles/11066881-comment-configurer-les-rapports-agorapulse.md): Découvrez les différentes manières d’exporter des informations à partir de l’outil Rapports !
+- [Comment exporter les rapports Agorapulse](https://support.agorapulse.com/fr/articles/11114496-comment-exporter-les-rapports-agorapulse.md): Découvrez comment exporter les informations issues des rapports Agorapulse !
+- [Comment configurer les heures de travail personnalisables](https://support.agorapulse.com/fr/articles/10728501-comment-configurer-les-heures-de-travail-personnalisables.md): Découvrez comment saisir des heures de travail personnalisées pour faciliter le calcul du temps de réponse moyen.
+- [Dépréciation des indicateurs Facebook \(juin 2026\)](https://support.agorapulse.com/fr/articles/15773507-depreciation-des-indicateurs-facebook-juin-2026.md): Découvrez comment les statistiques Facebook seront affectées par les récentes modifications apportées à l'API de Meta.
+- [Social Media ROI – Aperçu des fonctionnalités](https://support.agorapulse.com/fr/articles/8778518-social-media-roi-apercu-des-fonctionnalites.md)
+- [Tableau de bord ROI Agorapulse vs. Google Analytics 4](https://support.agorapulse.com/fr/articles/8778523-tableau-de-bord-roi-agorapulse-vs-google-analytics-4.md)
+- [Les réseaux sociaux payants sont-ils pris en compte dans les tableaux de bord du ROI ?](https://support.agorapulse.com/fr/articles/8778525-les-reseaux-sociaux-payants-sont-ils-pris-en-compte-dans-les-tableaux-de-bord-du-roi.md)
+- [Quantifiez la valeur du contenu social lorsque vous ne vendez rien en ligne](https://support.agorapulse.com/fr/articles/8778528-quantifiez-la-valeur-du-contenu-social-lorsque-vous-ne-vendez-rien-en-ligne.md)
+- [Comment puis-je analyser les données générées par mes liens Pulse.ly ?](https://support.agorapulse.com/fr/articles/8778530-comment-puis-je-analyser-les-donnees-generees-par-mes-liens-pulse-ly.md)
+- [Comment mesurer l'impact de votre travail avec Agorapulse](https://support.agorapulse.com/fr/articles/8778256-comment-mesurer-l-impact-de-votre-travail-avec-agorapulse.md)
+- [Présentation de Report Studio \(Bêta\)](https://support.agorapulse.com/fr/articles/14060602-presentation-de-report-studio-beta.md): Apprenez à créer des rapports individuels et de données agrégées à l'aide de Report Studio
+- [Explication de Report Studio](https://support.agorapulse.com/fr/articles/15950060-explication-de-report-studio.md): Découvrez comment créer des rapports avec Report Studio
+- [Comment organiser vos rapports dans Report Studio](https://support.agorapulse.com/fr/articles/15951155-comment-organiser-vos-rapports-dans-report-studio.md): Découvrez comment gérer et organiser vos rapports dans Report Studio
+- [Comment exporter des rapports dans Report Studio](https://support.agorapulse.com/fr/articles/16043113-comment-exporter-des-rapports-dans-report-studio.md): Découvrez comment exporter votre rapport personnalisé dans Report Studio
+- [Explication de la bibliothèque de widgets de Report Studio](https://support.agorapulse.com/fr/articles/15198172-explication-de-la-bibliotheque-de-widgets-de-report-studio.md): Découvrez les différentes configurations de chaque widget dans la bibliothèque de widgets.
+
+### Veille Avancée
+
+- [Veille avancée expliquée](https://support.agorapulse.com/fr/articles/10365572-veille-avancee-expliquee.md): La Veille avancée vous permet de rester à l'affût des changements qui affectent votre secteur et votre organisation !
+- [Comment afficher et gérer les recherches de Veille avancée ?](https://support.agorapulse.com/fr/articles/8712184-comment-afficher-et-gerer-les-recherches-de-veille-avancee.md): Toutes les recherches de Veille avancée sont visibles dans le tableau de bord de recherches.
+- [Comment créer une recherche de Veille avancée](https://support.agorapulse.com/fr/articles/8712232-comment-creer-une-recherche-de-veille-avancee.md): Découvrez comment créer une recherche de Veille avancée.
+- [Comment consulter les résultats de recherche de veille avancée](https://support.agorapulse.com/fr/articles/8712289-comment-consulter-les-resultats-de-recherche-de-veille-avancee.md): Apprenez comment accéder aux résultats de votre recherche de veille avancée et les interpréter !
+- [Comment configurer les alertes de veille avancée ?](https://support.agorapulse.com/fr/articles/10767589-comment-configurer-les-alertes-de-veille-avancee.md): Apprenez comment être informé des changements clés dans les recherches de veille avancée.
+- [Comment tester la fonctionnalité de Veille avancée](https://support.agorapulse.com/fr/articles/11384539-comment-tester-la-fonctionnalite-de-veille-avancee.md): Découvrez ce qui est inclus dans un essai de notre fonctionnalité de veille avancée !
+
+### Advocacy
+
+- [La fonctionnalité Advocacy d'Agorapulse expliquée](https://support.agorapulse.com/fr/articles/11624163-la-fonctionnalite-advocacy-d-agorapulse-expliquee.md): Apprenez à tirer parti de la fonctionnalité Advocacy pour augmenter la portée de vos campagnes.
+- [Comment créer une campagne Advocacy](https://support.agorapulse.com/fr/articles/11625852-comment-creer-une-campagne-advocacy.md): Créez une campagne pour partager des liens et publier avec des ambassadeurs internes ou externes.
+- [Comment visualiser et gérer une campagne Advocacy](https://support.agorapulse.com/fr/articles/11626012-comment-visualiser-et-gerer-une-campagne-advocacy.md): Apprenez à mieux comprendre les campagnes Advocacy.
+- [Comment ajouter et gérer des ambassadeurs](https://support.agorapulse.com/fr/articles/8871050-comment-ajouter-et-gerer-des-ambassadeurs.md): Ajoutez des ambassadeurs internes et externes à utiliser dans les campagnes Advocacy.
+- [Comment répondre à une campagne Advocacy en tant qu'ambassadeur](https://support.agorapulse.com/fr/articles/11626004-comment-repondre-a-une-campagne-advocacy-en-tant-qu-ambassadeur.md): Apprenez comment accéder à l'Espace Ambassadeur et répondre aux campagnes Advocacy !
+
+### Application mobile Agorapulse
+
+- [Les limitations de l'application mobile Agorapulse](https://support.agorapulse.com/fr/articles/8778754-les-limitations-de-l-application-mobile-agorapulse.md)
+- [Comment puis-je me connecter à l'application mobile Agorapulse ?](https://support.agorapulse.com/fr/articles/8778740-comment-puis-je-me-connecter-a-l-application-mobile-agorapulse.md)
+- [Existe-t-il une application mobile Agorapulse ?](https://support.agorapulse.com/fr/articles/8778753-existe-t-il-une-application-mobile-agorapulse.md)
+- [Comment planifier et publier une publication via une notification push](https://support.agorapulse.com/fr/articles/8778750-comment-planifier-et-publier-une-publication-via-une-notification-push.md): Apprenez à publier des publications Instagram et TikTok via une notification push mobile.
+- [Comment puis-je recevoir les notifications Push d'Agorapulse sur mon téléphone portable ?](https://support.agorapulse.com/fr/articles/8778765-comment-puis-je-recevoir-les-notifications-push-d-agorapulse-sur-mon-telephone-portable.md)
+- [Publication mobile expliquée](https://support.agorapulse.com/fr/articles/13197769-publication-mobile-expliquee.md): Découvrez comment programmer du contenu sur vos profils sociaux via l'application mobile Agorapulse.
+- [Comment consulter et gérer les publications depuis l'application mobile](https://support.agorapulse.com/fr/articles/13455632-comment-consulter-et-gerer-les-publications-depuis-l-application-mobile.md): Découvrez comment consulter et gérer les publications via l'application mobile
+- [Gestion des réponses sauvegardées depuis l'application mobile](https://support.agorapulse.com/fr/articles/12835207-gestion-des-reponses-sauvegardees-depuis-l-application-mobile.md): Utilisez les réponses enregistrées pour répondre aux conversations depuis l'application mobile.
+- [Explication de la boîte de réception mobile](https://support.agorapulse.com/fr/articles/12754360-explication-de-la-boite-de-reception-mobile.md): Répondez aux conversations, commentaires, mentions et messages directs \(MD\) où que vous soyez grâce à la messagerie mobile d'Agorapulse.
+- [Comment répondre aux messages et les gérer dans la boîte de réception mobile](https://support.agorapulse.com/fr/articles/12770663-comment-repondre-aux-messages-et-les-gerer-dans-la-boite-de-reception-mobile.md): Découvrez comment gérer les éléments de votre boîte de réception depuis l'application mobile
+- [Veille mobile expliquée](https://support.agorapulse.com/fr/articles/13181121-veille-mobile-expliquee.md): Consultez vos recherches de veille depuis l'application mobile Agorapulse
+- [Explication de la bibliothèque de ressources mobile](https://support.agorapulse.com/fr/articles/13754683-explication-de-la-bibliotheque-de-ressources-mobile.md): Découvrez comment utiliser la bibliothèque de ressources sur l'application mobile
+
+### IA et automatisation
+
+- [Model Context Protocool \(MCP\) , intégration expliquée](https://support.agorapulse.com/fr/articles/12960496-model-context-protocool-mcp-integration-expliquee.md): Découvrez comment la plateforme MCP d'Agorapulse vous permet de d'intégrer des outils d'IA.
+- [Comment utiliser le Writing Assistant IA](https://support.agorapulse.com/fr/articles/8769298-comment-utiliser-le-writing-assistant-ia.md): Créez, affinez ou traduisez des textes pour les réseaux sociaux avec l'aide de l'IA intégrée.
+- [Comment générer un AI Summary](https://support.agorapulse.com/fr/articles/12041180-comment-generer-un-ai-summary.md): Analysez, interprétez et générez rapidement et facilement des rapports sur les données avec l'IA.
+- [Contexte IA de l’organisation expliqué](https://support.agorapulse.com/fr/articles/12400727-contexte-ia-de-l-organisation-explique.md): Affiner le ton des fonctionnalités d'IA d'Agorapulse
+- [Comment utiliser l'intégration Zapier avec Agorapulse](https://support.agorapulse.com/fr/articles/12277852-comment-utiliser-l-integration-zapier-avec-agorapulse.md): Cet article décrit l'intégration d'Agorapulse pour Zapier et comment l'utiliser.
+
+### Intégrations
+
+- [Google Drive et Dropbox sont-ils disponibles sur Agorapulse ?](https://support.agorapulse.com/fr/articles/8773253-google-drive-et-dropbox-sont-ils-disponibles-sur-agorapulse.md)
+- [Comment se connecter à l'API ouverte d'Agorapulse](https://support.agorapulse.com/fr/articles/12417183-comment-se-connecter-a-l-api-ouverte-d-agorapulse.md): Exportez les données de reporting d'Agorapulse vers des outils d'analyse ou de BI externes.
+- [Comment utiliser votre compte Bitly pour raccourcir les liens ?](https://support.agorapulse.com/fr/articles/9095281-comment-utiliser-votre-compte-bitly-pour-raccourcir-les-liens.md)
+- [Comment utiliser l'intégration Canva ?](https://support.agorapulse.com/fr/articles/8773225-comment-utiliser-l-integration-canva.md): Apprenez comment importer des designs de Canva vers Agorapulse
+- [HubSpot et Salesforce au sein d'Agorapulse](https://support.agorapulse.com/fr/articles/9101574-hubspot-et-salesforce-au-sein-d-agorapulse.md)
+- [Comment connecter Google Analytics à Agorapulse ?](https://support.agorapulse.com/fr/articles/8778519-comment-connecter-google-analytics-a-agorapulse.md)
+- [Le compte Google Analytics que je recherche n'apparaît pas dans Agorapulse](https://support.agorapulse.com/fr/articles/8778521-le-compte-google-analytics-que-je-recherche-n-apparait-pas-dans-agorapulse.md)
+- [Comment lier les données d'Agorapulse à Looker Studio ?](https://support.agorapulse.com/fr/articles/9250755-comment-lier-les-donnees-d-agorapulse-a-looker-studio.md)
+- [Intégration d'Agorapulse pour Slack](https://support.agorapulse.com/fr/articles/9490732-integration-d-agorapulse-pour-slack.md): Cet article décrit l'intégration de Slack dans Agorapulse et comment l'utiliser.
+- [Intégration d'Agorapulse pour Microsoft Teams](https://support.agorapulse.com/fr/articles/11503107-integration-d-agorapulse-pour-microsoft-teams.md): Recevez les notifications Agorapulse directement dans Microsoft Teams !
+
+### Mises à jour Produits et API
+
+- [Quoi de neuf dans Agorapulse ?](https://support.agorapulse.com/fr/articles/11431161-quoi-de-neuf-dans-agorapulse.md): Un résumé des dernières fonctionnalités et améliorations apportées au produit lors de la dernière mise à jour.
+- [Limitations API selon les réseaux sociaux](https://support.agorapulse.com/fr/articles/8712660-limitations-api-selon-les-reseaux-sociaux.md): Aperçu des fonctionnalités indisponibles dans Agorapulse en raison des limitations d’API imposées par chaque réseau social.
+- [Agorapulse Release Notes - 2026](https://support.agorapulse.com/fr/articles/13315559-agorapulse-release-notes-2026.md)
+- [Agorapulse Release Notes - 2025](https://support.agorapulse.com/fr/articles/11419511-agorapulse-release-notes-2025.md): Découvrez les nouvelles fonctionnalités Produits que nous avons publiés cette année.
+- [Agorapulse Release Notes - 2024](https://support.agorapulse.com/fr/articles/11426269-agorapulse-release-notes-2024.md): Découvrez les fonctionnalités des produits sortis en 2024.
+- [Agorapulse Release Notes - 2023](https://support.agorapulse.com/fr/articles/11427752-agorapulse-release-notes-2023.md): Découvrez les fonctionnalités des produits sortis en 2023.
+
+## Deutsch
+
+### Erste Schritte mit Agorapulse
+
+- [Die Agorapulse Academy](https://support.agorapulse.com/de/articles/12108190-die-agorapulse-academy.md): Werden Sie mit der Agorapulse Academy zum Agorapulse-Experten.
+- [Das Agorapulse-Glossar](https://support.agorapulse.com/de/articles/13779845-das-agorapulse-glossar.md): Dies sind Wörter, die Ihnen bei der Verwendung von Agorapulse häufig begegnen werden.
+- [Was ist ein Social-Media-Profil?](https://support.agorapulse.com/de/articles/8762832-was-ist-ein-social-media-profil.md)
+- [Wie füge ich ein Social-Media-Profil hinzu?](https://support.agorapulse.com/de/articles/8762473-wie-fuge-ich-ein-social-media-profil-hinzu.md)
+- [Wie entferne ich ein Social-Media-Profil ?](https://support.agorapulse.com/de/articles/8762748-wie-entferne-ich-ein-social-media-profil.md)
+- [So verwalten Sie Tokens in Agorapulse](https://support.agorapulse.com/de/articles/8985782-so-verwalten-sie-tokens-in-agorapulse.md): Halten Sie die Verbindung Ihrer sozialen Profile aufrecht, indem Sie lernen, wie Sie abgelaufene oder ungültige Token erneuern und verwalten
+- [Warum stellt mein Instagram-Profil keine Verbindung zu Agorapulse her?](https://support.agorapulse.com/de/articles/8762513-warum-stellt-mein-instagram-profil-keine-verbindung-zu-agorapulse-her.md): Beheben Sie Instagram-Verbindungsprobleme im Zusammenhang mit der Einrichtung, den Berechtigungen oder dem Kontozugriff.
+- [Warum ist ein persönliches Facebook-Profil erforderlich, um Facebook oder Instagram mit Agorapulse zu verbinden?](https://support.agorapulse.com/de/articles/8762717-warum-ist-ein-personliches-facebook-profil-erforderlich-um-facebook-oder-instagram-mit-agorapulse-zu-verbinden.md): In diesem Artikel wird erläutert, wie wichtig es ist, Ihr persönliches Facebook-Profil zur Authentifizierung bei Agorapulse zu verwenden.
+- [Verwalten Sie Ihre Seiten über Meta Business Manager](https://support.agorapulse.com/de/articles/9027532-verwalten-sie-ihre-seiten-uber-meta-business-manager.md)
+- [Team Management Einstellungen erklärt](https://support.agorapulse.com/de/articles/9542481-team-management-einstellungen-erklart.md): Erfahren Sie, wie Sie Benutzer in Ihrer Agorapulse-Organisation verwalten.
+- [So können Sie Teammitglieder hinzufügen oder löschen](https://support.agorapulse.com/de/articles/9542494-so-konnen-sie-teammitglieder-hinzufugen-oder-loschen.md): Erfahren Sie, wie Sie Benutzer einladen, entfernen oder ihnen Einladungen senden!
+- [Agorapulse-Berechtigungsmatrix](https://support.agorapulse.com/de/articles/8764534-agorapulse-berechtigungsmatrix.md): Eine detaillierte Aufschlüsselung der Aktionen, die für jede Rolle auf Social-Profilebene in Agorapulse verfügbar sind.
+- [So erstellen und verwalten Sie benutzerdefinierte Rollen](https://support.agorapulse.com/de/articles/11641202-so-erstellen-und-verwalten-sie-benutzerdefinierte-rollen.md): Erstellen Sie benutzerdefinierte Berechtigungsvorlagen für Teammitglieder.
+- [Welchen Support bieten Sie an?](https://support.agorapulse.com/de/articles/8762469-welchen-support-bieten-sie-an.md)
+- [Werden Facebook Store-Standorte in Agorapulse unterstützt?](https://support.agorapulse.com/de/articles/8762837-werden-facebook-store-standorte-in-agorapulse-unterstutzt.md)
+- [So verwalten Sie Zeitzonen in Agorapulse](https://support.agorapulse.com/de/articles/8769381-so-verwalten-sie-zeitzonen-in-agorapulse.md): Erfahren Sie, wie Zeitzonen für alle Agorapulse-Funktionen konfiguriert werden können.
+- [Wie lange speichern Sie meine Daten?](https://support.agorapulse.com/de/articles/8980700-wie-lange-speichern-sie-meine-daten.md): Informieren Sie sich, wie Agorapulse Ihre Daten speichert.
+- [Agorapulse Trust Center](https://support.agorapulse.com/de/articles/13891773-agorapulse-trust-center.md): Ein Überblick darüber, wie Agorapulse Ihre Sicherheit und Privatsphäre schützt.
+- [Rückerstattungsrichtlinie von Agorapulse](https://support.agorapulse.com/de/articles/15075866-ruckerstattungsrichtlinie-von-agorapulse.md)
+
+### Konto, Preisplan und Rechnungen
+
+- [Preismodell pro Benutzer erklärt](https://support.agorapulse.com/de/articles/8762696-preismodell-pro-benutzer-erklart.md): Erfahren Sie mehr über die Preispläne, die Agorapulse anbietet.
+- [Erläuterung des kostenlosen Probeabos von Agorapulse](https://support.agorapulse.com/de/articles/11748805-erlauterung-des-kostenlosen-probeabos-von-agorapulse.md): Erfahren Sie mehr über die kostenlose Testversion von Agorapulse.
+- [Erläuterung des Agorapulse Free-Plans](https://support.agorapulse.com/de/articles/8762514-erlauterung-des-agorapulse-free-plans.md)
+- [X \(Twitter\) Lite und X \(Twitter\) Plus erklärt](https://support.agorapulse.com/de/articles/8762824-x-twitter-lite-und-x-twitter-plus-erklart.md): Finden Sie den Unterschied zwischen X Lite und X Plus heraus.
+- [Update zu Legacy-Plänen](https://support.agorapulse.com/de/articles/10982218-update-zu-legacy-planen.md): Erfahren Sie mehr über die Änderungen an unseren Legacy-Plänen.
+- [Erweiterte Synchronisierung historischer Daten erklärt](https://support.agorapulse.com/de/articles/10516784-erweiterte-synchronisierung-historischer-daten-erklart.md): In diesem Artikel wird detailliert beschrieben, welche erweiterten historischen Daten mit Agorapulse synchronisiert werden können, nachdem ein Social-Media-Profil verbunden wurde.
+- [So abonnieren Sie Agorapulse](https://support.agorapulse.com/de/articles/8762844-so-abonnieren-sie-agorapulse.md)
+- [So bearbeiten Sie einen aktiven Preisplan](https://support.agorapulse.com/de/articles/8762784-so-bearbeiten-sie-einen-aktiven-preisplan.md): Organisationseigentümer und Co-Eigentümer können Preispläne \(Upgrade oder Downgrade\) in den Preisplaneinstellungen verwalten.
+- [So verwalten Sie Extras in Ihrem Agorapulse-Preisplan](https://support.agorapulse.com/de/articles/8762841-so-verwalten-sie-extras-in-ihrem-agorapulse-preisplan.md): Konfigurieren Sie Extras für Ihre Agorapulse-Presipläne!
+- [Wie kann ich meinen Preisplan kündigen?](https://support.agorapulse.com/de/articles/8762836-wie-kann-ich-meinen-preisplan-kundigen.md): Kündigen Sie Ihren Preisplan oder die automatische Verlängerung
+- [Wie kann ich den Organisationsinhaber ändern und die Rolle an ein anderes Teammitglied übertragen?](https://support.agorapulse.com/de/articles/8762839-wie-kann-ich-den-organisationsinhaber-andern-und-die-rolle-an-ein-anderes-teammitglied-ubertragen.md)
+- [Agorapulse-Benachrichtigungen erklärt](https://support.agorapulse.com/de/articles/8762721-agorapulse-benachrichtigungen-erklart.md): Finden Sie heraus, welche Benachrichtigungen Sie in Agorapulse aktivieren können!
+- [Registrierung, An- und Abmeldung bei Agorapulse](https://support.agorapulse.com/de/articles/8762489-registrierung-an-und-abmeldung-bei-agorapulse.md)
+- [Wie lösche ich mein Konto?](https://support.agorapulse.com/de/articles/8762704-wie-losche-ich-mein-konto.md): Löschen Sie Ihr Konto oder Ihre Organisation
+- [So setzen Sie Ihr Passwort zurück](https://support.agorapulse.com/de/articles/8762711-so-setzen-sie-ihr-passwort-zuruck.md)
+- [So benennen und gruppieren Sie Ihre Social Media Profile](https://support.agorapulse.com/de/articles/8762708-so-benennen-und-gruppieren-sie-ihre-social-media-profile.md): Erfahren Sie, wie Sie Social-Media-Profilgruppen in Agorapulse erstellen und verwalten
+- [Agorapulse and SSO \(Single Sign-On\)](https://support.agorapulse.com/de/articles/8762699-agorapulse-and-sso-single-sign-on.md)
+- [So aktivieren/deaktivieren Sie die Zwei-Faktor-Authentifizierung \(2FA\) in Agorapulse](https://support.agorapulse.com/de/articles/8762716-so-aktivieren-deaktivieren-sie-die-zwei-faktor-authentifizierung-2fa-in-agorapulse.md): Erfahren Sie, wie Sie die Zwei-Faktor-Authentifizierung für Ihr Agorapulse-Konto verwalten.
+- [Mein Account/ Konto wurde gesperrt](https://support.agorapulse.com/de/articles/8762719-mein-account-konto-wurde-gesperrt.md)
+- [Warum sehe ich die Nachricht "zu viele Geräte?"](https://support.agorapulse.com/de/articles/8980870-warum-sehe-ich-die-nachricht-zu-viele-gerate.md)
+- [So aktualisieren Sie Ihre persönlichen Daten](https://support.agorapulse.com/de/articles/14040024-so-aktualisieren-sie-ihre-personlichen-daten.md): Anleitung zum Aktualisieren Ihrer persönlichen Daten
+- [So zeigen Sie Rechnungen in Agorapulse an](https://support.agorapulse.com/de/articles/8764453-so-zeigen-sie-rechnungen-in-agorapulse-an.md): Greifen Sie in den Preisplaneinstellungen auf Rechnungen zu.
+- [So bearbeiten Sie Rechnungsinformationen](https://support.agorapulse.com/de/articles/8764451-so-bearbeiten-sie-rechnungsinformationen.md): Aktualisieren Sie die Rechnungsinformationen in den Preisplaneinstellungen.
+- [Wie kann ich mehrere Zahlungsmethoden eingeben?](https://support.agorapulse.com/de/articles/8764468-wie-kann-ich-mehrere-zahlungsmethoden-eingeben.md): Erfahren Sie, wie Sie Ihre Zahlungsmethode aktualisieren können!
+- [Häufig gestellte Fragen \(FAQ\) zur Abrechnung](https://support.agorapulse.com/de/articles/12097076-haufig-gestellte-fragen-faq-zur-abrechnung.md): Finden Sie Antworten auf häufig gestellte Fragen zur Abrechnung in Agorapulse.
+
+### Beitragsveröffentlichung
+
+- [Veröffentlichung pro sozialem Netzwerk erklärt](https://support.agorapulse.com/de/articles/10520824-veroffentlichung-pro-sozialem-netzwerk-erklart.md): Erfahren Sie, was Sie über Agorapulse in den verschiedenen sozialen Netzwerken veröffentlichen können.
+- [So erstellen und planen Sie einen Beitrag in Agorapulse](https://support.agorapulse.com/de/articles/8769280-so-erstellen-und-planen-sie-einen-beitrag-in-agorapulse.md): Lernen Sie, mit Agorapulse Inhalte für Ihre sozialen Profile zu planen.
+- [So verwalten Sie geplante Beiträge](https://support.agorapulse.com/de/articles/8772948-so-verwalten-sie-geplante-beitrage.md): Erfahren Sie, wie Sie einen geplanten Beitrag bearbeiten oder löschen können.
+- [Spezifikationen für die Veröffentlichung von Bildern und Videos](https://support.agorapulse.com/de/articles/8773203-spezifikationen-fur-die-veroffentlichung-von-bildern-und-videos.md): Erfahren Sie mehr über Best Practices zum Hochladen von Medien auf Agorapulse
+- [So bearbeiten Sie ein Bild oder Video beim Erstellen eines Beitrags](https://support.agorapulse.com/de/articles/11982712-so-bearbeiten-sie-ein-bild-oder-video-beim-erstellen-eines-beitrags.md): Bearbeiten Sie ein Bild oder wählen Sie eine benutzerdefinierte Videominiaturansicht aus dem Publishing Composer.
+- [So verwenden Sie benutzerdefinierte Felder beim Erstellen eines Beitrags](https://support.agorapulse.com/de/articles/8769295-so-verwenden-sie-benutzerdefinierte-felder-beim-erstellen-eines-beitrags.md): Sparen Sie Zeit, indem Sie Beiträge mit wiederverwendbaren benutzerdefinierten Feldern personalisieren!
+- [So richten Sie eine Link-in-Bio-Seite eines Instagram-Profils ein](https://support.agorapulse.com/de/articles/8772962-so-richten-sie-eine-link-in-bio-seite-eines-instagram-profils-ein.md):  Verwalten Sie Ihren PulseLink-In-Bio und leiten Sie Follower per Instagram-Beiträgen zu eigenen URLs weiter!
+- [So erstellen Sie eine Gruppe von Hashtags](https://support.agorapulse.com/de/articles/8769364-so-erstellen-sie-eine-gruppe-von-hashtags.md): Sparen Sie Zeit beim Erstellen von Beiträgen, indem Sie Hashtag-Gruppen verwenden!
+- [So richten Sie Beiträge auf eine bestimmte Zielgruppe aus](https://support.agorapulse.com/de/articles/8769366-so-richten-sie-beitrage-auf-eine-bestimmte-zielgruppe-aus.md): Verwenden Sie Beitrags-Targeting, um Ihre Zielgruppe anzusprechen!
+- [So verwalten Sie Link-Vorschauen](https://support.agorapulse.com/de/articles/8769372-so-verwalten-sie-link-vorschauen.md): Erfahren Sie, wie Sie Linkvorschauen verwalten und anpassen!
+- [So fügen Sie einem Beitrag einen Standort hinzu](https://support.agorapulse.com/de/articles/8772956-so-fugen-sie-einem-beitrag-einen-standort-hinzu.md): Fügen Sie Ihren Facebook- und Instagram-Posts über Agorapulse Standorte hinzu!
+- [So erstellen und verwalten Sie Publishing Labels](https://support.agorapulse.com/de/articles/8769363-so-erstellen-und-verwalten-sie-publishing-labels.md): Nutzen Sie Publishing Labels, um veröffentlichte Inhalte zu gruppieren!
+- [So erwähnen und markieren Sie Konten in einem Beitrag](https://support.agorapulse.com/de/articles/8769375-so-erwahnen-und-markieren-sie-konten-in-einem-beitrag.md): Erwähnen und markieren Sie andere Profile, wenn Sie einen Beitrag im Publishing Composer erstellen.
+- [So fügen Sie einem Videobeitrag Untertitel hinzu](https://support.agorapulse.com/de/articles/8773239-so-fugen-sie-einem-videobeitrag-untertitel-hinzu.md): Fügen Sie Untertitel hinzu, um das Engagement mit und Sichtbarkeit von Videobeiträgen zu erhöhen
+- [So fügen Sie einem Bild alternativen Text hinzu](https://support.agorapulse.com/de/articles/8773211-so-fugen-sie-einem-bild-alternativen-text-hinzu.md): Machen Sie Ihre Inhalte durch die Verwendung von Alternativtext zugänglich!
+- [So verfolgen und verkürzen Sie Links](https://support.agorapulse.com/de/articles/9739136-so-verfolgen-und-verkurzen-sie-links.md): Messen Sie die Kampagnenleistung, indem Sie Links verfolgen und verkürzen.
+- [So fügen Sie eine Umfrage zu einem LinkedIn-Beitrag hinzu](https://support.agorapulse.com/de/articles/10249225-so-fugen-sie-eine-umfrage-zu-einem-linkedin-beitrag-hinzu.md): Erfahren Sie, wie Sie LinkedIn-Umfragen mit Agorapulse erstellen und veröffentlichen!
+- [Facebook Beiträge boosten](https://support.agorapulse.com/de/articles/8912280-facebook-beitrage-boosten.md)
+- [So erstellen Sie einen Thread](https://support.agorapulse.com/de/articles/8769726-so-erstellen-sie-einen-thread.md): Erstellen Sie einen Thread wenn Sie einen X-oder Thread Beitrag erstellen.
+- [So fügen Sie einem Beitrag einen Ersten Kommentar hinzu](https://support.agorapulse.com/de/articles/8769638-so-fugen-sie-einem-beitrag-einen-ersten-kommentar-hinzu.md): Planen Sie einen ersten Kommentar gleichzeitig mit Ihrem Beitrag!
+- [So erstellen Sie kollaborative Instagram-Beiträge in Agorapulse](https://support.agorapulse.com/de/articles/8769652-so-erstellen-sie-kollaborative-instagram-beitrage-in-agorapulse.md): Fügen Sie Ihren Instagram-Beiträge Kollaboratoren hinzu, um Ihr Publikum zu vergrößern!
+- [So richten Sie die Produktmarkierung auf Instagram ein](https://support.agorapulse.com/de/articles/12008373-so-richten-sie-die-produktmarkierung-auf-instagram-ein.md): Erfahren Sie, wie Sie den Commerce Manager von Meta einrichten und Produkte in Instagram-Beiträgen markieren.
+- [So fügt man Instagram Reels Audio hinzu](https://support.agorapulse.com/de/articles/16020547-so-fugt-man-instagram-reels-audio-hinzu.md): Erfahren Sie, wie man Instagram Reels Audio hinzufügt
+- [Veröffentlichungskalender erklärt](https://support.agorapulse.com/de/articles/12019371-veroffentlichungskalender-erklart.md): Zeigen Sie Veröffentlichungen über den Veröffentlichungskalender an und verwalten Sie sie.
+- [So zeigen Sie einen veröffentlichten oder fehlgeschlagenen Beitrag an](https://support.agorapulse.com/de/articles/10184307-so-zeigen-sie-einen-veroffentlichten-oder-fehlgeschlagenen-beitrag-an.md): Sehen Sie sich veröffentlichte Beiträge über den Veröffentlichungskalender an!
+- [So löschen Sie einen veröffentlichten Beitrag](https://support.agorapulse.com/de/articles/12059454-so-loschen-sie-einen-veroffentlichten-beitrag.md): Erfahren Sie, welche Netzwerke das Löschen veröffentlichter Beiträge über Agorapulse unterstützen.
+- [Wie exportiere ich Beiträge als CSV-Datei?](https://support.agorapulse.com/de/articles/15962987-wie-exportiere-ich-beitrage-als-csv-datei.md): Erfahren Sie, wie Sie Beiträge aus Ihrem Veröffentlichungskalender exportieren.
+- [So senden Sie einen Beitrag zur Genehmigung](https://support.agorapulse.com/de/articles/8773562-so-senden-sie-einen-beitrag-zur-genehmigung.md): Senden Sie Inhalte zur Überprüfung an interne oder externe Mitarbeiter!
+- [So überprüfen Sie einen Beitrag als Genehmiger](https://support.agorapulse.com/de/articles/10353571-so-uberprufen-sie-einen-beitrag-als-genehmiger.md): Erfahren Sie, wie Sie auf einen Ihnen zugewiesenen Beitrag antworten!
+- [So verwalten Sie Genehmigungs-Workflows](https://support.agorapulse.com/de/articles/10346598-so-verwalten-sie-genehmigungs-workflows.md): Verwalten Sie Beiträge über einen mehrstufigen Genehmigungsworkflow.
+- [So erstellen Sie einen Externen Kalender](https://support.agorapulse.com/de/articles/9979006-so-erstellen-sie-einen-externen-kalender.md): Senden Sie mithilfe des Externen Kalenders Beiträge zur Genehmigung an Kunden oder externe Benutzer.
+- [So greifen Sie als externer Benutzer auf den Externen Kalender zu](https://support.agorapulse.com/de/articles/12010367-so-greifen-sie-als-externer-benutzer-auf-den-externen-kalender-zu.md): Greifen Sie als externer Benutzer auf den Externen Kalender zu, um Beiträge zu genehmigen und abzulehnen.
+- [So erstellen und verwalten Sie Beitragsentwürfe](https://support.agorapulse.com/de/articles/8774052-so-erstellen-und-verwalten-sie-beitragsentwurfe.md): Erfahren Sie, wie Sie Beitragsentwürfe erstellen, konvertieren, organisieren und verwalten.
+- [Wie erstelle ich einen Sammel-Import aus einer CSV Datei?](https://support.agorapulse.com/de/articles/8774056-wie-erstelle-ich-einen-sammel-import-aus-einer-csv-datei.md): Laden Sie mehrere Beiträge gleichzeitig per Sammel-Import hoch
+- [Erläuterung des Media Centers](https://support.agorapulse.com/de/articles/8773668-erlauterung-des-media-centers.md): Laden Sie Medien direkt in das Media Center hoch, damit Ihr Team beim Veröffentlichen von Beiträgen in Agorapulse darauf zugreifen kann.
+- [Wie erstelle ich eine öffentliche URL meiner Bilder/Videos?](https://support.agorapulse.com/de/articles/8774058-wie-erstelle-ich-eine-offentliche-url-meiner-bilder-videos.md): Sammel-Upload von Videos und Bildern aus Dropbox und Google Drive
+- [Warteschlangen erklärt](https://support.agorapulse.com/de/articles/8774121-warteschlangen-erklart.md): Verwenden Sie Warteschlangen, um den Veröffentlichungsprozess zu automatisieren.
+- [So erstellen und organisieren Sie Warteschlangen](https://support.agorapulse.com/de/articles/8774124-so-erstellen-und-organisieren-sie-warteschlangen.md): Erstellen Sie Veröffentlichungswarteschlangen und organisieren Sie sie mithilfe von Gruppen.
+- [So richten Sie Zeitfenster für Warteschlangen ein](https://support.agorapulse.com/de/articles/8774145-so-richten-sie-zeitfenster-fur-warteschlangen-ein.md): Passen Sie Zeitfenster an, um Inhalte aus Ihren Warteschlangen automatisch zu veröffentlichen.
+- [So verwalten Sie Inhalte in einer Veröffentlichungswarteschlange](https://support.agorapulse.com/de/articles/10063742-so-verwalten-sie-inhalte-in-einer-veroffentlichungswarteschlange.md): Organisieren Sie Inhalte in einer Warteschlange.
+- [So fügen Sie Inhalte zu einer Warteschlange hinzu](https://support.agorapulse.com/de/articles/12081732-so-fugen-sie-inhalte-zu-einer-warteschlange-hinzu.md): Erfahren Sie, wie Sie Beiträge erstellen und zu einer Warteschlange hinzufügen.
+- [Häufig gestellte Fragen \(FAQ\) zum Veröffentlichen](https://support.agorapulse.com/de/articles/11951279-haufig-gestellte-fragen-faq-zum-veroffentlichen.md)
+- [Übliche Veröffentlichungsfehler](https://support.agorapulse.com/de/articles/11960881-ubliche-veroffentlichungsfehler.md): Erfahren Sie, wie Sie übliche Veröffentlichungsfehler beheben.
+
+### Archie \(Beta\)
+
+- [Archie erklärt](https://support.agorapulse.com/de/articles/15385025-archie-erklart.md): Erfahren Sie mehr über Archie, das KI-gestützte Kreativstudio von Agorapulse.
+- [Erste Schritte mit Archie](https://support.agorapulse.com/de/articles/15435821-erste-schritte-mit-archie.md): Erfahren Sie, wie Sie Archie nutzen können.
+- [Wie man eine Konversation mit Archie beginnt](https://support.agorapulse.com/de/articles/15450609-wie-man-eine-konversation-mit-archie-beginnt.md)
+- [Wie man Beiträge mit Archie erstellt](https://support.agorapulse.com/de/articles/15452272-wie-man-beitrage-mit-archie-erstellt.md): Erfahren Sie, wie Sie mit dem KI-Assistenten von Agorapulse Beiträge erstellen.
+- [So planen Sie Beiträge mit Archie](https://support.agorapulse.com/de/articles/15483742-so-planen-sie-beitrage-mit-archie.md)
+- [Wie man Inhalte mit Archie wiederverwendet](https://support.agorapulse.com/de/articles/15972276-wie-man-inhalte-mit-archie-wiederverwendet.md): Erfahren Sie, wie Sie Ihre Top-Inhalte mit Archie wiederverwenden können.
+
+### Inbox
+
+- [Agorapulse Inbox erklärt](https://support.agorapulse.com/de/articles/10393075-agorapulse-inbox-erklart.md): Beantworten Sie Unterhaltungen, Kommentare, Erwähnungen und Direktnachrichten \(DMs\) über den Posteingang von Agorapulse!
+- [So antworten Sie auf ein Element im Posteingang](https://support.agorapulse.com/de/articles/10393331-so-antworten-sie-auf-ein-element-im-posteingang.md): Antworten Sie auf Kommentare, DMs, Erwähnungen und Unterhaltungen im Posteingang.
+- [So verwalten Sie Nutzer im Posteingang](https://support.agorapulse.com/de/articles/10406585-so-verwalten-sie-nutzer-im-posteingang.md): Erfahren Sie mehr über Nutzer, die mit Ihren Inhalten interagieren.
+- [So weisen Sie Elemente im Posteingang zu und bearbeiten sie](https://support.agorapulse.com/de/articles/10441656-so-weisen-sie-elemente-im-posteingang-zu-und-bearbeiten-sie.md): Erfahren Sie, wie Sie Posteingangselemente zur Bearbeitung an Teammitglieder zuweisen.
+- [So erstellen und verwalten Sie Inbox-Labels](https://support.agorapulse.com/de/articles/10420408-so-erstellen-und-verwalten-sie-inbox-labels.md): Verwenden Sie Labels in der Inbox, um ähnliche Unterhaltungen zu gruppieren und darüber zu berichten.
+- [So erstellen und verwalten Sie Gespeicherte Antworten](https://support.agorapulse.com/de/articles/10393481-so-erstellen-und-verwalten-sie-gespeicherte-antworten.md): Verwenden Sie Gespeicherte Antworten, um auf allgemeine Konversationen im Posteingang zu antworten.
+- [So verfolgen Sie das Sentiment im Posteingang](https://support.agorapulse.com/de/articles/10394113-so-verfolgen-sie-das-sentiment-im-posteingang.md): Reagieren Sie mithilfe des Sentiments im Posteingang schnell auf Unterhaltungen, die Ihre Aufmerksamkeit erfordern.
+- [So löschen oder verbergen Sie ein Element im Posteingang](https://support.agorapulse.com/de/articles/10393493-so-loschen-oder-verbergen-sie-ein-element-im-posteingang.md): Erfahren Sie, wie Sie Kommentare, DMs oder Erwähnungen im Posteingang entfernen.
+- [Suchen, Filtern und Sortieren im Posteingang](https://support.agorapulse.com/de/articles/10410740-suchen-filtern-und-sortieren-im-posteingang.md): Identifizieren Sie Posteingangselemente schnell, indem Sie ausgewählte Kriterien anwenden.
+- [So verwenden Sie Sammelaktionen im Posteingang](https://support.agorapulse.com/de/articles/10420158-so-verwenden-sie-sammelaktionen-im-posteingang.md): Verwenden Sie Sammelaktionen im Posteingang, um mehrere Konversationen gleichzeitig effektiv zu verwalten.
+- [So exportieren Sie Posteingangselemente aus Agorapulse](https://support.agorapulse.com/de/articles/11197848-so-exportieren-sie-posteingangselemente-aus-agorapulse.md)
+- [So erstellen und verwalten Sie Filtervorgaben im Posteingang](https://support.agorapulse.com/de/articles/11640196-so-erstellen-und-verwalten-sie-filtervorgaben-im-posteingang.md): Passen Sie die Posteingangsansicht mit Filtervorgaben an.
+- [Benutzerdefinierte Inbox erklärt](https://support.agorapulse.com/de/articles/12571402-benutzerdefinierte-inbox-erklart.md): Passen Sie Ihren Posteingang mit benutzerdefinierten Posteingängen an
+- [Anzeigenkommentar-Management erklärt](https://support.agorapulse.com/de/articles/10442447-anzeigenkommentar-management-erklart.md): Interagieren Sie mit Benutzern, die sich mit geboosteten Inhalten beschäftigen.
+- [So verbinden und verwalten Sie Werbekonten](https://support.agorapulse.com/de/articles/9608631-so-verbinden-und-verwalten-sie-werbekonten.md): Erfahren Sie, wie Sie Anzeigenkommentare mit dem Posteingang synchronisieren, indem Sie Ihre Anzeigenkonten verbinden!
+- [So richten Sie die Automatische Moderation im Posteingang ein](https://support.agorapulse.com/de/articles/10419838-so-richten-sie-die-automatische-moderation-im-posteingang-ein.md): Definieren Sie einen Satz automatisierter Regeln, um Posteingangselementen automatisch Aktionen zuzuweisen.
+- [Best Practices für die automatisierte Moderation](https://support.agorapulse.com/de/articles/14658483-best-practices-fur-die-automatisierte-moderation.md): Lernen Sie die besten Methoden zum Erstellen von Moderationsregeln kennen.
+- [Häufige Fehler bei Antworten im Posteingang](https://support.agorapulse.com/de/articles/8764601-haufige-fehler-bei-antworten-im-posteingang.md): Erfahren Sie, wie Sie häufige Fehler im Posteingang beheben.
+- [Inbox– Häufig gestellte Fragen \(FAQs\)](https://support.agorapulse.com/de/articles/10443802-inbox-haufig-gestellte-fragen-faqs.md): Hier finden Sie Antworten auf häufig gestellte Fragen zur Inbox von Agorapulse.
+- [Bewährte Methoden für benutzerdefinierte Posteingangs- und Filtervoreinstellungen](https://support.agorapulse.com/de/articles/14424548-bewahrte-methoden-fur-benutzerdefinierte-posteingangs-und-filtervoreinstellungen.md)
+
+### Analytics 
+
+- [Berichte – Häufig gestellte Fragen \(FAQs\)](https://support.agorapulse.com/de/articles/11066949-berichte-haufig-gestellte-fragen-faqs.md): Finden Sie Antworten auf häufig gestellte Fragen zu Agorapulse-Berichten.
+- [Abschaffung der benutzerdefinierten Legacy-Berichte \(September 2026\)](https://support.agorapulse.com/de/articles/15880685-abschaffung-der-benutzerdefinierten-legacy-berichte-september-2026.md): Erfahren Sie mehr über die Abschaffung der Legacy-Benutzerberichte.
+- [Erläuterung der Agorapulse-Berichte](https://support.agorapulse.com/de/articles/11066993-erlauterung-der-agorapulse-berichte.md)
+- [Zielgruppen-Bericht erläutert](https://support.agorapulse.com/de/articles/10751286-zielgruppen-bericht-erlautert.md)
+- [Leistungsbericht der Beiträge erläutert](https://support.agorapulse.com/de/articles/11065478-leistungsbericht-der-beitrage-erlautert.md): Erfahren Sie, wie Sie im Berichtstool Einblicke in einzelne Inhalte erhalten!
+- [Erläuterung des Beitrags- Insights-Berichts](https://support.agorapulse.com/de/articles/10904403-erlauterung-des-beitrags-insights-berichts.md): Erfahren Sie, wie Sie Veröffentlichungs-Einblicke im Berichtstool anzeigen können!
+- [Erläuterung des Community-Management-Berichts](https://support.agorapulse.com/de/articles/10728067-erlauterung-des-community-management-berichts.md): Erfahren Sie, wie Sie die Reaktionseffizienz Ihres Teams verfolgen können!
+- [Wettbewerber/ Konkurrenten Bericht erklärt](https://support.agorapulse.com/de/articles/9952765-wettbewerber-konkurrenten-bericht-erklart.md): Fügen Sie Wettbewerber hinzu oder entfernen Sie sie, um wichtige Zielgruppen- und Content-Metriken zu vergleichen!
+- [Meta-Anzeigenbericht erklärt](https://support.agorapulse.com/de/articles/10137532-meta-anzeigenbericht-erklart.md): Synchronisieren Sie das Agorapulse-Berichtstool mit Daten aus dem Meta Ads Manager!
+- [Erläuterung des LinkedIn-Anzeigenberichts](https://support.agorapulse.com/de/articles/11537372-erlauterung-des-linkedin-anzeigenberichts.md): Synchronisieren Sie LinkedIn Ads-Daten mit Agorapulse!
+- [Benutzerdefinierte Berichte erklärt](https://support.agorapulse.com/de/articles/10728432-benutzerdefinierte-berichte-erklart.md): Erfahren Sie, wie Sie einen benutzerdefinierten Bericht erstellen und Daten aus mehreren sozialen Profilen aggregieren.
+- [So konfigurieren Sie Agorapulse-Berichte](https://support.agorapulse.com/de/articles/11066881-so-konfigurieren-sie-agorapulse-berichte.md): Erfahren Sie mehr über die verschiedenen Möglichkeiten, Erkenntnisse aus dem Berichtstool zu exportieren!
+- [So exportieren Sie Agorapulse-Berichte](https://support.agorapulse.com/de/articles/11114496-so-exportieren-sie-agorapulse-berichte.md): Erfahren Sie, wie Sie Erkenntnisse aus Agorapulse-Berichten exportieren!
+- [So konfigurieren Sie anpassbare Geschäftszeiten](https://support.agorapulse.com/de/articles/10728501-so-konfigurieren-sie-anpassbare-geschaftszeiten.md): Erfahren Sie, wie Sie anpassbare Geschäftszeiten eingeben, um die Berechnung der durchschnittlichen Reaktionszeit zu erleichtern.
+- [Facebook-Kennzahlen werden abgeschafft \(Juni 2026\)](https://support.agorapulse.com/de/articles/15773507-facebook-kennzahlen-werden-abgeschafft-juni-2026.md): Erfahren Sie, wie sich die jüngsten Änderungen an der Meta-API auf die Facebook-Kennzahlen auswirken werden.
+- [Social Media ROI - Feature Überblick](https://support.agorapulse.com/de/articles/8778518-social-media-roi-feature-uberblick.md)
+- [Agorapulse ROI dashboard vs Google Analytics 4](https://support.agorapulse.com/de/articles/8778523-agorapulse-roi-dashboard-vs-google-analytics-4.md)
+- [Sind bezahlte Socials in den Social ROI Dashboards enthalten?](https://support.agorapulse.com/de/articles/8778525-sind-bezahlte-socials-in-den-social-roi-dashboards-enthalten.md)
+- [Quantifizieren Sie den Wert von Social Content, wenn Sie nichts online verkaufen](https://support.agorapulse.com/de/articles/8778528-quantifizieren-sie-den-wert-von-social-content-wenn-sie-nichts-online-verkaufen.md)
+- [Wie kann ich meine Daten prüfen, die ich über Pulse.ly Links generiere?](https://support.agorapulse.com/de/articles/8778530-wie-kann-ich-meine-daten-prufen-die-ich-uber-pulse-ly-links-generiere.md)
+- [So messen Sie den Erfolg Ihrer Arbeit mit Agorapulse](https://support.agorapulse.com/de/articles/8778256-so-messen-sie-den-erfolg-ihrer-arbeit-mit-agorapulse.md)
+- [Report Studio \(Beta\) erklärt](https://support.agorapulse.com/de/articles/14060602-report-studio-beta-erklart.md): Erfahren Sie, wie Sie mit dem Report Studio einzelne Berichte erstellen.
+- [Report Studio erklärt](https://support.agorapulse.com/de/articles/15950060-report-studio-erklart.md): Erfahren Sie, wie Sie mit Report Studio Berichte erstellen.
+- [So organisieren Sie Ihre Berichte in Report Studio](https://support.agorapulse.com/de/articles/15951155-so-organisieren-sie-ihre-berichte-in-report-studio.md): Erfahren Sie, wie Sie Ihre Berichte in Report Studio verwalten und organisieren.
+- [Wie exportiert man Berichte in Report Studio?](https://support.agorapulse.com/de/articles/16043113-wie-exportiert-man-berichte-in-report-studio.md): Erfahren Sie, wie Sie Ihren benutzerdefinierten Bericht in Report Studio exportieren.
+- [Die Widget-Bibliothek von Report Studio erklärt](https://support.agorapulse.com/de/articles/15198172-die-widget-bibliothek-von-report-studio-erklart.md): Erfahren Sie mehr über die verschiedenen Konfigurationsmöglichkeiten für jedes Widget in der Widget-Bibliothek.
+
+### Monitoring
+
+- [Erweitertes Listening erklärt](https://support.agorapulse.com/de/articles/10365572-erweitertes-listening-erklart.md): Erweitertes Listening ermöglicht es, den Veränderungen, die Ihre Branche und Ihr Unternehmen betreffen, immer einen Schritt voraus zu sein
+- [So zeigen Sie Suchen des Erweiterten Listenings an und verwalten sie](https://support.agorapulse.com/de/articles/8712184-so-zeigen-sie-suchen-des-erweiterten-listenings-an-und-verwalten-sie.md): Zeigen Sie alle Erweiterten Listening-Suchen im Such-Dashboard an.
+- [So erstellen Sie eine erweiterte Listening-Suche](https://support.agorapulse.com/de/articles/8712232-so-erstellen-sie-eine-erweiterte-listening-suche.md): Erfahren Sie, wie Sie eine erweiterte Listening-Suche erstellen.
+- [So zeigen Sie die Suchergebnisse von Advanced Listening an](https://support.agorapulse.com/de/articles/8712289-so-zeigen-sie-die-suchergebnisse-von-advanced-listening-an.md): Erfahren Sie, wie Sie auf die Ergebnisse Ihres Advanced Listening zugreifen und diese interpretieren können!
+- [So richten Sie erweiterte Listening-Benachrichtigungen ein](https://support.agorapulse.com/de/articles/10767589-so-richten-sie-erweiterte-listening-benachrichtigungen-ein.md): Erfahren Sie, wie Sie über wichtige Änderungen in der erweiterten Listening-Suche benachrichtigt werden.
+- [So testen Sie die Funktion „Erweitertes Listening“](https://support.agorapulse.com/de/articles/11384539-so-testen-sie-die-funktion-erweitertes-listening.md): Erfahren Sie, was in einer Testversion unserer Funktion „Erweitertes Listening“ enthalten ist!
+
+### Agorapulse Advocacy
+
+- [Agorapulse Advocacy erklärt](https://support.agorapulse.com/de/articles/11624163-agorapulse-advocacy-erklart.md): Erfahren Sie, wie Sie Advocacy nutzen können, um die Reichweite Ihrer Kampagnen zu erhöhen.
+- [So erstellen Sie eine Advocacy-Kampagne](https://support.agorapulse.com/de/articles/11625852-so-erstellen-sie-eine-advocacy-kampagne.md): Erstellen Sie eine Kampagne, um Links und Beiträge mit internen oder externen Markenbotschaftern zu teilen.
+- [Anzeigen und Verwalten einer Advocacy-Kampagne](https://support.agorapulse.com/de/articles/11626012-anzeigen-und-verwalten-einer-advocacy-kampagne.md): Erfahren Sie, wie Sie Einblicke in Advocacy-Kampagnen gewinnen.
+- [So fügen Sie Markenbotschafter hinzu und verwalten sie](https://support.agorapulse.com/de/articles/8871050-so-fugen-sie-markenbotschafter-hinzu-und-verwalten-sie.md): Fügen Sie interne und externe Markenbotschafter für den Einsatz in Advocacy-Kampagnen hinzu.
+- [So reagieren Sie als Markenbotschafter auf eine Advocacy-Kampagne](https://support.agorapulse.com/de/articles/11626004-so-reagieren-sie-als-markenbotschafter-auf-eine-advocacy-kampagne.md): Erfahren Sie, wie Sie auf den Advocate Space zugreifen und auf Advocacy-Kampagnen reagieren können!
+
+### Agorapulse Mobile App
+
+- [Einschränkungen in der mobilen Agorapulse-App](https://support.agorapulse.com/de/articles/8778754-einschrankungen-in-der-mobilen-agorapulse-app.md)
+- [Wie melde ich mich in der mobilen Agorapulse-App an?](https://support.agorapulse.com/de/articles/8778740-wie-melde-ich-mich-in-der-mobilen-agorapulse-app-an.md)
+- [Bieten Sie eine mobile App an?](https://support.agorapulse.com/de/articles/8778753-bieten-sie-eine-mobile-app-an.md)
+- [So planen und veröffentlichen Sie einen Beitrag per mobiler Benachrichtigung](https://support.agorapulse.com/de/articles/8778750-so-planen-und-veroffentlichen-sie-einen-beitrag-per-mobiler-benachrichtigung.md): Erfahren Sie, wie Sie Instagram- und TikTok-Beiträge per mobiler Benachrichtigung veröffentlichen.
+- [Wie erhalte ich Agorapulse Mobile Push Benachrichtigungen?](https://support.agorapulse.com/de/articles/8778765-wie-erhalte-ich-agorapulse-mobile-push-benachrichtigungen.md)
+- [Mobile Beitragsveröffentlichung erklärt](https://support.agorapulse.com/de/articles/13197769-mobile-beitragsveroffentlichung-erklart.md): Erfahren Sie, wie Sie mithilfe der Agorapulse-Mobil-App Inhalte für Ihre Social-Media-Profile planen können.
+- [So zeigen Sie Beiträge über die mobile App an und verwalten sie](https://support.agorapulse.com/de/articles/13455632-so-zeigen-sie-beitrage-uber-die-mobile-app-an-und-verwalten-sie.md): Erfahren Sie, wie Sie Beiträge über die mobile App anzeigen und verwalten können.
+- [Verwalten gespeicherter Antworten aus der mobilen App](https://support.agorapulse.com/de/articles/12835207-verwalten-gespeicherter-antworten-aus-der-mobilen-app.md): Verwenden Sie gespeicherte Antworten, um über die mobile App auf Konversationen zu antworten.
+- [Mobiler Posteingang erklärt](https://support.agorapulse.com/de/articles/12754360-mobiler-posteingang-erklart.md): Reagiere unterwegs auf Konversationen, Kommentare, Erwähnungen und Direktnachrichten \(DMs\) mit dem mobilen Posteingang von Agorapulse.
+- [So beantworten und verwalten Sie Elemente im mobilen Posteingang](https://support.agorapulse.com/de/articles/12770663-so-beantworten-und-verwalten-sie-elemente-im-mobilen-posteingang.md): Erfahren Sie, wie Sie Ihre E-Mails über die mobile App verwalten können.
+- [Mobiles Listening erklärt](https://support.agorapulse.com/de/articles/13181121-mobiles-listening-erklart.md): Sehen Sie sich Ihre Listening-Suchanfragen in der Agorapulse-Mobil-App an.
+- [Mobile Asset Library erklärt](https://support.agorapulse.com/de/articles/13754683-mobile-asset-library-erklart.md): Erfahren Sie, wie Sie die Asset-Bibliothek in der mobilen App verwenden.
+
+### KI & Automatisierung
+
+- [Model Context Protocol \(MCP\) Integration erklärt](https://support.agorapulse.com/de/articles/12960496-model-context-protocol-mcp-integration-erklart.md): Erfahren Sie, wie das MCP von Agorapulse die Integration mit KI-Tools ermöglicht
+- [So verwenden Sie den KI-Schreibassistenten](https://support.agorapulse.com/de/articles/8769298-so-verwenden-sie-den-ki-schreibassistenten.md): Erstellen, verfeinern oder übersetzen Sie Social-Media-Texte mithilfe der integrierten KI.
+- [So erstellen Sie eine KI-Reportzusammenfassung](https://support.agorapulse.com/de/articles/12041180-so-erstellen-sie-eine-ki-reportzusammenfassung.md): Analysieren, interpretieren und verarbeiten Sie Berichtsdaten schnell und einfach mit KI.
+- [So verwenden Sie den KI - Organisationskontext](https://support.agorapulse.com/de/articles/12400727-so-verwenden-sie-den-ki-organisationskontext.md): Verfeinern Sie den Ton der KI-Funktionen von Agorapulse
+- [So verwenden Sie die Zapier-Integration mit Agorapulse](https://support.agorapulse.com/de/articles/12277852-so-verwenden-sie-die-zapier-integration-mit-agorapulse.md): Dieser Artikel beschreibt die Agorapulse-Integration für Zapier und ihre Verwendung.
+
+### Integrationen
+
+- [Sind Google Drive und Dropbox auf Agorapulse verfügbar?](https://support.agorapulse.com/de/articles/8773253-sind-google-drive-und-dropbox-auf-agorapulse-verfugbar.md)
+- [So verbinden Sie sich mit der offenen API von Agorapulse](https://support.agorapulse.com/de/articles/12417183-so-verbinden-sie-sich-mit-der-offenen-api-von-agorapulse.md): Exportieren Sie Agorapulse-Berichtsdaten an externe Analyse- oder BI-Tools.
+- [So verwenden Sie Ihr Bitly-Konto, um Links zu kürzen](https://support.agorapulse.com/de/articles/9095281-so-verwenden-sie-ihr-bitly-konto-um-links-zu-kurzen.md)
+- [Wie nutze ich die Canva-Integration?](https://support.agorapulse.com/de/articles/8773225-wie-nutze-ich-die-canva-integration.md): Erfahren Sie, wie Sie Designs von Canva nach Agorapulse importieren.
+- [HubSpot und Salesforce innerhalb von Agorapulse](https://support.agorapulse.com/de/articles/9101574-hubspot-und-salesforce-innerhalb-von-agorapulse.md)
+- [Wie verbinde ich Agorapulse mit Google Analytics](https://support.agorapulse.com/de/articles/8778519-wie-verbinde-ich-agorapulse-mit-google-analytics.md)
+- [Das gesuchte Google Analytics-Konto wird in Agorapulse nicht angezeigt](https://support.agorapulse.com/de/articles/8778521-das-gesuchte-google-analytics-konto-wird-in-agorapulse-nicht-angezeigt.md)
+- [Wie kann ich Agorapulse-Daten mit Looker Studio verknüpfen?](https://support.agorapulse.com/de/articles/9250755-wie-kann-ich-agorapulse-daten-mit-looker-studio-verknupfen.md)
+- [Agorapulse-Integration für Slack](https://support.agorapulse.com/de/articles/9490732-agorapulse-integration-fur-slack.md): Dieser Artikel beschreibt die Agorapulse-Integration für Slack und wie man sie verwendet.
+- [Agorapulse-Integration für Microsoft Teams](https://support.agorapulse.com/de/articles/11503107-agorapulse-integration-fur-microsoft-teams.md): Erhalten Sie Agorapulse-Benachrichtigungen direkt in Microsoft Teams!
+
+### Produkt Updates und API
+
+- [Was ist neu in Agorapulse?](https://support.agorapulse.com/de/articles/11431161-was-ist-neu-in-agorapulse.md): Eine Zusammenfassung der neuesten Produktfunktionen und Verbesserungen aus der neuesten Release-Periode.
+- [API Limitationen je Netzwerk](https://support.agorapulse.com/de/articles/8712660-api-limitationen-je-netzwerk.md)
+- [Agorapulse Release Notes - 2026](https://support.agorapulse.com/de/articles/13315559-agorapulse-release-notes-2026.md)
+- [Agorapulse Release Notes - 2025](https://support.agorapulse.com/de/articles/11419511-agorapulse-release-notes-2025.md)
+- [Agorapulse Release Notes 2024](https://support.agorapulse.com/de/articles/11426269-agorapulse-release-notes-2024.md): Entdecken Sie die Produktfunktionen, die im Jahr 2024 veröffentlicht wurden.
+- [Agorapulse Release Notes - 2023](https://support.agorapulse.com/de/articles/11427752-agorapulse-release-notes-2023.md): Entdecken Sie die Produktfunktionen, die im Jahr 2023 veröffentlicht wurden.

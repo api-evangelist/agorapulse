@@ -1,0 +1,103 @@
+generated: '2026-08-13'
+method: derived
+source: mcp/agorapulse-mcp.yml + openapi/ (22 operations across 15 refined specs)
+description: >-
+  Binds every Agorapulse MCP tool to the OpenAPI operation(s) that back it, so a tool inherits a real
+  input contract from the spec instead of a guessed one. The tool list is verbatim from the published
+  npm package @agorapulse/mcp@1.0.1; the REST side is the live spec harvested from
+  https://api.agorapulse.com/docs/open-api.yml on 2026-08-13.
+surfaces:
+  openapi:
+    files: openapi/agorapulse-*-openapi.yml
+    original: openapi/_original/agorapulse-open-api-openapi.yml
+    servers: [https://api.agorapulse.com]
+    gated: false
+    note: The spec itself is anonymous at /docs/open-api.yml; every operation requires an X-API-KEY.
+  mcp:
+    remote: https://api.openmcp.agorapulse.com/mcp
+    remote_gated: true
+    remote_gate: OAuth 2.0 bearer (RFC 9728 challenge on tools/list)
+    local: 'npx -y @agorapulse/mcp'
+    local_gated: false
+    note: >-
+      Tool names/schemas below come from the LOCAL stdio package, which is readable. The remote
+      server's tool set is documented in prose as broader (publishing/content, analytics,
+      organization management) and could not be enumerated without an authenticated tools/list.
+  graphql:
+    present: false
+crosswalk:
+- tool: get_organizations
+  category: organization
+  rest: [getManagerOrganizations]
+  binding: rest
+  confidence: high
+  note: 1:1. GET /v1.0/core/organizations, no parameters on either side.
+- tool: get_workspaces
+  category: organization
+  rest: [getOrganizationWorkspaces]
+  binding: rest
+  confidence: high
+  note: 1:1. organizationId maps to the path parameter of the same name.
+- tool: get_profiles
+  category: organization
+  rest: [getWorkspaceProfiles]
+  binding: rest
+  confidence: high
+  note: 1:1. organizationId + workspaceId map to path parameters of the same name.
+- tool: get_audience_insights
+  category: analytics
+  rest: [getAudience]
+  binding: rest
+  confidence: high
+  note: >-
+    1:1, with one real divergence — the tool accepts since/until as ISO 8601 strings and converts
+    them, while the REST operation takes Unix timestamps. An agent calling REST directly must convert.
+- tool: get_community_management_insights
+  category: analytics
+  rest: [getCommunityManagement]
+  binding: rest
+  confidence: high
+  note: Same ISO 8601 vs Unix-timestamp divergence as get_audience_insights.
+- tool: get_content_insights
+  category: analytics
+  rest: [getContentReport]
+  binding: rest
+  confidence: high
+  note: Same ISO 8601 vs Unix-timestamp divergence as get_audience_insights.
+mcp_only: []
+rest_only:
+- capability: Publishing — calendar notes
+  operations: [search, save, update, delete]
+  reason: No tool in the local package. The remote server documents calendar-note support, so this may be remote-only rather than absent.
+- capability: Publishing — drafts
+  operations: [save_1]
+  reason: No tool in the local package. Marked deprecated in the spec. The remote server documents draft creation.
+- capability: Publishing — media
+  operations: [create, get, requestUpload]
+  reason: No tool in the local package; upload slot / status / presigned studio upload.
+- capability: Publishing — Pinterest boards
+  operations: [list]
+  reason: No tool in the local package.
+- capability: Inbox
+  operations: [findItems, getMessages, create1]
+  reason: No tool in the local package. Reply (create1) is the only write in the inbox surface.
+- capability: Reports — competitors
+  operations: [getCompetitors, getCompetitorInsights]
+  reason: No tool in the local package. Added to the REST API after the package's last release (2025-06-12).
+- capability: Core — menu groups
+  operations: [listWorkspaceMenuGroups]
+  reason: No tool in the local package.
+- capability: Health
+  operations: [health]
+  reason: Operational probe, not an agent capability.
+coverage:
+  tools_named: 6
+  tools_bound: 6
+  mcp_only: 0
+  rest_operations_total: 22
+  rest_operations_with_tool: 6
+  rest_operations_without_tool: 16
+  note: >-
+    Coverage is measured against the LOCAL package only. The remote endpoint is described as covering
+    publishing and content as well, so the real remote coverage is almost certainly higher than 6/22 —
+    it simply cannot be measured without an OAuth token.

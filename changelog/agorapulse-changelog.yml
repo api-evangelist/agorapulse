@@ -1,0 +1,139 @@
+generated: '2026-08-13'
+method: searched
+source: https://support.agorapulse.com/en/articles/13315559-agorapulse-release-notes-2026
+url: https://support.agorapulse.com/en/articles/13315559-agorapulse-release-notes-2026
+scheme: dated product release notes (one help-centre article per year)
+current_version: v1.0 (the API has never been versioned past v1.0)
+api_changelog_published: false
+scope_note: >-
+  These are PRODUCT release notes, not an API changelog. Agorapulse publishes no dated record of API
+  changes: across every 2026 entry there is not one API, webhook, spec or developer-facing item, even
+  though the live OpenAPI gained competitor reports, media upload slots, Pinterest boards and
+  workspace menu groups during that period. The recent window below is captured because it is the
+  only dated change record the provider maintains, and because two entries are directly relevant to
+  the agent surface.
+archive:
+- {year: 2026, url: 'https://support.agorapulse.com/en/articles/13315559-agorapulse-release-notes-2026'}
+- {year: 2025, url: 'https://support.agorapulse.com/en/articles/11419511-agorapulse-release-notes-2025'}
+- {year: 2024, url: 'https://support.agorapulse.com/en/articles/11426269-agorapulse-release-notes-2024'}
+- {year: 2023, url: 'https://support.agorapulse.com/en/articles/11427752-agorapulse-release-notes-2023'}
+entries:
+- date: '2026-07-29'
+  title: '[Report Studio] Build custom reports on a flexible canvas'
+  type: addition
+  breaking: false
+- date: '2026-07-29'
+  title: Add audio to Instagram Reels from the Composer
+  type: addition
+  breaking: false
+- date: '2026-07-22'
+  title: Export your content calendar to CSV
+  type: addition
+  breaking: false
+- date: '2026-07-07'
+  title: Automate multilingual inbox moderation
+  type: addition
+  breaking: false
+- date: '2026-07-02'
+  title: Track Share of Voice and benchmark with Competitor Listening
+  type: addition
+  breaking: false
+  note: Competitor benchmarking across six platforms — the product side of the getCompetitors / getCompetitorInsights operations now in the spec.
+- date: '2026-07-02'
+  title: Drill into your Listening data with new charts and feed
+  type: addition
+  breaking: false
+- date: '2026-07-02'
+  title: Filter brand noise automatically in Listening searches
+  type: addition
+  breaking: false
+- date: '2026-06-30'
+  title: Schedule reports on the day and time that fits your workflow
+  type: addition
+  breaking: false
+- date: '2026-06-30'
+  title: Lock drafts as reusable templates
+  type: addition
+  breaking: false
+- date: '2026-05-20'
+  title: Access up to 24 months of historical data in Listening searches
+  type: addition
+  breaking: false
+- date: '2026-05-19'
+  title: Instagram keywords now available in Listening
+  type: addition
+  breaking: false
+- date: '2026-05-05'
+  title: Threads on Threads
+  type: addition
+  breaking: false
+- date: '2026-04-28'
+  title: Facebook & YouTube keywords now available in Listening
+  type: addition
+  breaking: false
+- date: '2026-04-22'
+  title: Forums & Web sources now available in Listening
+  type: addition
+  breaking: false
+- date: '2026-04-14'
+  title: Control who sees your ad performance
+  type: addition
+  breaking: false
+- date: '2026-04-08'
+  title: Add a first comment to your Facebook Reels
+  type: addition
+  breaking: false
+- date: '2026-03-31'
+  title: Search posts by keyword in the calendar
+  type: addition
+  breaking: false
+- date: '2026-03-17'
+  title: Navigate to your Competitors tab more easily
+  type: change
+  breaking: false
+- date: '2026-03-11'
+  title: Set up your AI Brand context in minutes
+  type: addition
+  breaking: false
+- date: '2026-03-10'
+  title: Navigate settings faster with a redesigned experience
+  type: change
+  breaking: false
+- date: '2026-03-05'
+  title: Create more precise listening searches
+  type: addition
+  breaking: false
+- date: '2026-02-18'
+  title: Set team permissions when connecting new profiles
+  type: addition
+  breaking: false
+- date: '2026-02-17'
+  title: Crop images in 3:4 format for Instagram
+  type: addition
+  breaking: false
+- date: '2026-02-03'
+  title: Threads Export for single reports
+  type: addition
+  breaking: false
+- date: '2026-02-03'
+  title: React to DM on Instagram
+  type: addition
+  breaking: false
+- date: '2026-01-16'
+  title: Org-level Moderation Rules
+  type: addition
+  breaking: false
+- date: '2026-01-13'
+  title: ChatGPT & Claude Integration Explained
+  type: addition
+  breaking: false
+  agent_surface: true
+  note: The launch entry for the MCP connector — see mcp/agorapulse-mcp.yml.
+- date: '2026-01-08'
+  title: Automatically moderate comments on labeled posts
+  type: addition
+  breaking: false
+- date: '2026-01-06'
+  title: Enforce 2 Factor Authentication
+  type: addition
+  breaking: false

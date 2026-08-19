@@ -1,0 +1,149 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/_original/agorapulse-open-api-openapi.yml (137 component schemas, 22 operations)
+description: >-
+  Entity-relationship graph for the Agorapulse API, derived from schema $ref links and the path
+  hierarchy. The model is strictly three levels deep — Organization owns Workspaces, a Workspace owns
+  Profiles — and almost every other resource hangs off a (organizationId, workspaceId) pair. Nothing
+  in the API is addressable without walking that chain first.
+identifiers:
+  organizationId: {type: integer(int64), path_parameter: true, obtained_from: getManagerOrganizations}
+  workspaceId: {type: string, path_parameter: true, obtained_from: getOrganizationWorkspaces}
+  profileUid: {type: string, path_parameter: true, obtained_from: getWorkspaceProfiles, note: 'a UID, not the numeric profile id'}
+  accountUid: {type: string, path_parameter: true, note: 'inbox surface addresses accounts by uid, not profiles'}
+  mediaUid: {type: string, path_parameter: true, obtained_from: 'create (media upload slot)'}
+  uid: {type: string, path_parameter: true, note: 'calendar note identifier'}
+  conversationId: {type: string, path_parameter: true}
+entities:
+- name: Organization
+  schema: OrganizationResponse
+  root: true
+  operations: [getManagerOrganizations]
+  relationships:
+  - {type: has_many, target: Workspace, via: organizationId}
+- name: Workspace
+  schema: WorkspaceResponse_1
+  operations: [getOrganizationWorkspaces]
+  relationships:
+  - {type: belongs_to, target: Organization, via: organizationId}
+  - {type: has_many, target: Profile, via: workspaceId}
+  - {type: has_many, target: MenuGroup, via: workspaceId}
+  - {type: has_many, target: CalendarNote, via: workspaceId}
+  - {type: has_many, target: Media, via: workspaceId}
+  - {type: has_many, target: InboxItem, via: workspaceId}
+- name: Profile
+  schema: ProfileResponse_1
+  operations: [getWorkspaceProfiles]
+  relationships:
+  - {type: belongs_to, target: Workspace, via: workspaceId}
+  - {type: has_many, target: AudienceInsight, via: profileUid}
+  - {type: has_many, target: ContentReportInsight, via: profileUid}
+  - {type: has_many, target: CommunityManagementInsight, via: profileUid}
+  - {type: has_many, target: Competitor, via: profileUid}
+  - {type: has_many, target: PinterestBoard, via: profileUid, note: 'Pinterest profiles only'}
+- name: MenuGroup
+  schema: MenuGroupResponse
+  operations: [listWorkspaceMenuGroups]
+  relationships:
+  - {type: belongs_to, target: Workspace, via: workspaceId}
+- name: CalendarNote
+  schema: SearchCalendarNoteOpenResponse.CalendarNoteOpenItem
+  operations: [search, save, update, delete]
+  relationships:
+  - {type: belongs_to, target: Workspace, via: workspaceId}
+  - {type: has_one, target: PublishingCalendarNoteColor, via: color}
+- name: Draft
+  schema: CreateSimpleDraftOpenResponse
+  operations: [save_1]
+  deprecated: true
+  relationships:
+  - {type: belongs_to, target: Workspace, via: workspaceId}
+  - {type: has_one, target: GroupOfPostsSummary, via: payload}
+  - {type: has_many, target: PostMedia, via: media}
+- name: Media
+  schema: MediaOpenResponse
+  operations: [create, get]
+  relationships:
+  - {type: belongs_to, target: Workspace, via: workspaceId}
+  - {type: has_one, target: PublishingApiMediaStatus, via: status}
+  - {type: has_one, target: PublishingApiMediaMetadata, via: metadata}
+  - {type: has_one, target: PublishingApiMediaError, via: error}
+  - {type: has_many, target: NetworkCompatibility, via: compatibility}
+  lifecycle: 'Slots expire — get returns 410 Media has expired.'
+- name: StudioMedia
+  schema: StudioMediaUploadOpenResponse
+  operations: [requestUpload]
+  relationships:
+  - {type: belongs_to, target: Workspace, via: workspaceId}
+  note: Returns a presigned upload URL; a separate surface from the publishing Media slot.
+- name: PinterestBoard
+  schema: PinterestBoardOpenItem
+  operations: [list]
+  relationships:
+  - {type: belongs_to, target: Profile, via: profileUid}
+- name: InboxItem
+  schema: ItemDTO
+  operations: [findItems]
+  relationships:
+  - {type: belongs_to, target: Workspace, via: workspaceId}
+  - {type: has_one, target: AbstractItem, via: item}
+  - {type: has_one, target: ItemSentiment, via: sentiment}
+  - {type: has_many, target: Message, via: conversationId}
+- name: Message
+  schema: MessagesSearchResponse
+  operations: [getMessages]
+  relationships:
+  - {type: belongs_to, target: Account, via: accountUid}
+  - {type: belongs_to, target: InboxItem, via: conversationId}
+- name: Reply
+  schema: CreateReplyRequest
+  operations: [create1]
+  relationships:
+  - {type: belongs_to, target: Account, via: accountUid}
+- name: AudienceInsight
+  schema: OpenAudienceInsight
+  operations: [getAudience]
+  relationships:
+  - {type: belongs_to, target: Profile, via: profileUid}
+  - {type: has_many, target: AudienceReportByDate, via: byDate}
+- name: ContentReportInsight
+  schema: ContentReportInsight_1
+  operations: [getContentReport]
+  relationships:
+  - {type: belongs_to, target: Profile, via: profileUid}
+  - {type: has_many, target: ContentReportData, via: data}
+- name: CommunityManagementInsight
+  schema: CommunityManagementInsight
+  operations: [getCommunityManagement]
+  relationships:
+  - {type: belongs_to, target: Profile, via: profileUid}
+  - {type: has_many, target: CommunityManagementByDate, via: byDate}
+- name: Competitor
+  schema: OpenCompetitor
+  operations: [getCompetitors, getCompetitorInsights]
+  relationships:
+  - {type: belongs_to, target: Profile, via: profileUid}
+  - {type: has_many, target: OpenCompetitorInsight, via: insights}
+  - {type: has_many, target: OpenCompetitorTopContent, via: topContent}
+  - {type: has_many, target: OpenDailyAudienceSummary, via: audience}
+- name: PublishingPostEvent
+  schema: PublishingPostEvent
+  delivered_by: webhook
+  relationships:
+  - {type: belongs_to, target: Organization, via: organizationId}
+  - {type: has_one, target: PublishingPost, via: payload}
+- name: InboxItemEvent
+  schema: InboxItemEvent
+  delivered_by: webhook
+  relationships:
+  - {type: belongs_to, target: Organization, via: organizationId}
+  - {type: has_one, target: InboxItem, via: payload}
+network_polymorphism:
+  note: >-
+    Insight schemas are specialised per social network rather than generalised — the schema library
+    carries FacebookAudienceInsight, InstagramAudienceInsight, LinkedinAudienceInsight,
+    TiktokAudienceInsight, TwitterAudienceInsight, YoutubeAudienceInsight, ThreadsAudienceInsight and
+    the matching *ContentReportInsight / *CommunityManagementAction families. An agent must branch on
+    network to read report fields.
+  networks: [facebook, instagram, linkedin, tiktok, twitter, youtube, threads]
+render: json-schema/ (137 schemas already extracted per entity)

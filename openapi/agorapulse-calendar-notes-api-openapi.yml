@@ -1,18 +1,28 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Open Calendar Notes API
-  description: Agorapulse's Open API documentation
+  title: Agorapulse Calendar notes API
+  description: "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n"
   version: '1.0'
+  contact:
+    name: Agorapulse API Support
+    url: https://www.agorapulse.com
+    email: support@agorapulse.com
+  x-logo:
+    url: docs/img/logo.svg
+    altText: Agorapulse
+servers:
+- url: https://api.agorapulse.com
+  description: Production
 security:
 - bearerAuth: []
 tags:
-- name: Calendar Notes
-  description: Publishing calendar notes management
+- name: Calendar notes
+  description: Annotate your publishing calendar with notes.
 paths:
   /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes:
     get:
       tags:
-      - Calendar Notes
+      - Calendar notes
       summary: Search calendar notes
       description: Search and filter calendar notes in the specified workspace
       operationId: search
@@ -21,19 +31,33 @@ paths:
         in: path
         description: Organization identifier
         required: true
+        schema:
+          type: integer
       - name: workspaceId
         in: path
         description: Workspace identifier
         required: true
+        schema:
+          type: integer
       - name: since
         in: query
         description: Filter notes after this date (ISO date)
+        schema:
+          type: string
+          format: date
       - name: until
         in: query
         description: Filter notes before this date (ISO date)
+        schema:
+          type: string
+          format: date
       - name: profileUids
         in: query
         description: Filter by profile UIDs
+        schema:
+          type: array
+          items:
+            type: string
       responses:
         '200':
           description: Calendar notes retrieved successfully
@@ -47,7 +71,7 @@ paths:
           description: Organization or workspace not found
     post:
       tags:
-      - Calendar Notes
+      - Calendar notes
       summary: Create a new calendar note
       description: Creates a new calendar note in the specified content
       operationId: save
@@ -56,10 +80,14 @@ paths:
         in: path
         description: Organization identifier
         required: true
+        schema:
+          type: integer
       - name: workspaceId
         in: path
         description: Workspace identifier
         required: true
+        schema:
+          type: integer
       requestBody:
         description: Calendar note to create
         content:
@@ -81,7 +109,7 @@ paths:
   /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/notes/{uid}:
     put:
       tags:
-      - Calendar Notes
+      - Calendar notes
       summary: Update a calendar note
       description: Updates an existing calendar note with new data
       operationId: update
@@ -90,14 +118,20 @@ paths:
         in: path
         description: Organization identifier
         required: true
+        schema:
+          type: integer
       - name: workspaceId
         in: path
         description: Workspace identifier
         required: true
+        schema:
+          type: integer
       - name: uid
         in: path
         description: Calendar note unique identifier
         required: true
+        schema:
+          type: string
       requestBody:
         description: Updated calendar note data
         content:
@@ -120,7 +154,7 @@ paths:
           description: Calendar note, organization, or workspace not found
     delete:
       tags:
-      - Calendar Notes
+      - Calendar notes
       summary: Delete a calendar note
       description: Deletes a calendar note by its UID
       operationId: delete
@@ -129,14 +163,20 @@ paths:
         in: path
         description: Organization identifier
         required: true
+        schema:
+          type: integer
       - name: workspaceId
         in: path
         description: Workspace identifier
         required: true
+        schema:
+          type: integer
       - name: uid
         in: path
         description: Calendar note unique identifier
         required: true
+        schema:
+          type: string
       responses:
         '204':
           description: Calendar note deleted successfully
@@ -146,70 +186,6 @@ paths:
           description: Calendar note, organization, or workspace not found
 components:
   schemas:
-    PublishingCalendarNoteColor:
-      type: string
-      enum:
-      - BLUE
-      - RED
-      - YELLOW
-      - GREEN
-      - PURPLE
-      - PINK
-      - ORANGE
-      - MINT
-      - CYAN
-      - GREY
-    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier of the calendar note
-        title:
-          type: string
-          description: Note title
-          example: Team Meeting
-        body:
-          type: string
-          description: Note body content
-          example: Discuss quarterly goals and roadmap
-        color:
-          type: object
-          description: Note color for calendar display
-          allOf:
-          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
-          - type: object
-        startDate:
-          type: string
-          description: Note start date
-          format: date
-          example: '2024-01-15T00:00:00.000Z'
-        endDate:
-          type: string
-          description: Note end date
-          format: date
-          example: '2024-01-15T00:00:00.000Z'
-        profileUids:
-          type: array
-          description: List of profile UIDs associated with the note
-          items:
-            type: string
-      description: Calendar note information in search results
-    SearchCalendarNoteOpenResponse:
-      type: object
-      properties:
-        notes:
-          type: array
-          description: List of calendar notes matching the search criteria
-          items:
-            $ref: '#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem'
-        query:
-          type: object
-          description: Query parameters used for the search
-          allOf:
-          - $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
-          - type: object
-      description: Response containing search results for calendar notes
     CreateCalendarNoteOpenRequest:
       required:
       - color
@@ -229,12 +205,7 @@ components:
           description: Note body content
           example: Discuss quarterly goals and roadmap
         color:
-          type: object
-          description: Note color for calendar display
-          allOf:
-          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
-          - type: object
-          x-not-null-message: Color is required
+          $ref: '#/components/schemas/PublishingCalendarNoteColor'
         startDate:
           type: string
           description: Note start date
@@ -253,7 +224,9 @@ components:
           items:
             type: string
       description: Request to create or update a calendar note
-    CreateCalendarNoteOpenResponse:
+    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem:
+      required:
+      - color
       type: object
       properties:
         uid:
@@ -268,11 +241,54 @@ components:
           description: Note body content
           example: Discuss quarterly goals and roadmap
         color:
-          type: object
-          description: Note color for calendar display
-          allOf:
-          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
-          - type: object
+          $ref: '#/components/schemas/PublishingCalendarNoteColor'
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        profileUids:
+          type: array
+          description: List of profile UIDs associated with the note
+          items:
+            type: string
+      description: Calendar note information in search results
+    SearchCalendarNoteOpenResponse:
+      required:
+      - query
+      type: object
+      properties:
+        notes:
+          type: array
+          description: List of calendar notes matching the search criteria
+          items:
+            $ref: '#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem'
+        query:
+          $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
+      description: Response containing search results for calendar notes
+    CreateCalendarNoteOpenResponse:
+      required:
+      - color
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the calendar note
+        title:
+          type: string
+          description: Note title
+          example: Team Meeting
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          $ref: '#/components/schemas/PublishingCalendarNoteColor'
         startDate:
           type: string
           description: Note start date
@@ -311,8 +327,56 @@ components:
           items:
             type: string
       description: Request to search calendar notes with filtering options
+    PublishingCalendarNoteColor:
+      type: string
+      enum:
+      - BLUE
+      - RED
+      - YELLOW
+      - GREEN
+      - PURPLE
+      - PINK
+      - ORANGE
+      - MINT
+      - CYAN
+      - GREY
   securitySchemes:
     bearerAuth:
       type: apiKey
       name: X-API-KEY
       in: header
+    HookSignature:
+      description: 'The signature of the webhook request, used to verify the authenticity of the request.
+
+        The signature is a SHA256 HMAC signature computed on the request body using the shared secret from your webhook subscription.
+
+        '
+      type: apiKey
+      name: X-Hook-Signature
+      in: header
+x-tagGroups:
+- name: Account & Workspaces
+  tags:
+  - Organizations
+  - Workspaces
+  - Profiles
+  - Groups
+- name: Publishing
+  tags:
+  - Drafts
+  - Calendar notes
+  - Pinterest boards
+- name: Content Library
+  tags:
+  - Media
+- name: Inbox & Engagement
+  tags:
+  - Conversations
+  - Items
+  - Replies
+- name: Analytics & Reporting
+  tags:
+  - Reports
+- name: System
+  tags:
+  - Health

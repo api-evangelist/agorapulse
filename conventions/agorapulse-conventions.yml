@@ -1,0 +1,75 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  openapi/_original/agorapulse-open-api-openapi.yml (info.description) harvested from
+  https://api.agorapulse.com/docs/open-api.yml, plus
+  https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+description: Cross-cutting request/response semantics for the Agorapulse REST API.
+style:
+  architecture: REST, resource-oriented URLs, JSON, standard HTTP verbs and status codes
+  base_url: https://api.agorapulse.com
+authentication:
+  style: static API key
+  header: X-API-KEY
+  detail: authentication/agorapulse-authentication.yml
+resource_hierarchy:
+  pattern: /v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...
+  domains: [core, publishing, report, inbox, library]
+  entry_point: GET /v1.0/core/organizations
+  note: >-
+    Almost every operation is nested under an organization and a workspace, so an agent must walk
+    organizations -> workspaces -> profiles before it can call anything useful. Three identifiers
+    (organizationId, workspaceId, profileUid) are prerequisites for the report surface.
+versioning:
+  scheme: uri-path
+  current: v1.0
+  detail: Every endpoint is versioned under a /v1.0/ prefix. No version header, no date-based train.
+idempotency:
+  supported: false
+  note: >-
+    No idempotency key header, parameter or retry contract is documented anywhere in the spec or the
+    help centre, and none of the four write operations declares one. Retrying a POST (a calendar
+    note, a draft, a reply, a media slot) will create a duplicate. No Idempotency pointer is emitted
+    for this provider.
+pagination:
+  documented: false
+  note: >-
+    No pagination convention is documented and no list operation declares page/cursor/limit
+    parameters. The list surfaces (organizations, workspaces, profiles, inbox items, Pinterest
+    boards) return whole collections.
+date_handling:
+  rest: >-
+    Report query parameters (since/until) take Unix timestamps. The help centre links
+    unixtimestamp.com for conversion.
+  mcp: >-
+    The MCP tools take ISO 8601 strings for the same parameters and convert internally — a real
+    divergence between the two surfaces, recorded in mcp/agorapulse-tool-crosswalk.yml.
+errors:
+  envelope: '{code, subCode?, message}'
+  rfc9457: false
+  no_body_statuses: [405, 406, 415]
+  detail: errors/agorapulse-problem-types.yml
+rate_limits:
+  limit: 500 requests per 30 minutes per API key
+  headers_documented: false
+  detail: rate-limits/agorapulse-rate-limits.yml
+request_tracing:
+  documented: false
+  note: No request-id / correlation-id header is documented or declared in the spec.
+field_expansion:
+  documented: false
+metadata:
+  documented: false
+webhooks:
+  supported: true
+  events: [PUBLISHING_POST, INBOX_ITEM]
+  verification: X-Hook-Signature — SHA256 HMAC of the raw body using the subscription's shared secret
+  receiver_contract: >-
+    Return 200 to acknowledge. Return 410 to have Agorapulse automatically disable the subscription.
+  detail: asyncapi/agorapulse-webhooks.yml
+access_model:
+  note: >-
+    The help centre describes the Open API as read-only for reporting export, but the live spec now
+    contains seven write operations (save, update and delete a calendar note; save_1 a draft; create
+    a media upload slot; requestUpload for studio media; create1 to reply to an inbox item). The
+    documentation and the contract disagree; the contract is the newer of the two.

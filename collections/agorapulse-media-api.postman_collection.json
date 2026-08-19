@@ -1,0 +1,815 @@
+{
+  "item": [
+    {
+      "id": "88a392be-7558-4977-9fd4-9e728ba8383b",
+      "name": "Media",
+      "description": {
+        "content": "Upload media assets to your content library.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0708f10f-b99a-4d32-bb6a-d684ea3b0d80",
+          "name": "Create a media upload slot",
+          "request": {
+            "name": "Create a media upload slot",
+            "description": {
+              "content": "Generates a presigned upload URL and registers a media awaiting upload. Upload the file with a PUT request to uploadUrl before expiresAt, replaying every entry of requiredHeaders verbatim, Content-Type included. Then poll GET /media/{mediaUid} until the status is VALID, INVALID or EXPIRED, or subscribe to the PUBLISHING_MEDIA webhook, which fires with the terminal status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "publishing",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "media"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fileName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "81c33473-5a5b-4ac0-aa0d-8d9a431f6a95",
+              "name": "Media upload slot created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"clip.mp4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"mediaUid\": \"pubmedia_abc123\",\n  \"uploadUrl\": \"string\",\n  \"requiredHeaders\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"mediaUrl\": \"string\",\n  \"status\": {\n    \"value\": \"<Error: Could not resolve allOf schema\"\n  },\n  \"expiresAt\": \"1962-03-14T19:42:00.560Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02957180-2456-4595-805f-bc242ebf8e8d",
+              "name": "Invalid or unsupported file name",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"clip.mp4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "208e80c3-66fe-4c7b-af2e-c7c7323d410f",
+          "name": "Get media status",
+          "request": {
+            "name": "Get media status",
+            "description": {
+              "content": "Returns the current status and, once probed, the technical metadata of a media",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "publishing",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "media",
+                ":mediaUid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "mediaUid",
+                  "description": "(Required) Media identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13ea4126-f6b3-4779-ab04-573356f665f1",
+              "name": "Media found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "media",
+                    ":mediaUid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "mediaUid",
+                      "description": "(Required) Media identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"mediaUid\": \"pubmedia_abc123\",\n  \"mediaUrl\": \"string\",\n  \"status\": {\n    \"value\": \"<Error: Could not resolve allOf schema\"\n  },\n  \"mediaType\": \"IMAGE\",\n  \"metadata\": {\n    \"width\": 5684,\n    \"height\": 848,\n    \"durationSeconds\": 3173.4475367832483,\n    \"sizeBytes\": 6395,\n    \"format\": \"string\",\n    \"animated\": true,\n    \"rotation\": 7318\n  },\n  \"errors\": [\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"compatibility\": {\n    \"key_0\": {\n      \"issues\": {\n        \"key_0\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"surfaces\": {\n        \"key_0\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ad34ff0-1d6c-4356-ba98-ee02e7a64196",
+              "name": "Media not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "media",
+                    ":mediaUid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "mediaUid",
+                      "description": "(Required) Media identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a38c1916-b90e-4d2a-abf0-36f50e3bf47f",
+              "name": "Media has expired",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "media",
+                    ":mediaUid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "mediaUid",
+                      "description": "(Required) Media identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f1c77ab-4d1a-4416-ae14-61e650db4b34",
+          "name": "Request a presigned upload URL for studio media",
+          "request": {
+            "name": "Request a presigned upload URL for studio media",
+            "description": {
+              "content": "Returns a presigned S3 PUT URL that can be used to upload a media file directly to S3",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "library",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "studio",
+                "media",
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "organizationId",
+                  "description": "(Required) Organization identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contentType\": \"<string>\",\n  \"extension\": \"<string>\",\n  \"fileSize\": \"<long>\",\n  \"origin\": \"<string>\",\n  \"contentStudioSessionId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "624aa8b3-3d8b-43a9-aaf4-82bb399dc708",
+              "name": "Presigned upload URL generated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "library",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "studio",
+                    "media",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contentType\": \"image/jpeg\",\n  \"extension\": \"jpg\",\n  \"fileSize\": 1048576,\n  \"origin\": \"lovable\",\n  \"contentStudioSessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uploadUrl\": \"string\",\n  \"filename\": \"string\",\n  \"publicUrl\": \"string\",\n  \"baseUrl\": \"string\",\n  \"expiresInSeconds\": 4283,\n  \"requiredHeaders\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5438c32-10ff-45bc-8ce9-271e2064ea89",
+              "name": "Invalid request data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "library",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "studio",
+                    "media",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contentType\": \"image/jpeg\",\n  \"extension\": \"jpg\",\n  \"fileSize\": 1048576,\n  \"origin\": \"lovable\",\n  \"contentStudioSessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d2e4d0f9-abbd-4206-a974-4acbea4667a8",
+              "name": "Organization or workspace not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "library",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "studio",
+                    "media",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contentType\": \"image/jpeg\",\n  \"extension\": \"jpg\",\n  \"fileSize\": 1048576,\n  \"origin\": \"lovable\",\n  \"contentStudioSessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.agorapulse.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bff634a3-9ad5-471b-be29-1299662d059f",
+    "name": "Agorapulse Media API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n\n\nContact Support:\n Name: Agorapulse API Support\n Email: support@agorapulse.com",
+      "type": "text/plain"
+    }
+  }
+}

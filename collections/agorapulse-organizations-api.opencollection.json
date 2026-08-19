@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Organizations API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get manager organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/core/organizations",
+            "params": [
+              {
+                "name": "v",
+                "value": "",
+                "type": "query",
+                "description": "API version"
+              }
+            ]
+          },
+          "docs": "List all organizations the manager belongs to"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,90 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  openapi/_original/agorapulse-open-api-openapi.yml, well-known/agorapulse-oauth-authorization-server.json,
+  well-known/agorapulse-oauth-protected-resource.json, https://www.agorapulse.com/security/,
+  https://trust.agorapulse.com/
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: openapi 3.1.0 published at https://api.agorapulse.com/docs/open-api.yml with 22 operations, 137 component schemas and a top-level webhooks object.
+- id: openapi-webhooks
+  conforms: true
+  evidence: OpenAPI 3.1 top-level `webhooks` object declares PUBLISHING_POST and INBOX_ITEM with typed payload schemas.
+- id: asyncapi
+  conforms: false
+  evidence: No AsyncAPI document published; the event surface is expressed as OpenAPI 3.1 webhooks instead.
+- id: oauth2
+  conforms: true
+  scope: MCP server only — the REST API has no OAuth surface.
+  evidence: authorization_code + refresh_token grants advertised at https://api.identity.agorapulse.com.
+- id: rfc8414-authorization-server-metadata
+  conforms: true
+  evidence: 200 at https://api.openmcp.agorapulse.com/.well-known/oauth-authorization-server with issuer, authorization_endpoint, token_endpoint, registration_endpoint.
+- id: rfc9728-protected-resource-metadata
+  conforms: true
+  evidence: >-
+    200 at /.well-known/oauth-protected-resource, and a 401 from POST /mcp carries
+    WWW-Authenticate: Bearer resource_metadata="…/.well-known/oauth-protected-resource/mcp".
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint https://api.identity.agorapulse.com/oauth/register advertised in the authorization-server metadata.
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported ["S256"].
+- id: oidc
+  conforms: false
+  evidence: >-
+    A userinfo_endpoint is advertised, but /.well-known/openid-configuration is 404 on the MCP host
+    and 405 on the identity host, and no id_token / openid scope is offered. This is OAuth 2.0, not OIDC.
+- id: mcp
+  conforms: true
+  evidence: >-
+    Remote streamable-HTTP MCP endpoint at https://api.openmcp.agorapulse.com/mcp plus a published
+    stdio server, npm @agorapulse/mcp@1.0.1 built on @modelcontextprotocol/sdk.
+- id: a2a
+  conforms: false
+  evidence: No agent card at /.well-known/agent-card.json or /.well-known/agent.json on any Agorapulse host.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a proprietary {code, subCode, message} JSON envelope, not application/problem+json.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: >-
+    No security.txt on any Agorapulse-controlled host. The 200 at support.agorapulse.com is
+    Intercom's document (its own Canonical field points at app.intercom.com).
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No Sunset or Deprecation response header declared; deprecation is signalled only by the OpenAPI `deprecated` flag.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency key header or retry contract documented for any of the seven write operations.
+- id: pagination
+  conforms: false
+  evidence: No pagination parameters declared on any list operation and no pagination convention documented.
+- id: hmac-webhook-signing
+  conforms: true
+  evidence: X-Hook-Signature — SHA256 HMAC over the raw body using the subscription's shared secret.
+- id: iso-27001
+  conforms: true
+  scope: organizational
+  evidence: ISO 27001:2022 certificate, published via https://trust.agorapulse.com/.
+- id: soc2-type-2
+  conforms: true
+  scope: organizational
+  evidence: SOC 2 Type 2 report, published via https://trust.agorapulse.com/.
+- id: gdpr
+  conforms: true
+  scope: organizational
+  evidence: https://www.agorapulse.com/gdpr/ (200) and a DPA referenced from the trust centre.
+- id: pci-dss
+  conforms: false
+  evidence: >-
+    PCI DSS Level 1 appears on https://www.agorapulse.com/security/ but in the list of AWS's
+    certifications, not Agorapulse's own. Not credited to Agorapulse.
+- id: hipaa
+  conforms: false
+  evidence: Not claimed anywhere on the security or trust pages.
+- id: fedramp
+  conforms: false
+  evidence: Not claimed.

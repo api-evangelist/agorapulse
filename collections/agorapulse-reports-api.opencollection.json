@@ -1,0 +1,149 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Reports API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get audience report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/report/organizations/:organizationId/workspaces/:workspaceId/profiles/:profileUid/insights/audience",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "profileUid",
+                "value": "",
+                "type": "path",
+                "description": "Profile uid"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get audience report"
+        },
+        {
+          "info": {
+            "name": "Get community management report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/report/organizations/:organizationId/workspaces/:workspaceId/profiles/:profileUid/insights/communitymanagement",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "profileUid",
+                "value": "",
+                "type": "path",
+                "description": "Profile uid"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get community management report"
+        },
+        {
+          "info": {
+            "name": "Get content report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/report/organizations/:organizationId/workspaces/:workspaceId/profiles/:profileUid/insights/content",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "profileUid",
+                "value": "",
+                "type": "path",
+                "description": "Profile uid"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get content report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

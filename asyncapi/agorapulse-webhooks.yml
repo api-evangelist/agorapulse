@@ -1,0 +1,65 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  openapi/_original/agorapulse-open-api-openapi.yml — the OpenAPI 3.1 `webhooks` block, harvested
+  verbatim from https://api.agorapulse.com/docs/open-api.yml on 2026-08-13
+spec_type: OpenAPI-3.1-webhooks
+asyncapi_published: false
+description: >-
+  Agorapulse publishes no AsyncAPI document. It does publish a real, machine-readable event surface:
+  the OpenAPI 3.1 top-level `webhooks` object, with two event types, typed payload schemas, an HMAC
+  signature scheme and an explicit receiver contract. That is captured here rather than fabricated
+  into an AsyncAPI document.
+delivery:
+  transport: HTTP POST to a subscriber-provided endpoint
+  content_type: application/json
+  subscription: Configured per organization; each subscription carries a shared secret.
+security:
+  scheme: X-Hook-Signature
+  type: apiKey (header)
+  algorithm: SHA256 HMAC computed over the raw request body using the subscription's shared secret
+  source: components.securitySchemes.HookSignature
+receiver_contract:
+- status: 200
+  meaning: Data was received successfully.
+- status: 410
+  meaning: >-
+    The endpoint is no longer active. Agorapulse will automatically disable the subscription — an
+    unusual and useful self-healing contract that a receiver can deliberately trigger.
+events:
+- name: PUBLISHING_POST
+  description: Events related to the publishing of a post.
+  payload_schema: PublishingPostEvent
+  payload_fields:
+    uid: Unique identifier for the event
+    type: PUBLISHING_POST
+    action: PostAction
+    organizationId: int64
+    timestamp: date-time
+    payload: PublishingPost
+  actions: [PUBLISHED, FAILED]
+  json_schema: json-schema/publishingpostevent.json
+- name: INBOX_ITEM
+  description: Events related to the life cycle of inbox items.
+  payload_schema: InboxItemEvent
+  payload_fields:
+    uid: Unique identifier for the event
+    type: INBOX_ITEM
+    action: InboxItemAction
+    organizationId: int64
+    timestamp: date-time
+    payload: InboxItem
+  actions: [CREATED, CLASSIFIED, LABELIZED]
+  json_schema: json-schema/inboxitemevent.json
+adjacent_event_schemas:
+  note: >-
+    The schema library also carries GroupOfPostsEvent (actions CREATED, ASSIGNED, APPROVED, REJECTED)
+    and ListeningItemEvent (action CREATED) with the same envelope shape, but neither is wired into
+    the `webhooks` block, so neither is claimed as a delivered event.
+  schemas: [GroupOfPostsEvent, ListeningItemEvent]
+gaps:
+- No AsyncAPI document is published.
+- >-
+  Webhook subscription management is not exposed as an API operation — there is no REST endpoint to
+  create, list or delete a subscription, so setup is out-of-band.
+- Retry and redelivery policy is not documented.

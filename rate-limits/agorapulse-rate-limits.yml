@@ -1,3 +1,7 @@
+generated: '2026-08-13'
+method: searched
+source: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+limit_count: 1
 name: Agorapulse Rate Limits
 description: Rate limiting policies for the Agorapulse Reports Open API.
 url: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
@@ -6,7 +10,24 @@ limits:
     limit: 500
     window: 30 minutes
     scope: per API key
+    burst: not documented
     description: A maximum of 500 API requests are allowed per 30-minute rolling window per API key.
+    source: https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+
+response_signalling:
+  headers_documented: false
+  headers_observed: []
+  note: >-
+    No rate-limit response headers are documented and none is declared anywhere in the OpenAPI —
+    no X-RateLimit-*, no RateLimit-*, no Retry-After. The only runtime signal an agent gets is the
+    error envelope's global code 3, "rate limit exceeded" (see errors/agorapulse-problem-types.yml).
+    The HTTP status paired with code 3 is not documented, and no operation in the spec declares a
+    429 response, so it was not assumed here. A client cannot read remaining quota or a reset time
+    from a response; it can only count its own calls against the 500/30min budget and back off
+    blindly on code 3.
+  probe_note: >-
+    Not observed live. Every path on api.agorapulse.com returns 401 without a key, so the limit
+    headers on a successful response could not be inspected anonymously.
 
 authentication:
   type: API Key

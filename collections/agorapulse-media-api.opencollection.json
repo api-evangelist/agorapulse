@@ -1,0 +1,115 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Media API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Media",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a media upload slot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.agorapulse.com/v1.0/publishing/organizations/:organizationId/workspaces/:workspaceId/media",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates a presigned upload URL and registers a media awaiting upload. Upload the file with a PUT request to uploadUrl before expiresAt, replaying every entry of requiredHeaders verbatim, Content-Type included. Then poll GET /media/{mediaUid} until the status is VALID, INVALID or EXPIRED, or subscribe to the PUBLISHING_MEDIA webhook, which fires with the terminal status."
+        },
+        {
+          "info": {
+            "name": "Get media status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/publishing/organizations/:organizationId/workspaces/:workspaceId/media/:mediaUid",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              },
+              {
+                "name": "mediaUid",
+                "value": "",
+                "type": "path",
+                "description": "Media identifier"
+              }
+            ]
+          },
+          "docs": "Returns the current status and, once probed, the technical metadata of a media"
+        },
+        {
+          "info": {
+            "name": "Request a presigned upload URL for studio media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.agorapulse.com/v1.0/library/organizations/:organizationId/workspaces/:workspaceId/studio/media/upload",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a presigned S3 PUT URL that can be used to upload a media file directly to S3"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

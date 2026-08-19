@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Items API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/inbox/organizations/:organizationId/workspaces/:workspaceId/items",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "1419",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "1416",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "accountUids",
+                "value": "",
+                "type": "query",
+                "description": "Set of account UIDs to filter items. Only items from these accounts will be returned."
+              },
+              {
+                "name": "toReview",
+                "value": "",
+                "type": "query",
+                "description": "Filter items that need review (not yet approved by a manager)"
+              },
+              {
+                "name": "labels",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by labels. Only items with these labels will be returned."
+              },
+              {
+                "name": "sentiments",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by sentiment."
+              },
+              {
+                "name": "types",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by type/source. Specify the types of items to retrieve (e.g., organicComment, adsComment, conversation, ...)"
+              },
+              {
+                "name": "since",
+                "value": "2025-10-01T09:00:00.000Z",
+                "type": "query",
+                "description": "Filter items created after this date (inclusive). ISO 8601 format."
+              },
+              {
+                "name": "until",
+                "value": "2025-10-15T13:00:00.000Z",
+                "type": "query",
+                "description": "Filter items created before this date (inclusive). ISO 8601 format."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset for pagination"
+              },
+              {
+                "name": "limit",
+                "value": "10",
+                "type": "query",
+                "description": "Maximum number of items to return per page. Must be between 1 and 25."
+              },
+              {
+                "name": "order",
+                "value": "DESC",
+                "type": "query",
+                "description": "Sort order for the results. ASC for ascending (oldest first), DESC for descending (newest first)."
+              }
+            ]
+          },
+          "docs": "Find items"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

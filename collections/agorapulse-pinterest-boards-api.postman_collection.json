@@ -1,0 +1,259 @@
+{
+  "item": [
+    {
+      "id": "c9815288-4d74-4628-8790-2ad4d49e06ec",
+      "name": "Pinterest boards",
+      "description": {
+        "content": "List a Pinterest profile's boards to obtain the board id a pin requires.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fbd3bbbd-6d37-4c63-8d1b-ed691f7106a6",
+          "name": "List a Pinterest profile's boards",
+          "request": {
+            "name": "List a Pinterest profile's boards",
+            "description": {
+              "content": "Lists the boards a Pinterest profile can publish to, so that an id from the response can be passed as networks.pinterest.boardId when scheduling or publishing. Pinterest rejects a post without a board, and a board id cannot be guessed, so this endpoint is the way to obtain one. Boards are read live from Pinterest on every call.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "publishing",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "profiles",
+                ":profileUid",
+                "pinterest",
+                "boards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "profileUid",
+                  "description": "(Required) Pinterest profile identifier, as returned by the profiles endpoint"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5db99e74-ea40-43b1-a1d9-dd0e41ef36d3",
+              "name": "Boards retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "profiles",
+                    ":profileUid",
+                    "pinterest",
+                    "boards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "profileUid",
+                      "description": "(Required) Pinterest profile identifier, as returned by the profiles endpoint"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"boards\": [\n    {\n      \"id\": \"1234567890123456789\",\n      \"name\": \"Summer collection\",\n      \"description\": \"Inspiration for the summer campaign\"\n    },\n    {\n      \"id\": \"1234567890123456789\",\n      \"name\": \"Summer collection\",\n      \"description\": \"Inspiration for the summer campaign\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f407ab32-7d86-4afc-996c-570b8c05352f",
+              "name": "The profile is not in the workspace, is not a Pinterest profile, or has no usable Pinterest token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "profiles",
+                    ":profileUid",
+                    "pinterest",
+                    "boards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "profileUid",
+                      "description": "(Required) Pinterest profile identifier, as returned by the profiles endpoint"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.agorapulse.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8d1eb9c9-2c53-47f8-9abe-3db8b22a943f",
+    "name": "Agorapulse Pinterest boards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n\n\nContact Support:\n Name: Agorapulse API Support\n Email: support@agorapulse.com",
+      "type": "text/plain"
+    }
+  }
+}

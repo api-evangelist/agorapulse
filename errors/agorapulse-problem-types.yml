@@ -1,0 +1,72 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  openapi/_original/agorapulse-open-api-openapi.yml (info.description "Errors" section and the 4xx
+  responses on every operation), harvested from https://api.agorapulse.com/docs/open-api.yml
+format: proprietary-json
+rfc9457: false
+description: >-
+  Agorapulse does not use RFC 9457 problem+json. It publishes its own three-field error envelope and,
+  unusually for a catalog of this size, actually documents what the numeric code means — a global
+  family or the component that produced the error — plus an optional subCode that pinpoints the cause
+  within that component.
+envelope:
+  media_type: application/json
+  fields:
+  - {name: code, type: integer, required: true, description: 'Error family: either a global code or the code of the component that produced the error.'}
+  - {name: subCode, type: integer, required: false, description: 'Pinpoints the exact cause within that component. Documented per endpoint where returned.'}
+  - {name: message, type: string, required: true, description: 'Human-readable explanation. Explicitly documented as not meant to be parsed.'}
+  example: |
+    {
+      "code": 1005,
+      "subCode": 1104,
+      "message": "Media not found: pubmedia_abc123"
+    }
+  exceptions:
+  - >-
+    405, 406 and 415 answer with a status only and carry no JSON body — an agent must not assume the
+    envelope is always present.
+global_codes:
+- {code: 1, meaning: internal error}
+- {code: 2, meaning: unauthorized}
+- {code: 3, meaning: rate limit exceeded}
+- {code: 4, meaning: unprocessable input}
+- {code: 5, meaning: validation failed}
+- code: 1013
+  meaning: API gateway — no endpoint matches the request path
+  note: >-
+    Documented trap: a path that matches no endpoint is rejected by the gateway itself and carries
+    1013 regardless of which feature the path pointed at, so code does not identify the component in
+    this one case.
+observed_bodies:
+- status: 401
+  code: 2
+  body: '{"code":2,"message":"No valid API key found in request header X-API-Key"}'
+  observed_at: https://api.agorapulse.com/v1.0/core/organizations
+  observed: '2026-08-13'
+problems:
+- {status: 400, title: Invalid or unsupported file name, source_operation: 'openapi/agorapulse-media-api-openapi.yml#create'}
+- {status: 404, title: Media not found, source_operation: 'openapi/agorapulse-media-api-openapi.yml#get'}
+- {status: 410, title: Media has expired, source_operation: 'openapi/agorapulse-media-api-openapi.yml#get', remediation: Request a new upload slot; expired media cannot be recovered.}
+- {status: 400, title: Invalid search parameters, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#search'}
+- {status: 404, title: Organization or workspace not found, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#search'}
+- {status: 400, title: Invalid request data, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#save'}
+- {status: 404, title: Organization or workspace not found, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#save'}
+- {status: 400, title: Invalid request data, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#update'}
+- {status: 403, title: Insufficient permissions to update the note, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#update', remediation: 'API keys inherit the minting user''s role; use a key from an org owner or manager.'}
+- {status: 404, title: Calendar note, organization, or workspace not found, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#update'}
+- {status: 403, title: Insufficient permissions to delete the note, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#delete'}
+- {status: 404, title: Calendar note, organization, or workspace not found, source_operation: 'openapi/agorapulse-calendar-notes-api-openapi.yml#delete'}
+- {status: 400, title: 'The profile is not in the workspace, is not a Pinterest profile, or has no usable Pinterest token', source_operation: 'openapi/agorapulse-pinterest-boards-api-openapi.yml#list'}
+- {status: 400, title: Invalid request data, source_operation: 'openapi/agorapulse-drafts-api-openapi.yml#save_1'}
+- {status: 404, title: Organization or workspace not found, source_operation: 'openapi/agorapulse-drafts-api-openapi.yml#save_1'}
+- {status: 400, title: Invalid request data, source_operation: 'openapi/agorapulse-media-api-openapi.yml#requestUpload'}
+- {status: 404, title: Organization or workspace not found, source_operation: 'openapi/agorapulse-media-api-openapi.yml#requestUpload'}
+gaps:
+- >-
+  No error response in the spec declares a schema or an example body, so the {code, subCode, message}
+  envelope is documented only in info.description prose — a machine reading the spec alone would not
+  find it.
+- >-
+  The per-component code registry and the per-endpoint subCode values are referenced but not
+  published as a table anywhere reachable; only the six global codes above are enumerated.

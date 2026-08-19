@@ -1,0 +1,326 @@
+{
+  "item": [
+    {
+      "id": "a2a9f9a3-09e7-4415-86ac-8ca04a0dbc5d",
+      "name": "Drafts",
+      "description": {
+        "content": "Create draft posts for review and approval.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cb801b9e-a5fc-4c00-bbbc-0d2b0ca47c69",
+          "name": "Create a simple draft (deprecated)",
+          "request": {
+            "name": "Create a simple draft (deprecated)",
+            "description": {
+              "content": "Deprecated: use POST /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/drafts instead (one draft per profile; see the Drafts tag). This endpoint is frozen and will not receive new features such as per-network options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "publishing",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "simple-drafts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"<string>\",\n  \"link\": \"<string>\",\n  \"labels\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"mediaUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"media\": [\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ],\n  \"scheduling\": [\n    {\n      \"profileUid\": \"<string>\",\n      \"publishingDates\": [\n        \"<dateTime>\",\n        \"<dateTime>\"\n      ]\n    },\n    {\n      \"profileUid\": \"<string>\",\n      \"publishingDates\": [\n        \"<dateTime>\",\n        \"<dateTime>\"\n      ]\n    }\n  ],\n  \"networks\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6eebd27e-238f-4dda-b8e1-f135f14db76b",
+              "name": "Simple draft created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "simple-drafts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"This is my social media post\",\n  \"link\": \"https://example.com\",\n  \"labels\": [\n    \"marketing\",\n    \"promotion\"\n  ],\n  \"mediaUrls\": [\n    \"https://example.com/image.jpg\"\n  ],\n  \"media\": [\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ],\n  \"scheduling\": [\n    {\n      \"profileUid\": \"profile_123\",\n      \"publishingDates\": [\n        \"2024-12-25T10:00:00.000Z\",\n        \"2024-12-26T15:30:00.000Z\"\n      ]\n    },\n    {\n      \"profileUid\": \"profile_123\",\n      \"publishingDates\": [\n        \"2024-12-25T10:00:00.000Z\",\n        \"2024-12-26T15:30:00.000Z\"\n      ]\n    }\n  ],\n  \"networks\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"groupOfPosts\": {\n    \"agorapulseLink\": \"string\",\n    \"labels\": [\n      \"string\",\n      \"string\"\n    ],\n    \"profileScheduling\": [\n      {\n        \"profile\": {\n          \"name\": \"string\",\n          \"network\": \"INSTAGRAM\",\n          \"uid\": \"string\"\n        },\n        \"schedulingSummary\": [\n          {\n            \"publishingDate\": \"1959-03-13T09:46:55.898Z\",\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": \"string\"\n          },\n          {\n            \"publishingDate\": \"1953-09-24T18:31:15.209Z\",\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": \"string\"\n          }\n        ]\n      },\n      {\n        \"profile\": {\n          \"name\": \"string\",\n          \"network\": \"THREADS\",\n          \"uid\": \"string\"\n        },\n        \"schedulingSummary\": [\n          {\n            \"publishingDate\": \"2023-10-08T01:59:53.550Z\",\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": \"string\"\n          },\n          {\n            \"publishingDate\": \"1982-01-06T13:57:45.749Z\",\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"type\": \"<string>\",\n    \"uid\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e083d70c-b613-4efa-a8b1-9891df4d6efa",
+              "name": "Invalid request data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "simple-drafts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"This is my social media post\",\n  \"link\": \"https://example.com\",\n  \"labels\": [\n    \"marketing\",\n    \"promotion\"\n  ],\n  \"mediaUrls\": [\n    \"https://example.com/image.jpg\"\n  ],\n  \"media\": [\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ],\n  \"scheduling\": [\n    {\n      \"profileUid\": \"profile_123\",\n      \"publishingDates\": [\n        \"2024-12-25T10:00:00.000Z\",\n        \"2024-12-26T15:30:00.000Z\"\n      ]\n    },\n    {\n      \"profileUid\": \"profile_123\",\n      \"publishingDates\": [\n        \"2024-12-25T10:00:00.000Z\",\n        \"2024-12-26T15:30:00.000Z\"\n      ]\n    }\n  ],\n  \"networks\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "acf1a66e-a546-4518-b9c9-52ca79f021ea",
+              "name": "Organization or workspace not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "publishing",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "simple-drafts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"This is my social media post\",\n  \"link\": \"https://example.com\",\n  \"labels\": [\n    \"marketing\",\n    \"promotion\"\n  ],\n  \"mediaUrls\": [\n    \"https://example.com/image.jpg\"\n  ],\n  \"media\": [\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"altText\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ],\n  \"scheduling\": [\n    {\n      \"profileUid\": \"profile_123\",\n      \"publishingDates\": [\n        \"2024-12-25T10:00:00.000Z\",\n        \"2024-12-26T15:30:00.000Z\"\n      ]\n    },\n    {\n      \"profileUid\": \"profile_123\",\n      \"publishingDates\": [\n        \"2024-12-25T10:00:00.000Z\",\n        \"2024-12-26T15:30:00.000Z\"\n      ]\n    }\n  ],\n  \"networks\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.agorapulse.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "307feaf7-120e-4bff-be4d-3a971e93eb46",
+    "name": "Agorapulse Drafts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n\n\nContact Support:\n Name: Agorapulse API Support\n Email: support@agorapulse.com",
+      "type": "text/plain"
+    }
+  }
+}

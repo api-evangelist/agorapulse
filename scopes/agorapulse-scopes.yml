@@ -1,0 +1,35 @@
+generated: '2026-08-13'
+method: probed
+source: https://api.openmcp.agorapulse.com/.well-known/oauth-authorization-server
+docs: https://support.agorapulse.com/en/articles/12960496-model-context-protocool-mcp-integration-explained
+description: >-
+  Agorapulse's REST API has no OAuth surface at all — it authenticates with a static per-user
+  X-API-KEY and therefore has no scopes. The only OAuth surface is the remote MCP server, whose
+  authorization-server metadata advertises exactly one scope.
+applies_to: https://api.openmcp.agorapulse.com/mcp
+schemes:
+- name: MCP OAuth
+  source: well-known/agorapulse-oauth-authorization-server.json
+  issuer: https://api.identity.agorapulse.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.identity.agorapulse.com/oauth/authorize
+    tokenUrl: https://api.identity.agorapulse.com/oauth/token
+    code_challenge_methods: [S256]
+scopes:
+- scope: read
+  description: >-
+    The only scope advertised in scopes_supported. Agorapulse publishes no scope reference page, so
+    there is no documented breakdown of what read covers; the REST API it fronts is itself described
+    as read-only for reporting data.
+  flows: [authorizationCode]
+  sources: [well-known/agorapulse-oauth-authorization-server.json]
+gaps:
+- >-
+  No published scopes/permissions reference page was found on agorapulse.com or the help centre. The
+  single "read" scope is taken from the machine-readable metadata, not from documentation.
+- >-
+  scopes_supported on the protected-resource document (RFC 9728) is absent, so per-resource scope
+  requirements are not advertised.
+x-evidence:
+- {fetched: '2026-08-13', url: 'https://api.openmcp.agorapulse.com/.well-known/oauth-authorization-server', http_status: 200}

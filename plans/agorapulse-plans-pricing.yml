@@ -1,6 +1,15 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.agorapulse.com/pricing/
+plan_count: 4
 name: Agorapulse Plans and Pricing
 description: Pricing plans for the Agorapulse social media management platform, including API access details for each tier.
 url: https://www.agorapulse.com/pricing/
+api_gate_note: >-
+  Two different gates apply to two different surfaces. The REST Reports Open API is documented as
+  Custom-plan only (api_access below). The MCP connector is documented as available on every plan
+  except Legacy and Free — see mcp/agorapulse-mcp.yml — so an account that cannot call the REST API
+  may still be able to reach the same data through an AI client.
 plans:
   - name: Standard
     price: 79

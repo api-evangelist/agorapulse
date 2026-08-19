@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Competitor API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Competitor",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get competitors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/report/organizations/:organizationId/workspaces/:workspaceId/profiles/:profileUid/competitors",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "profileUid",
+                "value": "",
+                "type": "path",
+                "description": "Profile uid"
+              }
+            ]
+          },
+          "docs": "Get the competitors tracked for the profile, only available for Facebook pages and Instagram business accounts"
+        },
+        {
+          "info": {
+            "name": "Get competitor report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/report/organizations/:organizationId/workspaces/:workspaceId/profiles/:profileUid/competitors/insights",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "profileUid",
+                "value": "",
+                "type": "path",
+                "description": "Profile uid"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the aggregated competitor report for the profile, only available for Facebook pages and Instagram business accounts, competitor data is synchronized daily"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

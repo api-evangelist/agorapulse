@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Conversations API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conversations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get conversation messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/inbox/organizations/:organizationId/workspaces/:workspaceId/accounts/:accountUid/conversations/:conversationId/messages",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "1419",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "1416",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "accountUid",
+                "value": "facebook_611",
+                "type": "path",
+                "description": "Account uid"
+              },
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path",
+                "description": "Conversation id"
+              },
+              {
+                "name": "since",
+                "value": "2025-10-01T09:00:00.000Z",
+                "type": "query",
+                "description": "Filter messages created after this date (inclusive). ISO 8601 format."
+              },
+              {
+                "name": "until",
+                "value": "2025-10-15T13:00:00.000Z",
+                "type": "query",
+                "description": "Filter messages created before this date (inclusive). ISO 8601 format."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset for pagination"
+              },
+              {
+                "name": "limit",
+                "value": "10",
+                "type": "query",
+                "description": "Maximum number of messages to return per page. Must be between 1 and 25."
+              },
+              {
+                "name": "order",
+                "value": "DESC",
+                "type": "query",
+                "description": "Sort order for the results. ASC for ascending (oldest first), DESC for descending (newest first)."
+              }
+            ]
+          },
+          "docs": "Get conversation messages"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,487 @@
+openapi: 3.2.0
+info:
+  title: Agorapulse Competitor API
+  description: "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n"
+  version: '1.0'
+  contact:
+    name: Agorapulse API Support
+    url: https://www.agorapulse.com
+    email: support@agorapulse.com
+  x-logo:
+    url: docs/img/logo.svg
+    altText: Agorapulse
+servers:
+- url: https://api.agorapulse.com
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Competitor
+  description: ''
+paths:
+  /v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/competitors:
+    get:
+      tags:
+      - Competitor
+      summary: Get competitors
+      description: Get the competitors tracked for the profile, only available for Facebook pages and Instagram business accounts
+      operationId: getCompetitors
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization id
+        required: true
+        schema:
+          type: string
+      - name: workspaceId
+        in: path
+        description: Workspace id
+        required: true
+        schema:
+          type: string
+      - name: profileUid
+        in: path
+        description: Profile uid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Competitors are returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenCompetitorList'
+  /v1.0/report/organizations/{organizationId}/workspaces/{workspaceId}/profiles/{profileUid}/competitors/insights:
+    get:
+      tags:
+      - Competitor
+      summary: Get competitor report
+      description: Get the aggregated competitor report for the profile, only available for Facebook pages and Instagram business accounts, competitor data is synchronized daily
+      operationId: getCompetitorInsights
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization id
+        required: true
+        schema:
+          type: string
+      - name: workspaceId
+        in: path
+        description: Workspace id
+        required: true
+        schema:
+          type: string
+      - name: profileUid
+        in: path
+        description: Profile uid
+        required: true
+        schema:
+          type: string
+      - name: since
+        in: query
+        required: true
+        explode: false
+        schema:
+          type: string
+      - name: until
+        in: query
+        required: true
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Competitor report is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenCompetitorReportInsight'
+components:
+  schemas:
+    OpenCompetitorViews:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of views received over the period
+          format: int64
+          example: 45000
+        variation:
+          type: number
+          description: Views variation in percent compared to the previous period
+          format: double
+          example: 5.4
+      description: Views received by a competitor's posts over the requested period
+    OpenCompetitor:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the competitor
+          example: facebook_123456789
+        name:
+          type: string
+          description: Name of the competitor page or account
+          example: Acme Corp
+        username:
+          type: string
+          description: Username of the competitor account
+          example: acmecorp
+        service:
+          type: string
+          description: Social network of the competitor, either facebook or instagram
+          example: facebook
+        pictureUrl:
+          type: string
+          description: URL of the competitor profile picture
+        followerCount:
+          type: integer
+          description: Latest known follower count of the competitor
+          format: int64
+          example: 12000
+        selected:
+          type: boolean
+          description: Whether the competitor is selected for the profile competitor report
+          example: true
+        lastSyncedDate:
+          type: string
+          description: Date of the last competitor data synchronization, competitor data is synchronized daily
+          format: date-time
+      description: A competitor tracked for a social profile
+    OpenCompetitorAudience:
+      type: object
+      properties:
+        followerCount:
+          type: integer
+          description: Follower count at the end of the period
+          format: int64
+          example: 12000
+        variation:
+          type: number
+          description: Follower count variation in percent compared to the previous period
+          format: double
+          example: 3.5
+        followerCountByDay:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Follower count per day, keyed by date in ISO format YYYY-MM-DD, null when no data was collected for that day
+      description: Audience metrics of a competitor over the requested period
+    OpenCompetitorInsight:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the competitor
+          example: facebook_123456789
+        name:
+          type: string
+          description: Name of the competitor page or account
+          example: Acme Corp
+        pictureUrl:
+          type: string
+          description: URL of the competitor profile picture
+        audience:
+          type: object
+          description: Audience metrics of the competitor
+          allOf:
+          - $ref: '#/components/schemas/OpenCompetitorAudience'
+          - type: object
+        engagement:
+          type: object
+          description: Engagement received by the competitor's posts
+          allOf:
+          - $ref: '#/components/schemas/OpenCompetitorEngagement'
+          - type: object
+        publishing:
+          type: object
+          description: Posts published by the competitor
+          allOf:
+          - $ref: '#/components/schemas/OpenCompetitorPublishing'
+          - type: object
+        views:
+          type: object
+          description: Views received by the competitor's posts, only available for Instagram competitors
+          allOf:
+          - $ref: '#/components/schemas/OpenCompetitorViews'
+          - type: object
+      description: Aggregated metrics of a single competitor over the requested period
+    OpenCompetitorPublishing:
+      type: object
+      properties:
+        carouselPublishedCount:
+          type: integer
+          description: Number of carousel posts published
+          format: int64
+          example: 4
+        linkPublishedCount:
+          type: integer
+          description: Number of link posts published
+          format: int64
+          example: 2
+        photoPublishedCount:
+          type: integer
+          description: Number of photo posts published
+          format: int64
+          example: 10
+        reelPublishedCount:
+          type: integer
+          description: Number of reels published
+          format: int64
+          example: 6
+        textPublishedCount:
+          type: integer
+          description: Number of text posts published
+          format: int64
+          example: 1
+        videoPublishedCount:
+          type: integer
+          description: Number of video posts published
+          format: int64
+          example: 3
+        total:
+          type: integer
+          description: Total number of posts published over the period
+          format: int64
+          example: 26
+        variation:
+          type: number
+          description: Publishing variation in percent compared to the previous period
+          format: double
+          example: 20
+      description: Posts published by a competitor over the requested period
+    OpenCompetitorTopContent:
+      type: object
+      properties:
+        competitorUid:
+          type: string
+          description: Unique identifier of the competitor that published the post
+          example: facebook_123456789
+        competitorName:
+          type: string
+          description: Name of the competitor that published the post
+          example: Acme Corp
+        message:
+          type: string
+          description: Text of the post
+        type:
+          type: string
+          description: Type of the post
+          example: reel
+        postUrl:
+          type: string
+          description: URL of the post on the social network
+        imageUrl:
+          type: string
+          description: URL of the post image
+        publishingDate:
+          type: string
+          description: Publishing date of the post
+          format: date-time
+        engagement:
+          type: integer
+          description: Total engagement received by the post
+          format: int64
+          example: 540
+        likeCount:
+          type: integer
+          description: Number of likes received by the post
+          format: int64
+          example: 400
+        commentCount:
+          type: integer
+          description: Number of comments received by the post
+          format: int64
+          example: 60
+        reactionCount:
+          type: integer
+          description: Number of reactions received by the post
+          format: int64
+          example: 450
+        shareCount:
+          type: integer
+          description: Number of shares received by the post
+          format: int64
+          example: 30
+        viewCount:
+          type: integer
+          description: Number of views received by the post
+          format: int64
+          example: 12000
+      description: One of the best performing posts published by the competitors over the requested period
+    OpenCompetitorList:
+      required:
+      - data
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenCompetitor'
+      description: List of competitors tracked for a social profile
+    OpenCompetitorEngagement:
+      type: object
+      properties:
+        carouselEngagementCount:
+          type: integer
+          description: Engagement received by carousel posts
+          format: int64
+          example: 120
+        linkEngagementCount:
+          type: integer
+          description: Engagement received by link posts
+          format: int64
+          example: 20
+        photoEngagementCount:
+          type: integer
+          description: Engagement received by photo posts
+          format: int64
+          example: 340
+        reelEngagementCount:
+          type: integer
+          description: Engagement received by reels
+          format: int64
+          example: 560
+        textEngagementCount:
+          type: integer
+          description: Engagement received by text posts
+          format: int64
+          example: 10
+        videoEngagementCount:
+          type: integer
+          description: Engagement received by video posts
+          format: int64
+          example: 230
+        commentCount:
+          type: integer
+          description: Number of comments received
+          format: int64
+          example: 150
+        likeCount:
+          type: integer
+          description: Number of likes received
+          format: int64
+          example: 900
+        reactionCount:
+          type: integer
+          description: Number of reactions received
+          format: int64
+          example: 1000
+        shareCount:
+          type: integer
+          description: Number of shares received
+          format: int64
+          example: 80
+        total:
+          type: integer
+          description: Total engagement received over the period
+          format: int64
+          example: 1280
+        variation:
+          type: number
+          description: Engagement variation in percent compared to the previous period
+          format: double
+          example: -10.2
+      description: Engagement received by a competitor's posts over the requested period
+    OpenCompetitorReportInsight:
+      type: object
+      properties:
+        competitors:
+          type: array
+          description: Aggregated metrics per competitor
+          items:
+            $ref: '#/components/schemas/OpenCompetitorInsight'
+        topContents:
+          type: array
+          description: Best performing posts published by the competitors
+          items:
+            $ref: '#/components/schemas/OpenCompetitorTopContent'
+        dailyAudienceSummary:
+          type: object
+          description: Daily follower count summary across all competitors, null when less than 10 competitors are tracked
+          allOf:
+          - $ref: '#/components/schemas/OpenDailyAudienceSummary'
+          - type: object
+        postsByDayByType:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties:
+              type: integer
+              format: int64
+          description: Number of posts published by all competitors per day and post type, keyed by date in ISO format YYYY-MM-DD then by post type
+        maxOrganizationCompetitorReached:
+          type: boolean
+          description: True when the organization exceeds its competitor plan limit, competitor metrics are not computed in that case
+          example: false
+      description: Aggregated competitor report for a social profile, data is synchronized daily
+    OpenDailyAudienceSummary:
+      type: object
+      properties:
+        average:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Average follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
+        maximum:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Maximum follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
+        minimum:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Minimum follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
+        self:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Follower count of the profile itself per day, keyed by date in ISO format YYYY-MM-DD
+      description: Daily follower count summary across all competitors, only available when at least 10 competitors are tracked
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header
+    HookSignature:
+      description: 'The signature of the webhook request, used to verify the authenticity of the request.
+
+        The signature is a SHA256 HMAC signature computed on the request body using the shared secret from your webhook subscription.
+
+        '
+      type: apiKey
+      name: X-Hook-Signature
+      in: header
+x-tagGroups:
+- name: Account & Workspaces
+  tags:
+  - Organizations
+  - Workspaces
+  - Profiles
+  - Groups
+- name: Publishing
+  tags:
+  - Drafts
+  - Calendar notes
+  - Pinterest boards
+- name: Content Library
+  tags:
+  - Media
+- name: Inbox & Engagement
+  tags:
+  - Conversations
+  - Items
+  - Replies
+- name: Analytics & Reporting
+  tags:
+  - Reports
+- name: System
+  tags:
+  - Health

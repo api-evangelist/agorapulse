@@ -1,0 +1,291 @@
+openapi: 3.2.0
+info:
+  title: Agorapulse Items API
+  description: "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n"
+  version: '1.0'
+  contact:
+    name: Agorapulse API Support
+    url: https://www.agorapulse.com
+    email: support@agorapulse.com
+  x-logo:
+    url: docs/img/logo.svg
+    altText: Agorapulse
+servers:
+- url: https://api.agorapulse.com
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Items
+  description: List inbox items (comments, messages, reviews).
+paths:
+  /v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items:
+    get:
+      tags:
+      - Items
+      summary: Find items
+      operationId: findItems
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization id
+        required: true
+        schema:
+          type: integer
+        example: 1419
+      - name: workspaceId
+        in: path
+        description: Workspace id
+        required: true
+        schema:
+          type: integer
+        example: 1416
+      - name: accountUids
+        in: query
+        description: Set of account UIDs to filter items. Only items from these accounts will be returned.
+        schema:
+          type: array
+          items:
+            type: string
+      - name: toReview
+        in: query
+        description: Filter items that need review (not yet approved by a manager)
+        schema:
+          type: boolean
+      - name: labels
+        in: query
+        description: Filter items by labels. Only items with these labels will be returned.
+        schema:
+          type: array
+          items:
+            type: string
+      - name: sentiments
+        in: query
+        description: Filter items by sentiment.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemSentiment'
+      - name: types
+        in: query
+        description: Filter items by type/source. Specify the types of items to retrieve (e.g., organicComment, adsComment, conversation, ...)
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemFilterType'
+      - name: since
+        in: query
+        description: Filter items created after this date (inclusive). ISO 8601 format.
+        schema:
+          type: string
+          format: date-time
+        example: '2025-10-01T09:00:00.000Z'
+      - name: until
+        in: query
+        description: Filter items created before this date (inclusive). ISO 8601 format.
+        schema:
+          type: string
+          format: date-time
+        example: '2025-10-15T13:00:00.000Z'
+      - name: offset
+        in: query
+        description: Offset for pagination
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: Maximum number of items to return per page. Must be between 1 and 25.
+        schema:
+          type: integer
+        example: 10
+      - name: order
+        in: query
+        description: Sort order for the results. ASC for ascending (oldest first), DESC for descending (newest first).
+        schema:
+          $ref: '#/components/schemas/Order'
+        example: DESC
+      responses:
+        '200':
+          description: findItems 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemsSearchResponse'
+components:
+  schemas:
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    AbstractItem:
+      type: object
+      properties:
+        id:
+          type: string
+        parentId:
+          type: string
+        workspaceId:
+          type: integer
+          format: int64
+        creationDate:
+          type: string
+          format: date-time
+        type:
+          $ref: '#/components/schemas/ItemType'
+        text:
+          type: string
+        agorapulseLink:
+          type: string
+        networkLink:
+          type: string
+        profile:
+          $ref: '#/components/schemas/Profile'
+        creator:
+          $ref: '#/components/schemas/ItemCreator'
+        labels:
+          type: array
+          items:
+            type: string
+        sentiment:
+          $ref: '#/components/schemas/ItemSentiment'
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    ItemsSearchResponse:
+      required:
+      - items
+      - offset
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemDTO'
+        offset:
+          type: string
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Order:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    ItemFilterType:
+      type: string
+      description: 'Enum representing the possible item types that can be used for filtering items in the inbox. These values correspond to the item types available in the UI filter menu.
+
+
+        The enum values map to the frontend itemTypes used in the filter UI:
+
+
+        * **Facebook:** adsComment, organicComment, conversation, mention, rating
+
+        * **Instagram:** adsComment, organicComment, conversation, reelComment, mention, storyMentionConversation
+
+        * **Twitter:** mention, conversation
+
+        * **LinkedIn:** adsComment, organicComment, mention
+
+        * **TikTok:** adsComment, organicComment
+
+        * **Threads:** organicComment, mention'
+      enum:
+      - ADS_COMMENT
+      - ORGANIC_COMMENT
+      - CONVERSATION
+      - MENTION
+      - RATING
+      - REEL_COMMENT
+      - STORY_MENTION_CONVERSATION
+      x-enum-descriptions:
+      - 'Comments on promoted/sponsored posts (ads). Supported by: Facebook, Instagram, LinkedIn, TikTok'
+      - 'Organic comments (not on ads). Supported by: Facebook, Instagram, LinkedIn, TikTok, Threads'
+      - 'Private messages / direct messages. Supported by: Facebook, Instagram, Twitter'
+      - 'Mentions of the profile/page. Supported by: Facebook, Instagram, Twitter, LinkedIn, Threads'
+      - 'Reviews/ratings. Supported by: Facebook only'
+      - 'Comments on Instagram Reels. Supported by: Instagram only'
+      - 'Conversations from story mentions. Supported by: Instagram only Note: This is different from the ''storyMention'' source used in automated moderation rules. In the UI filters, this represents conversations grouped by story mentions.'
+      x-type: String
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header
+    HookSignature:
+      description: 'The signature of the webhook request, used to verify the authenticity of the request.
+
+        The signature is a SHA256 HMAC signature computed on the request body using the shared secret from your webhook subscription.
+
+        '
+      type: apiKey
+      name: X-Hook-Signature
+      in: header
+x-tagGroups:
+- name: Account & Workspaces
+  tags:
+  - Organizations
+  - Workspaces
+  - Profiles
+  - Groups
+- name: Publishing
+  tags:
+  - Drafts
+  - Calendar notes
+  - Pinterest boards
+- name: Content Library
+  tags:
+  - Media
+- name: Inbox & Engagement
+  tags:
+  - Conversations
+  - Items
+  - Replies
+- name: Analytics & Reporting
+  tags:
+  - Reports
+- name: System
+  tags:
+  - Health

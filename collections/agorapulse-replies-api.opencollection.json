@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Replies API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Replies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Reply to an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.agorapulse.com/v1.0/inbox/organizations/:organizationId/workspaces/:workspaceId/accounts/:accountUid/reply",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "1419",
+                "type": "path",
+                "description": "Organization id"
+              },
+              {
+                "name": "workspaceId",
+                "value": "1416",
+                "type": "path",
+                "description": "Workspace id"
+              },
+              {
+                "name": "accountUid",
+                "value": "facebook_611",
+                "type": "path",
+                "description": "Account uid"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reply to an item"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

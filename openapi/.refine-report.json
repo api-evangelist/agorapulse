@@ -1,36 +1,36 @@
 {
   "provider": "agorapulse",
   "sources": [
-    "agorapulse-calendar-notes-api-openapi.yml",
-    "agorapulse-inbox-conversations-api-openapi.yml",
-    "agorapulse-inbox-items-api-openapi.yml",
-    "agorapulse-inbox-reply-api-openapi.yml",
-    "agorapulse-openapi-api-openapi.yml",
-    "agorapulse-organization-api-openapi.yml",
-    "agorapulse-profile-api-openapi.yml",
-    "agorapulse-report-api-openapi.yml",
-    "agorapulse-simple-drafts-api-openapi.yml",
-    "agorapulse-simple-scheduling-api-openapi.yml",
-    "agorapulse-studio-media-api-openapi.yml",
-    "agorapulse-workspace-api-openapi.yml"
+    "agorapulse-open-api-openapi.yml"
   ],
   "outputs": [
+    "agorapulse-agorapulse-api-api-openapi.yml",
     "agorapulse-calendar-notes-api-openapi.yml",
-    "agorapulse-inbox-conversations-api-openapi.yml",
-    "agorapulse-inbox-items-api-openapi.yml",
-    "agorapulse-inbox-reply-api-openapi.yml",
-    "agorapulse-openapi-api-openapi.yml",
-    "agorapulse-organization-api-openapi.yml",
-    "agorapulse-profile-api-openapi.yml",
-    "agorapulse-report-api-openapi.yml",
-    "agorapulse-simple-drafts-api-openapi.yml",
-    "agorapulse-simple-scheduling-api-openapi.yml",
-    "agorapulse-studio-media-api-openapi.yml",
-    "agorapulse-workspace-api-openapi.yml"
+    "agorapulse-competitor-api-openapi.yml",
+    "agorapulse-conversations-api-openapi.yml",
+    "agorapulse-drafts-api-openapi.yml",
+    "agorapulse-groups-api-openapi.yml",
+    "agorapulse-health-api-openapi.yml",
+    "agorapulse-items-api-openapi.yml",
+    "agorapulse-media-api-openapi.yml",
+    "agorapulse-organizations-api-openapi.yml",
+    "agorapulse-pinterest-boards-api-openapi.yml",
+    "agorapulse-profiles-api-openapi.yml",
+    "agorapulse-replies-api-openapi.yml",
+    "agorapulse-reports-api-openapi.yml",
+    "agorapulse-workspaces-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "archived openapi/agorapulse-open-api-openapi.yml"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "agorapulse-open-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "agorapulse-open-api-openapi.yml: tagged webhooks POST PUBLISHING_POST -> Agorapulse API",
+    "agorapulse-open-api-openapi.yml: tagged webhooks POST INBOX_ITEM -> Agorapulse API",
+    "agorapulse-open-api-openapi.yml: declared missing tag: Agorapulse API",
+    "apis.yml register: written (+14 apis, 15 total)"
+  ],
   "skipped": []
 }

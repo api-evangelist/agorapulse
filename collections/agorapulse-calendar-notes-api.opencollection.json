@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Calendar notes API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Calendar notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search calendar notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/publishing/organizations/:organizationId/workspaces/:workspaceId/notes",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query",
+                "description": "Filter notes after this date (ISO date)"
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query",
+                "description": "Filter notes before this date (ISO date)"
+              },
+              {
+                "name": "profileUids",
+                "value": "",
+                "type": "query",
+                "description": "Filter by profile UIDs"
+              }
+            ]
+          },
+          "docs": "Search and filter calendar notes in the specified workspace"
+        },
+        {
+          "info": {
+            "name": "Create a new calendar note",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.agorapulse.com/v1.0/publishing/organizations/:organizationId/workspaces/:workspaceId/notes",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new calendar note in the specified content"
+        },
+        {
+          "info": {
+            "name": "Update a calendar note",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.agorapulse.com/v1.0/publishing/organizations/:organizationId/workspaces/:workspaceId/notes/:uid",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              },
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "Calendar note unique identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing calendar note with new data"
+        },
+        {
+          "info": {
+            "name": "Delete a calendar note",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.agorapulse.com/v1.0/publishing/organizations/:organizationId/workspaces/:workspaceId/notes/:uid",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              },
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "Calendar note unique identifier"
+              }
+            ]
+          },
+          "docs": "Deletes a calendar note by its UID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

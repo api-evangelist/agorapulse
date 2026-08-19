@@ -1,0 +1,349 @@
+{
+  "item": [
+    {
+      "id": "61ba4da2-f3fd-4d39-abaf-4e4cf681bbda",
+      "name": "Competitor",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6e4048e2-9411-405f-8fcd-fb6aba48c06a",
+          "name": "Get competitors",
+          "request": {
+            "name": "Get competitors",
+            "description": {
+              "content": "Get the competitors tracked for the profile, only available for Facebook pages and Instagram business accounts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "report",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "profiles",
+                ":profileUid",
+                "competitors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "profileUid",
+                  "description": "(Required) Profile uid"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9ba8004-d8d9-411b-acfd-974e07f82f5e",
+              "name": "Competitors are returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "report",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "profiles",
+                    ":profileUid",
+                    "competitors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "profileUid",
+                      "description": "(Required) Profile uid"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"uid\": \"facebook_123456789\",\n      \"name\": \"Acme Corp\",\n      \"username\": \"acmecorp\",\n      \"service\": \"facebook\",\n      \"pictureUrl\": \"string\",\n      \"followerCount\": 12000,\n      \"selected\": true,\n      \"lastSyncedDate\": \"1959-07-10T07:03:39.280Z\"\n    },\n    {\n      \"uid\": \"facebook_123456789\",\n      \"name\": \"Acme Corp\",\n      \"username\": \"acmecorp\",\n      \"service\": \"facebook\",\n      \"pictureUrl\": \"string\",\n      \"followerCount\": 12000,\n      \"selected\": true,\n      \"lastSyncedDate\": \"1971-05-14T13:18:35.185Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b9e389d-221c-4781-ba54-9bcea8b67d49",
+          "name": "Get competitor report",
+          "request": {
+            "name": "Get competitor report",
+            "description": {
+              "content": "Get the aggregated competitor report for the profile, only available for Facebook pages and Instagram business accounts, competitor data is synchronized daily",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1.0",
+                "report",
+                "organizations",
+                ":organizationId",
+                "workspaces",
+                ":workspaceId",
+                "profiles",
+                ":profileUid",
+                "competitors",
+                "insights"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "until",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) Organization id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "workspaceId",
+                  "description": "(Required) Workspace id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "profileUid",
+                  "description": "(Required) Profile uid"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91295f4f-cb20-4bd7-8ae6-36270a127733",
+              "name": "Competitor report is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1.0",
+                    "report",
+                    "organizations",
+                    ":organizationId",
+                    "workspaces",
+                    ":workspaceId",
+                    "profiles",
+                    ":profileUid",
+                    "competitors",
+                    "insights"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) Organization id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workspaceId",
+                      "description": "(Required) Workspace id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "profileUid",
+                      "description": "(Required) Profile uid"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"competitors\": [\n    {\n      \"uid\": \"facebook_123456789\",\n      \"name\": \"Acme Corp\",\n      \"pictureUrl\": \"string\",\n      \"audience\": {\n        \"followerCount\": 12000,\n        \"variation\": 3.5,\n        \"followerCountByDay\": {\n          \"key_0\": 30,\n          \"key_1\": 8518\n        }\n      },\n      \"engagement\": {\n        \"carouselEngagementCount\": 120,\n        \"linkEngagementCount\": 20,\n        \"photoEngagementCount\": 340,\n        \"reelEngagementCount\": 560,\n        \"textEngagementCount\": 10,\n        \"videoEngagementCount\": 230,\n        \"commentCount\": 150,\n        \"likeCount\": 900,\n        \"reactionCount\": 1000,\n        \"shareCount\": 80,\n        \"total\": 1280,\n        \"variation\": -10.2\n      },\n      \"publishing\": {\n        \"carouselPublishedCount\": 4,\n        \"linkPublishedCount\": 2,\n        \"photoPublishedCount\": 10,\n        \"reelPublishedCount\": 6,\n        \"textPublishedCount\": 1,\n        \"videoPublishedCount\": 3,\n        \"total\": 26,\n        \"variation\": 20\n      },\n      \"views\": {\n        \"total\": 45000,\n        \"variation\": 5.4\n      }\n    },\n    {\n      \"uid\": \"facebook_123456789\",\n      \"name\": \"Acme Corp\",\n      \"pictureUrl\": \"string\",\n      \"audience\": {\n        \"followerCount\": 12000,\n        \"variation\": 3.5,\n        \"followerCountByDay\": {\n          \"key_0\": 6939\n        }\n      },\n      \"engagement\": {\n        \"carouselEngagementCount\": 120,\n        \"linkEngagementCount\": 20,\n        \"photoEngagementCount\": 340,\n        \"reelEngagementCount\": 560,\n        \"textEngagementCount\": 10,\n        \"videoEngagementCount\": 230,\n        \"commentCount\": 150,\n        \"likeCount\": 900,\n        \"reactionCount\": 1000,\n        \"shareCount\": 80,\n        \"total\": 1280,\n        \"variation\": -10.2\n      },\n      \"publishing\": {\n        \"carouselPublishedCount\": 4,\n        \"linkPublishedCount\": 2,\n        \"photoPublishedCount\": 10,\n        \"reelPublishedCount\": 6,\n        \"textPublishedCount\": 1,\n        \"videoPublishedCount\": 3,\n        \"total\": 26,\n        \"variation\": 20\n      },\n      \"views\": {\n        \"total\": 45000,\n        \"variation\": 5.4\n      }\n    }\n  ],\n  \"topContents\": [\n    {\n      \"competitorUid\": \"facebook_123456789\",\n      \"competitorName\": \"Acme Corp\",\n      \"message\": \"string\",\n      \"type\": \"reel\",\n      \"postUrl\": \"string\",\n      \"imageUrl\": \"string\",\n      \"publishingDate\": \"1984-08-06T17:25:24.382Z\",\n      \"engagement\": 540,\n      \"likeCount\": 400,\n      \"commentCount\": 60,\n      \"reactionCount\": 450,\n      \"shareCount\": 30,\n      \"viewCount\": 12000\n    },\n    {\n      \"competitorUid\": \"facebook_123456789\",\n      \"competitorName\": \"Acme Corp\",\n      \"message\": \"string\",\n      \"type\": \"reel\",\n      \"postUrl\": \"string\",\n      \"imageUrl\": \"string\",\n      \"publishingDate\": \"1961-08-17T17:15:02.936Z\",\n      \"engagement\": 540,\n      \"likeCount\": 400,\n      \"commentCount\": 60,\n      \"reactionCount\": 450,\n      \"shareCount\": 30,\n      \"viewCount\": 12000\n    }\n  ],\n  \"dailyAudienceSummary\": {\n    \"average\": {\n      \"key_0\": 3590\n    },\n    \"maximum\": {\n      \"key_0\": 8851,\n      \"key_1\": 1773,\n      \"key_2\": 6292\n    },\n    \"minimum\": {\n      \"key_0\": 8875,\n      \"key_1\": 373,\n      \"key_2\": 8724\n    },\n    \"self\": {\n      \"key_0\": 308,\n      \"key_1\": 3545,\n      \"key_2\": 7437\n    }\n  },\n  \"postsByDayByType\": {\n    \"key_0\": {\n      \"key_0\": 5255\n    },\n    \"key_1\": {\n      \"key_0\": 6720\n    }\n  },\n  \"maxOrganizationCompetitorReached\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.agorapulse.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2709f53f-2d37-4ce1-9b71-04a8d61471a8",
+    "name": "Agorapulse Competitor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n\n\nContact Support:\n Name: Agorapulse API Support\n Email: support@agorapulse.com",
+      "type": "text/plain"
+    }
+  }
+}

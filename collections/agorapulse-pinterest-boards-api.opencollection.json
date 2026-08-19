@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Agorapulse Pinterest boards API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pinterest boards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List a Pinterest profile's boards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.agorapulse.com/v1.0/publishing/organizations/:organizationId/workspaces/:workspaceId/profiles/:profileUid/pinterest/boards",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "Organization identifier"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "Workspace identifier"
+              },
+              {
+                "name": "profileUid",
+                "value": "",
+                "type": "path",
+                "description": "Pinterest profile identifier, as returned by the profiles endpoint"
+              }
+            ]
+          },
+          "docs": "Lists the boards a Pinterest profile can publish to, so that an id from the response can be passed as networks.pinterest.boardId when scheduling or publishing. Pinterest rejects a post without a board, and a board id cannot be guessed, so this endpoint is the way to obtain one. Boards are read live from Pinterest on every call."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

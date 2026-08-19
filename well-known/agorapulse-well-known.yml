@@ -1,0 +1,138 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /.well-known/* on every Agorapulse host in apis.yml and the OpenAPI servers[] block
+summary:
+  hosts_probed: 7
+  documents_found: 3
+  note: >-
+    The only real /.well-known documents Agorapulse serves are the OAuth discovery pair that backs
+    the remote MCP server (RFC 8414 authorization-server metadata and RFC 9728 protected-resource
+    metadata). The API host, the marketing host and the help-centre host serve nothing of their own.
+hosts:
+- host: https://api.openmcp.agorapulse.com
+  role: remote MCP server (OAuth protected resource)
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    file: agorapulse-oauth-authorization-server.json
+    note: RFC 8414. issuer https://api.identity.agorapulse.com; DCR registration_endpoint present; PKCE S256; scopes_supported [read].
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: application/json
+    file: agorapulse-oauth-protected-resource.json
+    note: RFC 9728. resource https://api.openmcp.agorapulse.com/mcp, authorization_servers [https://api.identity.agorapulse.com].
+  - path: /.well-known/oauth-protected-resource/mcp
+    status: 200
+    note: Same document as /.well-known/oauth-protected-resource; this is the exact URL advertised in the WWW-Authenticate resource_metadata parameter on a 401 from /mcp.
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.identity.agorapulse.com
+  role: OAuth authorization server
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    file: agorapulse-identity-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    note: Present but effectively empty — resource is the issuer itself and authorization_servers/jwks_uri/scopes_supported are all null. Not recorded as a separate file.
+  - path: /.well-known/openid-configuration
+    status: 405
+  - path: /.well-known/security.txt
+    status: 405
+  - path: /.well-known/api-catalog
+    status: 405
+  - path: /.well-known/agent-card.json
+    status: 405
+  - path: /.well-known/agent.json
+    status: 405
+- host: https://api.agorapulse.com
+  role: REST API host
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 401
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+  note: >-
+    Every path on this host, known or unknown, answers 401 {"code":2,"message":"No valid API key
+    found in request header X-API-Key"} — the API-key filter runs ahead of routing, so a 401 here is
+    not evidence that a route exists. The only anonymous path is /docs (the Scalar reference shell).
+- host: https://www.agorapulse.com
+  role: marketing site
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://support.agorapulse.com
+  role: help centre (hosted by Intercom)
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    recorded: false
+    note: >-
+      NOT Agorapulse's document. The body is Intercom's security.txt — it names Bugcrowd
+      (bugcrowd.com/intercom), security@intercom.com, and its own Canonical field points at
+      https://app.intercom.com/.well-known/security.txt. The help centre is a vendor-hosted domain,
+      so this 200 is credited to Intercom, not to Agorapulse. Agorapulse's own disclosure route is a
+      private HackerOne program (see security/agorapulse-vulnerability-disclosure.yml).
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://app.agorapulse.com
+  role: web application (Angular SPA)
+  documents:
+  - path: /.well-known/*
+    status: 200
+    recorded: false
+    note: >-
+      Soft 200. The SPA catch-all returns the same Angular index.html shell for every path probed,
+      including /.well-known/agent-card.json, /.well-known/agent.json and /openapi.json. No document
+      here is real; all were rejected.
+- host: https://mcp.agorapulse.com
+  role: internal knowledge-base MCP service (page title lib-foundation-knowledge-base-mcp-server-configuration)
+  documents:
+  - path: /.well-known/*
+    status: 401
+    note: >-
+      Every path except /, /info and /health answers 401 before routing, so route existence cannot be
+      established here. /health reports {"status":"UP"}. This is NOT the documented public MCP
+      endpoint — that is https://api.openmcp.agorapulse.com/mcp.

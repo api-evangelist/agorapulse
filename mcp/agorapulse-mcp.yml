@@ -1,0 +1,143 @@
+generated: '2026-08-13'
+method: searched
+status: published
+source: https://support.agorapulse.com/en/articles/12960496-model-context-protocool-mcp-integration-explained
+sources:
+- https://support.agorapulse.com/en/articles/12960496-model-context-protocool-mcp-integration-explained
+- https://www.npmjs.com/package/@agorapulse/mcp
+- https://api.openmcp.agorapulse.com/.well-known/oauth-protected-resource
+deployment:
+  mode: both
+  endpoint: https://api.openmcp.agorapulse.com/mcp
+  install: npx -y @agorapulse/mcp
+  package: https://www.npmjs.com/package/@agorapulse/mcp
+  auth: oauth
+  verified: probed
+  note: >-
+    Two distinct products. The REMOTE server at https://api.openmcp.agorapulse.com/mcp is the one
+    Agorapulse documents for Claude, ChatGPT and Microsoft Copilot Studio; an unauthenticated POST of
+    tools/list returns 401 with
+    WWW-Authenticate: Bearer resource_metadata="https://api.openmcp.agorapulse.com/.well-known/oauth-protected-resource/mcp",
+    which is the RFC 9728 challenge and confirms the endpoint is live and OAuth-protected. The
+    LOCAL-STDIO server is the npm package @agorapulse/mcp (1.0.1, published 2025-06-12), which runs
+    under npx on the operator's machine and authenticates with a plain X-API-KEY instead.
+server:
+  name: agorapulse
+  transport: http
+  url: https://api.openmcp.agorapulse.com/mcp
+  protected_resource_metadata: https://api.openmcp.agorapulse.com/.well-known/oauth-protected-resource/mcp
+  authorization_server: https://api.identity.agorapulse.com
+  scopes: [read]
+  clients_documented:
+  - Claude (Pro, Max, Team, Enterprise)
+  - ChatGPT (Go, Plus, Pro, Team)
+  - Microsoft Copilot Studio
+  plan_requirement: >-
+    Documented as available to all Agorapulse plans except Legacy and Free. Note this is a different
+    gate from the REST Reports Open API, which the pricing page restricts to the Custom plan.
+local_server:
+  name: agorapulse-mcp
+  transport: stdio
+  package: '@agorapulse/mcp'
+  registry: npm
+  version: 1.0.1
+  published: '2025-06-12'
+  bin: agorapulse-mcp
+  install: npx -y @agorapulse/mcp
+  auth: api-key
+  env:
+  - name: AGORAPULSE_API_KEY
+    required: true
+  - name: AGORAPULSE_API_URL
+    required: false
+    note: Overrides the default https://api.agorapulse.com base.
+  runtime: Node.js 20+
+  sdk: '@modelcontextprotocol/sdk'
+x-evidence:
+- fetched: '2026-08-13'
+  url: https://api.openmcp.agorapulse.com/mcp
+  method: POST tools/list
+  http_status: 401
+  www_authenticate: Bearer resource_metadata="https://api.openmcp.agorapulse.com/.well-known/oauth-protected-resource/mcp"
+- fetched: '2026-08-13'
+  url: https://api.openmcp.agorapulse.com/.well-known/oauth-protected-resource
+  http_status: 200
+- fetched: '2026-08-13'
+  url: https://api.openmcp.agorapulse.com/health
+  http_status: 200
+  body: '{"status":"UP"}'
+tools_note: >-
+  The live tools/list on the remote endpoint is OAuth-gated, so the schemas below are NOT from the
+  hosted server. They are the verbatim tool definitions read out of the published npm package
+  @agorapulse/mcp@1.0.1 (dist/index.js, ListToolsRequestSchema handler) — real names, descriptions
+  and inputSchemas, but they describe the LOCAL stdio server. The remote server's tool set is
+  documented in prose as covering publishing/content, analytics and organization management, which is
+  broader than the six below; confirming it requires an authenticated introspection.
+tools:
+- name: get_organizations
+  description: List all organizations accessible to the current manager
+  input_schema:
+    type: object
+    properties: {}
+  source_operation: openapi/agorapulse-organizations-api-openapi.yml#getManagerOrganizations
+- name: get_workspaces
+  description: Get all workspaces within an organization
+  input_schema:
+    type: object
+    properties:
+      organizationId: {type: string, description: Organization ID}
+    required: [organizationId]
+  source_operation: openapi/agorapulse-workspaces-api-openapi.yml#getOrganizationWorkspaces
+- name: get_profiles
+  description: List social media profiles in a workspace
+  input_schema:
+    type: object
+    properties:
+      organizationId: {type: string, description: Organization ID}
+      workspaceId: {type: string, description: Workspace ID}
+    required: [organizationId, workspaceId]
+  source_operation: openapi/agorapulse-profiles-api-openapi.yml#getWorkspaceProfiles
+- name: get_audience_insights
+  description: Get audience analytics for a profile (followers, demographics). Provide dates in ISO 8601 format.
+  input_schema:
+    type: object
+    properties:
+      organizationId: {type: string, description: Organization ID}
+      workspaceId: {type: string, description: Workspace ID}
+      profileUid: {type: string, description: Profile UID}
+      since: {type: string, description: 'Start date in ISO 8601 format (e.g., "2023-01-01" or "2023-01-01T00:00:00Z")'}
+      until: {type: string, description: 'End date in ISO 8601 format (e.g., "2023-12-31" or "2023-12-31T23:59:59Z")'}
+    required: [organizationId, workspaceId, profileUid, since, until]
+  source_operation: openapi/agorapulse-reports-api-openapi.yml#getAudience
+- name: get_community_management_insights
+  description: Get community management metrics (replies, messages, actions). Provide dates in ISO 8601 format.
+  input_schema:
+    type: object
+    properties:
+      organizationId: {type: string, description: Organization ID}
+      workspaceId: {type: string, description: Workspace ID}
+      profileUid: {type: string, description: Profile UID}
+      since: {type: string, description: 'Start date in ISO 8601 format (e.g., "2023-01-01" or "2023-01-01T00:00:00Z")'}
+      until: {type: string, description: 'End date in ISO 8601 format (e.g., "2023-12-31" or "2023-12-31T23:59:59Z")'}
+    required: [organizationId, workspaceId, profileUid, since, until]
+  source_operation: openapi/agorapulse-reports-api-openapi.yml#getCommunityManagement
+- name: get_content_insights
+  description: Get content performance analytics (posts, engagement, reach). Provide dates in ISO 8601 format.
+  input_schema:
+    type: object
+    properties:
+      organizationId: {type: string, description: Organization ID}
+      workspaceId: {type: string, description: Workspace ID}
+      profileUid: {type: string, description: Profile UID}
+      since: {type: string, description: 'Start date in ISO 8601 format (e.g., "2023-01-01" or "2023-01-01T00:00:00Z")'}
+      until: {type: string, description: 'End date in ISO 8601 format (e.g., "2023-12-31" or "2023-12-31T23:59:59Z")'}
+    required: [organizationId, workspaceId, profileUid, since, until]
+  source_operation: openapi/agorapulse-reports-api-openapi.yml#getContentReport
+other_mcp_hosts:
+- host: https://mcp.agorapulse.com
+  status: not-the-public-endpoint
+  note: >-
+    An Agorapulse-served host (their branding, CSP locked to *.agorapulse.com) whose page title is
+    "lib-foundation-knowledge-base-mcp-server-configuration" and whose /health reports UP. It exposes
+    /sse and /messages, but so does every other path — the auth filter answers 401 before routing, so
+    no endpoint here can be verified and none is claimed. Recorded for completeness only.

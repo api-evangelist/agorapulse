@@ -1,0 +1,32 @@
+generated: '2026-08-13'
+method: searched
+source: registry.npmjs.org (@agorapulse scope) + https://github.com/agorapulse/design
+description: >-
+  Agorapulse publishes no embeddable UI components for API consumers — there is no widget, element
+  library, hosted checkout-style surface or embedded dashboard offered to developers. What it does
+  publish, publicly and under its official npm scope, is the Angular design system behind its own web
+  application. That is recorded here for completeness and honesty about what the scope contains; it
+  is not a customer-facing embed surface and should not be read as one.
+customer_facing_components: false
+family:
+  name: Agorapulse Design System
+  repository: https://github.com/agorapulse/design
+  framework: Angular
+  distribution: npm
+  audience: Agorapulse's own applications
+  documentation: none published
+  components:
+  - {name: '@agorapulse/ui-components', version: 22.0.14, published: '2026-08-12', description: UI Components Library}
+  - {name: '@agorapulse/ui-symbol', version: 22.0.0, published: '2026-07-22', description: Icon/symbol library}
+  - {name: '@agorapulse/ui-theme', version: 22.0.1, published: '2026-07-30', description: Theme tokens}
+  - {name: '@agorapulse/ui-charts', version: 22.0.0, published: '2026-07-22', description: Chart components}
+  - {name: '@agorapulse/ui-charts-map', version: 22.0.0, published: '2026-07-22', description: Map chart components}
+  - {name: '@agorapulse/ui-animations', version: 22.0.1, published: '2026-07-31', description: Animation components}
+  - {name: '@agorapulse/ui-wysiwyg-editor', version: 22.0.2, published: '2026-07-22', description: WYSIWYG editor}
+  - {name: '@agorapulse/ui-social-network-preview', version: 13.2.1, published: '2022-08-09', description: Social network post preview, no longer on the 22.x line}
+loaders: []
+embedded_surfaces:
+  note: >-
+    The only embedded surface Agorapulse offers third parties is the in-product integration set
+    (Zapier, HubSpot, Salesforce, Slack, Microsoft Teams) and the "link in bio" hosted page — neither
+    is a developer component.
