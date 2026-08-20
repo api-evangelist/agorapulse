@@ -21,6 +21,14 @@ modified: '2026-08-13'
 specificationVersion: '0.23'
 tags:
   - Social Media Management
+  - Social-Media
+  - CRM
+  - Analytics
+  - Publishing
+  - Inbox Management
+  - Social Listening
+tags_raw:
+  - Social Media Management
   - Social Media
   - CRM
   - Analytics
@@ -113,6 +121,8 @@ apis:
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -143,6 +153,8 @@ apis:
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
@@ -173,6 +185,8 @@ apis:
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
