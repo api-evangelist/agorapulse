@@ -1,0 +1,25 @@
+slug: agorapulse
+provider: Agorapulse
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Competitor
+  spec_file: agorapulse-competitor-api-openapi.yml
+  capability_id: BC-400.30
+  capability_id_l1: BC-400
+  capability_name: Market Intelligence Management
+  confidence: 0.8
+  evidence: 'GET .../competitors/insights  getCompetitorInsights  Get competitor report; schemas: OpenCompetitorEngagement,
+    OpenCompetitorAudience, OpenCompetitorTopContent'
+  reason: Retrieves competitor lists and comparative engagement/audience/content reports for social profiles
+    — competitive intelligence, i.e. Market Intelligence Management.

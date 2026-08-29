@@ -415,6 +415,9 @@ apis:
   - type: OpenAPI
     url: openapi/agorapulse-workspace-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/agorapulse-capability-edges.yml
+    name: Agorapulse Business Capability Map
   - type: AgenticAccess
     url: agentic-access/agorapulse-agentic-access.yml
   - type: TrustCenter
