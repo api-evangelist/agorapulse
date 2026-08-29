@@ -66,9 +66,9 @@ apis:
 - aid: agorapulse:agorapulse-agorapulse-api-api
   name: Agorapulse Webhooks API
   description: >-
-    The webhook surface of the Agorapulse API — the OpenAPI 3.1 top-level webhooks object carrying
-    the PUBLISHING_POST and INBOX_ITEM events, their payload schemas and the X-Hook-Signature HMAC
-    scheme. Carries no request operations of its own.
+    The webhook surface of the Agorapulse API — the OpenAPI 3.1 top-level webhooks object carrying the
+    PUBLISHING_POST and INBOX_ITEM events, their payload schemas and the X-Hook-Signature HMAC scheme.
+    Carries no request operations of its own.
   humanURL: >-
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
@@ -282,6 +282,138 @@ apis:
     url: overlays/agorapulse-workspaces-api-overlay.yaml
   - type: Documentation
     url: https://api.agorapulse.com/docs
+- aid: agorapulse:agorapulse-inbox-conversations-api
+  name: Agorapulse Inbox conversations API
+  description: The Inbox conversations API from Agorapulse — 1 operation(s) for inbox conversations.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Inbox conversations
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-inbox-conversations-api-openapi.yml
+- aid: agorapulse:agorapulse-inbox-items-api
+  name: Agorapulse Inbox items API
+  description: The Inbox items API from Agorapulse — 1 operation(s) for inbox items.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Inbox items
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-inbox-items-api-openapi.yml
+- aid: agorapulse:agorapulse-inbox-reply-api
+  name: Agorapulse Inbox reply API
+  description: The Inbox reply API from Agorapulse — 1 operation(s) for inbox reply.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Inbox reply
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-inbox-reply-api-openapi.yml
+- aid: agorapulse:agorapulse-open-api-api
+  name: Agorapulse Open API
+  description: The Open API API from Agorapulse — 0 operation(s) for open api.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Open API
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-open-api-api-openapi.yml
+- aid: agorapulse:agorapulse-openapi-api
+  name: Agorapulse Open API
+  description: The OpenAPI API from Agorapulse — 1 operation(s) for openapi.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - OpenAPI
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-openapi-api-openapi.yml
+- aid: agorapulse:agorapulse-organization-api
+  name: Agorapulse Organization API
+  description: The Organization API from Agorapulse — 1 operation(s) for organization.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-organization-api-openapi.yml
+- aid: agorapulse:agorapulse-profile-api
+  name: Agorapulse Profile API
+  description: The Profile API from Agorapulse — 1 operation(s) for profile.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-profile-api-openapi.yml
+- aid: agorapulse:agorapulse-report-api
+  name: Agorapulse Report API
+  description: The Report API from Agorapulse — 3 operation(s) for report.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-report-api-openapi.yml
+- aid: agorapulse:agorapulse-simple-drafts-api
+  name: Agorapulse Simple Drafts API
+  description: Publishing simple drafts management
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Simple Drafts
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-simple-drafts-api-openapi.yml
+- aid: agorapulse:agorapulse-simple-scheduling-api
+  name: Agorapulse Simple Scheduling API
+  description: Publishing simple scheduled and immediate posts management
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Simple Scheduling
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-simple-scheduling-api-openapi.yml
+- aid: agorapulse:agorapulse-studio-media-api
+  name: Agorapulse Studio Media API
+  description: Studio media upload management
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Studio Media
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-studio-media-api-openapi.yml
+- aid: agorapulse:agorapulse-workspace-api
+  name: Agorapulse Workspace API
+  description: The Workspace API from Agorapulse — 1 operation(s) for workspace.
+  humanURL: >-
+    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
+  baseURL: https://api.agorapulse.com
+  tags:
+  - Workspace
+  properties:
+  - type: OpenAPI
+    url: openapi/agorapulse-workspace-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/agorapulse-agentic-access.yml

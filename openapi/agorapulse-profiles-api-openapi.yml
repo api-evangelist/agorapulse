@@ -53,26 +53,6 @@ paths:
                 $ref: '#/components/schemas/ProfileListResponse'
 components:
   schemas:
-    ProfileResponse_1:
-      required:
-      - profileName
-      - profileType
-      - profileUid
-      - socialNetworkId
-      - workspaceId
-      type: object
-      properties:
-        profileUid:
-          type: string
-        profileName:
-          type: string
-        profileType:
-          $ref: '#/components/schemas/SocialNetworkChannel'
-        socialNetworkId:
-          type: string
-        workspaceId:
-          type: integer
-          format: int64
     SocialNetworkChannel:
       type: string
       enum:
@@ -96,6 +76,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProfileResponse_1'
+    ProfileResponse_1:
+      required:
+      - profileName
+      - profileType
+      - profileUid
+      - socialNetworkId
+      - workspaceId
+      type: object
+      properties:
+        profileUid:
+          type: string
+        profileName:
+          type: string
+        profileType:
+          $ref: '#/components/schemas/SocialNetworkChannel'
+        socialNetworkId:
+          type: string
+        workspaceId:
+          type: integer
+          format: int64
   securitySchemes:
     bearerAuth:
       type: apiKey

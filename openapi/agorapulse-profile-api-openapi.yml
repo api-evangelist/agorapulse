@@ -1,0 +1,92 @@
+openapi: 3.2.0
+info:
+  title: Open Profile API
+  description: Agorapulse's Open API documentation
+  version: '1.0'
+security:
+- bearerAuth: []
+tags:
+- name: Profile
+paths:
+  /v1.0/core/organizations/{organizationId}/workspaces/{workspaceId}/profiles:
+    get:
+      tags:
+      - Profile
+      summary: Get workspace profiles
+      description: List all profiles in a workspace
+      operationId: getWorkspaceProfiles
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization id
+        required: true
+        schema:
+          type: string
+      - name: workspaceId
+        in: path
+        description: Workspace id
+        required: true
+        schema:
+          type: string
+      - name: v
+        in: query
+        description: API version
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of the profiles
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileListResponse'
+components:
+  schemas:
+    SocialNetworkChannel:
+      type: string
+      enum:
+      - FACEBOOK_PAGE
+      - FACEBOOK_INSTAGRAM
+      - LINKEDIN_PERSONAL
+      - LINKEDIN_COMPANY
+      - TIKTOK
+      - TWITTER
+      - GOOGLE
+      - YOUTUBE
+      - PINTEREST
+      - THREADS
+      - BLUESKY
+    ProfileListResponse:
+      required:
+      - profiles
+      type: object
+      properties:
+        profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileResponse_1'
+    ProfileResponse_1:
+      required:
+      - profileName
+      - profileType
+      - profileUid
+      - socialNetworkId
+      - workspaceId
+      type: object
+      properties:
+        profileUid:
+          type: string
+        profileName:
+          type: string
+        profileType:
+          $ref: '#/components/schemas/SocialNetworkChannel'
+        socialNetworkId:
+          type: string
+        workspaceId:
+          type: integer
+          format: int64
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header

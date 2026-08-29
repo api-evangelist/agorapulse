@@ -126,41 +126,6 @@ paths:
           description: Organization or workspace not found
 components:
   schemas:
-    StudioMediaUploadOpenRequest:
-      required:
-      - contentType
-      - extension
-      - fileSize
-      - origin
-      type: object
-      properties:
-        extension:
-          minLength: 1
-          type: string
-          description: File extension
-          example: jpg
-        fileSize:
-          minimum: 0
-          exclusiveMinimum: true
-          type: integer
-          description: File size in bytes
-          format: int64
-          example: 1048576
-        contentType:
-          minLength: 1
-          type: string
-          description: Content type (MIME)
-          example: image/jpeg
-        origin:
-          minLength: 1
-          type: string
-          description: Origin of the upload request
-          example: lovable
-        contentStudioSessionId:
-          type: string
-          description: Optional Content Studio session ID for grouping uploads
-          nullable: true
-      description: Request to obtain a presigned upload URL for a studio media
     NetworkCompatibility:
       required:
       - issues
@@ -180,40 +145,35 @@ components:
               type: string
           description: offending media-rule messages keyed by surface name, present only for surfaces marked KO
       description: 'Per-network media compatibility verdict, one entry per surface variant the network exposes: `feed`/ `story`/`reel` for Facebook and Instagram, `default` for every other network.'
-    PublishingApiMediaStatus:
-      type: string
-      description: Current status of the media
-      enum:
-      - AWAITING_UPLOAD
-      - PROCESSING
-      - VALID
-      - INVALID
-      - EXPIRED
-    StudioMediaUploadOpenResponse:
+    MediaOpenResponse:
       type: object
       properties:
+        mediaUid:
+          type: string
+          description: Unique identifier of the media
+          example: pubmedia_abc123
         uploadUrl:
           type: string
-          description: Presigned PUT URL - upload file with HTTP PUT to this URL
-        filename:
-          type: string
-          description: S3 object key
-        publicUrl:
-          type: string
-          description: CDN URL to access the uploaded file
-        baseUrl:
-          type: string
-          description: S3 URL to access the uploaded file
-        expiresInSeconds:
-          type: integer
-          description: URL expiration in seconds
-          format: int32
+          description: Presigned S3 URL to PUT the file to. Every header listed in requiredHeaders is part of the URL signature, so the PUT is rejected with a 403 unless all of them are replayed verbatim.
         requiredHeaders:
           type: object
           additionalProperties:
             type: string
-          description: Headers the client MUST include in the PUT upload request
-      description: Presigned URL for direct S3 upload
+          description: 'Headers that must be replayed verbatim on the PUT upload request, Content-Type included. Do not derive Content-Type yourself: it is signed from the declared file extension and some extensions map to a non-obvious type (.flv is signed as video/flv, not video/x-flv).'
+        mediaUrl:
+          type: string
+          description: Public URL the media will be available at once uploaded
+        status:
+          type: object
+          description: Current status of the media
+          allOf:
+          - $ref: '#/components/schemas/PublishingApiMediaStatus'
+          - type: object
+        expiresAt:
+          type: string
+          description: Expiration timestamp of the presigned upload URL
+          format: date-time
+      description: Presigned upload slot for a media file
     MediaStatusOpenResponse:
       type: object
       properties:
@@ -253,6 +213,96 @@ components:
           description: Per-network media compatibility check, keyed by account type; null until the media is VALID
           nullable: true
       description: Status and metadata of a media
+    PublishingApiMediaStatus:
+      type: string
+      description: Current status of the media
+      enum:
+      - AWAITING_UPLOAD
+      - PROCESSING
+      - VALID
+      - INVALID
+      - EXPIRED
+    StudioMediaUploadOpenRequest:
+      required:
+      - contentType
+      - extension
+      - fileSize
+      - origin
+      type: object
+      properties:
+        extension:
+          minLength: 1
+          type: string
+          description: File extension
+          example: jpg
+        fileSize:
+          minimum: 0
+          exclusiveMinimum: true
+          type: integer
+          description: File size in bytes
+          format: int64
+          example: 1048576
+        contentType:
+          minLength: 1
+          type: string
+          description: Content type (MIME)
+          example: image/jpeg
+        origin:
+          minLength: 1
+          type: string
+          description: Origin of the upload request
+          example: lovable
+        contentStudioSessionId:
+          type: string
+          description: Optional Content Studio session ID for grouping uploads
+          nullable: true
+      description: Request to obtain a presigned upload URL for a studio media
+    PublishingApiMediaError:
+      required:
+      - code
+      - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+    CreateMediaOpenRequest:
+      required:
+      - fileName
+      type: object
+      properties:
+        fileName:
+          minLength: 1
+          type: string
+          description: File name with extension, e.g. clip.mp4
+          example: clip.mp4
+      description: Request to create a media upload slot
+    StudioMediaUploadOpenResponse:
+      type: object
+      properties:
+        uploadUrl:
+          type: string
+          description: Presigned PUT URL - upload file with HTTP PUT to this URL
+        filename:
+          type: string
+          description: S3 object key
+        publicUrl:
+          type: string
+          description: CDN URL to access the uploaded file
+        baseUrl:
+          type: string
+          description: S3 URL to access the uploaded file
+        expiresInSeconds:
+          type: integer
+          description: URL expiration in seconds
+          format: int32
+        requiredHeaders:
+          type: object
+          additionalProperties:
+            type: string
+          description: Headers the client MUST include in the PUT upload request
+      description: Presigned URL for direct S3 upload
     PublishingApiMediaMetadata:
       type: object
       properties:
@@ -276,56 +326,6 @@ components:
           type: integer
           format: int32
       description: Probed technical metadata, null until the media has been probed
-    PublishingApiMediaError:
-      required:
-      - code
-      - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-    CreateMediaOpenRequest:
-      required:
-      - fileName
-      type: object
-      properties:
-        fileName:
-          minLength: 1
-          type: string
-          description: File name with extension, e.g. clip.mp4
-          example: clip.mp4
-      description: Request to create a media upload slot
-    MediaOpenResponse:
-      type: object
-      properties:
-        mediaUid:
-          type: string
-          description: Unique identifier of the media
-          example: pubmedia_abc123
-        uploadUrl:
-          type: string
-          description: Presigned S3 URL to PUT the file to. Every header listed in requiredHeaders is part of the URL signature, so the PUT is rejected with a 403 unless all of them are replayed verbatim.
-        requiredHeaders:
-          type: object
-          additionalProperties:
-            type: string
-          description: 'Headers that must be replayed verbatim on the PUT upload request, Content-Type included. Do not derive Content-Type yourself: it is signed from the declared file extension and some extensions map to a non-obvious type (.flv is signed as video/flv, not video/x-flv).'
-        mediaUrl:
-          type: string
-          description: Public URL the media will be available at once uploaded
-        status:
-          type: object
-          description: Current status of the media
-          allOf:
-          - $ref: '#/components/schemas/PublishingApiMediaStatus'
-          - type: object
-        expiresAt:
-          type: string
-          description: Expiration timestamp of the presigned upload URL
-          format: date-time
-      description: Presigned upload slot for a media file
   securitySchemes:
     bearerAuth:
       type: apiKey

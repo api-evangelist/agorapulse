@@ -1,7 +1,8 @@
 {
   "provider": "agorapulse",
   "sources": [
-    "agorapulse-open-api-openapi.yml"
+    "_original/agorapulse-open-api-openapi.yml",
+    "_original/agorapulse-openapi.yml"
   ],
   "outputs": [
     "agorapulse-agorapulse-api-api-openapi.yml",
@@ -18,19 +19,58 @@
     "agorapulse-profiles-api-openapi.yml",
     "agorapulse-replies-api-openapi.yml",
     "agorapulse-reports-api-openapi.yml",
-    "agorapulse-workspaces-api-openapi.yml"
+    "agorapulse-workspaces-api-openapi.yml",
+    "agorapulse-inbox-conversations-api-openapi.yml",
+    "agorapulse-inbox-items-api-openapi.yml",
+    "agorapulse-inbox-reply-api-openapi.yml",
+    "agorapulse-open-api-api-openapi.yml",
+    "agorapulse-openapi-api-openapi.yml",
+    "agorapulse-organization-api-openapi.yml",
+    "agorapulse-profile-api-openapi.yml",
+    "agorapulse-report-api-openapi.yml",
+    "agorapulse-simple-drafts-api-openapi.yml",
+    "agorapulse-simple-scheduling-api-openapi.yml",
+    "agorapulse-studio-media-api-openapi.yml",
+    "agorapulse-workspace-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi/agorapulse-open-api-openapi.yml"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "agorapulse-open-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "agorapulse-open-api-openapi.yml: tagged webhooks POST PUBLISHING_POST -> Agorapulse API",
     "agorapulse-open-api-openapi.yml: tagged webhooks POST INBOX_ITEM -> Agorapulse API",
     "agorapulse-open-api-openapi.yml: declared missing tag: Agorapulse API",
-    "apis.yml register: written (+14 apis, 15 total)"
+    "agorapulse-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "agorapulse-openapi.yml: tagged webhooks POST PUBLISHING_POST -> Open API",
+    "agorapulse-openapi.yml: tagged webhooks POST INBOX_ITEM -> Open API",
+    "agorapulse-openapi.yml: declared missing tag: Inbox conversations",
+    "agorapulse-openapi.yml: declared missing tag: Inbox items",
+    "agorapulse-openapi.yml: declared missing tag: Inbox reply",
+    "agorapulse-openapi.yml: declared missing tag: Open API",
+    "agorapulse-openapi.yml: declared missing tag: OpenAPI",
+    "agorapulse-openapi.yml: declared missing tag: Organization",
+    "agorapulse-openapi.yml: declared missing tag: Profile",
+    "agorapulse-openapi.yml: declared missing tag: Report",
+    "agorapulse-openapi.yml: declared missing tag: Workspace",
+    "tag 'Calendar notes' spans 2 source specs (agorapulse-open-api-openapi.yml, agorapulse-openapi.yml): per-path servers applied"
   ],
-  "skipped": []
+  "skipped": [
+    "agorapulse-agorapulse-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-calendar-notes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-competitor-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-conversations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-drafts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-pinterest-boards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-replies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-workspaces-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

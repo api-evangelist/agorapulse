@@ -1,0 +1,296 @@
+openapi: 3.2.0
+info:
+  title: Open Simple Scheduling API
+  description: Agorapulse's Open API documentation
+  version: '1.0'
+security:
+- bearerAuth: []
+tags:
+- name: Simple Scheduling
+  description: Publishing simple scheduled and immediate posts management
+paths:
+  /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-schedule-posts:
+    post:
+      tags:
+      - Simple Scheduling
+      summary: Create a scheduled post
+      description: Creates a new scheduled post with text, media, and publishing dates in the specified workspace
+      operationId: save_2
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization identifier
+        required: true
+      - name: workspaceId
+        in: path
+        description: Workspace identifier
+        required: true
+      requestBody:
+        description: Scheduled post to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSimpleScheduleOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Scheduled post created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSimpleScheduleOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+  /v1.0/publishing/organizations/{organizationId}/workspaces/{workspaceId}/simple-schedule-posts:publish-now:
+    post:
+      tags:
+      - Simple Scheduling
+      summary: Publish a post immediately
+      description: Publishes a new post immediately on the specified profiles in the workspace
+      operationId: publishNow
+      parameters:
+      - name: organizationId
+        in: path
+        description: Organization identifier
+        required: true
+      - name: workspaceId
+        in: path
+        description: Workspace identifier
+        required: true
+      requestBody:
+        description: Post to publish immediately
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SimplePublishOpenRequest'
+        required: true
+      responses:
+        '201':
+          description: Post published successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSimpleScheduleOpenResponse'
+        '400':
+          description: Invalid request data
+        '404':
+          description: Organization or workspace not found
+components:
+  schemas:
+    GroupOfPostsSummary:
+      required:
+      - agorapulseLink
+      - labels
+      - profileScheduling
+      - type
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        agorapulseLink:
+          type: string
+        type:
+          $ref: '#/components/schemas/PostType'
+        labels:
+          type: array
+          items:
+            type: string
+        profileScheduling:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary'
+    GroupOfPostsSummary.SchedulingSummary:
+      required:
+      - publishingDate
+      - status
+      - uid
+      type: object
+      properties:
+        uid:
+          type: string
+        publishingDate:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/PostStatus'
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
+    CreateSimpleScheduleOpenResponse:
+      required:
+      - groupOfPosts
+      type: object
+      properties:
+        groupOfPosts:
+          $ref: '#/components/schemas/GroupOfPostsSummary'
+      description: Response after creating a scheduled post
+    GroupOfPostsSummary.ProfileSchedulingSummary:
+      required:
+      - profile
+      - schedulingSummary
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+        schedulingSummary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+    CreateSimpleScheduleOpenRequest.ProfileScheduling:
+      required:
+      - profileUid
+      - publishingDates
+      type: object
+      properties:
+        profileUid:
+          minLength: 1
+          type: string
+          description: Unique identifier of the profile
+          example: profile_123
+        publishingDates:
+          minItems: 1
+          type: array
+          description: List of publishing dates in ISO-8601 format
+          example:
+          - '2024-12-25T10:00:00.000Z'
+          - '2024-12-26T15:30:00.000Z'
+          items:
+            type: string
+            format: date-time
+      description: Scheduling configuration for a specific profile
+    CreateSimpleScheduleOpenRequest:
+      required:
+      - scheduling
+      - type
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text content of the post
+          example: This is my social media post
+        type:
+          type: object
+          description: Type of the post
+          allOf:
+          - $ref: '#/components/schemas/PostType'
+          - type: object
+        link:
+          type: string
+          description: Link URL to be included in the post
+          example: https://example.com
+        labels:
+          type: array
+          description: Set of labels/tags to categorize the post
+          example:
+          - marketing
+          - promotion
+          items:
+            type: string
+        mediaUrls:
+          type: array
+          description: List of media URLs (images, videos) to be included
+          example:
+          - https://example.com/image.jpg
+          items:
+            type: string
+        scheduling:
+          minItems: 1
+          type: array
+          description: Scheduling configuration for different profiles
+          items:
+            $ref: '#/components/schemas/CreateSimpleScheduleOpenRequest.ProfileScheduling'
+      description: Request to create a scheduled post
+    SimplePublishOpenRequest:
+      required:
+      - profileUids
+      - type
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text content of the post
+          example: This is my social media post
+        type:
+          type: object
+          description: Type of the post
+          allOf:
+          - $ref: '#/components/schemas/PostType'
+          - type: object
+        link:
+          type: string
+          description: Link URL to be included in the post
+          example: https://example.com
+        labels:
+          type: array
+          description: Set of labels/tags to categorize the post
+          example:
+          - marketing
+          - promotion
+          items:
+            type: string
+        mediaUrls:
+          type: array
+          description: List of media URLs (images, videos) to be included
+          example:
+          - https://example.com/image.jpg
+          items:
+            type: string
+        profileUids:
+          minItems: 1
+          type: array
+          description: List of profile UIDs the post will be published to
+          example:
+          - profile_123
+          - profile_456
+          items:
+            type: string
+      description: Request to publish a post immediately
+    PostStatus:
+      type: string
+      enum:
+      - DRAFT
+      - PUBLISHED
+      - FAILED
+      - SCHEDULED
+    PostType:
+      type: string
+      enum:
+      - TEXT
+      - PHOTO
+      - VIDEO
+      - PHOTO_AND_VIDEO
+      - LINK
+      - PDF
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header
