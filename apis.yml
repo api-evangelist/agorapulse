@@ -330,17 +330,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/agorapulse-open-api-api-openapi.yml
-- aid: agorapulse:agorapulse-openapi-api
-  name: Agorapulse Open API
-  description: The OpenAPI API from Agorapulse — 1 operation(s) for openapi.
-  humanURL: >-
-    https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
-  baseURL: https://api.agorapulse.com
-  tags:
-  - OpenAPI
-  properties:
-  - type: OpenAPI
-    url: openapi/agorapulse-openapi-api-openapi.yml
 - aid: agorapulse:agorapulse-organization-api
   name: Agorapulse Organization API
   description: The Organization API from Agorapulse — 1 operation(s) for organization.
