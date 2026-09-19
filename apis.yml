@@ -274,6 +274,8 @@ apis:
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
+  - Workspace
+  tags_raw:
   - Workspaces
   properties:
   - type: OpenAPI
@@ -348,6 +350,8 @@ apis:
     https://support.agorapulse.com/en/articles/12417183-how-to-connect-to-agorapulse-s-open-api
   baseURL: https://api.agorapulse.com
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
