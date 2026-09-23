@@ -54,7 +54,8 @@
     "agorapulse-openapi.yml: declared missing tag: Profile",
     "agorapulse-openapi.yml: declared missing tag: Report",
     "agorapulse-openapi.yml: declared missing tag: Workspace",
-    "tag 'Calendar notes' spans 2 source specs (agorapulse-open-api-openapi.yml, agorapulse-openapi.yml): per-path servers applied"
+    "tag 'Calendar notes' spans 2 source specs (agorapulse-open-api-openapi.yml, agorapulse-openapi.yml): per-path servers applied",
+    "apis.yml register: written (+1 apis, 27 total)"
   ],
   "skipped": [
     "agorapulse-agorapulse-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -64,13 +65,24 @@
     "agorapulse-drafts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-inbox-conversations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-inbox-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-inbox-reply-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-open-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-pinterest-boards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-profile-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-replies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-report-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-simple-drafts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-simple-scheduling-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-studio-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agorapulse-workspace-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agorapulse-workspaces-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

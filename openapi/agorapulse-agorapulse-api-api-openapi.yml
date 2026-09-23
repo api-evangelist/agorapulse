@@ -1,7 +1,10 @@
 openapi: 3.2.0
 info:
   title: Agorapulse API
-  description: "# Agorapulse API\n\nWelcome to the Agorapulse API. Use it to manage publishing, social inbox conversations, analytics and your content library programmatically.\n\nThe API is organized around REST, uses resource-oriented URLs, returns JSON, and relies on standard HTTP response codes and verbs.\n\n## Base URL\n\nAll requests go to the base URL shown in the **Server** selector, and every endpoint is versioned under a `/v1.0/` prefix.\n\n## Authentication\n\nThe API authenticates requests with an **API key** sent in the `X-API-KEY` HTTP header. Every request must include it:\n\n```http\nGET /v1.0/core/organizations HTTP/1.1\nHost: api.agorapulse.com\nX-API-KEY: your-api-key\n```\n\n```bash\ncurl https://api.agorapulse.com/v1.0/core/organizations \\\n  -H \"X-API-KEY: your-api-key\"\n```\n\nKeep your API key secret: it grants access to your account's data. Requests without a valid key return `401 Unauthorized`.\n\n## Resource hierarchy\n\nMost resources are nested under an organization and a workspace:\n\n```\n/v1.0/<domain>/organizations/{organizationId}/workspaces/{workspaceId}/...\n```\n\nStart from `GET /v1.0/core/organizations` to discover your organizations, then list their workspaces and profiles.\n\n## Errors\n\nThe API uses conventional HTTP status codes: `2xx` for success, `4xx` for client errors (a missing or invalid parameter, an unknown resource, a missing API key), and `5xx` for server errors.\n\nError responses carry a JSON body describing the problem, except for `405`, `406` and `415`, which answer with a status only:\n\n```json\n{\n  \"code\": 1005,\n  \"subCode\": 1104,\n  \"message\": \"Media not found: pubmedia_abc123\"\n}\n```\n\n`code` identifies the error family: either a global one (`1` internal, `2` unauthorized, `3` rate limit exceeded, `4` unprocessable input, `5` validation failed), or the component that produced the error. That component is usually the feature you addressed, but not always — a request whose path matches no endpoint is rejected by the API gateway itself and carries the gateway's own code, `1013`, whichever feature the path pointed at. `subCode` is optional and, when present, pinpoints the exact cause within that component; the endpoints that return one document its values. `message` is a human-readable explanation and is not meant to be parsed.\n\n## Webhooks\n\nAgorapulse can push events to your endpoints. See the **Webhooks** section for the available events (for example `PUBLISHING_POST` and `INBOX_ITEM`) and their payloads.\n"
+  description: '# Agorapulse API
+
+
+    Welcome to the Agorapulse API.'
   version: '1.0'
   contact:
     name: Agorapulse API Support
@@ -34,6 +37,8 @@ webhooks:
           description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
       tags:
       - Agorapulse API
+      summary: Create publishing post
+      x-summary-source: derived
   INBOX_ITEM:
     post:
       requestBody:
@@ -49,8 +54,104 @@ webhooks:
           description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
       tags:
       - Agorapulse API
+      summary: Create inbox item
+      x-summary-source: derived
 components:
   schemas:
+    User:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the user
+        name:
+          type: string
+          description: Name of the user
+        email:
+          type: string
+          format: email
+          description: Email address of the user
+    InboxItemAction:
+      type: string
+      enum:
+      - CREATED
+      - CLASSIFIED
+      - LABELIZED
+    PostStatus1:
+      type: string
+      enum:
+      - PUBLISHED
+      - FAILED
+    PublishingPost:
+      type: object
+      properties:
+        actor:
+          $ref: '#/components/schemas/User'
+          description: The user who performed the action
+        post:
+          $ref: '#/components/schemas/Post'
+          description: The post information
+    Profile1:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the profile
+        name:
+          type: string
+          description: Name of the profile
+        network:
+          $ref: '#/components/schemas/Network'
+          description: The social network of the profile
+    InboxItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    Post:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the post
+        agorapulseLink:
+          type: string
+          description: Link to the post in Agorapulse application
+        networkLink:
+          type: string
+          description: Link to the post in the social network
+        publishDate:
+          type: string
+          format: date-time
+          description: Publish date of the post
+        groupUid:
+          type: string
+          description: Unique identifier for the group of posts if applicable
+        profile:
+          $ref: '#/components/schemas/Profile1'
+          description: The social network profile associated with the post
+        status:
+          $ref: '#/components/schemas/PostStatus1'
+          description: Status of the post
+    PublishingPostEventType:
+      type: string
+      enum:
+      - PUBLISHING_POST
+    InboxItemCreator:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user on social network
+        name:
+          type: string
+          description: Name of the user
+    InboxItemEventType:
+      type: string
+      enum:
+      - INBOX_ITEM
     InboxItemEvent:
       type: object
       properties:
@@ -74,12 +175,12 @@ components:
         payload:
           $ref: '#/components/schemas/InboxItem'
           description: The payload containing the inbox item information
-    InboxItemAction:
+    InboxItemSentiment:
       type: string
       enum:
-      - CREATED
-      - CLASSIFIED
-      - LABELIZED
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
     PublishingPostEvent:
       type: object
       properties:
@@ -103,30 +204,11 @@ components:
         payload:
           $ref: '#/components/schemas/PublishingPost'
           description: The payload containing the post information
-    InboxItemCreator:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the user on social network
-        name:
-          type: string
-          description: Name of the user
-    PostStatus1:
+    PostAction:
       type: string
       enum:
       - PUBLISHED
       - FAILED
-    InboxItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
-    InboxItemEventType:
-      type: string
-      enum:
-      - INBOX_ITEM
     InboxItem:
       type: object
       properties:
@@ -173,31 +255,6 @@ components:
         sentiment:
           $ref: '#/components/schemas/InboxItemSentiment'
           description: Sentiment of the inbox item
-    User:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the user
-        name:
-          type: string
-          description: Name of the user
-        email:
-          type: string
-          format: email
-          description: Email address of the user
-    PostAction:
-      type: string
-      enum:
-      - PUBLISHED
-      - FAILED
-    InboxItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
     Network:
       type: string
       enum:
@@ -211,56 +268,6 @@ components:
       - TIKTOK
       - TWITTER
       - YOUTUBE
-    PublishingPostEventType:
-      type: string
-      enum:
-      - PUBLISHING_POST
-    PublishingPost:
-      type: object
-      properties:
-        actor:
-          $ref: '#/components/schemas/User'
-          description: The user who performed the action
-        post:
-          $ref: '#/components/schemas/Post'
-          description: The post information
-    Profile1:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the profile
-        name:
-          type: string
-          description: Name of the profile
-        network:
-          $ref: '#/components/schemas/Network'
-          description: The social network of the profile
-    Post:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the post
-        agorapulseLink:
-          type: string
-          description: Link to the post in Agorapulse application
-        networkLink:
-          type: string
-          description: Link to the post in the social network
-        publishDate:
-          type: string
-          format: date-time
-          description: Publish date of the post
-        groupUid:
-          type: string
-          description: Unique identifier for the group of posts if applicable
-        profile:
-          $ref: '#/components/schemas/Profile1'
-          description: The social network profile associated with the post
-        status:
-          $ref: '#/components/schemas/PostStatus1'
-          description: Status of the post
   securitySchemes:
     bearerAuth:
       type: apiKey

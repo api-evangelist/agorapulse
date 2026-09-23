@@ -36,6 +36,16 @@ paths:
                 $ref: '#/components/schemas/WorkspaceListResponse'
 components:
   schemas:
+    WorkspaceListResponse:
+      required:
+      - workspaces
+      type: object
+      properties:
+        workspaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkspaceResponse_1'
+      description: List of workspaces
     WorkspaceResponse_1:
       required:
       - organizationId
@@ -52,16 +62,6 @@ components:
           type: integer
           format: int64
       description: Single workspace
-    WorkspaceListResponse:
-      required:
-      - workspaces
-      type: object
-      properties:
-        workspaces:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkspaceResponse_1'
-      description: List of workspaces
   securitySchemes:
     bearerAuth:
       type: apiKey

@@ -7,7 +7,22 @@ security:
 - bearerAuth: []
 tags:
 - name: Open API
-paths: {}
+paths:
+  /v1.0/report/health:
+    get:
+      tags:
+      - Open API
+      summary: Get health
+      description: Provides information about the state of the API
+      operationId: health
+      responses:
+        '200':
+          description: The API is healthy and working
+          content:
+            application/json:
+              examples:
+                example:
+                  value: OK
 webhooks:
   PUBLISHING_POST:
     post:
@@ -24,6 +39,8 @@ webhooks:
           description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
       tags:
       - Open API
+      summary: Create publishing post
+      x-summary-source: derived
   INBOX_ITEM:
     post:
       requestBody:
@@ -39,8 +56,104 @@ webhooks:
           description: Return a 410 status to indicate that the endpoint is no longer active, it will automatically disable the subscription
       tags:
       - Open API
+      summary: Create inbox item
+      x-summary-source: derived
 components:
   schemas:
+    User:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the user
+        name:
+          type: string
+          description: Name of the user
+        email:
+          type: string
+          format: email
+          description: Email address of the user
+    InboxItemAction:
+      type: string
+      enum:
+      - CREATED
+      - CLASSIFIED
+      - LABELIZED
+    PostStatus1:
+      type: string
+      enum:
+      - PUBLISHED
+      - FAILED
+    PublishingPost:
+      type: object
+      properties:
+        actor:
+          $ref: '#/components/schemas/User'
+          description: The user who performed the action
+        post:
+          $ref: '#/components/schemas/Post'
+          description: The post information
+    Profile1:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the profile
+        name:
+          type: string
+          description: Name of the profile
+        network:
+          $ref: '#/components/schemas/Network'
+          description: The social network of the profile
+    InboxItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    Post:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the post
+        agorapulseLink:
+          type: string
+          description: Link to the post in Agorapulse application
+        networkLink:
+          type: string
+          description: Link to the post in the social network
+        publishDate:
+          type: string
+          format: date-time
+          description: Publish date of the post
+        groupUid:
+          type: string
+          description: Unique identifier for the group of posts if applicable
+        profile:
+          $ref: '#/components/schemas/Profile1'
+          description: The social network profile associated with the post
+        status:
+          $ref: '#/components/schemas/PostStatus1'
+          description: Status of the post
+    PublishingPostEventType:
+      type: string
+      enum:
+      - PUBLISHING_POST
+    InboxItemCreator:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user on social network
+        name:
+          type: string
+          description: Name of the user
+    InboxItemEventType:
+      type: string
+      enum:
+      - INBOX_ITEM
     InboxItemEvent:
       type: object
       properties:
@@ -64,12 +177,12 @@ components:
         payload:
           $ref: '#/components/schemas/InboxItem'
           description: The payload containing the inbox item information
-    InboxItemAction:
+    InboxItemSentiment:
       type: string
       enum:
-      - CREATED
-      - CLASSIFIED
-      - LABELIZED
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
     PublishingPostEvent:
       type: object
       properties:
@@ -93,30 +206,11 @@ components:
         payload:
           $ref: '#/components/schemas/PublishingPost'
           description: The payload containing the post information
-    InboxItemCreator:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the user on social network
-        name:
-          type: string
-          description: Name of the user
-    PostStatus1:
+    PostAction:
       type: string
       enum:
       - PUBLISHED
       - FAILED
-    InboxItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
-    InboxItemEventType:
-      type: string
-      enum:
-      - INBOX_ITEM
     InboxItem:
       type: object
       properties:
@@ -163,31 +257,6 @@ components:
         sentiment:
           $ref: '#/components/schemas/InboxItemSentiment'
           description: Sentiment of the inbox item
-    User:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the user
-        name:
-          type: string
-          description: Name of the user
-        email:
-          type: string
-          format: email
-          description: Email address of the user
-    PostAction:
-      type: string
-      enum:
-      - PUBLISHED
-      - FAILED
-    InboxItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
     Network:
       type: string
       enum:
@@ -201,56 +270,6 @@ components:
       - TIKTOK
       - TWITTER
       - YOUTUBE
-    PublishingPostEventType:
-      type: string
-      enum:
-      - PUBLISHING_POST
-    PublishingPost:
-      type: object
-      properties:
-        actor:
-          $ref: '#/components/schemas/User'
-          description: The user who performed the action
-        post:
-          $ref: '#/components/schemas/Post'
-          description: The post information
-    Profile1:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the profile
-        name:
-          type: string
-          description: Name of the profile
-        network:
-          $ref: '#/components/schemas/Network'
-          description: The social network of the profile
-    Post:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the post
-        agorapulseLink:
-          type: string
-          description: Link to the post in Agorapulse application
-        networkLink:
-          type: string
-          description: Link to the post in the social network
-        publishDate:
-          type: string
-          format: date-time
-          description: Publish date of the post
-        groupUid:
-          type: string
-          description: Unique identifier for the group of posts if applicable
-        profile:
-          $ref: '#/components/schemas/Profile1'
-          description: The social network profile associated with the post
-        status:
-          $ref: '#/components/schemas/PostStatus1'
-          description: Status of the post
   securitySchemes:
     bearerAuth:
       type: apiKey

@@ -6,12 +6,12 @@ info:
 security:
 - bearerAuth: []
 tags:
-- name: Inbox items
+- name: Inbox Items
 paths:
   /v1.0/inbox/organizations/{organizationId}/workspaces/{workspaceId}/items:
     get:
       tags:
-      - Inbox items
+      - Inbox Items
       summary: Find items
       operationId: findItems
       parameters:
@@ -128,47 +128,6 @@ components:
           type: string
         network:
           $ref: '#/components/schemas/Network'
-    ItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
-    Order:
-      type: string
-      enum:
-      - ASC
-      - DESC
-    ItemCreator:
-      required:
-      - id
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    ItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
-    Network:
-      type: string
-      enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
     AbstractItem:
       type: object
       properties:
@@ -200,8 +159,6 @@ components:
             type: string
         sentiment:
           $ref: '#/components/schemas/ItemSentiment'
-    ItemDTO:
-      $ref: '#/components/schemas/AbstractItem'
     ItemFilterType:
       type: string
       description: 'Enum representing the possible item types that can be used for filtering items in the inbox. These values correspond to the item types available in the UI filter menu.
@@ -238,6 +195,49 @@ components:
       - 'Comments on Instagram Reels. Supported by: Instagram only'
       - 'Conversations from story mentions. Supported by: Instagram only Note: This is different from the ''storyMention'' source used in automated moderation rules. In the UI filters, this represents conversations grouped by story mentions.'
       x-type: String
+    Order:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
   securitySchemes:
     bearerAuth:
       type: apiKey

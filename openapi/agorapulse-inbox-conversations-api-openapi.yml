@@ -96,59 +96,6 @@ components:
           type: string
         network:
           $ref: '#/components/schemas/Network'
-    MessagesSearchResponse:
-      required:
-      - items
-      - offset
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/ItemDTO'
-        offset:
-          type: string
-    ItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
-    Order:
-      type: string
-      enum:
-      - ASC
-      - DESC
-    ItemCreator:
-      required:
-      - id
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    ItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
-    Network:
-      type: string
-      enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
     AbstractItem:
       type: object
       properties:
@@ -180,8 +127,61 @@ components:
             type: string
         sentiment:
           $ref: '#/components/schemas/ItemSentiment'
+    MessagesSearchResponse:
+      required:
+      - items
+      - offset
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemDTO'
+        offset:
+          type: string
+    Order:
+      type: string
+      enum:
+      - ASC
+      - DESC
     ItemDTO:
       $ref: '#/components/schemas/AbstractItem'
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
   securitySchemes:
     bearerAuth:
       type: apiKey
