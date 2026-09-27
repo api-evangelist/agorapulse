@@ -102,114 +102,38 @@ paths:
                 $ref: '#/components/schemas/OpenCompetitorReportInsight'
 components:
   schemas:
-    OpenDailyAudienceSummary:
+    OpenCompetitorReportInsight:
       type: object
       properties:
-        average:
+        competitors:
+          type: array
+          description: Aggregated metrics per competitor
+          items:
+            $ref: '#/components/schemas/OpenCompetitorInsight'
+        topContents:
+          type: array
+          description: Best performing posts published by the competitors
+          items:
+            $ref: '#/components/schemas/OpenCompetitorTopContent'
+        dailyAudienceSummary:
+          type: object
+          description: Daily follower count summary across all competitors, null when less than 10 competitors are tracked
+          allOf:
+          - $ref: '#/components/schemas/OpenDailyAudienceSummary'
+          - type: object
+        postsByDayByType:
           type: object
           additionalProperties:
-            type: integer
-            format: int64
-          description: Average follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
-        maximum:
-          type: object
-          additionalProperties:
-            type: integer
-            format: int64
-          description: Maximum follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
-        minimum:
-          type: object
-          additionalProperties:
-            type: integer
-            format: int64
-          description: Minimum follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
-        self:
-          type: object
-          additionalProperties:
-            type: integer
-            format: int64
-          description: Follower count of the profile itself per day, keyed by date in ISO format YYYY-MM-DD
-      description: Daily follower count summary across all competitors, only available when at least 10 competitors are tracked
-    OpenCompetitor:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier of the competitor
-          example: facebook_123456789
-        name:
-          type: string
-          description: Name of the competitor page or account
-          example: Acme Corp
-        username:
-          type: string
-          description: Username of the competitor account
-          example: acmecorp
-        service:
-          type: string
-          description: Social network of the competitor, either facebook or instagram
-          example: facebook
-        pictureUrl:
-          type: string
-          description: URL of the competitor profile picture
-        followerCount:
-          type: integer
-          description: Latest known follower count of the competitor
-          format: int64
-          example: 12000
-        selected:
+            type: object
+            additionalProperties:
+              type: integer
+              format: int64
+          description: Number of posts published by all competitors per day and post type, keyed by date in ISO format YYYY-MM-DD then by post type
+        maxOrganizationCompetitorReached:
           type: boolean
-          description: Whether the competitor is selected for the profile competitor report
-          example: true
-        lastSyncedDate:
-          type: string
-          description: Date of the last competitor data synchronization, competitor data is synchronized daily
-          format: date-time
-      description: A competitor tracked for a social profile
-    OpenCompetitorPublishing:
-      type: object
-      properties:
-        carouselPublishedCount:
-          type: integer
-          description: Number of carousel posts published
-          format: int64
-          example: 4
-        linkPublishedCount:
-          type: integer
-          description: Number of link posts published
-          format: int64
-          example: 2
-        photoPublishedCount:
-          type: integer
-          description: Number of photo posts published
-          format: int64
-          example: 10
-        reelPublishedCount:
-          type: integer
-          description: Number of reels published
-          format: int64
-          example: 6
-        textPublishedCount:
-          type: integer
-          description: Number of text posts published
-          format: int64
-          example: 1
-        videoPublishedCount:
-          type: integer
-          description: Number of video posts published
-          format: int64
-          example: 3
-        total:
-          type: integer
-          description: Total number of posts published over the period
-          format: int64
-          example: 26
-        variation:
-          type: number
-          description: Publishing variation in percent compared to the previous period
-          format: double
-          example: 20
-      description: Posts published by a competitor over the requested period
+          description: True when the organization exceeds its competitor plan limit, competitor metrics are not computed in that case
+          example: false
+      description: Aggregated competitor report for a social profile, data is synchronized daily
     OpenCompetitorInsight:
       type: object
       properties:
@@ -249,30 +173,6 @@ components:
           - $ref: '#/components/schemas/OpenCompetitorViews'
           - type: object
       description: Aggregated metrics of a single competitor over the requested period
-    OpenCompetitorViews:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: Total number of views received over the period
-          format: int64
-          example: 45000
-        variation:
-          type: number
-          description: Views variation in percent compared to the previous period
-          format: double
-          example: 5.4
-      description: Views received by a competitor's posts over the requested period
-    OpenCompetitorList:
-      required:
-      - data
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenCompetitor'
-      description: List of competitors tracked for a social profile
     OpenCompetitorAudience:
       type: object
       properties:
@@ -293,38 +193,6 @@ components:
             format: int64
           description: Follower count per day, keyed by date in ISO format YYYY-MM-DD, null when no data was collected for that day
       description: Audience metrics of a competitor over the requested period
-    OpenCompetitorReportInsight:
-      type: object
-      properties:
-        competitors:
-          type: array
-          description: Aggregated metrics per competitor
-          items:
-            $ref: '#/components/schemas/OpenCompetitorInsight'
-        topContents:
-          type: array
-          description: Best performing posts published by the competitors
-          items:
-            $ref: '#/components/schemas/OpenCompetitorTopContent'
-        dailyAudienceSummary:
-          type: object
-          description: Daily follower count summary across all competitors, null when less than 10 competitors are tracked
-          allOf:
-          - $ref: '#/components/schemas/OpenDailyAudienceSummary'
-          - type: object
-        postsByDayByType:
-          type: object
-          additionalProperties:
-            type: object
-            additionalProperties:
-              type: integer
-              format: int64
-          description: Number of posts published by all competitors per day and post type, keyed by date in ISO format YYYY-MM-DD then by post type
-        maxOrganizationCompetitorReached:
-          type: boolean
-          description: True when the organization exceeds its competitor plan limit, competitor metrics are not computed in that case
-          example: false
-      description: Aggregated competitor report for a social profile, data is synchronized daily
     OpenCompetitorTopContent:
       type: object
       properties:
@@ -448,6 +316,138 @@ components:
           format: double
           example: -10.2
       description: Engagement received by a competitor's posts over the requested period
+    OpenCompetitor:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier of the competitor
+          example: facebook_123456789
+        name:
+          type: string
+          description: Name of the competitor page or account
+          example: Acme Corp
+        username:
+          type: string
+          description: Username of the competitor account
+          example: acmecorp
+        service:
+          type: string
+          description: Social network of the competitor, either facebook or instagram
+          example: facebook
+        pictureUrl:
+          type: string
+          description: URL of the competitor profile picture
+        followerCount:
+          type: integer
+          description: Latest known follower count of the competitor
+          format: int64
+          example: 12000
+        selected:
+          type: boolean
+          description: Whether the competitor is selected for the profile competitor report
+          example: true
+        lastSyncedDate:
+          type: string
+          description: Date of the last competitor data synchronization, competitor data is synchronized daily
+          format: date-time
+      description: A competitor tracked for a social profile
+    OpenCompetitorList:
+      required:
+      - data
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenCompetitor'
+      description: List of competitors tracked for a social profile
+    OpenCompetitorViews:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of views received over the period
+          format: int64
+          example: 45000
+        variation:
+          type: number
+          description: Views variation in percent compared to the previous period
+          format: double
+          example: 5.4
+      description: Views received by a competitor's posts over the requested period
+    OpenCompetitorPublishing:
+      type: object
+      properties:
+        carouselPublishedCount:
+          type: integer
+          description: Number of carousel posts published
+          format: int64
+          example: 4
+        linkPublishedCount:
+          type: integer
+          description: Number of link posts published
+          format: int64
+          example: 2
+        photoPublishedCount:
+          type: integer
+          description: Number of photo posts published
+          format: int64
+          example: 10
+        reelPublishedCount:
+          type: integer
+          description: Number of reels published
+          format: int64
+          example: 6
+        textPublishedCount:
+          type: integer
+          description: Number of text posts published
+          format: int64
+          example: 1
+        videoPublishedCount:
+          type: integer
+          description: Number of video posts published
+          format: int64
+          example: 3
+        total:
+          type: integer
+          description: Total number of posts published over the period
+          format: int64
+          example: 26
+        variation:
+          type: number
+          description: Publishing variation in percent compared to the previous period
+          format: double
+          example: 20
+      description: Posts published by a competitor over the requested period
+    OpenDailyAudienceSummary:
+      type: object
+      properties:
+        average:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Average follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
+        maximum:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Maximum follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
+        minimum:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Minimum follower count across competitors per day, keyed by date in ISO format YYYY-MM-DD
+        self:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+          description: Follower count of the profile itself per day, keyed by date in ISO format YYYY-MM-DD
+      description: Daily follower count summary across all competitors, only available when at least 10 competitors are tracked
   securitySchemes:
     bearerAuth:
       type: apiKey

@@ -51,20 +51,6 @@ paths:
                 $ref: '#/components/schemas/ItemDTO'
 components:
   schemas:
-    Profile:
-      required:
-      - name
-      - network
-      - uid
-      type: object
-      properties:
-        uid:
-          minLength: 1
-          type: string
-        name:
-          type: string
-        network:
-          $ref: '#/components/schemas/Network'
     AbstractItem:
       type: object
       properties:
@@ -96,31 +82,26 @@ components:
             type: string
         sentiment:
           $ref: '#/components/schemas/ItemSentiment'
-    ItemDTO:
-      $ref: '#/components/schemas/AbstractItem'
-    ItemCreator:
-      required:
-      - id
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    ItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
     ItemSentiment:
       type: string
       enum:
       - POSITIVE
       - NEGATIVE
       - NEUTRAL
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
     Network:
       type: string
       enum:
@@ -134,6 +115,25 @@ components:
       - TIKTOK
       - TWITTER
       - YOUTUBE
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
     CreateReplyRequest:
       required:
       - itemId

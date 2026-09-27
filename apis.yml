@@ -33,7 +33,7 @@ modified: '2026-08-13'
 specificationVersion: '0.23'
 tags:
   - Social Media Management
-  - Social-Media
+  - Social Media
   - CRM
   - Analytics
   - Publishing
@@ -47,6 +47,7 @@ tags_raw:
   - Publishing
   - Inbox Management
   - Social Listening
+  - Social-Media
 apis:
 - aid: agorapulse:agorapulse-calendar-notes-api
   name: Agorapulse Calendar Notes API

@@ -44,6 +44,16 @@ paths:
                 $ref: '#/components/schemas/OrganizationListResponse'
 components:
   schemas:
+    OrganizationListResponse:
+      required:
+      - organizations
+      type: object
+      properties:
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationResponse'
+      description: List of organizations
     OrganizationResponse:
       required:
       - managerOrganizationRole
@@ -60,16 +70,6 @@ components:
           type: string
           deprecated: true
       description: Single organization
-    OrganizationListResponse:
-      required:
-      - organizations
-      type: object
-      properties:
-        organizations:
-          type: array
-          items:
-            $ref: '#/components/schemas/OrganizationResponse'
-      description: List of organizations
   securitySchemes:
     bearerAuth:
       type: apiKey

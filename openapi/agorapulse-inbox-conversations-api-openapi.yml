@@ -82,20 +82,6 @@ paths:
                 $ref: '#/components/schemas/MessagesSearchResponse'
 components:
   schemas:
-    Profile:
-      required:
-      - name
-      - network
-      - uid
-      type: object
-      properties:
-        uid:
-          minLength: 1
-          type: string
-        name:
-          type: string
-        network:
-          $ref: '#/components/schemas/Network'
     AbstractItem:
       type: object
       properties:
@@ -127,6 +113,12 @@ components:
             type: string
         sentiment:
           $ref: '#/components/schemas/ItemSentiment'
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
     MessagesSearchResponse:
       required:
       - items
@@ -139,36 +131,20 @@ components:
             $ref: '#/components/schemas/ItemDTO'
         offset:
           type: string
-    Order:
-      type: string
-      enum:
-      - ASC
-      - DESC
-    ItemDTO:
-      $ref: '#/components/schemas/AbstractItem'
-    ItemCreator:
+    Profile:
       required:
-      - id
       - name
+      - network
+      - uid
       type: object
       properties:
-        id:
+        uid:
+          minLength: 1
           type: string
         name:
           type: string
-    ItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
-    ItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
+        network:
+          $ref: '#/components/schemas/Network'
     Network:
       type: string
       enum:
@@ -182,6 +158,30 @@ components:
       - TIKTOK
       - TWITTER
       - YOUTUBE
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Order:
+      type: string
+      enum:
+      - ASC
+      - DESC
   securitySchemes:
     bearerAuth:
       type: apiKey

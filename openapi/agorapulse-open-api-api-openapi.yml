@@ -60,58 +60,6 @@ webhooks:
       x-summary-source: derived
 components:
   schemas:
-    User:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the user
-        name:
-          type: string
-          description: Name of the user
-        email:
-          type: string
-          format: email
-          description: Email address of the user
-    InboxItemAction:
-      type: string
-      enum:
-      - CREATED
-      - CLASSIFIED
-      - LABELIZED
-    PostStatus1:
-      type: string
-      enum:
-      - PUBLISHED
-      - FAILED
-    PublishingPost:
-      type: object
-      properties:
-        actor:
-          $ref: '#/components/schemas/User'
-          description: The user who performed the action
-        post:
-          $ref: '#/components/schemas/Post'
-          description: The post information
-    Profile1:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the profile
-        name:
-          type: string
-          description: Name of the profile
-        network:
-          $ref: '#/components/schemas/Network'
-          description: The social network of the profile
-    InboxItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
     Post:
       type: object
       properties:
@@ -137,23 +85,6 @@ components:
         status:
           $ref: '#/components/schemas/PostStatus1'
           description: Status of the post
-    PublishingPostEventType:
-      type: string
-      enum:
-      - PUBLISHING_POST
-    InboxItemCreator:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the user on social network
-        name:
-          type: string
-          description: Name of the user
-    InboxItemEventType:
-      type: string
-      enum:
-      - INBOX_ITEM
     InboxItemEvent:
       type: object
       properties:
@@ -177,12 +108,47 @@ components:
         payload:
           $ref: '#/components/schemas/InboxItem'
           description: The payload containing the inbox item information
-    InboxItemSentiment:
+    PublishingPost:
+      type: object
+      properties:
+        actor:
+          $ref: '#/components/schemas/User'
+          description: The user who performed the action
+        post:
+          $ref: '#/components/schemas/Post'
+          description: The post information
+    InboxItemAction:
       type: string
       enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
+      - CREATED
+      - CLASSIFIED
+      - LABELIZED
+    PublishingPostEventType:
+      type: string
+      enum:
+      - PUBLISHING_POST
+    InboxItemCreator:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user on social network
+        name:
+          type: string
+          description: Name of the user
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
     PublishingPostEvent:
       type: object
       properties:
@@ -206,11 +172,6 @@ components:
         payload:
           $ref: '#/components/schemas/PublishingPost'
           description: The payload containing the post information
-    PostAction:
-      type: string
-      enum:
-      - PUBLISHED
-      - FAILED
     InboxItem:
       type: object
       properties:
@@ -257,19 +218,58 @@ components:
         sentiment:
           $ref: '#/components/schemas/InboxItemSentiment'
           description: Sentiment of the inbox item
-    Network:
+    InboxItemEventType:
       type: string
       enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
+      - INBOX_ITEM
+    Profile1:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the profile
+        name:
+          type: string
+          description: Name of the profile
+        network:
+          $ref: '#/components/schemas/Network'
+          description: The social network of the profile
+    InboxItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    PostStatus1:
+      type: string
+      enum:
+      - PUBLISHED
+      - FAILED
+    InboxItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    PostAction:
+      type: string
+      enum:
+      - PUBLISHED
+      - FAILED
+    User:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the user
+        name:
+          type: string
+          description: Name of the user
+        email:
+          type: string
+          format: email
+          description: Email address of the user
   securitySchemes:
     bearerAuth:
       type: apiKey

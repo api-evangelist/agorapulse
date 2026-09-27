@@ -187,28 +187,40 @@ paths:
       description: Production
 components:
   schemas:
-    SearchCalendarNoteOpenRequest:
+    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem:
+      required:
+      - color
       type: object
       properties:
-        since:
+        uid:
           type: string
-          description: Filter notes after this timestamp
-          format: date-time
-          example: '2024-01-01T00:00:00.000Z'
-        until:
+          description: Unique identifier of the calendar note
+        title:
           type: string
-          description: Filter notes before this timestamp
-          format: date-time
-          example: '2024-12-31T23:59:59.000Z'
+          description: Note title
+          example: Team Meeting
+        body:
+          type: string
+          description: Note body content
+          example: Discuss quarterly goals and roadmap
+        color:
+          $ref: '#/components/schemas/PublishingCalendarNoteColor'
+        startDate:
+          type: string
+          description: Note start date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
+        endDate:
+          type: string
+          description: Note end date
+          format: date
+          example: '2024-01-15T00:00:00.000Z'
         profileUids:
           type: array
-          description: Filter by specific profile UIDs
-          example:
-          - profile_123
-          - profile_456
+          description: List of profile UIDs associated with the note
           items:
             type: string
-      description: Request to search calendar notes with filtering options
+      description: Calendar note information in search results
     CreateCalendarNoteOpenResponse:
       required:
       - color
@@ -243,19 +255,19 @@ components:
           items:
             type: string
       description: Response containing calendar note details
-    PublishingCalendarNoteColor:
-      type: string
-      enum:
-      - BLUE
-      - RED
-      - YELLOW
-      - GREEN
-      - PURPLE
-      - PINK
-      - ORANGE
-      - MINT
-      - CYAN
-      - GREY
+    SearchCalendarNoteOpenResponse:
+      required:
+      - query
+      type: object
+      properties:
+        notes:
+          type: array
+          description: List of calendar notes matching the search criteria
+          items:
+            $ref: '#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem'
+        query:
+          $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
+      description: Response containing search results for calendar notes
     CreateCalendarNoteOpenRequest:
       required:
       - color
@@ -294,22 +306,42 @@ components:
           items:
             type: string
       description: Request to create or update a calendar note
-    SearchCalendarNoteOpenResponse:
-      required:
-      - query
+    SearchCalendarNoteOpenRequest:
       type: object
       properties:
-        notes:
+        since:
+          type: string
+          description: Filter notes after this timestamp
+          format: date-time
+          example: '2024-01-01T00:00:00.000Z'
+        until:
+          type: string
+          description: Filter notes before this timestamp
+          format: date-time
+          example: '2024-12-31T23:59:59.000Z'
+        profileUids:
           type: array
-          description: List of calendar notes matching the search criteria
+          description: Filter by specific profile UIDs
+          example:
+          - profile_123
+          - profile_456
           items:
-            $ref: '#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem'
-        query:
-          $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
-      description: Response containing search results for calendar notes
-    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem:
-      required:
-      - color
+            type: string
+      description: Request to search calendar notes with filtering options
+    PublishingCalendarNoteColor:
+      type: string
+      enum:
+      - BLUE
+      - RED
+      - YELLOW
+      - GREEN
+      - PURPLE
+      - PINK
+      - ORANGE
+      - MINT
+      - CYAN
+      - GREY
+    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem_2:
       type: object
       properties:
         uid:
@@ -324,7 +356,11 @@ components:
           description: Note body content
           example: Discuss quarterly goals and roadmap
         color:
-          $ref: '#/components/schemas/PublishingCalendarNoteColor'
+          type: object
+          description: Note color for calendar display
+          allOf:
+          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
+          - type: object
         startDate:
           type: string
           description: Note start date
@@ -377,6 +413,21 @@ components:
           items:
             type: string
       description: Response containing calendar note details
+    SearchCalendarNoteOpenResponse_2:
+      type: object
+      properties:
+        notes:
+          type: array
+          description: List of calendar notes matching the search criteria
+          items:
+            $ref: '#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem_2'
+        query:
+          type: object
+          description: Query parameters used for the search
+          allOf:
+          - $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
+          - type: object
+      description: Response containing search results for calendar notes
     CreateCalendarNoteOpenRequest_2:
       required:
       - color
@@ -420,57 +471,6 @@ components:
           items:
             type: string
       description: Request to create or update a calendar note
-    SearchCalendarNoteOpenResponse_2:
-      type: object
-      properties:
-        notes:
-          type: array
-          description: List of calendar notes matching the search criteria
-          items:
-            $ref: '#/components/schemas/SearchCalendarNoteOpenResponse.CalendarNoteOpenItem_2'
-        query:
-          type: object
-          description: Query parameters used for the search
-          allOf:
-          - $ref: '#/components/schemas/SearchCalendarNoteOpenRequest'
-          - type: object
-      description: Response containing search results for calendar notes
-    SearchCalendarNoteOpenResponse.CalendarNoteOpenItem_2:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier of the calendar note
-        title:
-          type: string
-          description: Note title
-          example: Team Meeting
-        body:
-          type: string
-          description: Note body content
-          example: Discuss quarterly goals and roadmap
-        color:
-          type: object
-          description: Note color for calendar display
-          allOf:
-          - $ref: '#/components/schemas/PublishingCalendarNoteColor'
-          - type: object
-        startDate:
-          type: string
-          description: Note start date
-          format: date
-          example: '2024-01-15T00:00:00.000Z'
-        endDate:
-          type: string
-          description: Note end date
-          format: date
-          example: '2024-01-15T00:00:00.000Z'
-        profileUids:
-          type: array
-          description: List of profile UIDs associated with the note
-          items:
-            type: string
-      description: Calendar note information in search results
   securitySchemes:
     bearerAuth:
       type: apiKey

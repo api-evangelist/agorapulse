@@ -156,31 +156,285 @@ paths:
                 $ref: '#/components/schemas/ContentReportInsight_1'
 components:
   schemas:
-    CommunityManagementByDate:
+    LinkedinContentReportInsight:
       type: object
       properties:
-        date:
-          type: string
-          description: Date in ISO format YYYY-MM-DD
-          example: '2020-04-18T00:00:00.000Z'
-        sentRepliesCount:
+        clicksCount:
           type: integer
-          description: Number of replies sent
+          description: Number of clicks
+          format: int64
+          example: 573
+        organicClicksCount:
+          type: integer
+          description: Number of organic clicks
+          format: int64
+          example: 173
+        paidClicksCount:
+          type: integer
+          description: Number of paid clicks
+          format: int64
+          example: 400
+        commentsCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 23
+        organicCommentsCount:
+          type: integer
+          description: Number of organic comments
+          format: int64
+          example: 5
+        paidCommentsCount:
+          type: integer
+          description: Number of paid comments
+          format: int64
+          example: 18
+        organicEngagementCount:
+          type: integer
+          description: Number of organic engagement
+          format: int64
+          example: 220
+        paidEngagementCount:
+          type: integer
+          description: Number of paid engagement
+          format: int64
+          example: 557
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 68.8
+        organicEngagementRatePerImpression:
+          type: number
+          description: Ratio of organic engagement to impression as a percentage
+          format: double
+          example: 21.2
+        paidEngagementRatePerImpression:
+          type: number
+          description: Ratio of paid engagement to impression as a percentage
+          format: double
+          example: 47.6
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 65.2
+        organicEngagementRatePerReach:
+          type: number
+          description: Ratio of organic engagement to reach as a percentage
+          format: double
+          example: 17.5
+        paidEngagementRatePerReach:
+          type: number
+          description: Ratio of paid engagement to reach as a percentage
+          format: double
+          example: 47.7
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 756
+        organicImpressionsCount:
+          type: integer
+          description: Number of organic impressions
+          format: int64
+          example: 276
+        paidImpressionsCount:
+          type: integer
+          description: Number of paid impressions
+          format: int64
+          example: 480
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 215
+        organicLikesCount:
+          type: integer
+          description: Number of organic likes
+          format: int64
+          example: 69
+        paidLikesCount:
+          type: integer
+          description: Number of paid likes
+          format: int64
+          example: 146
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 1200
+        organicReachCount:
+          type: integer
+          description: Number of organic reach
+          format: int64
+          example: 350
+        paidReachCount:
+          type: integer
+          description: Number of paid reach
+          format: int64
+          example: 850
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 21
+        organicSharesCount:
+          type: integer
+          description: Number of organic shares
+          format: int64
+          example: 3
+        paidSharesCount:
+          type: integer
+          description: Number of paid shares
+          format: int64
+          example: 18
+        videoViewsCount:
+          type: integer
+          description: Number of video views
+          format: int64
+          example: 86
+        videoViewsTimeWatchedCount:
+          type: integer
+          description: The time the video was watched in milliseconds
+          format: int64
+          example: 86
+        videoViewersCount:
+          type: integer
+          description: Number of viewers who made engaged plays on the video
+          format: int64
+          example: 86
+        video3sViewsTimeWatchedCount:
+          type: integer
+          description: The time watched in milliseconds for video play-pause cycles that are at least 3 seconds
+          format: int64
+          example: 86
+        organicVideoViewsCount:
+          type: integer
+          description: Number of organic video views
+          format: int64
+          example: 14
+        paidVideoViewsCount:
+          type: integer
+          description: Number of paid video views
+          format: int64
+          example: 72
+      description: Linkedin Specific Content Report Insights
+      allOf:
+      - $ref: '#/components/schemas/ContentReportData'
+    YoutubeAudienceInsight:
+      type: object
+      properties:
+        addedToPlaylistCount:
+          type: integer
+          description: Number of times videos of the channel were added to a playlist
+          format: int64
+          example: 300
+        dislikesCount:
+          type: integer
+          description: Number of dislikes
+          format: int64
+          example: 30
+        estimatedWatchedTimeCount:
+          type: integer
+          description: Time people spent watching videos from your channel in minutes
+          format: int64
+          example: 10
+        likesCount:
+          type: integer
+          description: Number of likes
           format: int64
           example: 12
-        actions:
-          type: array
-          description: List of actions made by users
-          oneOf:
-          - $ref: '#/components/schemas/CommunityManagementAction'
-          - $ref: '#/components/schemas/FacebookCommunityManagementAction'
-          - $ref: '#/components/schemas/LinkedinCommunityManagementAction'
-          - $ref: '#/components/schemas/InstagramCommunityManagementAction'
-          - $ref: '#/components/schemas/TiktokCommunityManagementAction'
-          - $ref: '#/components/schemas/YoutubeCommunityManagementAction'
-          items:
-            $ref: '#/components/schemas/CommunityManagementAction'
-      description: Common properties for community management report
+        publishedVideoCount:
+          type: integer
+          description: Number of published videos
+          format: int64
+          example: 1
+        removedFromPlaylistCount:
+          type: integer
+          description: Number of times videos of the channel were removed from a playlist
+          format: int64
+          example: 3
+        subscribersCount:
+          type: integer
+          description: Number of total subscribers
+          format: int64
+          example: 199
+        subscribersLostCount:
+          type: integer
+          description: Number of subscribers lost
+          format: int64
+          example: 9
+        subscribersGainedCount:
+          type: integer
+          description: Number of subscribers gained
+          format: int64
+          example: 9
+        subscribersNetGrowth:
+          type: integer
+          description: Net subscriber growth (gained minus lost)
+          format: int64
+          example: 0
+        videoViewsCount:
+          type: integer
+          description: Number of times your videos has been viewed
+          format: int64
+          example: 90
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sentimentScore:
+          type: number
+          description: Ratio of positive items divided by the total of positive and negative items
+          format: double
+          example: 50
+      description: Youtube Specific Audience Insights
+      allOf:
+      - $ref: '#/components/schemas/AudienceReportByDate'
+    LinkedinCommunityManagementAction:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/CommunityManagementAction'
+      - type: object
+        properties:
+          removedCount:
+            type: integer
+            description: Number of items removed
+            format: int64
+            example: 5
+    FacebookCommunityManagementAction:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/CommunityManagementAction'
+      - type: object
+        properties:
+          removedCount:
+            type: integer
+            description: Number of items removed
+            format: int64
+            example: 5
     TwitterContentReportInsight:
       type: object
       properties:
@@ -222,6 +476,86 @@ components:
       description: Twitter Specific Content Report Insights
       allOf:
       - $ref: '#/components/schemas/ContentReportData'
+    CommunityManagementByDate:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date in ISO format YYYY-MM-DD
+          example: '2020-04-18T00:00:00.000Z'
+        sentRepliesCount:
+          type: integer
+          description: Number of replies sent
+          format: int64
+          example: 12
+        actions:
+          type: array
+          description: List of actions made by users
+          oneOf:
+          - $ref: '#/components/schemas/CommunityManagementAction'
+          - $ref: '#/components/schemas/FacebookCommunityManagementAction'
+          - $ref: '#/components/schemas/LinkedinCommunityManagementAction'
+          - $ref: '#/components/schemas/InstagramCommunityManagementAction'
+          - $ref: '#/components/schemas/TiktokCommunityManagementAction'
+          - $ref: '#/components/schemas/YoutubeCommunityManagementAction'
+          items:
+            $ref: '#/components/schemas/CommunityManagementAction'
+      description: Common properties for community management report
+    ContentReportData:
+      type: object
+      properties:
+        engagementCount:
+          type: integer
+          description: Number of engagement
+          format: int64
+          example: 577
+        id:
+          type: string
+          description: Post id on the native network
+          example: '12232123'
+        publishingDate:
+          type: string
+          description: Publishing date
+          format: date-time
+          example: null
+        postUrl:
+          type: string
+          description: Post url on the native network
+        tags:
+          type: array
+          description: Label applied to the post
+          example:
+          - test
+          - test2
+          items:
+            type: string
+        text:
+          type: string
+          description: Text of the published post
+          example: This is a post
+        username:
+          type: string
+          description: Name of the user who published the post
+          example: User123
+      description: Common properties for content report insight
+      oneOf:
+      - $ref: '#/components/schemas/FacebookContentReportInsight'
+      - $ref: '#/components/schemas/TwitterContentReportInsight'
+      - $ref: '#/components/schemas/LinkedinContentReportInsight'
+      - $ref: '#/components/schemas/InstagramContentReportInsight'
+      - $ref: '#/components/schemas/InstagramStoryContentReportInsight'
+      - $ref: '#/components/schemas/TikTokContentReportInsight'
+      - $ref: '#/components/schemas/YoutubeContentReportInsight'
+    CommunityManagementInsight:
+      required:
+      - data
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommunityManagementByDate'
+      description: List of community management insight
     InstagramContentReportInsight:
       type: object
       properties:
@@ -387,112 +721,130 @@ components:
       description: Instagram Specific Content Report Insights
       allOf:
       - $ref: '#/components/schemas/ContentReportData'
-    YoutubeContentReportInsight:
+    ThreadsAudienceInsight:
       type: object
       properties:
-        addedToPlaylistCount:
+        followersCount:
           type: integer
-          description: Number of times this video was added to a playlist
+          description: Number of total followers
           format: int64
-          example: 830
-        commentsCount:
+          example: 200
+        followersGainedCount:
           type: integer
-          description: Number of comments
+          description: Number of gained followers
           format: int64
-          example: 2
-        dislikeCount:
+          example: 21
+          deprecated: true
+        followersNetGrowth:
           type: integer
-          description: Number of dislikes
+          description: Net follower growth (gained minus lost)
           format: int64
-          example: 15
-        subscribersGainCount:
-          type: integer
-          description: Number of subscribers gained from the video
-          format: int64
-          example: 10
-        subscribersLostCount:
-          type: integer
-          description: Number of subscribers lost from the video
-          format: int64
-          example: 2
+          example: 21
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 24.2
         likesCount:
           type: integer
           description: Number of likes
           format: int64
-          example: 65
-        removedFromPlaylistCount:
+          example: 100
+        quotesCount:
           type: integer
-          description: Number of times this video was removed to a playlist
-          format: int64
-          example: 400
-        sharesCount:
-          type: integer
-          description: Number of shares
-          format: int64
-          example: 46
-        videoViewsCount:
-          type: integer
-          description: Number of video views
+          description: Number of quotes
           format: int64
           example: 23
-        videoViewsTimeWatchedRate:
-          type: number
-          description: Ratio of average viewing time to total video duration as a percentage
-          format: double
-          example: 75.8
-      description: Youtube Specific Content Report Insights
-      allOf:
-      - $ref: '#/components/schemas/ContentReportData'
-    InstagramStoryContentReportInsight:
-      type: object
-      properties:
-        reachCount:
+        repliesCount:
           type: integer
-          description: Number of reach
+          description: Number of replies
           format: int64
-          example: 283
-        engagementRatePerImpression:
-          type: number
-          description: Ratio of engagement to impression as a percentage
-          format: double
-          example: 46.7
-        engagementRatePerReach:
-          type: number
-          description: Ratio of engagement to reach as a percentage
-          format: double
-          example: 50
-        impressionsCount:
+          example: 6
+        repostsCount:
           type: integer
-          description: Number of impressions
-          format: int64
-          example: 342
-        swipeForwardCount:
-          type: integer
-          description: Number of swipes forward
+          description: Number of reposts
           format: int64
           example: 23
-        tapBackCount:
+        viewsCount:
           type: integer
-          description: Number of taps back
+          description: Number of views
+          format: int64
+          example: 245
+        publishedCarouselCount:
+          type: integer
+          description: Number of published carousels
+          format: int64
+          example: 3
+        publishedPhotoCount:
+          type: integer
+          description: Number of published photos
           format: int64
           example: 12
-        tapForwardCount:
+        publishedTextCount:
           type: integer
-          description: Number of taps forward
+          description: Number of published texts
           format: int64
-          example: 0
-        exitCount:
+          example: 12
+        publishedVideoCount:
           type: integer
-          description: Number of taps exit
+          description: Number of published videos
           format: int64
-          example: 0
-        type:
-          type: string
-          description: Type of post
-          example: story
-      description: Instagram Stories Specific Content Report Insights
+          example: 8
+        positiveItemsCount:
+          type: integer
+          description: Number of items with positive sentiment
+          format: int64
+          example: 24
+        neutralItemsCount:
+          type: integer
+          description: Number of items with neutral sentiment
+          format: int64
+          example: 2
+        negativeItemsCount:
+          type: integer
+          description: Number of items with negative sentiment
+          format: int64
+          example: 12
+        sentimentScore:
+          type: number
+          description: Ratio of positive items divided by the total of positive and negative items
+          format: double
+          example: 50
+      description: Threads Specific Audience Insights
       allOf:
-      - $ref: '#/components/schemas/ContentReportData'
+      - $ref: '#/components/schemas/AudienceReportByDate'
+    YoutubeCommunityManagementAction:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/CommunityManagementAction'
+      - type: object
+        properties:
+          removedCount:
+            type: integer
+            description: Number of items removed
+            format: int64
+            example: 5
+    AudienceReportByDate:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date in ISO format YYYY-MM-DD
+          example: '2020-04-18T00:00:00.000Z'
+        engagementCount:
+          type: integer
+          description: Number of engagement
+          format: int64
+          example: 99
+      description: Common properties for audience report insight
+      oneOf:
+      - $ref: '#/components/schemas/FacebookAudienceInsight'
+      - $ref: '#/components/schemas/TwitterAudienceInsight'
+      - $ref: '#/components/schemas/LinkedinAudienceInsight'
+      - $ref: '#/components/schemas/InstagramAudienceInsight'
+      - $ref: '#/components/schemas/TiktokAudienceInsight'
+      - $ref: '#/components/schemas/YoutubeAudienceInsight'
+      - $ref: '#/components/schemas/ThreadsAudienceInsight'
     LinkedinAudienceInsight:
       type: object
       properties:
@@ -697,6 +1049,62 @@ components:
       description: Linkedin Specific Audience Insights
       allOf:
       - $ref: '#/components/schemas/AudienceReportByDate'
+    TiktokAudienceInsight:
+      type: object
+      properties:
+        followersCount:
+          type: integer
+          description: Number of total followers
+          format: int64
+          example: 199
+        followersGainedCount:
+          type: integer
+          description: Number of followers gained (only available for Tiktok business)
+          format: int64
+          example: 9
+        followersLostCount:
+          type: integer
+          description: Number of followers lost (only available for Tiktok business)
+          format: int64
+          example: 2
+        followersNetGrowth:
+          type: integer
+          description: Net follower growth (gained minus lost)
+          format: int64
+          example: 7
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 24.2
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 90
+        likesCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 12
+        publishedVideoCount:
+          type: integer
+          description: Number of published videos
+          format: int64
+          example: 1
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+      description: Tiktok Specific Audience Insights
+      allOf:
+      - $ref: '#/components/schemas/AudienceReportByDate'
     InstagramCommunityManagementAction:
       type: object
       allOf:
@@ -708,240 +1116,63 @@ components:
             description: Number of items removed
             format: int64
             example: 5
-    LinkedinContentReportInsight:
+    YoutubeContentReportInsight:
       type: object
       properties:
-        clicksCount:
+        addedToPlaylistCount:
           type: integer
-          description: Number of clicks
+          description: Number of times this video was added to a playlist
           format: int64
-          example: 573
-        organicClicksCount:
-          type: integer
-          description: Number of organic clicks
-          format: int64
-          example: 173
-        paidClicksCount:
-          type: integer
-          description: Number of paid clicks
-          format: int64
-          example: 400
+          example: 830
         commentsCount:
           type: integer
           description: Number of comments
           format: int64
-          example: 23
-        organicCommentsCount:
+          example: 2
+        dislikeCount:
           type: integer
-          description: Number of organic comments
+          description: Number of dislikes
           format: int64
-          example: 5
-        paidCommentsCount:
+          example: 15
+        subscribersGainCount:
           type: integer
-          description: Number of paid comments
+          description: Number of subscribers gained from the video
           format: int64
-          example: 18
-        organicEngagementCount:
+          example: 10
+        subscribersLostCount:
           type: integer
-          description: Number of organic engagement
+          description: Number of subscribers lost from the video
           format: int64
-          example: 220
-        paidEngagementCount:
-          type: integer
-          description: Number of paid engagement
-          format: int64
-          example: 557
-        engagementRatePerImpression:
-          type: number
-          description: Ratio of engagement to impression as a percentage
-          format: double
-          example: 68.8
-        organicEngagementRatePerImpression:
-          type: number
-          description: Ratio of organic engagement to impression as a percentage
-          format: double
-          example: 21.2
-        paidEngagementRatePerImpression:
-          type: number
-          description: Ratio of paid engagement to impression as a percentage
-          format: double
-          example: 47.6
-        engagementRatePerReach:
-          type: number
-          description: Ratio of engagement to reach as a percentage
-          format: double
-          example: 65.2
-        organicEngagementRatePerReach:
-          type: number
-          description: Ratio of organic engagement to reach as a percentage
-          format: double
-          example: 17.5
-        paidEngagementRatePerReach:
-          type: number
-          description: Ratio of paid engagement to reach as a percentage
-          format: double
-          example: 47.7
-        impressionsCount:
-          type: integer
-          description: Number of impressions
-          format: int64
-          example: 756
-        organicImpressionsCount:
-          type: integer
-          description: Number of organic impressions
-          format: int64
-          example: 276
-        paidImpressionsCount:
-          type: integer
-          description: Number of paid impressions
-          format: int64
-          example: 480
+          example: 2
         likesCount:
           type: integer
           description: Number of likes
           format: int64
-          example: 215
-        organicLikesCount:
+          example: 65
+        removedFromPlaylistCount:
           type: integer
-          description: Number of organic likes
+          description: Number of times this video was removed to a playlist
           format: int64
-          example: 69
-        paidLikesCount:
-          type: integer
-          description: Number of paid likes
-          format: int64
-          example: 146
-        reachCount:
-          type: integer
-          description: Number of reach
-          format: int64
-          example: 1200
-        organicReachCount:
-          type: integer
-          description: Number of organic reach
-          format: int64
-          example: 350
-        paidReachCount:
-          type: integer
-          description: Number of paid reach
-          format: int64
-          example: 850
+          example: 400
         sharesCount:
           type: integer
           description: Number of shares
           format: int64
-          example: 21
-        organicSharesCount:
-          type: integer
-          description: Number of organic shares
-          format: int64
-          example: 3
-        paidSharesCount:
-          type: integer
-          description: Number of paid shares
-          format: int64
-          example: 18
+          example: 46
         videoViewsCount:
           type: integer
           description: Number of video views
           format: int64
-          example: 86
-        videoViewsTimeWatchedCount:
-          type: integer
-          description: The time the video was watched in milliseconds
-          format: int64
-          example: 86
-        videoViewersCount:
-          type: integer
-          description: Number of viewers who made engaged plays on the video
-          format: int64
-          example: 86
-        video3sViewsTimeWatchedCount:
-          type: integer
-          description: The time watched in milliseconds for video play-pause cycles that are at least 3 seconds
-          format: int64
-          example: 86
-        organicVideoViewsCount:
-          type: integer
-          description: Number of organic video views
-          format: int64
-          example: 14
-        paidVideoViewsCount:
-          type: integer
-          description: Number of paid video views
-          format: int64
-          example: 72
-      description: Linkedin Specific Content Report Insights
+          example: 23
+        videoViewsTimeWatchedRate:
+          type: number
+          description: Ratio of average viewing time to total video duration as a percentage
+          format: double
+          example: 75.8
+      description: Youtube Specific Content Report Insights
       allOf:
       - $ref: '#/components/schemas/ContentReportData'
-    CommunityManagementAction:
-      type: object
-      properties:
-        averageResponseTime:
-          type: integer
-          description: Average time to respond
-          format: int64
-          example: 15
-        repliesCount:
-          type: integer
-          description: Number of replies
-          format: int64
-          example: 2
-        reviewsCount:
-          type: integer
-          description: Number of reviews
-          format: int64
-          example: 10
-        username:
-          type: string
-          description: Name of the user who performed community management actions
-          example: User123
-    ContentReportData:
-      type: object
-      properties:
-        engagementCount:
-          type: integer
-          description: Number of engagement
-          format: int64
-          example: 577
-        id:
-          type: string
-          description: Post id on the native network
-          example: '12232123'
-        publishingDate:
-          type: string
-          description: Publishing date
-          format: date-time
-          example: null
-        postUrl:
-          type: string
-          description: Post url on the native network
-        tags:
-          type: array
-          description: Label applied to the post
-          example:
-          - test
-          - test2
-          items:
-            type: string
-        text:
-          type: string
-          description: Text of the published post
-          example: This is a post
-        username:
-          type: string
-          description: Name of the user who published the post
-          example: User123
-      description: Common properties for content report insight
-      oneOf:
-      - $ref: '#/components/schemas/FacebookContentReportInsight'
-      - $ref: '#/components/schemas/TwitterContentReportInsight'
-      - $ref: '#/components/schemas/LinkedinContentReportInsight'
-      - $ref: '#/components/schemas/InstagramContentReportInsight'
-      - $ref: '#/components/schemas/InstagramStoryContentReportInsight'
-      - $ref: '#/components/schemas/TikTokContentReportInsight'
-      - $ref: '#/components/schemas/YoutubeContentReportInsight'
-    ContentReportInsight_1:
+    OpenAudienceInsight:
       required:
       - data
       type: object
@@ -949,50 +1180,8 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/ContentReportData'
-      description: List of content report insight
-    AudienceReportByDate:
-      type: object
-      properties:
-        date:
-          type: string
-          description: Date in ISO format YYYY-MM-DD
-          example: '2020-04-18T00:00:00.000Z'
-        engagementCount:
-          type: integer
-          description: Number of engagement
-          format: int64
-          example: 99
-      description: Common properties for audience report insight
-      oneOf:
-      - $ref: '#/components/schemas/FacebookAudienceInsight'
-      - $ref: '#/components/schemas/TwitterAudienceInsight'
-      - $ref: '#/components/schemas/LinkedinAudienceInsight'
-      - $ref: '#/components/schemas/InstagramAudienceInsight'
-      - $ref: '#/components/schemas/TiktokAudienceInsight'
-      - $ref: '#/components/schemas/YoutubeAudienceInsight'
-      - $ref: '#/components/schemas/ThreadsAudienceInsight'
-    CommunityManagementInsight:
-      required:
-      - data
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CommunityManagementByDate'
-      description: List of community management insight
-    LinkedinCommunityManagementAction:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/CommunityManagementAction'
-      - type: object
-        properties:
-          removedCount:
-            type: integer
-            description: Number of items removed
-            format: int64
-            example: 5
+            $ref: '#/components/schemas/AudienceReportByDate'
+      description: List of social network audience insight
     TwitterAudienceInsight:
       type: object
       properties:
@@ -1096,228 +1285,6 @@ components:
       description: Twitter Specific Audience Insights
       allOf:
       - $ref: '#/components/schemas/AudienceReportByDate'
-    FacebookAudienceInsight:
-      type: object
-      properties:
-        angryCount:
-          type: integer
-          description: Number of angry (reaction)
-          format: int64
-          example: 120
-        organicEngagementCount:
-          type: integer
-          description: Number of organic engagement
-          format: int64
-          example: 23
-        paidEngagementCount:
-          type: integer
-          description: Number of paid engagement
-          format: int64
-          example: 76
-        engagementRatePerView:
-          type: number
-          description: Ratio of engagement to view as a percentage
-          format: double
-          example: 24.2
-        organicEngagementRatePerView:
-          type: number
-          description: Ratio of organic engagement to view as a percentage
-          format: double
-          example: 10.2
-        paidEngagementRatePerView:
-          type: number
-          description: Ratio of paid engagement to view as a percentage
-          format: double
-          example: 14
-        engagementRatePerReach:
-          type: number
-          description: Ratio of engagement to reach as a percentage
-          format: double
-          example: 26.6
-        organicEngagementRatePerReach:
-          type: number
-          description: Ratio of organic engagement to reach as a percentage
-          format: double
-          example: 14.4
-        paidEngagementRatePerReach:
-          type: number
-          description: Ratio of paid engagement to reach as a percentage
-          format: double
-          example: 20.4
-        followersGainedCount:
-          type: integer
-          description: Number of gained followers
-          format: int64
-          example: 25
-        followersLostCount:
-          type: integer
-          description: Number of lost followers
-          format: int64
-          example: 2
-        followersNetGrowth:
-          type: integer
-          description: Net follower growth (gained minus lost)
-          format: int64
-          example: 23
-        followersCount:
-          type: integer
-          description: Number of total followers
-          format: int64
-          example: 3765
-        viewsCount:
-          type: integer
-          description: Number of views
-          format: int64
-          example: 245
-        organicViewsCount:
-          type: integer
-          description: Number of organic views
-          format: int64
-          example: 45
-        paidViewsCount:
-          type: integer
-          description: Number of paid views
-          format: int64
-          example: 200
-        hahaCount:
-          type: integer
-          description: Number of haha (reaction)
-          format: int64
-          example: 830
-        loveCount:
-          type: integer
-          description: Number of love (reaction)
-          format: int64
-          example: 830
-        receivedMessagesCount:
-          type: integer
-          description: Number of received messages
-          format: int64
-          example: 3
-        publishedLinksCount:
-          type: integer
-          description: Number of published links
-          format: int64
-          example: 12
-        publishedPhotosCount:
-          type: integer
-          description: Number of published photos
-          format: int64
-          example: 23
-        publishedStatusCount:
-          type: integer
-          description: Number of published status
-          format: int64
-          example: 3
-        publishedVideoCount:
-          type: integer
-          description: Number of published videos
-          format: int64
-          example: 2
-        reactionsCount:
-          type: integer
-          description: Number of reactions
-          format: int64
-          example: 99
-        receivedCommentsCount:
-          type: integer
-          description: Number of received comments
-          format: int64
-          example: 6
-        organicReceivedCommentsCount:
-          type: integer
-          description: Number of organic received comments
-          format: int64
-          example: 2
-        paidReceivedCommentsCount:
-          type: integer
-          description: Number of paid received comments
-          format: int64
-          example: 4
-        sharesCount:
-          type: integer
-          description: Number of shares
-          format: int64
-          example: 23
-        organicSharesCount:
-          type: integer
-          description: Number of organic shares
-          format: int64
-          example: 3
-        paidSharesCount:
-          type: integer
-          description: Number of paid shares
-          format: int64
-          example: 20
-        videoViewsAutoplayCount:
-          type: integer
-          description: Number of video views generated by autoplayed videos
-          format: int64
-          example: 56
-        videoViewsClickCount:
-          type: integer
-          description: Number of video views generated by click-to-play
-          format: int64
-          example: 54
-        positiveItemsCount:
-          type: integer
-          description: Number of items with positive sentiment
-          format: int64
-          example: 24
-        neutralItemsCount:
-          type: integer
-          description: Number of items with neutral sentiment
-          format: int64
-          example: 2
-        negativeItemsCount:
-          type: integer
-          description: Number of items with negative sentiment
-          format: int64
-          example: 12
-        sadCount:
-          type: integer
-          description: Number of sad (reaction)
-          format: int64
-          example: 1200
-        sentimentScore:
-          type: number
-          description: Ratio of positive items divided by the total of positive and negative items
-          format: double
-          example: 50
-        videoViewsCount:
-          type: integer
-          description: Number of video views
-          format: int64
-          example: 152
-        organicVideoViewsCount:
-          type: integer
-          description: Number of organic video views
-          format: int64
-          example: 54
-        paidVideoViewsCount:
-          type: integer
-          description: Number of paid video views
-          format: int64
-          example: 98
-        wowCount:
-          type: integer
-          description: Number of wow (reaction)
-          format: int64
-          example: 1200
-      description: Facebook model for audience report insight
-      allOf:
-      - $ref: '#/components/schemas/AudienceReportByDate'
-    YoutubeCommunityManagementAction:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/CommunityManagementAction'
-      - type: object
-        properties:
-          removedCount:
-            type: integer
-            description: Number of items removed
-            format: int64
-            example: 5
     FacebookContentReportInsight:
       type: object
       properties:
@@ -1548,6 +1515,118 @@ components:
             description: Number of items removed
             format: int64
             example: 5
+    CommunityManagementAction:
+      type: object
+      properties:
+        averageResponseTime:
+          type: integer
+          description: Average time to respond
+          format: int64
+          example: 15
+        repliesCount:
+          type: integer
+          description: Number of replies
+          format: int64
+          example: 2
+        reviewsCount:
+          type: integer
+          description: Number of reviews
+          format: int64
+          example: 10
+        username:
+          type: string
+          description: Name of the user who performed community management actions
+          example: User123
+    TikTokContentReportInsight:
+      type: object
+      properties:
+        completionRate:
+          type: integer
+          description: Average viewing time relative to total video duration
+          format: int64
+          example: null
+        commentCount:
+          type: integer
+          description: Number of comments
+          format: int64
+          example: 583
+        engagementRatePerView:
+          type: number
+          description: Ratio of engagement to view as a percentage
+          format: double
+          example: 78.3
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 67.5
+        viewsCount:
+          type: integer
+          description: Number of views
+          format: int64
+          example: 928
+        likeCount:
+          type: integer
+          description: Number of likes
+          format: int64
+          example: 583
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 583
+        shareCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 583
+        videoCompletedCount:
+          type: integer
+          description: Number of times the video is watched fully
+          format: int64
+          example: 76
+        videoReplaysCount:
+          type: integer
+          description: Number of video replays
+          format: int64
+          example: 45
+        videoViewsTimeWatchedCount:
+          type: integer
+          description: Total viewing time in seconds
+          format: int64
+          example: 12
+        videoViewersRateByGender:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Video viewers rate by gender
+          example:
+            Female: 0.457
+            Male: 0.403
+            Other: 0.14
+        videoViewersRateByCountry:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Video viewers rate by country
+          example:
+            CA: 0.0132
+            GB: 0.7303
+            US: 0.2565
+        videoViewersRateByCity:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Video viewers rate by city
+          example:
+            US Cincinnati: 0.597
+            US Los Angeles: 0.403
+      description: TikTok Specific Content Report Insights
+      allOf:
+      - $ref: '#/components/schemas/ContentReportData'
     InstagramAudienceInsight:
       type: object
       properties:
@@ -1749,7 +1828,57 @@ components:
       description: Instagram Specific Audience Insights
       allOf:
       - $ref: '#/components/schemas/AudienceReportByDate'
-    OpenAudienceInsight:
+    InstagramStoryContentReportInsight:
+      type: object
+      properties:
+        reachCount:
+          type: integer
+          description: Number of reach
+          format: int64
+          example: 283
+        engagementRatePerImpression:
+          type: number
+          description: Ratio of engagement to impression as a percentage
+          format: double
+          example: 46.7
+        engagementRatePerReach:
+          type: number
+          description: Ratio of engagement to reach as a percentage
+          format: double
+          example: 50
+        impressionsCount:
+          type: integer
+          description: Number of impressions
+          format: int64
+          example: 342
+        swipeForwardCount:
+          type: integer
+          description: Number of swipes forward
+          format: int64
+          example: 23
+        tapBackCount:
+          type: integer
+          description: Number of taps back
+          format: int64
+          example: 12
+        tapForwardCount:
+          type: integer
+          description: Number of taps forward
+          format: int64
+          example: 0
+        exitCount:
+          type: integer
+          description: Number of taps exit
+          format: int64
+          example: 0
+        type:
+          type: string
+          description: Type of post
+          example: story
+      description: Instagram Stories Specific Content Report Insights
+      allOf:
+      - $ref: '#/components/schemas/ContentReportData'
+    ContentReportInsight_1:
       required:
       - data
       type: object
@@ -1757,325 +1886,171 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/AudienceReportByDate'
-      description: List of social network audience insight
-    TiktokAudienceInsight:
+            $ref: '#/components/schemas/ContentReportData'
+      description: List of content report insight
+    FacebookAudienceInsight:
       type: object
       properties:
-        followersCount:
+        angryCount:
           type: integer
-          description: Number of total followers
+          description: Number of angry (reaction)
           format: int64
-          example: 199
-        followersGainedCount:
+          example: 120
+        organicEngagementCount:
           type: integer
-          description: Number of followers gained (only available for Tiktok business)
+          description: Number of organic engagement
           format: int64
-          example: 9
-        followersLostCount:
+          example: 23
+        paidEngagementCount:
           type: integer
-          description: Number of followers lost (only available for Tiktok business)
+          description: Number of paid engagement
           format: int64
-          example: 2
-        followersNetGrowth:
-          type: integer
-          description: Net follower growth (gained minus lost)
-          format: int64
-          example: 7
+          example: 76
         engagementRatePerView:
           type: number
           description: Ratio of engagement to view as a percentage
           format: double
           example: 24.2
-        viewsCount:
-          type: integer
-          description: Number of views
-          format: int64
-          example: 90
-        likesCount:
-          type: integer
-          description: Number of likes
-          format: int64
-          example: 12
-        publishedVideoCount:
-          type: integer
-          description: Number of published videos
-          format: int64
-          example: 1
-        receivedCommentsCount:
-          type: integer
-          description: Number of received comments
-          format: int64
-          example: 6
-        sharesCount:
-          type: integer
-          description: Number of shares
-          format: int64
-          example: 23
-      description: Tiktok Specific Audience Insights
-      allOf:
-      - $ref: '#/components/schemas/AudienceReportByDate'
-    FacebookCommunityManagementAction:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/CommunityManagementAction'
-      - type: object
-        properties:
-          removedCount:
-            type: integer
-            description: Number of items removed
-            format: int64
-            example: 5
-    YoutubeAudienceInsight:
-      type: object
-      properties:
-        addedToPlaylistCount:
-          type: integer
-          description: Number of times videos of the channel were added to a playlist
-          format: int64
-          example: 300
-        dislikesCount:
-          type: integer
-          description: Number of dislikes
-          format: int64
-          example: 30
-        estimatedWatchedTimeCount:
-          type: integer
-          description: Time people spent watching videos from your channel in minutes
-          format: int64
-          example: 10
-        likesCount:
-          type: integer
-          description: Number of likes
-          format: int64
-          example: 12
-        publishedVideoCount:
-          type: integer
-          description: Number of published videos
-          format: int64
-          example: 1
-        removedFromPlaylistCount:
-          type: integer
-          description: Number of times videos of the channel were removed from a playlist
-          format: int64
-          example: 3
-        subscribersCount:
-          type: integer
-          description: Number of total subscribers
-          format: int64
-          example: 199
-        subscribersLostCount:
-          type: integer
-          description: Number of subscribers lost
-          format: int64
-          example: 9
-        subscribersGainedCount:
-          type: integer
-          description: Number of subscribers gained
-          format: int64
-          example: 9
-        subscribersNetGrowth:
-          type: integer
-          description: Net subscriber growth (gained minus lost)
-          format: int64
-          example: 0
-        videoViewsCount:
-          type: integer
-          description: Number of times your videos has been viewed
-          format: int64
-          example: 90
-        receivedCommentsCount:
-          type: integer
-          description: Number of received comments
-          format: int64
-          example: 6
-        sharesCount:
-          type: integer
-          description: Number of shares
-          format: int64
-          example: 23
-        positiveItemsCount:
-          type: integer
-          description: Number of items with positive sentiment
-          format: int64
-          example: 24
-        neutralItemsCount:
-          type: integer
-          description: Number of items with neutral sentiment
-          format: int64
-          example: 2
-        negativeItemsCount:
-          type: integer
-          description: Number of items with negative sentiment
-          format: int64
-          example: 12
-        sentimentScore:
+        organicEngagementRatePerView:
           type: number
-          description: Ratio of positive items divided by the total of positive and negative items
+          description: Ratio of organic engagement to view as a percentage
           format: double
-          example: 50
-      description: Youtube Specific Audience Insights
-      allOf:
-      - $ref: '#/components/schemas/AudienceReportByDate'
-    TikTokContentReportInsight:
-      type: object
-      properties:
-        completionRate:
-          type: integer
-          description: Average viewing time relative to total video duration
-          format: int64
-          example: null
-        commentCount:
-          type: integer
-          description: Number of comments
-          format: int64
-          example: 583
-        engagementRatePerView:
+          example: 10.2
+        paidEngagementRatePerView:
           type: number
-          description: Ratio of engagement to view as a percentage
+          description: Ratio of paid engagement to view as a percentage
           format: double
-          example: 78.3
+          example: 14
         engagementRatePerReach:
           type: number
           description: Ratio of engagement to reach as a percentage
           format: double
-          example: 67.5
-        viewsCount:
-          type: integer
-          description: Number of views
-          format: int64
-          example: 928
-        likeCount:
-          type: integer
-          description: Number of likes
-          format: int64
-          example: 583
-        reachCount:
-          type: integer
-          description: Number of reach
-          format: int64
-          example: 583
-        shareCount:
-          type: integer
-          description: Number of shares
-          format: int64
-          example: 583
-        videoCompletedCount:
-          type: integer
-          description: Number of times the video is watched fully
-          format: int64
-          example: 76
-        videoReplaysCount:
-          type: integer
-          description: Number of video replays
-          format: int64
-          example: 45
-        videoViewsTimeWatchedCount:
-          type: integer
-          description: Total viewing time in seconds
-          format: int64
-          example: 12
-        videoViewersRateByGender:
-          type: object
-          additionalProperties:
-            type: number
-            format: double
-          description: Video viewers rate by gender
-          example:
-            Female: 0.457
-            Male: 0.403
-            Other: 0.14
-        videoViewersRateByCountry:
-          type: object
-          additionalProperties:
-            type: number
-            format: double
-          description: Video viewers rate by country
-          example:
-            CA: 0.0132
-            GB: 0.7303
-            US: 0.2565
-        videoViewersRateByCity:
-          type: object
-          additionalProperties:
-            type: number
-            format: double
-          description: Video viewers rate by city
-          example:
-            US Cincinnati: 0.597
-            US Los Angeles: 0.403
-      description: TikTok Specific Content Report Insights
-      allOf:
-      - $ref: '#/components/schemas/ContentReportData'
-    ThreadsAudienceInsight:
-      type: object
-      properties:
-        followersCount:
-          type: integer
-          description: Number of total followers
-          format: int64
-          example: 200
+          example: 26.6
+        organicEngagementRatePerReach:
+          type: number
+          description: Ratio of organic engagement to reach as a percentage
+          format: double
+          example: 14.4
+        paidEngagementRatePerReach:
+          type: number
+          description: Ratio of paid engagement to reach as a percentage
+          format: double
+          example: 20.4
         followersGainedCount:
           type: integer
           description: Number of gained followers
           format: int64
-          example: 21
-          deprecated: true
+          example: 25
+        followersLostCount:
+          type: integer
+          description: Number of lost followers
+          format: int64
+          example: 2
         followersNetGrowth:
           type: integer
           description: Net follower growth (gained minus lost)
           format: int64
-          example: 21
-        engagementRatePerView:
-          type: number
-          description: Ratio of engagement to view as a percentage
-          format: double
-          example: 24.2
-        likesCount:
-          type: integer
-          description: Number of likes
-          format: int64
-          example: 100
-        quotesCount:
-          type: integer
-          description: Number of quotes
-          format: int64
           example: 23
-        repliesCount:
+        followersCount:
           type: integer
-          description: Number of replies
+          description: Number of total followers
           format: int64
-          example: 6
-        repostsCount:
-          type: integer
-          description: Number of reposts
-          format: int64
-          example: 23
+          example: 3765
         viewsCount:
           type: integer
           description: Number of views
           format: int64
           example: 245
-        publishedCarouselCount:
+        organicViewsCount:
           type: integer
-          description: Number of published carousels
+          description: Number of organic views
+          format: int64
+          example: 45
+        paidViewsCount:
+          type: integer
+          description: Number of paid views
+          format: int64
+          example: 200
+        hahaCount:
+          type: integer
+          description: Number of haha (reaction)
+          format: int64
+          example: 830
+        loveCount:
+          type: integer
+          description: Number of love (reaction)
+          format: int64
+          example: 830
+        receivedMessagesCount:
+          type: integer
+          description: Number of received messages
           format: int64
           example: 3
-        publishedPhotoCount:
+        publishedLinksCount:
+          type: integer
+          description: Number of published links
+          format: int64
+          example: 12
+        publishedPhotosCount:
           type: integer
           description: Number of published photos
           format: int64
-          example: 12
-        publishedTextCount:
+          example: 23
+        publishedStatusCount:
           type: integer
-          description: Number of published texts
+          description: Number of published status
           format: int64
-          example: 12
+          example: 3
         publishedVideoCount:
           type: integer
           description: Number of published videos
           format: int64
-          example: 8
+          example: 2
+        reactionsCount:
+          type: integer
+          description: Number of reactions
+          format: int64
+          example: 99
+        receivedCommentsCount:
+          type: integer
+          description: Number of received comments
+          format: int64
+          example: 6
+        organicReceivedCommentsCount:
+          type: integer
+          description: Number of organic received comments
+          format: int64
+          example: 2
+        paidReceivedCommentsCount:
+          type: integer
+          description: Number of paid received comments
+          format: int64
+          example: 4
+        sharesCount:
+          type: integer
+          description: Number of shares
+          format: int64
+          example: 23
+        organicSharesCount:
+          type: integer
+          description: Number of organic shares
+          format: int64
+          example: 3
+        paidSharesCount:
+          type: integer
+          description: Number of paid shares
+          format: int64
+          example: 20
+        videoViewsAutoplayCount:
+          type: integer
+          description: Number of video views generated by autoplayed videos
+          format: int64
+          example: 56
+        videoViewsClickCount:
+          type: integer
+          description: Number of video views generated by click-to-play
+          format: int64
+          example: 54
         positiveItemsCount:
           type: integer
           description: Number of items with positive sentiment
@@ -2091,12 +2066,37 @@ components:
           description: Number of items with negative sentiment
           format: int64
           example: 12
+        sadCount:
+          type: integer
+          description: Number of sad (reaction)
+          format: int64
+          example: 1200
         sentimentScore:
           type: number
           description: Ratio of positive items divided by the total of positive and negative items
           format: double
           example: 50
-      description: Threads Specific Audience Insights
+        videoViewsCount:
+          type: integer
+          description: Number of video views
+          format: int64
+          example: 152
+        organicVideoViewsCount:
+          type: integer
+          description: Number of organic video views
+          format: int64
+          example: 54
+        paidVideoViewsCount:
+          type: integer
+          description: Number of paid video views
+          format: int64
+          example: 98
+        wowCount:
+          type: integer
+          description: Number of wow (reaction)
+          format: int64
+          example: 1200
+      description: Facebook model for audience report insight
       allOf:
       - $ref: '#/components/schemas/AudienceReportByDate'
   securitySchemes:
