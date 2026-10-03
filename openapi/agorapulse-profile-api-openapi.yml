@@ -42,6 +42,20 @@ paths:
                 $ref: '#/components/schemas/ProfileListResponse'
 components:
   schemas:
+    SocialNetworkChannel:
+      type: string
+      enum:
+      - FACEBOOK_PAGE
+      - FACEBOOK_INSTAGRAM
+      - LINKEDIN_PERSONAL
+      - LINKEDIN_COMPANY
+      - TIKTOK
+      - TWITTER
+      - GOOGLE
+      - YOUTUBE
+      - PINTEREST
+      - THREADS
+      - BLUESKY
     ProfileListResponse:
       required:
       - profiles
@@ -71,20 +85,6 @@ components:
         workspaceId:
           type: integer
           format: int64
-    SocialNetworkChannel:
-      type: string
-      enum:
-      - FACEBOOK_PAGE
-      - FACEBOOK_INSTAGRAM
-      - LINKEDIN_PERSONAL
-      - LINKEDIN_COMPANY
-      - TIKTOK
-      - TWITTER
-      - GOOGLE
-      - YOUTUBE
-      - PINTEREST
-      - THREADS
-      - BLUESKY
   securitySchemes:
     bearerAuth:
       type: apiKey

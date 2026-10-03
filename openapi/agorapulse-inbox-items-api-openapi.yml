@@ -102,37 +102,61 @@ paths:
                 $ref: '#/components/schemas/ItemsSearchResponse'
 components:
   schemas:
-    AbstractItem:
+    ItemsSearchResponse:
+      required:
+      - items
+      - offset
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemDTO'
+        offset:
+          type: string
+    Order:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+    ItemCreator:
+      required:
+      - id
+      - name
       type: object
       properties:
         id:
           type: string
-        parentId:
+        name:
           type: string
-        workspaceId:
-          type: integer
-          format: int64
-        creationDate:
-          type: string
-          format: date-time
-        type:
-          $ref: '#/components/schemas/ItemType'
-        text:
-          type: string
-        agorapulseLink:
-          type: string
-        networkLink:
-          type: string
-        profile:
-          $ref: '#/components/schemas/Profile'
-        creator:
-          $ref: '#/components/schemas/ItemCreator'
-        labels:
-          type: array
-          items:
-            type: string
-        sentiment:
-          $ref: '#/components/schemas/ItemSentiment'
     ItemFilterType:
       type: string
       description: 'Enum representing the possible item types that can be used for filtering items in the inbox. These values correspond to the item types available in the UI filter menu.
@@ -169,12 +193,6 @@ components:
       - 'Comments on Instagram Reels. Supported by: Instagram only'
       - 'Conversations from story mentions. Supported by: Instagram only Note: This is different from the ''storyMention'' source used in automated moderation rules. In the UI filters, this represents conversations grouped by story mentions.'
       x-type: String
-    ItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
     Profile:
       required:
       - name
@@ -189,55 +207,37 @@ components:
           type: string
         network:
           $ref: '#/components/schemas/Network'
-    Network:
-      type: string
-      enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
-    ItemsSearchResponse:
-      required:
-      - items
-      - offset
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/ItemDTO'
-        offset:
-          type: string
-    ItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
-    ItemDTO:
-      $ref: '#/components/schemas/AbstractItem'
-    ItemCreator:
-      required:
-      - id
-      - name
+    AbstractItem:
       type: object
       properties:
         id:
           type: string
-        name:
+        parentId:
           type: string
-    Order:
-      type: string
-      enum:
-      - ASC
-      - DESC
+        workspaceId:
+          type: integer
+          format: int64
+        creationDate:
+          type: string
+          format: date-time
+        type:
+          $ref: '#/components/schemas/ItemType'
+        text:
+          type: string
+        agorapulseLink:
+          type: string
+        networkLink:
+          type: string
+        profile:
+          $ref: '#/components/schemas/Profile'
+        creator:
+          $ref: '#/components/schemas/ItemCreator'
+        labels:
+          type: array
+          items:
+            type: string
+        sentiment:
+          $ref: '#/components/schemas/ItemSentiment'
   securitySchemes:
     bearerAuth:
       type: apiKey

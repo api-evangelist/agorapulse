@@ -79,6 +79,70 @@ paths:
           description: Organization or workspace not found
 components:
   schemas:
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+    PostType:
+      type: string
+      enum:
+      - TEXT
+      - PHOTO
+      - VIDEO
+      - PHOTO_AND_VIDEO
+      - LINK
+      - PDF
+    CreateSimpleScheduleOpenRequest:
+      required:
+      - scheduling
+      - type
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text content of the post
+          example: This is my social media post
+        type:
+          type: object
+          description: Type of the post
+          allOf:
+          - $ref: '#/components/schemas/PostType'
+          - type: object
+        link:
+          type: string
+          description: Link URL to be included in the post
+          example: https://example.com
+        labels:
+          type: array
+          description: Set of labels/tags to categorize the post
+          example:
+          - marketing
+          - promotion
+          items:
+            type: string
+        mediaUrls:
+          type: array
+          description: List of media URLs (images, videos) to be included
+          example:
+          - https://example.com/image.jpg
+          items:
+            type: string
+        scheduling:
+          minItems: 1
+          type: array
+          description: Scheduling configuration for different profiles
+          items:
+            $ref: '#/components/schemas/CreateSimpleScheduleOpenRequest.ProfileScheduling'
+      description: Request to create a scheduled post
     GroupOfPostsSummary.SchedulingSummary:
       required:
       - publishingDate
@@ -93,6 +157,28 @@ components:
           format: date-time
         status:
           $ref: '#/components/schemas/PostStatus'
+    CreateSimpleScheduleOpenRequest.ProfileScheduling:
+      required:
+      - profileUid
+      - publishingDates
+      type: object
+      properties:
+        profileUid:
+          minLength: 1
+          type: string
+          description: Unique identifier of the profile
+          example: profile_123
+        publishingDates:
+          minItems: 1
+          type: array
+          description: List of publishing dates in ISO-8601 format
+          example:
+          - '2024-12-25T10:00:00.000Z'
+          - '2024-12-26T15:30:00.000Z'
+          items:
+            type: string
+            format: date-time
+      description: Scheduling configuration for a specific profile
     SimplePublishOpenRequest:
       required:
       - profileUids
@@ -152,19 +238,33 @@ components:
           type: string
         network:
           $ref: '#/components/schemas/Network'
-    Network:
+    PostStatus:
       type: string
       enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
+      - DRAFT
+      - PUBLISHED
+      - FAILED
+      - SCHEDULED
+    CreateSimpleScheduleOpenResponse:
+      required:
+      - groupOfPosts
+      type: object
+      properties:
+        groupOfPosts:
+          $ref: '#/components/schemas/GroupOfPostsSummary'
+      description: Response after creating a scheduled post
+    GroupOfPostsSummary.ProfileSchedulingSummary:
+      required:
+      - profile
+      - schedulingSummary
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+        schedulingSummary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
     GroupOfPostsSummary:
       required:
       - agorapulseLink
@@ -189,106 +289,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary'
-    PostStatus:
-      type: string
-      enum:
-      - DRAFT
-      - PUBLISHED
-      - FAILED
-      - SCHEDULED
-    CreateSimpleScheduleOpenRequest:
-      required:
-      - scheduling
-      - type
-      type: object
-      properties:
-        text:
-          type: string
-          description: Text content of the post
-          example: This is my social media post
-        type:
-          type: object
-          description: Type of the post
-          allOf:
-          - $ref: '#/components/schemas/PostType'
-          - type: object
-        link:
-          type: string
-          description: Link URL to be included in the post
-          example: https://example.com
-        labels:
-          type: array
-          description: Set of labels/tags to categorize the post
-          example:
-          - marketing
-          - promotion
-          items:
-            type: string
-        mediaUrls:
-          type: array
-          description: List of media URLs (images, videos) to be included
-          example:
-          - https://example.com/image.jpg
-          items:
-            type: string
-        scheduling:
-          minItems: 1
-          type: array
-          description: Scheduling configuration for different profiles
-          items:
-            $ref: '#/components/schemas/CreateSimpleScheduleOpenRequest.ProfileScheduling'
-      description: Request to create a scheduled post
-    CreateSimpleScheduleOpenRequest.ProfileScheduling:
-      required:
-      - profileUid
-      - publishingDates
-      type: object
-      properties:
-        profileUid:
-          minLength: 1
-          type: string
-          description: Unique identifier of the profile
-          example: profile_123
-        publishingDates:
-          minItems: 1
-          type: array
-          description: List of publishing dates in ISO-8601 format
-          example:
-          - '2024-12-25T10:00:00.000Z'
-          - '2024-12-26T15:30:00.000Z'
-          items:
-            type: string
-            format: date-time
-      description: Scheduling configuration for a specific profile
-    GroupOfPostsSummary.ProfileSchedulingSummary:
-      required:
-      - profile
-      - schedulingSummary
-      type: object
-      properties:
-        profile:
-          $ref: '#/components/schemas/Profile'
-        schedulingSummary:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
-    CreateSimpleScheduleOpenResponse:
-      required:
-      - groupOfPosts
-      type: object
-      properties:
-        groupOfPosts:
-          $ref: '#/components/schemas/GroupOfPostsSummary'
-      description: Response after creating a scheduled post
-    PostType:
-      type: string
-      enum:
-      - TEXT
-      - PHOTO
-      - VIDEO
-      - PHOTO_AND_VIDEO
-      - LINK
-      - PDF
   securitySchemes:
     bearerAuth:
       type: apiKey

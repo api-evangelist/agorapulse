@@ -45,34 +45,6 @@ paths:
           description: Organization or workspace not found
 components:
   schemas:
-    GroupOfPostsSummary.SchedulingSummary:
-      required:
-      - publishingDate
-      - status
-      - uid
-      type: object
-      properties:
-        uid:
-          type: string
-        publishingDate:
-          type: string
-          format: date-time
-        status:
-          $ref: '#/components/schemas/PostStatus'
-    Profile:
-      required:
-      - name
-      - network
-      - uid
-      type: object
-      properties:
-        uid:
-          minLength: 1
-          type: string
-        name:
-          type: string
-        network:
-          $ref: '#/components/schemas/Network'
     Network:
       type: string
       enum:
@@ -106,6 +78,29 @@ components:
             type: string
             format: date-time
       description: Scheduling configuration for a specific profile
+    PostType:
+      type: string
+      enum:
+      - TEXT
+      - PHOTO
+      - VIDEO
+      - PHOTO_AND_VIDEO
+      - LINK
+      - PDF
+    GroupOfPostsSummary.SchedulingSummary:
+      required:
+      - publishingDate
+      - status
+      - uid
+      type: object
+      properties:
+        uid:
+          type: string
+        publishingDate:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/PostStatus'
     GroupOfPostsSummary:
       required:
       - agorapulseLink
@@ -130,13 +125,20 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary'
-    PostStatus:
-      type: string
-      enum:
-      - DRAFT
-      - PUBLISHED
-      - FAILED
-      - SCHEDULED
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
     CreateSimpleDraftOpenRequest:
       required:
       - type
@@ -185,6 +187,13 @@ components:
         groupOfPosts:
           $ref: '#/components/schemas/GroupOfPostsSummary'
       description: Response after creating a simple draft
+    PostStatus:
+      type: string
+      enum:
+      - DRAFT
+      - PUBLISHED
+      - FAILED
+      - SCHEDULED
     GroupOfPostsSummary.ProfileSchedulingSummary:
       required:
       - profile
@@ -197,15 +206,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
-    PostType:
-      type: string
-      enum:
-      - TEXT
-      - PHOTO
-      - VIDEO
-      - PHOTO_AND_VIDEO
-      - LINK
-      - PDF
   securitySchemes:
     bearerAuth:
       type: apiKey

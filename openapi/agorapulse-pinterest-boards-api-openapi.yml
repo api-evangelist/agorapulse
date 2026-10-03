@@ -57,15 +57,6 @@ paths:
           description: The profile is not in the workspace, is not a Pinterest profile, or has no usable Pinterest token
 components:
   schemas:
-    PinterestBoardListOpenResponse:
-      type: object
-      properties:
-        boards:
-          type: array
-          description: Every public board of the profile. Pinterest rejects publishing to a secret board, so secret boards are omitted rather than returned and refused later.
-          items:
-            $ref: '#/components/schemas/PinterestBoardOpenItem'
-      description: Boards of a Pinterest profile
     PinterestBoardOpenItem:
       type: object
       properties:
@@ -82,6 +73,15 @@ components:
           description: Description of the board
           example: Inspiration for the summer campaign
       description: Pinterest board a profile can publish to
+    PinterestBoardListOpenResponse:
+      type: object
+      properties:
+        boards:
+          type: array
+          description: Every public board of the profile. Pinterest rejects publishing to a secret board, so secret boards are omitted rather than returned and refused later.
+          items:
+            $ref: '#/components/schemas/PinterestBoardOpenItem'
+      description: Boards of a Pinterest profile
   securitySchemes:
     bearerAuth:
       type: apiKey

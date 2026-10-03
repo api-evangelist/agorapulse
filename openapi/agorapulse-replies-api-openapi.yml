@@ -65,6 +65,58 @@ paths:
                 $ref: '#/components/schemas/ItemDTO'
 components:
   schemas:
+    ItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    ItemDTO:
+      $ref: '#/components/schemas/AbstractItem'
+    ItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+    ItemCreator:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
     AbstractItem:
       type: object
       properties:
@@ -96,58 +148,6 @@ components:
             type: string
         sentiment:
           $ref: '#/components/schemas/ItemSentiment'
-    ItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
-    Profile:
-      required:
-      - name
-      - network
-      - uid
-      type: object
-      properties:
-        uid:
-          minLength: 1
-          type: string
-        name:
-          type: string
-        network:
-          $ref: '#/components/schemas/Network'
-    Network:
-      type: string
-      enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
-    ItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
-    ItemDTO:
-      $ref: '#/components/schemas/AbstractItem'
-    ItemCreator:
-      required:
-      - id
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     CreateReplyRequest:
       required:
       - itemId

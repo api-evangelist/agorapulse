@@ -58,6 +58,15 @@ webhooks:
       x-summary-source: derived
 components:
   schemas:
+    InboxItemCreator:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user on social network
+        name:
+          type: string
+          description: Name of the user
     Post:
       type: object
       properties:
@@ -83,6 +92,37 @@ components:
         status:
           $ref: '#/components/schemas/PostStatus1'
           description: Status of the post
+    InboxItemSentiment:
+      type: string
+      enum:
+      - POSITIVE
+      - NEGATIVE
+      - NEUTRAL
+    InboxItemType:
+      type: string
+      enum:
+      - PRIVATE_MESSAGE
+      - CONVERSATION
+      - COMMENT
+      - POST
+    PostStatus1:
+      type: string
+      enum:
+      - PUBLISHED
+      - FAILED
+    PublishingPostEventType:
+      type: string
+      enum:
+      - PUBLISHING_POST
+    PublishingPost:
+      type: object
+      properties:
+        actor:
+          $ref: '#/components/schemas/User'
+          description: The user who performed the action
+        post:
+          $ref: '#/components/schemas/Post'
+          description: The post information
     InboxItemEvent:
       type: object
       properties:
@@ -106,34 +146,6 @@ components:
         payload:
           $ref: '#/components/schemas/InboxItem'
           description: The payload containing the inbox item information
-    PublishingPost:
-      type: object
-      properties:
-        actor:
-          $ref: '#/components/schemas/User'
-          description: The user who performed the action
-        post:
-          $ref: '#/components/schemas/Post'
-          description: The post information
-    InboxItemAction:
-      type: string
-      enum:
-      - CREATED
-      - CLASSIFIED
-      - LABELIZED
-    PublishingPostEventType:
-      type: string
-      enum:
-      - PUBLISHING_POST
-    InboxItemCreator:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the user on social network
-        name:
-          type: string
-          description: Name of the user
     Network:
       type: string
       enum:
@@ -147,29 +159,6 @@ components:
       - TIKTOK
       - TWITTER
       - YOUTUBE
-    PublishingPostEvent:
-      type: object
-      properties:
-        uid:
-          type: string
-          description: Unique identifier for the event
-        type:
-          $ref: '#/components/schemas/PublishingPostEventType'
-          description: The event type
-        action:
-          $ref: '#/components/schemas/PostAction'
-          description: The action
-        organizationId:
-          type: integer
-          format: int64
-          description: Unique identifier for the organization
-        timestamp:
-          type: string
-          format: date-time
-          description: Timestamp of the event
-        payload:
-          $ref: '#/components/schemas/PublishingPost'
-          description: The payload containing the post information
     InboxItem:
       type: object
       properties:
@@ -220,6 +209,11 @@ components:
       type: string
       enum:
       - INBOX_ITEM
+    PostAction:
+      type: string
+      enum:
+      - PUBLISHED
+      - FAILED
     Profile1:
       type: object
       properties:
@@ -232,29 +226,6 @@ components:
         network:
           $ref: '#/components/schemas/Network'
           description: The social network of the profile
-    InboxItemType:
-      type: string
-      enum:
-      - PRIVATE_MESSAGE
-      - CONVERSATION
-      - COMMENT
-      - POST
-    PostStatus1:
-      type: string
-      enum:
-      - PUBLISHED
-      - FAILED
-    InboxItemSentiment:
-      type: string
-      enum:
-      - POSITIVE
-      - NEGATIVE
-      - NEUTRAL
-    PostAction:
-      type: string
-      enum:
-      - PUBLISHED
-      - FAILED
     User:
       type: object
       properties:
@@ -268,6 +239,35 @@ components:
           type: string
           format: email
           description: Email address of the user
+    InboxItemAction:
+      type: string
+      enum:
+      - CREATED
+      - CLASSIFIED
+      - LABELIZED
+    PublishingPostEvent:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the event
+        type:
+          $ref: '#/components/schemas/PublishingPostEventType'
+          description: The event type
+        action:
+          $ref: '#/components/schemas/PostAction'
+          description: The action
+        organizationId:
+          type: integer
+          format: int64
+          description: Unique identifier for the organization
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the event
+        payload:
+          $ref: '#/components/schemas/PublishingPost'
+          description: The payload containing the post information
   securitySchemes:
     bearerAuth:
       type: apiKey
