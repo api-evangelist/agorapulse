@@ -45,19 +45,39 @@ paths:
           description: Organization or workspace not found
 components:
   schemas:
-    Network:
+    GroupOfPostsSummary.ProfileSchedulingSummary:
+      required:
+      - profile
+      - schedulingSummary
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+        schedulingSummary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
+    GroupOfPostsSummary.SchedulingSummary:
+      required:
+      - publishingDate
+      - status
+      - uid
+      type: object
+      properties:
+        uid:
+          type: string
+        publishingDate:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/PostStatus'
+    PostStatus:
       type: string
       enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
+      - DRAFT
+      - PUBLISHED
+      - FAILED
+      - SCHEDULED
     CreateSimpleDraftOpenRequest.ProfileScheduling:
       required:
       - profileUid
@@ -87,58 +107,19 @@ components:
       - PHOTO_AND_VIDEO
       - LINK
       - PDF
-    GroupOfPostsSummary.SchedulingSummary:
-      required:
-      - publishingDate
-      - status
-      - uid
-      type: object
-      properties:
-        uid:
-          type: string
-        publishingDate:
-          type: string
-          format: date-time
-        status:
-          $ref: '#/components/schemas/PostStatus'
-    GroupOfPostsSummary:
-      required:
-      - agorapulseLink
-      - labels
-      - profileScheduling
-      - type
-      - uid
-      type: object
-      properties:
-        uid:
-          minLength: 1
-          type: string
-        agorapulseLink:
-          type: string
-        type:
-          $ref: '#/components/schemas/PostType'
-        labels:
-          type: array
-          items:
-            type: string
-        profileScheduling:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary'
-    Profile:
-      required:
-      - name
-      - network
-      - uid
-      type: object
-      properties:
-        uid:
-          minLength: 1
-          type: string
-        name:
-          type: string
-        network:
-          $ref: '#/components/schemas/Network'
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
     CreateSimpleDraftOpenRequest:
       required:
       - type
@@ -179,6 +160,44 @@ components:
           items:
             $ref: '#/components/schemas/CreateSimpleDraftOpenRequest.ProfileScheduling'
       description: Request to create a simple draft
+    GroupOfPostsSummary:
+      required:
+      - agorapulseLink
+      - labels
+      - profileScheduling
+      - type
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        agorapulseLink:
+          type: string
+        type:
+          $ref: '#/components/schemas/PostType'
+        labels:
+          type: array
+          items:
+            type: string
+        profileScheduling:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary'
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
     CreateSimpleDraftOpenResponse:
       required:
       - groupOfPosts
@@ -187,25 +206,6 @@ components:
         groupOfPosts:
           $ref: '#/components/schemas/GroupOfPostsSummary'
       description: Response after creating a simple draft
-    PostStatus:
-      type: string
-      enum:
-      - DRAFT
-      - PUBLISHED
-      - FAILED
-      - SCHEDULED
-    GroupOfPostsSummary.ProfileSchedulingSummary:
-      required:
-      - profile
-      - schedulingSummary
-      type: object
-      properties:
-        profile:
-          $ref: '#/components/schemas/Profile'
-        schedulingSummary:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
   securitySchemes:
     bearerAuth:
       type: apiKey

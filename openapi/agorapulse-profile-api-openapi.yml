@@ -42,29 +42,6 @@ paths:
                 $ref: '#/components/schemas/ProfileListResponse'
 components:
   schemas:
-    SocialNetworkChannel:
-      type: string
-      enum:
-      - FACEBOOK_PAGE
-      - FACEBOOK_INSTAGRAM
-      - LINKEDIN_PERSONAL
-      - LINKEDIN_COMPANY
-      - TIKTOK
-      - TWITTER
-      - GOOGLE
-      - YOUTUBE
-      - PINTEREST
-      - THREADS
-      - BLUESKY
-    ProfileListResponse:
-      required:
-      - profiles
-      type: object
-      properties:
-        profiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProfileResponse_1'
     ProfileResponse_1:
       required:
       - profileName
@@ -85,6 +62,29 @@ components:
         workspaceId:
           type: integer
           format: int64
+    ProfileListResponse:
+      required:
+      - profiles
+      type: object
+      properties:
+        profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileResponse_1'
+    SocialNetworkChannel:
+      type: string
+      enum:
+      - FACEBOOK_PAGE
+      - FACEBOOK_INSTAGRAM
+      - LINKEDIN_PERSONAL
+      - LINKEDIN_COMPANY
+      - TIKTOK
+      - TWITTER
+      - GOOGLE
+      - YOUTUBE
+      - PINTEREST
+      - THREADS
+      - BLUESKY
   securitySchemes:
     bearerAuth:
       type: apiKey
