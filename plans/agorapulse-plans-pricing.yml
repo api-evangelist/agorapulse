@@ -88,3 +88,39 @@ notes:
   - Additional social profiles cost $15 per profile per month.
   - X (Twitter) Lite is included in all paid plans; X Plus is an additional add-on.
   - API key is unique to each individual user; permissions are based on the user's assigned access level.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  - subscription
+  units: []
+  plans:
+  - name: Standard
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Professional
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Advanced
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Custom
+    access: other
+    model: negotiated
+    model_how: derived
+    units:
+    - other
+    periods: []

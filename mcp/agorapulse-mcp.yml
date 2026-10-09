@@ -200,3 +200,16 @@ other_mcp_hosts:
     "lib-foundation-knowledge-base-mcp-server-configuration" and whose /health reports UP. It exposes
     /sse and /messages, but so does every other path — the auth filter answers 401 before routing, so
     no endpoint here can be verified and none is claimed. Recorded for completeness only.
+rfc9728:
+  endpoint: https://api.openmcp.agorapulse.com/mcp
+  metadata_url: https://api.openmcp.agorapulse.com/.well-known/oauth-protected-resource/mcp
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://api.openmcp.agorapulse.com/mcp
+    authorization_servers:
+    - https://api.identity.agorapulse.com
+    bearer_methods_supported:
+    - header
