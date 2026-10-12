@@ -1,0 +1,239 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/agorapulse/integrations
+checked:
+- https://composio.dev/toolkits/agorapulse
+- https://monid.ai/tools/agorapulse
+- https://n8n.io/integrations/agorapulse/
+- https://zapier.com/apps/agorapulse/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: agorapulse
+  url: https://zapier.com/apps/agorapulse/integrations
+  external_url: https://www.agorapulse.com/
+  partner_tier: BRONZE
+  triggers:
+  - key: inbox_item
+    label: New or Updated Inbox Item
+  - key: publishing_post
+    label: Published or Failed Publishing Post
+  actions:
+  - key: create_draft
+    label: Create Draft
+  - key: create_note
+    label: Create Note
+  searches: []
+edges:
+- partner_name: Notion
+  partner: notion
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/notion
+  direction: third-party
+  category: Task Management
+  partner_url: https://www.notion.so/
+- partner_name: Zendesk
+  partner: zendesk
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/zendesk
+  direction: third-party
+  category: Customer Support
+  partner_url: https://www.zendesk.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Anthropic (Claude)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/anthropic-claude
+  direction: third-party
+  category: AI Models
+  partner_url: https://www.anthropic.com/
+- partner_name: Microsoft SharePoint
+  partner: sharepoint
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/sharepoint
+  direction: third-party
+  category: Microsoft
+  partner_url: https://www.microsoft.com/en-ca/microsoft-365/sharepoint/collaboration
+- partner_name: Canva
+  partner: canva
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/canva
+  direction: third-party
+  category: Images & Design
+  partner_url: null
+- partner_name: Discord
+  partner: discord
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/discord
+  direction: third-party
+  category: Team Chat
+  partner_url: https://discordapp.com/
+- partner_name: Redtail CRM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/redtailcrm
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://redtailtechnology.com/
+- partner_name: Perplexity
+  partner: perplexity
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/perplexity
+  direction: third-party
+  category: AI Assistants
+  partner_url: https://www.perplexity.ai/
+- partner_name: OpenRouter
+  partner: openrouter
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/openrouter
+  direction: third-party
+  category: AI Models
+  partner_url: https://www.openrouter.ai/docs/community/zapier
+- partner_name: Zoho Analytics
+  partner: zoho-analytics
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/zoho-analytics
+  direction: third-party
+  category: Analytics
+  partner_url: https://go.zoho.com/EI5
+- partner_name: Hootsuite
+  partner: hootsuite
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/hootsuite
+  direction: third-party
+  category: Social Media Marketing
+  partner_url: http://hootsuite.com/
+- partner_name: Sendible
+  partner: sendible
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/sendible
+  direction: third-party
+  category: Social Media Marketing
+  partner_url: https://www.sendible.com/
+templates:
+- title: Create Agorapulse draft posts for new Trello card labels
+  url: https://zapier.com/apps/agorapulse/integrations/trello/255668203/create-agorapulse-draft-posts-for-new-trello-card-labels
+  apps:
+  - trello
+  - agorapulse
+- title: Create Agorapulse calendar notes from new or updated Google Calendar events
+  url: https://zapier.com/apps/agorapulse/integrations/google-calendar/255668159/create-agorapulse-calendar-notes-from-new-or-updated-google-calendar-events
+  apps:
+  - google-calendar
+  - filter
+  - agorapulse
+- title: Create new Agorapulse drafts from new files in a Google Drive folder
+  url: https://zapier.com/apps/agorapulse/integrations/google-drive/255680501/create-new-agorapulse-drafts-from-new-files-in-a-google-drive-folder
+  apps:
+  - google-drive
+  - agorapulse
+- title: Send newly-approved ClickUp tasks to Agorapulse as drafts
+  url: https://zapier.com/apps/agorapulse/integrations/clickup/255668168/send-newly-approved-clickup-tasks-to-agorapulse-as-drafts
+  apps:
+  - clickup
+  - agorapulse
+- title: Create Agorapulse draft posts from newly tagged Asana tasks
+  url: https://zapier.com/apps/agorapulse/integrations/asana/255668192/create-agorapulse-draft-posts-from-newly-tagged-asana-tasks
+  apps:
+  - asana
+  - agorapulse
+- title: Create Agorapulse draft posts from new Asana task section changes
+  url: https://zapier.com/apps/agorapulse/integrations/asana/255668193/create-agorapulse-draft-posts-from-new-asana-task-section-changes
+  apps:
+  - asana
+  - agorapulse
+- title: Update Google Sheets with new Agorapulse post outcomes
+  url: https://zapier.com/apps/agorapulse/integrations/google-sheets/255668194/update-google-sheets-with-new-agorapulse-post-outcomes
+  apps:
+  - agorapulse
+  - google-sheets
+- title: Draft social media posts in Agorapulse with AI by Zapier when new Trello cards are moved to a list
+  url: https://zapier.com/apps/agorapulse/integrations/trello/255668196/draft-social-media-posts-in-agorapulse-with-ai-by-zapier-when-new-trello-cards-are-moved-to-a-list
+  apps:
+  - trello
+  - ai
+  - agorapulse
+- title: Send Slack channel messages for new negative inbox messages in Agorapulse
+  url: https://zapier.com/apps/agorapulse/integrations/slack/255668427/send-slack-channel-messages-for-new-negative-inbox-messages-in-agorapulse
+  apps:
+  - agorapulse
+  - filter
+  - slack
+- title: Create Intercom conversations from new or updated Agorapulse items
+  url: https://zapier.com/apps/agorapulse/integrations/intercom/255668432/create-intercom-conversations-from-new-or-updated-agorapulse-items
+  apps:
+  - agorapulse
+  - filter
+  - intercom
+- title: Create Microsoft Dynamics 365 CRM leads from new labeled Agorapulse inbox messages
+  url: https://zapier.com/apps/agorapulse/integrations/microsoft-dynamics-crm/255668433/create-microsoft-dynamics-365-crm-leads-from-new-labeled-agorapulse-inbox-messages
+  apps:
+  - agorapulse
+  - filter
+  - microsoft-dynamics-crm
+- title: Turn new RSS feed items into Agorapulse draft posts
+  url: https://zapier.com/apps/agorapulse/integrations/rss/255672006/turn-new-rss-feed-items-into-agorapulse-draft-posts
+  apps:
+  - rss
+  - agorapulse
+template_total: 15
