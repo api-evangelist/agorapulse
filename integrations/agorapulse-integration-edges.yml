@@ -6,6 +6,8 @@ checked:
 - https://composio.dev/toolkits/agorapulse
 - https://monid.ai/tools/agorapulse
 - https://n8n.io/integrations/agorapulse/
+- https://registry.npmjs.org/-/v1/search?text=keywords:n8n-community-node-package
+- https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/agorapulse/integrations
 summary: null
 marketplace_apps:
@@ -170,6 +172,58 @@ edges:
   direction: third-party
   category: Social Media Marketing
   partner_url: https://www.sendible.com/
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/agorapulse/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Agorapulse
+    matched_domain: agorapulse.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: agorapulse
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
+- partner_name: n8n
+  partner: n8n
+  partner_match: aggregator
+  type: marketplace
+  marketplace: n8n-community
+  channel: open-source-node
+  relationship: ipaas-bridge
+  direction: provider-built
+  evidence: https://www.npmjs.com/package/@agorapulse/n8n-nodes-agorapulse
+  category: null
+  contract_reference:
+    register: n8n community nodes (npm keyword n8n-community-node-package)
+    spec_file: null
+    role: ipaas-connector:n8n-community
+    registered_name: '@agorapulse/n8n-nodes-agorapulse'
+    matched_domain: agorapulse.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    package: '@agorapulse/n8n-nodes-agorapulse'
+    version: 0.0.1
+    published: '2025-12-17T16:29:00.356Z'
+    matched_on: publisher-email
+    builder: provider (package published from the provider's own domain)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 templates:
 - title: Create Agorapulse draft posts for new Trello card labels
   url: https://zapier.com/apps/agorapulse/integrations/trello/255668203/create-agorapulse-draft-posts-for-new-trello-card-labels
