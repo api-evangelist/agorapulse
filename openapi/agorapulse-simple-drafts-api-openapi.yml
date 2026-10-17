@@ -45,6 +45,19 @@ paths:
           description: Organization or workspace not found
 components:
   schemas:
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
     GroupOfPostsSummary.ProfileSchedulingSummary:
       required:
       - profile
@@ -57,6 +70,23 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
+    CreateSimpleDraftOpenResponse:
+      required:
+      - groupOfPosts
+      type: object
+      properties:
+        groupOfPosts:
+          $ref: '#/components/schemas/GroupOfPostsSummary'
+      description: Response after creating a simple draft
+    PostType:
+      type: string
+      enum:
+      - TEXT
+      - PHOTO
+      - VIDEO
+      - PHOTO_AND_VIDEO
+      - LINK
+      - PDF
     GroupOfPostsSummary.SchedulingSummary:
       required:
       - publishingDate
@@ -71,55 +101,6 @@ components:
           format: date-time
         status:
           $ref: '#/components/schemas/PostStatus'
-    PostStatus:
-      type: string
-      enum:
-      - DRAFT
-      - PUBLISHED
-      - FAILED
-      - SCHEDULED
-    CreateSimpleDraftOpenRequest.ProfileScheduling:
-      required:
-      - profileUid
-      type: object
-      properties:
-        profileUid:
-          minLength: 1
-          type: string
-          description: Unique identifier of the profile
-          example: profile_123
-        publishingDates:
-          type: array
-          description: List of publishing dates in ISO-8601 format
-          example:
-          - '2024-12-25T10:00:00.000Z'
-          - '2024-12-26T15:30:00.000Z'
-          items:
-            type: string
-            format: date-time
-      description: Scheduling configuration for a specific profile
-    PostType:
-      type: string
-      enum:
-      - TEXT
-      - PHOTO
-      - VIDEO
-      - PHOTO_AND_VIDEO
-      - LINK
-      - PDF
-    Network:
-      type: string
-      enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
     CreateSimpleDraftOpenRequest:
       required:
       - type
@@ -160,6 +141,33 @@ components:
           items:
             $ref: '#/components/schemas/CreateSimpleDraftOpenRequest.ProfileScheduling'
       description: Request to create a simple draft
+    PostStatus:
+      type: string
+      enum:
+      - DRAFT
+      - PUBLISHED
+      - FAILED
+      - SCHEDULED
+    CreateSimpleDraftOpenRequest.ProfileScheduling:
+      required:
+      - profileUid
+      type: object
+      properties:
+        profileUid:
+          minLength: 1
+          type: string
+          description: Unique identifier of the profile
+          example: profile_123
+        publishingDates:
+          type: array
+          description: List of publishing dates in ISO-8601 format
+          example:
+          - '2024-12-25T10:00:00.000Z'
+          - '2024-12-26T15:30:00.000Z'
+          items:
+            type: string
+            format: date-time
+      description: Scheduling configuration for a specific profile
     GroupOfPostsSummary:
       required:
       - agorapulseLink
@@ -198,14 +206,6 @@ components:
           type: string
         network:
           $ref: '#/components/schemas/Network'
-    CreateSimpleDraftOpenResponse:
-      required:
-      - groupOfPosts
-      type: object
-      properties:
-        groupOfPosts:
-          $ref: '#/components/schemas/GroupOfPostsSummary'
-      description: Response after creating a simple draft
   securitySchemes:
     bearerAuth:
       type: apiKey

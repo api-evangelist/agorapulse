@@ -63,51 +63,22 @@ paths:
       deprecated: true
 components:
   schemas:
-    GroupOfPostsSummary.SchedulingSummary:
-      required:
-      - publishingDate
-      - status
-      - uid
-      type: object
-      properties:
-        uid:
-          type: string
-        publishingDate:
-          type: string
-          format: date-time
-        status:
-          $ref: '#/components/schemas/PostStatus'
-    YoutubePostLicense:
+    PostType:
       type: string
-      description: Licence the video is published under
       enum:
-      - STANDARD
-      - CREATIVE_COMMONS
-    PostMedia:
-      required:
-      - altText
-      - url
-      type: object
-      properties:
-        url:
-          type: string
-        altText:
-          type: string
-    LinkedinPollDuration:
+      - TEXT
+      - PHOTO
+      - VIDEO
+      - PHOTO_AND_VIDEO
+      - LINK
+      - PDF
+    PostStatus:
       type: string
-      description: How long the poll stays open for votes
       enum:
-      - ONE_DAY
-      - THREE_DAYS
-      - SEVEN_DAYS
-      - FOURTEEN_DAYS
-    FacebookPostFormat:
-      type: string
-      description: Publishing surface of a Facebook Page post. REEL requires a video post.
-      enum:
-      - FEED
-      - STORY
-      - REEL
+      - DRAFT
+      - PUBLISHED
+      - FAILED
+      - SCHEDULED
     GroupOfPostsSummary:
       required:
       - agorapulseLink
@@ -132,6 +103,79 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupOfPostsSummary.ProfileSchedulingSummary'
+    CreateSimpleDraftOpenRequest.ProfileScheduling:
+      required:
+      - profileUid
+      type: object
+      properties:
+        profileUid:
+          minLength: 1
+          type: string
+          description: Unique identifier of the profile
+          example: profile_123
+        publishingDates:
+          type: array
+          description: List of publishing dates in ISO-8601 format
+          example:
+          - '2024-12-25T10:00:00.000Z'
+          - '2024-12-26T15:30:00.000Z'
+          items:
+            type: string
+            format: date-time
+      description: Scheduling configuration for a specific profile
+    PinterestPostOptions:
+      type: object
+      properties:
+        boardId:
+          type: string
+          description: 'Board the pin is published to. Required: Pinterest cannot publish a pin without one.'
+          example: '1234567890123456789'
+        title:
+          type: string
+          description: Title of the pin, at most 100 characters.
+          example: Our summer collection
+        link:
+          type: string
+          description: Destination the pin links to, a well-formed http(s) URL. Distinct from the post link.
+          example: https://example.com/collection
+      description: Pinterest specific publishing options
+    LinkedinPollDuration:
+      type: string
+      description: How long the poll stays open for votes
+      enum:
+      - ONE_DAY
+      - THREE_DAYS
+      - SEVEN_DAYS
+      - FOURTEEN_DAYS
+    PostMedia:
+      required:
+      - altText
+      - url
+      type: object
+      properties:
+        url:
+          type: string
+        altText:
+          type: string
+    InstagramPostFormat:
+      type: string
+      description: Publishing surface of an Instagram Business post. REEL requires a video post.
+      enum:
+      - FEED
+      - STORY
+      - REEL
+    GroupOfPostsSummary.ProfileSchedulingSummary:
+      required:
+      - profile
+      - schedulingSummary
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+        schedulingSummary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
     Profile:
       required:
       - name
@@ -146,6 +190,27 @@ components:
           type: string
         network:
           $ref: '#/components/schemas/Network'
+    FacebookPostFormat:
+      type: string
+      description: Publishing surface of a Facebook Page post. REEL requires a video post.
+      enum:
+      - FEED
+      - STORY
+      - REEL
+    PostFirstComment:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text of the comment
+          example: More details in the link below!
+        media:
+          type: object
+          description: Single media attached to the comment. 'altText' is ignored for comment media.
+          allOf:
+          - $ref: '#/components/schemas/PostMedia'
+          - type: object
+      description: Comment posted right after the post is published
     Network:
       type: string
       enum:
@@ -159,35 +224,6 @@ components:
       - TIKTOK
       - TWITTER
       - YOUTUBE
-    CreateSimpleDraftOpenResponse:
-      required:
-      - groupOfPosts
-      type: object
-      properties:
-        groupOfPosts:
-          $ref: '#/components/schemas/GroupOfPostsSummary'
-      description: Response after creating a simple draft
-    GroupOfPostsSummary.ProfileSchedulingSummary:
-      required:
-      - profile
-      - schedulingSummary
-      type: object
-      properties:
-        profile:
-          $ref: '#/components/schemas/Profile'
-        schedulingSummary:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
-    PostType:
-      type: string
-      enum:
-      - TEXT
-      - PHOTO
-      - VIDEO
-      - PHOTO_AND_VIDEO
-      - LINK
-      - PDF
     FacebookPostOptions:
       type: object
       properties:
@@ -216,20 +252,6 @@ components:
           description: Title of the video, at most 200 characters. Ignored on a reel.
           example: Behind the scenes
       description: Facebook Page specific publishing options
-    PostFirstComment:
-      type: object
-      properties:
-        text:
-          type: string
-          description: Text of the comment
-          example: More details in the link below!
-        media:
-          type: object
-          description: Single media attached to the comment. 'altText' is ignored for comment media.
-          allOf:
-          - $ref: '#/components/schemas/PostMedia'
-          - type: object
-      description: Comment posted right after the post is published
     CreateSimpleDraftOpenRequest:
       required:
       - type
@@ -278,6 +300,163 @@ components:
           - $ref: '#/components/schemas/PostNetworks'
           - type: object
       description: Request to create a simple draft
+    LinkedinPostOptions:
+      type: object
+      properties:
+        firstComment:
+          type: object
+          description: First comment posted under the published post. Its 'media' is not supported on LinkedIn and is ignored.
+          allOf:
+          - $ref: '#/components/schemas/PostFirstComment'
+          - type: object
+        linkTitle:
+          type: string
+          description: Title of the link preview. Required on a LINK post.
+          example: How we ship our public API
+        linkDescription:
+          type: string
+          description: Description of the link preview, at most 4086 characters.
+          example: A short summary of the linked page.
+        poll:
+          type: object
+          description: Poll attached to the post. Supplying one replaces any poll already on the post.
+          allOf:
+          - $ref: '#/components/schemas/LinkedinPoll'
+          - type: object
+      description: LinkedIn specific publishing options, applied to company pages and personal accounts alike
+    InstagramPostOptions:
+      type: object
+      properties:
+        format:
+          type: object
+          description: 'Publishing surface: regular feed post (default), story, or reel. REEL also shares the reel on the feed.'
+          allOf:
+          - $ref: '#/components/schemas/InstagramPostFormat'
+          - type: object
+        firstComment:
+          type: object
+          description: First comment posted under the published post. Its 'media' is not supported on Instagram and is ignored.
+          allOf:
+          - $ref: '#/components/schemas/PostFirstComment'
+          - type: object
+      description: Instagram Business specific publishing options
+    TiktokPostPrivacy:
+      type: string
+      description: Audience of a TikTok post. The account's own settings may narrow what TikTok accepts.
+      enum:
+      - PUBLIC_TO_EVERYONE
+      - MUTUAL_FOLLOW_FRIENDS
+      - FOLLOWER_OF_CREATOR
+      - SELF_ONLY
+    CreateSimpleDraftOpenResponse:
+      required:
+      - groupOfPosts
+      type: object
+      properties:
+        groupOfPosts:
+          $ref: '#/components/schemas/GroupOfPostsSummary'
+      description: Response after creating a simple draft
+    LinkedinPoll:
+      type: object
+      properties:
+        question:
+          type: string
+          description: Question asked, at most 140 characters.
+          example: Which topic should we cover next?
+        options:
+          type: array
+          description: Between 2 and 4 answers, each at most 30 characters, all distinct.
+          example:
+          - Public API
+          - Webhooks
+          items:
+            type: string
+        duration:
+          type: object
+          description: Defaults to THREE_DAYS, as the composer does.
+          allOf:
+          - $ref: '#/components/schemas/LinkedinPollDuration'
+          - type: object
+      description: Poll attached to the LinkedIn post. A poll and media are mutually exclusive.
+    YoutubePostOptions:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Video title. Required by YouTube, at most 100 characters, and it cannot contain < or >.
+          example: How we ship our public API
+        privacy:
+          type: object
+          description: Visibility of the video. Defaults to PUBLIC when omitted, as the composer does.
+          allOf:
+          - $ref: '#/components/schemas/YoutubePostPrivacy'
+          - type: object
+        tags:
+          type: array
+          description: Video tags. They are comma-joined with every tag containing a space wrapped in quotes, and the result must stay under 500 characters.
+          example:
+          - public api
+          - openapi
+          items:
+            type: string
+        madeForKids:
+          type: boolean
+          description: Declare the video as made for kids.
+        notifySubscribers:
+          type: boolean
+          description: Notify the channel's subscribers of the upload.
+        embeddable:
+          type: boolean
+          description: Allow the video to be embedded on other sites.
+        license:
+          type: object
+          description: Licence the video is published under.
+          allOf:
+          - $ref: '#/components/schemas/YoutubePostLicense'
+          - type: object
+      description: YouTube channel specific publishing options
+    GroupOfPostsSummary.SchedulingSummary:
+      required:
+      - publishingDate
+      - status
+      - uid
+      type: object
+      properties:
+        uid:
+          type: string
+        publishingDate:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/PostStatus'
+    TiktokPostOptions:
+      type: object
+      properties:
+        privacy:
+          type: object
+          description: Who can see the post. Defaults to PUBLIC_TO_EVERYONE when omitted.
+          allOf:
+          - $ref: '#/components/schemas/TiktokPostPrivacy'
+          - type: object
+        commentEnabled:
+          type: boolean
+          description: Allow comments on the post. Omitting this disables them.
+        duetEnabled:
+          type: boolean
+          description: Allow other creators to duet the video. Omitting this disables duets.
+        stitchEnabled:
+          type: boolean
+          description: Allow other creators to stitch the video. Omitting this disables stitches.
+        autoAddMusicEnabled:
+          type: boolean
+          description: Let TikTok add a soundtrack to a photo post. Omitting this leaves it off.
+      description: TikTok specific publishing options
+    YoutubePostLicense:
+      type: string
+      description: Licence the video is published under
+      enum:
+      - STANDARD
+      - CREATIVE_COMMONS
     YoutubePostPrivacy:
       type: string
       description: Visibility of the published video on YouTube
@@ -325,185 +504,6 @@ components:
           - $ref: '#/components/schemas/TiktokPostOptions'
           - type: object
       description: Per-network publishing options, applied to every targeted profile of that network
-    LinkedinPostOptions:
-      type: object
-      properties:
-        firstComment:
-          type: object
-          description: First comment posted under the published post. Its 'media' is not supported on LinkedIn and is ignored.
-          allOf:
-          - $ref: '#/components/schemas/PostFirstComment'
-          - type: object
-        linkTitle:
-          type: string
-          description: Title of the link preview. Required on a LINK post.
-          example: How we ship our public API
-        linkDescription:
-          type: string
-          description: Description of the link preview, at most 4086 characters.
-          example: A short summary of the linked page.
-        poll:
-          type: object
-          description: Poll attached to the post. Supplying one replaces any poll already on the post.
-          allOf:
-          - $ref: '#/components/schemas/LinkedinPoll'
-          - type: object
-      description: LinkedIn specific publishing options, applied to company pages and personal accounts alike
-    LinkedinPoll:
-      type: object
-      properties:
-        question:
-          type: string
-          description: Question asked, at most 140 characters.
-          example: Which topic should we cover next?
-        options:
-          type: array
-          description: Between 2 and 4 answers, each at most 30 characters, all distinct.
-          example:
-          - Public API
-          - Webhooks
-          items:
-            type: string
-        duration:
-          type: object
-          description: Defaults to THREE_DAYS, as the composer does.
-          allOf:
-          - $ref: '#/components/schemas/LinkedinPollDuration'
-          - type: object
-      description: Poll attached to the LinkedIn post. A poll and media are mutually exclusive.
-    TiktokPostPrivacy:
-      type: string
-      description: Audience of a TikTok post. The account's own settings may narrow what TikTok accepts.
-      enum:
-      - PUBLIC_TO_EVERYONE
-      - MUTUAL_FOLLOW_FRIENDS
-      - FOLLOWER_OF_CREATOR
-      - SELF_ONLY
-    YoutubePostOptions:
-      type: object
-      properties:
-        title:
-          type: string
-          description: Video title. Required by YouTube, at most 100 characters, and it cannot contain < or >.
-          example: How we ship our public API
-        privacy:
-          type: object
-          description: Visibility of the video. Defaults to PUBLIC when omitted, as the composer does.
-          allOf:
-          - $ref: '#/components/schemas/YoutubePostPrivacy'
-          - type: object
-        tags:
-          type: array
-          description: Video tags. They are comma-joined with every tag containing a space wrapped in quotes, and the result must stay under 500 characters.
-          example:
-          - public api
-          - openapi
-          items:
-            type: string
-        madeForKids:
-          type: boolean
-          description: Declare the video as made for kids.
-        notifySubscribers:
-          type: boolean
-          description: Notify the channel's subscribers of the upload.
-        embeddable:
-          type: boolean
-          description: Allow the video to be embedded on other sites.
-        license:
-          type: object
-          description: Licence the video is published under.
-          allOf:
-          - $ref: '#/components/schemas/YoutubePostLicense'
-          - type: object
-      description: YouTube channel specific publishing options
-    PostStatus:
-      type: string
-      enum:
-      - DRAFT
-      - PUBLISHED
-      - FAILED
-      - SCHEDULED
-    PinterestPostOptions:
-      type: object
-      properties:
-        boardId:
-          type: string
-          description: 'Board the pin is published to. Required: Pinterest cannot publish a pin without one.'
-          example: '1234567890123456789'
-        title:
-          type: string
-          description: Title of the pin, at most 100 characters.
-          example: Our summer collection
-        link:
-          type: string
-          description: Destination the pin links to, a well-formed http(s) URL. Distinct from the post link.
-          example: https://example.com/collection
-      description: Pinterest specific publishing options
-    CreateSimpleDraftOpenRequest.ProfileScheduling:
-      required:
-      - profileUid
-      type: object
-      properties:
-        profileUid:
-          minLength: 1
-          type: string
-          description: Unique identifier of the profile
-          example: profile_123
-        publishingDates:
-          type: array
-          description: List of publishing dates in ISO-8601 format
-          example:
-          - '2024-12-25T10:00:00.000Z'
-          - '2024-12-26T15:30:00.000Z'
-          items:
-            type: string
-            format: date-time
-      description: Scheduling configuration for a specific profile
-    TiktokPostOptions:
-      type: object
-      properties:
-        privacy:
-          type: object
-          description: Who can see the post. Defaults to PUBLIC_TO_EVERYONE when omitted.
-          allOf:
-          - $ref: '#/components/schemas/TiktokPostPrivacy'
-          - type: object
-        commentEnabled:
-          type: boolean
-          description: Allow comments on the post. Omitting this disables them.
-        duetEnabled:
-          type: boolean
-          description: Allow other creators to duet the video. Omitting this disables duets.
-        stitchEnabled:
-          type: boolean
-          description: Allow other creators to stitch the video. Omitting this disables stitches.
-        autoAddMusicEnabled:
-          type: boolean
-          description: Let TikTok add a soundtrack to a photo post. Omitting this leaves it off.
-      description: TikTok specific publishing options
-    InstagramPostFormat:
-      type: string
-      description: Publishing surface of an Instagram Business post. REEL requires a video post.
-      enum:
-      - FEED
-      - STORY
-      - REEL
-    InstagramPostOptions:
-      type: object
-      properties:
-        format:
-          type: object
-          description: 'Publishing surface: regular feed post (default), story, or reel. REEL also shares the reel on the feed.'
-          allOf:
-          - $ref: '#/components/schemas/InstagramPostFormat'
-          - type: object
-        firstComment:
-          type: object
-          description: First comment posted under the published post. Its 'media' is not supported on Instagram and is ignored.
-          allOf:
-          - $ref: '#/components/schemas/PostFirstComment'
-          - type: object
-      description: Instagram Business specific publishing options
   securitySchemes:
     bearerAuth:
       type: apiKey

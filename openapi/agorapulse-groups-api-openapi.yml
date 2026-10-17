@@ -56,6 +56,16 @@ paths:
                 $ref: '#/components/schemas/MenuGroupListResponse'
 components:
   schemas:
+    MenuGroupListResponse:
+      required:
+      - menuGroups
+      type: object
+      properties:
+        menuGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/MenuGroupResponse'
+      description: List of workspace menu groups
     MenuGroupResponse:
       required:
       - groupId
@@ -73,16 +83,6 @@ components:
           items:
             type: string
       description: Single menu group with the profiles it contains
-    MenuGroupListResponse:
-      required:
-      - menuGroups
-      type: object
-      properties:
-        menuGroups:
-          type: array
-          items:
-            $ref: '#/components/schemas/MenuGroupResponse'
-      description: List of workspace menu groups
   securitySchemes:
     bearerAuth:
       type: apiKey

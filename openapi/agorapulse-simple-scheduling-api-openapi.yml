@@ -79,18 +79,6 @@ paths:
           description: Organization or workspace not found
 components:
   schemas:
-    GroupOfPostsSummary.ProfileSchedulingSummary:
-      required:
-      - profile
-      - schedulingSummary
-      type: object
-      properties:
-        profile:
-          $ref: '#/components/schemas/Profile'
-        schedulingSummary:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
     CreateSimpleScheduleOpenRequest.ProfileScheduling:
       required:
       - profileUid
@@ -113,6 +101,40 @@ components:
             type: string
             format: date-time
       description: Scheduling configuration for a specific profile
+    Network:
+      type: string
+      enum:
+      - BLUESKY
+      - FACEBOOK
+      - GOOGLE
+      - INSTAGRAM
+      - LINKEDIN
+      - PINTEREST
+      - THREADS
+      - TIKTOK
+      - TWITTER
+      - YOUTUBE
+    PostType:
+      type: string
+      enum:
+      - TEXT
+      - PHOTO
+      - VIDEO
+      - PHOTO_AND_VIDEO
+      - LINK
+      - PDF
+    GroupOfPostsSummary.ProfileSchedulingSummary:
+      required:
+      - profile
+      - schedulingSummary
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+        schedulingSummary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupOfPostsSummary.SchedulingSummary'
     GroupOfPostsSummary.SchedulingSummary:
       required:
       - publishingDate
@@ -179,28 +201,6 @@ components:
       - PUBLISHED
       - FAILED
       - SCHEDULED
-    Network:
-      type: string
-      enum:
-      - BLUESKY
-      - FACEBOOK
-      - GOOGLE
-      - INSTAGRAM
-      - LINKEDIN
-      - PINTEREST
-      - THREADS
-      - TIKTOK
-      - TWITTER
-      - YOUTUBE
-    PostType:
-      type: string
-      enum:
-      - TEXT
-      - PHOTO
-      - VIDEO
-      - PHOTO_AND_VIDEO
-      - LINK
-      - PDF
     CreateSimpleScheduleOpenResponse:
       required:
       - groupOfPosts
@@ -209,6 +209,20 @@ components:
         groupOfPosts:
           $ref: '#/components/schemas/GroupOfPostsSummary'
       description: Response after creating a scheduled post
+    Profile:
+      required:
+      - name
+      - network
+      - uid
+      type: object
+      properties:
+        uid:
+          minLength: 1
+          type: string
+        name:
+          type: string
+        network:
+          $ref: '#/components/schemas/Network'
     GroupOfPostsSummary:
       required:
       - agorapulseLink
@@ -275,20 +289,6 @@ components:
           items:
             $ref: '#/components/schemas/CreateSimpleScheduleOpenRequest.ProfileScheduling'
       description: Request to create a scheduled post
-    Profile:
-      required:
-      - name
-      - network
-      - uid
-      type: object
-      properties:
-        uid:
-          minLength: 1
-          type: string
-        name:
-          type: string
-        network:
-          $ref: '#/components/schemas/Network'
   securitySchemes:
     bearerAuth:
       type: apiKey
