@@ -211,3 +211,16 @@
     builder: provider (package published from the provider's own domain)
   status: not-a-workflow
   arazzo: null
+- slug: agorapulse-microsoft-teams-own
+  label: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_name: Microsoft Teams (own)
+  category: Microsoft Teams app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200009010
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

@@ -9,6 +9,7 @@ checked:
 - https://registry.npmjs.org/-/v1/search?text=keywords:n8n-community-node-package
 - https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/agorapulse/integrations
+- microsoft-teams/integrations/microsoft-teams-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -224,6 +225,25 @@ edges:
     builder: provider (package published from the provider's own domain)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200009010
+  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
+  apps:
+  - Agorapulse
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Microsoft Teams app
+  publisher_verified:
+  - Microsoft 365 Certified
 templates:
 - title: Create Agorapulse draft posts for new Trello card labels
   url: https://zapier.com/apps/agorapulse/integrations/trello/255668203/create-agorapulse-draft-posts-for-new-trello-card-labels
