@@ -1,4 +1,4 @@
-generated: '2026-10-12'
+generated: '2026-10-20'
 method: searched
 source:
 - https://zapier.com/apps/agorapulse/integrations
@@ -17,6 +17,7 @@ checked:
 - https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/agorapulse/integrations
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
+- n8n/integrations/n8n-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -37,149 +38,6 @@ marketplace_apps:
     label: Create Note
   searches: []
 edges:
-- partner_name: Notion
-  partner: notion
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/notion
-  direction: third-party
-  category: Task Management
-  partner_url: https://www.notion.so/
-- partner_name: Zendesk
-  partner: zendesk
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/zendesk
-  direction: third-party
-  category: Customer Support
-  partner_url: https://www.zendesk.com/
-- partner_name: Google Sheets
-  partner: google-sheets
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/google-sheets
-  direction: third-party
-  category: Google
-  partner_url: http://sheets.google.com/
-- partner_name: Anthropic (Claude)
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/anthropic-claude
-  direction: third-party
-  category: AI Models
-  partner_url: https://www.anthropic.com/
-- partner_name: Microsoft SharePoint
-  partner: sharepoint
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/sharepoint
-  direction: third-party
-  category: Microsoft
-  partner_url: https://www.microsoft.com/en-ca/microsoft-365/sharepoint/collaboration
-- partner_name: Canva
-  partner: canva
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/canva
-  direction: third-party
-  category: Images & Design
-  partner_url: null
-- partner_name: Discord
-  partner: discord
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/discord
-  direction: third-party
-  category: Team Chat
-  partner_url: https://discordapp.com/
-- partner_name: Redtail CRM
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/redtailcrm
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: http://redtailtechnology.com/
-- partner_name: Perplexity
-  partner: perplexity
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/perplexity
-  direction: third-party
-  category: AI Assistants
-  partner_url: https://www.perplexity.ai/
-- partner_name: OpenRouter
-  partner: openrouter
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/openrouter
-  direction: third-party
-  category: AI Models
-  partner_url: https://www.openrouter.ai/docs/community/zapier
-- partner_name: Zoho Analytics
-  partner: zoho-analytics
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/zoho-analytics
-  direction: third-party
-  category: Analytics
-  partner_url: https://go.zoho.com/EI5
-- partner_name: Hootsuite
-  partner: hootsuite
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/hootsuite
-  direction: third-party
-  category: Social Media Marketing
-  partner_url: http://hootsuite.com/
-- partner_name: Sendible
-  partner: sendible
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/sendible
-  direction: third-party
-  category: Social Media Marketing
-  partner_url: https://www.sendible.com/
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -232,25 +90,6 @@ edges:
     builder: provider (package published from the provider's own domain)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
-- partner_name: Microsoft Teams (own)
-  partner: microsoft-teams
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://appsource.microsoft.com/en-us/product/office/WA200009010
-  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
-  apps:
-  - Agorapulse
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Microsoft Teams app
-  publisher_verified:
-  - Microsoft 365 Certified
 - partner_name: npm registry
   partner: npm
   partner_match: register
@@ -281,6 +120,196 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200009010
+  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
+  apps:
+  - Agorapulse
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Microsoft Teams app
+  publisher_verified:
+  - Microsoft 365 Certified
+- partner_name: n8n (n8n-community)
+  partner: n8n
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: n8n-community
+  evidence: https://www.npmjs.com/package/@agorapulse/n8n-nodes-agorapulse
+  mirror_of: n8n/integrations/n8n-integration-edges.yml
+  apps: []
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+- partner_name: Notion
+  partner: notion
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/notion
+  direction: third-party
+  category: Task Management
+  partner_url: https://www.notion.so/
+- partner_name: Zendesk
+  partner: zendesk
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/zendesk
+  direction: third-party
+  category: Customer Support
+  partner_url: https://www.zendesk.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Anthropic (Claude)
+  partner: anthropic
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/anthropic-claude
+  direction: third-party
+  category: AI Models
+  partner_url: https://www.anthropic.com/
+- partner_name: Microsoft SharePoint
+  partner: sharepoint
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/sharepoint
+  direction: third-party
+  category: Microsoft
+  partner_url: https://www.microsoft.com/en-ca/microsoft-365/sharepoint/collaboration
+- partner_name: Canva
+  partner: canva
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/canva
+  direction: third-party
+  category: Images & Design
+  partner_url: null
+- partner_name: Discord
+  partner: discord
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/discord
+  direction: third-party
+  category: Team Chat
+  partner_url: https://discordapp.com/
+- partner_name: Redtail CRM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/redtailcrm
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://redtailtechnology.com/
+- partner_name: Perplexity
+  partner: perplexity
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/perplexity
+  direction: third-party
+  category: AI Assistants
+  partner_url: https://www.perplexity.ai/
+- partner_name: OpenRouter
+  partner: openrouter
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/openrouter
+  direction: third-party
+  category: AI Models
+  partner_url: https://www.openrouter.ai/docs/community/zapier
+- partner_name: Zoho Analytics
+  partner: zoho-analytics
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/zoho-analytics
+  direction: third-party
+  category: Analytics
+  partner_url: https://go.zoho.com/EI5
+- partner_name: Hootsuite
+  partner: hootsuite
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/hootsuite
+  direction: third-party
+  category: Social Media Marketing
+  partner_url: http://hootsuite.com/
+- partner_name: Sendible
+  partner: sendible
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/agorapulse/integrations/sendible
+  direction: third-party
+  category: Social Media Marketing
+  partner_url: https://www.sendible.com/
 templates:
 - title: Create Agorapulse draft posts for new Trello card labels
   url: https://zapier.com/apps/agorapulse/integrations/trello/255668203/create-agorapulse-draft-posts-for-new-trello-card-labels

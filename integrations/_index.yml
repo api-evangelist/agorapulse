@@ -15,149 +15,8 @@
   evidence: https://zapier.com/apps/agorapulse/integrations/google-sheets/255668194/update-google-sheets-with-new-agorapulse-post-outcomes
   template: https://zapier.com/apps/agorapulse/integrations/google-sheets/255668194/update-google-sheets-with-new-agorapulse-post-outcomes
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
-  arazzo: null
-- slug: agorapulse-notion
-  label: Notion
-  partner: notion
-  partner_name: Notion
-  category: Task Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/notion
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-zendesk
-  label: Zendesk
-  partner: zendesk
-  partner_name: Zendesk
-  category: Customer Support
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/zendesk
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-anthropic-claude
-  label: Anthropic (Claude)
-  partner_name: Anthropic (Claude)
-  category: AI Models
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/anthropic-claude
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: agorapulse-microsoft-sharepoint
-  label: Microsoft SharePoint
-  partner: sharepoint
-  partner_name: Microsoft SharePoint
-  category: Microsoft
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/sharepoint
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-canva
-  label: Canva
-  partner: canva
-  partner_name: Canva
-  category: Images & Design
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/canva
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-discord
-  label: Discord
-  partner: discord
-  partner_name: Discord
-  category: Team Chat
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/discord
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-redtail-crm
-  label: Redtail CRM
-  partner_name: Redtail CRM
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/redtailcrm
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: agorapulse-perplexity
-  label: Perplexity
-  partner: perplexity
-  partner_name: Perplexity
-  category: AI Assistants
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/perplexity
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-openrouter
-  label: OpenRouter
-  partner: openrouter
-  partner_name: OpenRouter
-  category: AI Models
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/openrouter
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-zoho-analytics
-  label: Zoho Analytics
-  partner: zoho-analytics
-  partner_name: Zoho Analytics
-  category: Analytics
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/zoho-analytics
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-hootsuite
-  label: Hootsuite
-  partner: hootsuite
-  partner_name: Hootsuite
-  category: Social Media Marketing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/hootsuite
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: agorapulse-sendible
-  label: Sendible
-  partner: sendible
-  partner_name: Sendible
-  category: Social Media Marketing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/agorapulse/integrations/sendible
-  source: edge
-  status: pending-partner-spec
   arazzo: null
 - slug: agorapulse-zapier
   label: Zapier
@@ -211,19 +70,6 @@
     builder: provider (package published from the provider's own domain)
   status: not-a-workflow
   arazzo: null
-- slug: agorapulse-microsoft-teams-own
-  label: Microsoft Teams (own)
-  partner: microsoft-teams
-  partner_name: Microsoft Teams (own)
-  category: Microsoft Teams app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://appsource.microsoft.com/en-us/product/office/WA200009010
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: agorapulse-npm-registry
   label: npm registry
   partner: npm
@@ -254,4 +100,184 @@
     detected_by: sweep-official-sdks.py
     detected: '2026-10-18'
   status: not-a-workflow
+  arazzo: null
+- slug: agorapulse-microsoft-teams-own
+  label: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_name: Microsoft Teams (own)
+  category: Microsoft Teams app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200009010
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: agorapulse-n8n-n8n-community
+  label: n8n (n8n-community)
+  partner: n8n
+  partner_name: n8n (n8n-community)
+  type: marketplace
+  marketplace: n8n-community
+  channel: partner-built
+  evidence: https://www.npmjs.com/package/@agorapulse/n8n-nodes-agorapulse
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: agorapulse-notion
+  label: Notion
+  partner: notion
+  partner_name: Notion
+  category: Task Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/notion
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-zendesk
+  label: Zendesk
+  partner: zendesk
+  partner_name: Zendesk
+  category: Customer Support
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/zendesk
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-anthropic-claude
+  label: Anthropic (Claude)
+  partner: anthropic
+  partner_name: Anthropic (Claude)
+  category: AI Models
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/anthropic-claude
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-microsoft-sharepoint
+  label: Microsoft SharePoint
+  partner: sharepoint
+  partner_name: Microsoft SharePoint
+  category: Microsoft
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/sharepoint
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-canva
+  label: Canva
+  partner: canva
+  partner_name: Canva
+  category: Images & Design
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/canva
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-discord
+  label: Discord
+  partner: discord
+  partner_name: Discord
+  category: Team Chat
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/discord
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-redtail-crm
+  label: Redtail CRM
+  partner_name: Redtail CRM
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/redtailcrm
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: agorapulse-perplexity
+  label: Perplexity
+  partner: perplexity
+  partner_name: Perplexity
+  category: AI Assistants
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/perplexity
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-openrouter
+  label: OpenRouter
+  partner: openrouter
+  partner_name: OpenRouter
+  category: AI Models
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/openrouter
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-zoho-analytics
+  label: Zoho Analytics
+  partner: zoho-analytics
+  partner_name: Zoho Analytics
+  category: Analytics
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/zoho-analytics
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-hootsuite
+  label: Hootsuite
+  partner: hootsuite
+  partner_name: Hootsuite
+  category: Social Media Marketing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/hootsuite
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: agorapulse-sendible
+  label: Sendible
+  partner: sendible
+  partner_name: Sendible
+  category: Social Media Marketing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/agorapulse/integrations/sendible
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
   arazzo: null
