@@ -238,11 +238,12 @@ The permissions the API asks for.
 
 - [Agorapulse Scopes](https://apis.io/scopes/agorapulse/agorapulse-scopes/)
 
-#### Plans and pricing (1)
+#### Plans and pricing (2)
 
 Published plans, tiers and prices.
 
 - [Agorapulse Plans Pricing](https://apis.io/plans/agorapulse/agorapulse-plans-pricing/)
+- [Agorapulse Price Estimates](https://apis.io/plans/agorapulse/agorapulse-price-estimates/)
 
 #### Rate limits (1)
 
@@ -276,18 +277,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 68.2** — exemplar · rubric 0.25.0 · scored 2026-10-23
+**Kin Score 68.4** — exemplar · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
 | Discoverability | 75.0 |
 | Contract quality | 62.0 |
 | Contract governance | 14.4 |
-| Operational transparency | 76.3 |
+| Operational transparency | 69.0 |
 | Developer ergonomics | 56.5 |
-| Access clarity | 92.1 |
+| Access clarity | 97.9 |
 
-**Agent readiness 54.3** — agent-ready (gated down from agent-native)
+**Agent readiness 54.2** — agent-ready (gated down from agent-native)
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -303,7 +304,7 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Event Surface Described | yes |
 | Agent Skills | derived (partial credit) |
 | Well Known Catalog | — |
-| Consent Identity | — |
+| Consent Identity | signal |
 | Agent Card | — |
 | Dry Run Mode | — |
 | Delegated Identity | served (partial credit) |
@@ -312,6 +313,10 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Agentic Commerce | — |
 | Pagination Ratio | — |
 | Operation Distinctiveness | distinct |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
 **Regulatory alignment 45.1** — Horizontal (data, software, accessibility, platform)
 
